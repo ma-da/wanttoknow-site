@@ -1,0 +1,91 @@
+{
+  "dataset": {
+    "id": "ultra-page-search",
+    "title": "ULTRA Archive Page Search",
+    "version": "3.0.0",
+    "created_at": "2026-08-10T19:08:29.057413+00:00",
+    "site_path": "/ultra-search/",
+    "primary_identifier": "record_id",
+    "description": "Combined client-side page-level transcription index for the original PEERS FOIA collection and the supplemental MKULTRA collection."
+  },
+  "counts": {
+    "pages": 21237,
+    "documents": 2175,
+    "primary_pages": 16383,
+    "supplemental_pages": 4854,
+    "pages_with_dates": 4312,
+    "pages_with_subprojects": 1852,
+    "pages_with_redactions": 18522,
+    "transcription_status": {
+      "usable": 19387,
+      "unreliable_replaced": 1850
+    }
+  },
+  "collections": {
+    "primary": {
+      "label": "Original PEERS FOIA collection",
+      "page_count": 16383,
+      "source_image_format": "PNG"
+    },
+    "supplemental": {
+      "label": "Supplemental collection",
+      "page_count": 4854,
+      "source_image_format": "JPEG",
+      "source_export": "supplemental_artifacts/supplemental_pages_v1_redactions.jsonl.gz"
+    }
+  },
+  "files": {
+    "page_index": {
+      "filename": "assets/data/ultra_page_index.jsonl",
+      "media_type": "application/x-ndjson",
+      "record_count": 21237,
+      "size_bytes": 35759248,
+      "sha256": "e8fe29d0368dce80f158887cb0e66903b0ce3b4a01b16c9fd66855b66a46bc6a"
+    },
+    "thumbnails": {
+      "directory": "thumbs/",
+      "format": "image/webp",
+      "width_pixels": 320,
+      "quality": 76
+    },
+    "images": {
+      "directory": "images/",
+      "formats": [
+        "image/png",
+        "image/jpeg"
+      ]
+    }
+  },
+  "page_schema": {
+    "record_id": "Stable page identifier across both collections",
+    "document_id": "Stable document identifier across both collections",
+    "display_id": "Identifier displayed in search results",
+    "collection": "primary or supplemental",
+    "identifier_type": "mori or supplemental_record_id",
+    "mori_id": "Compatibility search/display field. True MORI ID for primary pages; namespaced record ID for supplemental pages.",
+    "mori_document_id": "Compatibility document field. True MORI document ID for primary pages; namespaced document ID for supplemental pages.",
+    "page": "Integer page number",
+    "source_filename": "Original PNG or JPEG filename",
+    "thumbnail_filename": "Matching WebP thumbnail",
+    "document_label": "Supplemental source-document label when available",
+    "text": "Human-readable display and search transcription",
+    "dates": "Probable dates extracted from transcription",
+    "subprojects": "Probable subproject references extracted from transcription",
+    "transcription_status": "usable or unreliable_replaced",
+    "transcription_quality_score": "Optional heuristic score",
+    "redaction_count": "Count only; raw geometry omitted"
+  },
+  "search": {
+    "unit": "page",
+    "maximum_results": 50,
+    "search_fields": [
+      "text",
+      "record_id",
+      "document_id",
+      "mori_id",
+      "mori_document_id",
+      "dates",
+      "subprojects"
+    ]
+  }
+}

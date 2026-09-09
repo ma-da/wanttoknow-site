@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wanttoknow.info/schemas/ref-registry-v1.schema.json",
+  "title": "WantToKnow.info RefRegistry v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "ref_id",
+    "family",
+    "record_type",
+    "source_key",
+    "source_id",
+    "chunk_index",
+    "active"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "ref_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "news",
+        "document",
+        "youtube"
+      ]
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "news",
+        "page_chunk",
+        "substack_chunk",
+        "youtube_chunk"
+      ]
+    },
+    "source_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chunk_index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

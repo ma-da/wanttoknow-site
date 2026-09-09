@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "ufo-disclosure",
+  "eyebrow": "UFO / UAP history",
+  "title": "UFO Disclosure Timeline",
+  "description": "A chronological guide to major government programs, public disclosures, whistleblower testimony, official investigations, and legislation related to UFO and UAP phenomena.",
+  "sourcePage": "https://www.wanttoknow.info/ufo-information-center#timeline",
+  "endingNote": "As more information and UFO disclosure comes to light, this timeline will continue to be updated.",
+  "entries": [
+    {
+      "id": "project-blue-book",
+      "dateLabel": "1947–1969",
+      "sortYear": 1947,
+      "title": "Project Blue Book",
+      "paragraphs": [
+        "Project Blue Book was headquartered at Wright-Patterson Air Force Base in Ohio from 1952 to 1969. Following Project Sign in 1947 and Project Grudge in 1949, Blue Book created reports on 12,618 sightings of unidentified flying objects across the United States. Prominent astronomer J. Allen Hynek led the Air Force investigations. Although the purpose of Blue Book was to debunk UFO sightings, there were hundreds of incidents that Hynek was never able to fully explain.",
+        "According to an Air Force fact sheet on Blue Book, 701 of the 12,618 sightings studied remained mysterious. The New York Times later reported that Hynek eventually concluded the sightings represented a real phenomenon in serious need of scientific attention."
+      ],
+      "sources": [
+        {
+          "label": "U.S. Air Force: Project Blue Book fact sheet",
+          "url": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104590/unidentified-flying-objects-and-air-force-project-blue-book/"
+        },
+        {
+          "label": "WantToKnow.info: Project Blue Book article summary",
+          "url": "https://www.wanttoknow.info/a-project-blue-book-based-a-true-ufo-story"
+        }
+      ]
+    },
+    {
+      "id": "condon-report",
+      "dateLabel": "1969",
+      "sortYear": 1969,
+      "title": "Condon Report Results Released",
+      "paragraphs": [
+        "From 1966 to 1968, a team at the University of Colorado combined Project Blue Book data with information from the civilian UFO groups National Investigations Committee on Aerial Phenomena and Aerial Phenomena Research Organization. The Air Force financed the study while, according to the source timeline, undermining the investigation from its outset. The report ultimately concluded that scientific discoveries were unlikely to come from further UFO study.",
+        "The findings were published as The Scientific Study of Unidentified Flying Objects and became known as the Condon Report. Its conclusions were used to discredit the UFO issue broadly. Following publication, UFOs were officially treated as having no national-security interest or relevance."
+      ],
+      "sources": [
+        {
+          "label": "The Scientific Study of Unidentified Flying Objects",
+          "url": "https://archive.org/details/pdfy-4vyHjooOJagoGAwN"
+        },
+        {
+          "label": "WantToKnow.info: Government cover-ups and the UFO narrative",
+          "url": "https://www.wanttoknow.info/ufo-information-center#government-cover-ups"
+        }
+      ]
+    },
+    {
+      "id": "nids",
+      "dateLabel": "1995",
+      "sortYear": 1995,
+      "title": "National Institute for Discovery Science",
+      "paragraphs": [
+        "Entrepreneur Robert Bigelow convened a meeting in Las Vegas to consider UFO issues and studies of life after death. The resulting National Institute for Discovery Science included scientists, engineers, a CIA officer, a former Army colonel, two Apollo astronauts, and then-sitting Nevada senator Harry Reid.",
+        "Years later, Reid helped secure support for secret UFO research inside the Defense Department. One of the program’s main beneficiaries was an aerospace company owned by Bigelow, and Bigelow Aerospace was later revealed to have held a secret Defense Department UFO-study contract."
+      ],
+      "sources": [
+        {
+          "label": "NASA Watch: Bigelow Aerospace secret DoD UFO-study contract",
+          "url": "https://nasawatch.com/2017/12/19/bigelow-aerospace-had-a-secret-dod-ufo-study-contract-update/"
+        }
+      ]
+    },
+    {
+      "id": "disclosure-project",
+      "dateLabel": "2001",
+      "sortYear": 2001,
+      "title": "The Disclosure Project",
+      "paragraphs": [
+        "At the National Press Club in Washington, D.C., approximately twenty former military, intelligence, and security officials publicly described their experiences with anomalous phenomena. Organized by physician and former emergency-room director Dr. Steven Greer, the event sought to motivate congressional hearings on UFOs.",
+        "The Disclosure Project documented testimony from scientists and military-intelligence officers who described alleged knowledge of extraterrestrial beings, recovered technologies, and classified programs."
+      ],
+      "sources": [
+        {
+          "label": "Disclosure Project National Press Club presentation",
+          "url": "https://www.youtube.com/watch?v=jI-9a3vj4gE"
+        },
+        {
+          "label": "Full 494-page Disclosure Project briefing document",
+          "url": "https://www.wanttoknow.info/ufos/Disclosure-Project-Briefing-Document-Full.pdf"
+        },
+        {
+          "label": "Two-page UFO disclosure summary",
+          "url": "https://www.wanttoknow.info/ufocover-up"
+        },
+        {
+          "label": "Ten-page UFO disclosure summary",
+          "url": "https://www.wanttoknow.info/ufocover-up10pg"
+        }
+      ]
+    },
+    {
+      "id": "aatip",
+      "dateLabel": "2007",
+      "sortYear": 2007,
+      "title": "New Pentagon Investigation",
+      "paragraphs": [
+        "The Department of Defense secretly launched the Advanced Aerospace Threat Identification Program, commonly known as AATIP, to investigate unusual phenomena. The program was associated with military-intelligence official Luis Elizondo until his 2017 resignation, cost about $22 million, and operated from the Pentagon’s C Ring.",
+        "The program produced documents describing aircraft that appeared to move at high velocity without visible propulsion or hover without an apparent means of lift. Declassified material also shows research into subjects including invisibility cloaking, dark energy, wormholes, and space travel using quantum processes."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: Pentagon UFO-program article summary",
+          "url": "https://www.wanttoknow.info/a-glowing-auras-black-money-pentagons-mysterious-ufo-program"
+        },
+        {
+          "label": "WantToKnow.info: AATIP research subjects",
+          "url": "https://www.wanttoknow.info/a-secret-pentagon-projects-reveal-govt-looked-into-ufos-wormholes-other-bizarre-anomalies"
+        },
+        {
+          "label": "DIA list of AATIP research products",
+          "url": "https://www.wanttoknow.info/z/aatip-list-fas-aftergood.pdf"
+        }
+      ]
+    },
+    {
+      "id": "area-51-disclosed",
+      "dateLabel": "2013",
+      "sortYear": 2013,
+      "title": "The Existence of Area 51 Is Disclosed",
+      "paragraphs": [
+        "A secret base in the Nevada desert had long been rumored to contain UFO secrets. For decades, U.S. officials declined to acknowledge Area 51 publicly. In 2013, the CIA formally acknowledged the facility in records released in response to a 2005 Freedom of Information Act request.",
+        "The released history discussed experimental spy planes rather than exotic technologies. Even so, official acknowledgment of the facility’s existence represented a significant disclosure event."
+      ],
+      "sources": [
+        {
+          "label": "National Security Archive: The Secret History of the U-2 and Area 51",
+          "url": "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB434/"
+        }
+      ]
+    },
+    {
+      "id": "elizondo-resigns",
+      "dateLabel": "2017",
+      "sortYear": 2017.1,
+      "title": "Luis Elizondo Resigns From AATIP and Becomes a Whistleblower",
+      "paragraphs": [
+        "Luis Elizondo resigned from the Defense Department in October, citing excessive secrecy and bureaucratic resistance. In his resignation letter to Defense Secretary Jim Mattis, he argued that the department needed to take seriously reports of unusual aerial systems interfering with military platforms and displaying beyond-next-generation capabilities.",
+        "Elizondo later filed an inspector-general complaint alleging malicious activity, coordinated disinformation, professional misconduct, whistleblower reprisal, and explicit threats."
+      ],
+      "sources": [
+        {
+          "label": "The Guardian: Elizondo’s Pentagon complaint",
+          "url": "https://www.theguardian.com/world/2021/may/28/ufo-whistleblower-pentagon-complaint"
+        }
+      ]
+    },
+    {
+      "id": "to-the-stars-academy",
+      "dateLabel": "2017",
+      "sortYear": 2017.2,
+      "title": "To the Stars Academy",
+      "paragraphs": [
+        "Blink-182 musician Tom DeLonge launched To the Stars Academy with former CIA officer Jim Semivan and physicist Hal Puthoff, who had directed research at Stanford Research Institute and worked on the CIA’s remote-viewing program.",
+        "Led operationally by former AATIP head Luis Elizondo, the organization also included former defense and aerospace officials. It helped move UFO discussion into mainstream media, though its finances drew criticism and the organization later receded from public prominence."
+      ],
+      "sources": [
+        {
+          "label": "To the Stars Academy launch announcement",
+          "url": "https://www.prnewswire.com/news-releases/to-the-stars-academy-of-arts--science-launches-today-300534912.html"
+        },
+        {
+          "label": "Transcript of the launch press conference",
+          "url": "https://openminds.tv/transcript-of-to-the-stars-academy-press-conference/"
+        },
+        {
+          "label": "WantToKnow.info: Former AATIP manager interview",
+          "url": "https://www.wanttoknow.info/a-fmr-manager-dod-aerospace-threat-program-ufos-real"
+        }
+      ]
+    },
+    {
+      "id": "ufo-videos-released",
+      "dateLabel": "2017",
+      "sortYear": 2017.3,
+      "title": "Unclassified UFO Videos Released to the Media",
+      "paragraphs": [
+        "Elizondo worked with former Deputy Assistant Secretary of Defense for Intelligence Christopher Mellon and journalist Leslie Kean to reveal AATIP publicly. The resulting story appeared on the front page of The New York Times in December 2017.",
+        "Mellon also provided the media with two unclassified Defense Department UAP videos recorded by U.S. Navy aircraft. One depicted the 2004 USS Nimitz encounter in which pilots reported a white, approximately 40-foot, Tic Tac-shaped object with no visible means of propulsion that outmaneuvered their F/A-18 fighters."
+      ],
+      "sources": [
+        {
+          "label": "The New York Times: Secret Pentagon UFO program",
+          "url": "https://www.nytimes.com/2017/12/16/us/politics/pentagon-program-ufo-harry-reid.html"
+        },
+        {
+          "label": "Christopher Mellon: Setting the Record Straight",
+          "url": "https://www.christophermellon.net/post/setting-the-record-straight"
+        },
+        {
+          "label": "History: The 2004 USS Nimitz Tic Tac encounter",
+          "url": "https://www.history.com/articles/uss-nimitz-2004-tic-tac-ufo-encounter"
+        }
+      ]
+    },
+    {
+      "id": "navy-pilots-brief-senate",
+      "dateLabel": "2018",
+      "sortYear": 2018,
+      "title": "Navy Pilots Talk to Senate Staffers",
+      "paragraphs": [
+        "Christopher Mellon and Luis Elizondo arranged a classified briefing that introduced staff from the Senate Armed Services and Intelligence Committees to Navy pilots Dave Fravor, Ryan Graves, and Alex Dietrich, along with other Defense Department personnel and contractors who had encountered UAPs."
+      ],
+      "sources": [
+        {
+          "label": "CNN: Classified briefings on Navy UFO encounters",
+          "url": "https://www.cnn.com/2019/06/20/politics/us-navy-ufo-sightings/index.html"
+        }
+      ]
+    },
+    {
+      "id": "aaro-created",
+      "dateLabel": "2022",
+      "sortYear": 2022,
+      "title": "All-domain Anomaly Resolution Office",
+      "paragraphs": [
+        "The National Defense Authorization Act for fiscal year 2022 included a provision creating the All-domain Anomaly Resolution Office, or AARO. Its mission was to coordinate Defense Department and federal efforts to detect, identify, attribute, and, when necessary, mitigate anomalous objects near military installations, operating areas, training areas, and special-use airspace.",
+        "The office’s mandate includes unidentified space, airborne, submerged, and transmedium objects. The legislation also created whistleblower protections and exemptions from certain nondisclosure restrictions to make it easier for government workers to report UFO-related experiences and technologies."
+      ],
+      "sources": [
+        {
+          "label": "Department of Defense announcement establishing AARO",
+          "url": "https://www.defense.gov/News/Releases/Release/Article/3100053/dod-announces-the-establishment-of-the-all-domain-anomaly-resolution-office/"
+        },
+        {
+          "label": "Military Times: AARO funding and transparency",
+          "url": "https://www.militarytimes.com/news/your-military/2023/07/05/senators-want-to-boost-pentagon-ufo-office-funding-transparency/"
+        }
+      ]
+    },
+    {
+      "id": "david-grusch",
+      "dateLabel": "2023",
+      "sortYear": 2023.1,
+      "title": "Whistleblower David Grusch Steps Forward",
+      "paragraphs": [
+        "Before becoming a whistleblower, David Grusch worked for the Air Force, the National Geospatial-Intelligence Agency, and the National Reconnaissance Office. In July 2023, he testified before the House Oversight Committee’s national-security subcommittee that the U.S. government had secretly studied UAPs since the 1930s.",
+        "His testimony and media comments alleged that non-human craft and biological material had been recovered and studied by secret programs. The source timeline also notes that some members of the UFO community view his disclosures as a possible limited hangout: the selective release of partial truths to conceal a larger reality."
+      ],
+      "sources": [
+        {
+          "label": "C-SPAN: House hearing on unidentified aerial phenomena",
+          "url": "https://www.c-span.org/video/?529499-1/hearing-unidentified-aerial-phenomena"
+        }
+      ]
+    },
+    {
+      "id": "cbp-ufo-videos",
+      "dateLabel": "2023",
+      "sortYear": 2023.2,
+      "title": "Customs and Border Protection Releases UFO Videos",
+      "paragraphs": [
+        "U.S. Customs and Border Protection released ten videos in August 2023 depicting reported UAPs, along with 387 pages of supporting records and eyewitness testimony. The material was published through the agency’s Freedom of Information Act records process."
+      ],
+      "sources": [
+        {
+          "label": "NBC News: CBP releases UAP videos",
+          "url": "https://www.nbcnews.com/now/video/cbp-releases-videos-of-unidentified-aerial-phenomena-193517125723"
+        },
+        {
+          "label": "CBP supporting records PDF",
+          "url": "https://www.cbp.gov/sites/default/files/assets/documents/2023-Aug/Records%20pertaining%20to%20Unidentified%20Aerial%20Phenomenon.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ndaa-non-human-intelligence",
+      "dateLabel": "2023",
+      "sortYear": 2023.3,
+      "title": "“Non-Human Intelligence” Enters the Fiscal 2024 NDAA",
+      "paragraphs": [
+        "In December, President Biden signed the National Defense Authorization Act for fiscal year 2024. The source timeline highlights the act’s use of the term “non-human intelligence” in provisions concerning records and material associated with technologies of unknown origin and biological evidence.",
+        "The enacted measure differed from the broader Senate proposal described in the original timeline. For ongoing accuracy, this entry should be reviewed against the final statutory text whenever the timeline is updated."
+      ],
+      "sources": [
+        {
+          "label": "White House statement on signing the fiscal 2024 NDAA",
+          "url": "https://www.whitehouse.gov/briefing-room/statements-releases/2023/12/22/statement-from-president-joe-biden-on-h-r-2670-national-defense-authorization-act-for-fiscal-year-2024/"
+        },
+        {
+          "label": "Congress.gov: National Defense Authorization Act for Fiscal Year 2024",
+          "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2226"
+        }
+      ]
+    }
+  ],
+  "titleParts": {
+    "lead": "UFO",
+    "outline": "Disclosure",
+    "tail": "Timeline"
+  }
+}

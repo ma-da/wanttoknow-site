@@ -1,0 +1,1612 @@
+{
+  "id": "pathways-menu",
+  "items": [
+    {
+      "label": "Inspiration",
+      "title": "Inspiration",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Inspiration"
+            },
+            {
+              "type": "paragraph",
+              "text": "What’s going right with the world? Delve into insights, ideas, videos, resources, and over 3,000 news articles aimed at healing social divides, creating constructive social change, exploring consciousness and spirituality, and strengthening heart-centered living."
+            },
+            {
+              "type": "link",
+              "label": "Inspiration Center",
+              "url": "/topics/inspiring/"
+            },
+            {
+              "type": "link",
+              "label": "Our Inspiration series on Substack",
+              "url": "https://peerservice.substack.com/t/inspiring"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Solutions Hub"
+            },
+            {
+              "type": "link",
+              "label": "People-Powered Alternative Systems",
+              "url": "/news/category/grassroots-alternative-systems"
+            },
+            {
+              "type": "link",
+              "label": "Healing Social Division and Polarization",
+              "url": "/news/category/healing-our-relationships"
+            },
+            {
+              "type": "link",
+              "label": "Healing Our Bodies",
+              "url": "/news/category/healing-our-bodies"
+            },
+            {
+              "type": "link",
+              "label": "Healing the Earth",
+              "url": "/news/category/healing-our-earth"
+            },
+            {
+              "type": "link",
+              "label": "Clean Energy Technologies",
+              "url": "/news/category/newenergyinventions"
+            },
+            {
+              "type": "link",
+              "label": "Microplastic Solutions",
+              "url": "/news/category/microplastics-solutions"
+            },
+            {
+              "type": "link",
+              "label": "Healing the War Machine",
+              "url": "/news/category/healing-the-war-machine"
+            },
+            {
+              "type": "link",
+              "label": "Reimagining the Economy",
+              "url": "/news/category/reimagining-the-economy"
+            },
+            {
+              "type": "link",
+              "label": "Reimagining Education",
+              "url": "/news/category/reimagining-education"
+            },
+            {
+              "type": "link",
+              "label": "Repairing the Criminal Justice System",
+              "url": "/news/category/repairing-our-criminal-justice-system"
+            },
+            {
+              "type": "link",
+              "label": "Ending Sex Abuse and Human Trafficking",
+              "url": "/news/category/ending-human-trafficking"
+            },
+            {
+              "type": "link",
+              "label": "Technology for Good",
+              "url": "/news/category/tech-for-good"
+            },
+            {
+              "type": "link",
+              "label": "Power of Art and Music",
+              "url": "/news/category/power-of-art"
+            },
+            {
+              "type": "link",
+              "label": "More Inspiring Resources",
+              "url": "/inspirational2022"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Latest Inspiring News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "inspirational"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Latest Inspiring News"
+            },
+            {
+              "type": "link",
+              "label": "See all inspiring news.",
+              "url": "/news/category/inspirational"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Other Inspirational Topics"
+            },
+            {
+              "type": "link",
+              "label": "Nature of Reality and Consciousness",
+              "url": "/news/category/natureofreality"
+            },
+            {
+              "type": "link",
+              "label": "Psychedelic Medicine",
+              "url": "/news/category/mindalteringdrugs"
+            },
+            {
+              "type": "link",
+              "label": "Near-Death Experiences",
+              "url": "/news/category/neardeathexperiences"
+            },
+            {
+              "type": "link",
+              "label": "Overcoming Odds: Human Interest Stories",
+              "url": "/news/category/top-human-interest-stories"
+            },
+            {
+              "type": "link",
+              "label": "Amazing Seniors",
+              "url": "/news/category/amazing-seniors"
+            },
+            {
+              "type": "link",
+              "label": "People with Disabilities",
+              "url": "/news/category/inspiring-disabled-persons"
+            },
+            {
+              "type": "link",
+              "label": "Animal Wonders",
+              "url": "/news/category/animal-wonders"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Health",
+      "title": "Health",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Health"
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The "
+                },
+                {
+                  "type": "link",
+                  "label": "US spends the most on health care",
+                  "url": "https://edition.cnn.com/2023/01/31/health/us-health-care-spending-global-perspective/index.html"
+                },
+                {
+                  "type": "text",
+                  "text": " but has the worst health outcomes among high-income countries. "
+                },
+                {
+                  "type": "link",
+                  "label": "More than half of children",
+                  "url": "/news/more-than-half-young-us-adults-have-chronic-health-condition"
+                },
+                {
+                  "type": "text",
+                  "text": " now have chronic health conditions. What is behind this? To understand root causes of chronic illness and disease, we take a multi-factorial approach."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Substack Investigations"
+            },
+            {
+              "type": "link",
+              "label": "The Pesticide Crisis Reveals The Dark Side of Science. We Have The Solutions to Regenerate.",
+              "url": "https://peerservice.substack.com/p/the-pesticide-crisis-reveals-the"
+            },
+            {
+              "type": "link",
+              "label": "Geoengineering is a Weapon That's Been Rebranded as Climate Science. There's a Better Way To Heal the Earth.",
+              "url": "https://peerservice.substack.com/p/how-geoengineering-went-from-top"
+            },
+            {
+              "type": "link",
+              "label": "Historic Senate Panel Exposes How the US Government Turns a Blind Eye to the Corporate Cartels Fueling America’s Health Crisis",
+              "url": "https://peerservice.substack.com/p/historic-senate-panel-exposes-how"
+            },
+            {
+              "type": "link",
+              "label": "Inspiring Remedies to the Chronic Illness Crisis",
+              "url": "https://peerservice.substack.com/p/make-our-communities-healthier-againinspiring"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key News Topics on Health"
+            },
+            {
+              "type": "link",
+              "label": "War on Drugs",
+              "url": "/news/category/war-on-drugs"
+            },
+            {
+              "type": "link",
+              "label": "Health Corruption",
+              "url": "/news/category/health"
+            },
+            {
+              "type": "link",
+              "label": "Food Corruption",
+              "url": "/news/category/food-corruption"
+            },
+            {
+              "type": "link",
+              "label": "Science Corruption",
+              "url": "/news/category/corruptioninscience"
+            },
+            {
+              "type": "link",
+              "label": "GMOs",
+              "url": "/news/category/geneticallymodifiedorganisms"
+            },
+            {
+              "type": "link",
+              "label": "Toxic Chemicals",
+              "url": "/news/category/toxic-chemicals"
+            },
+            {
+              "type": "link",
+              "label": "Big Pharma Corruption",
+              "url": "/news/category/pharmaceuticalcorruption"
+            },
+            {
+              "type": "link",
+              "label": "Mental Health",
+              "url": "/news/category/mental-health"
+            },
+            {
+              "type": "link",
+              "label": "Transgender Medicine",
+              "url": "/news/category/transgender-medicine"
+            },
+            {
+              "type": "link",
+              "label": "Psychedelic Medicine",
+              "url": "/news/category/mindalteringdrugs"
+            },
+            {
+              "type": "link",
+              "label": "Inspiring Health News",
+              "url": "/news/category/healing-our-bodies"
+            },
+            {
+              "type": "link",
+              "label": "Microplastics Solutions",
+              "url": "/news/category/microplastics-solutions"
+            },
+            {
+              "type": "link",
+              "label": "Environmental Destruction",
+              "url": "/news/category/environmental-destruction"
+            },
+            {
+              "type": "link",
+              "label": "Vaccines",
+              "url": "/news/category/vaccines"
+            },
+            {
+              "type": "link",
+              "label": "Wireless Radiation",
+              "url": "/news/category/cell-phones-wireless-dangers"
+            },
+            {
+              "type": "link",
+              "label": "Factory Farming Dangers",
+              "url": "/news/category/factory-farming"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "link",
+              "label": "Health and Food Information Center",
+              "url": "/topics/health/info-center-health"
+            },
+            {
+              "type": "link",
+              "label": "COVID Information Center",
+              "url": "/topics/health/info-center-covid"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Health News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "health"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Health News"
+            },
+            {
+              "type": "link",
+              "label": "See all health news.",
+              "url": "/news/category/health"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Big Pharma News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "pharmaceuticalcorruption"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Big Pharma News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on Big Pharma corruption.",
+              "url": "/news/category/pharmaceuticalcorruption"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Justice",
+      "title": "Justice",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Justice"
+            },
+            {
+              "type": "paragraph",
+              "text": "Our criminal justice system is tasked with maintaining public safety and upholding the rule of law. Yet far too often, social justice takes a backseat while those in authority violate human rights."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Police Corruption News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "police-corruption"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Police Corruption News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on police corruption.",
+              "url": "/news/category/police-corruption"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "More Key Topics"
+            },
+            {
+              "type": "link",
+              "label": "A History of Militarized Policing in the US and the Suppression of Dissent Across the Political Spectrum",
+              "url": "https://peerservice.substack.com/p/managing-society-in-crisis-history"
+            },
+            {
+              "type": "link",
+              "label": "How The Deep State Won the War on Drugs: A Complete Timeline",
+              "url": "https://peerservice.substack.com/p/how-the-deep-state-won-the-war-on"
+            },
+            {
+              "type": "link",
+              "label": "Immigration Enforcement Corruption News",
+              "url": "/news/category/immigration-enforcement-corruption"
+            },
+            {
+              "type": "link",
+              "label": "Child Trafficking at the US-Mexico Border",
+              "url": "/mindfulnewsbrief/how-us-government-facilitates-child-trafficking-at-border"
+            },
+            {
+              "type": "link",
+              "label": "Court and Judiciary System Corruption News",
+              "url": "/news/category/court-judicial-corruption"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Prison System Corruption News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "prisonscorruption"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Prison System Corruption News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on prison system corruption.",
+              "url": "/news/category/prisonscorruption"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Repairing Our Criminal Justice System"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "repairing-our-criminal-justice-system"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Repairing Our Criminal Justice System"
+            },
+            {
+              "type": "link",
+              "label": "See all inspiring news on criminal justice system reform.",
+              "url": "/news/category/repairing-our-criminal-justice-system"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Money",
+      "title": "Money",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Money"
+            },
+            {
+              "type": "paragraph",
+              "text": "Considering the vital role money plays both in our lives and in the world, our educational system teaches us very little about how money is created, how banks operate, and what causes the huge banking scandals and bankruptcies that have occurred. Furthermore, rising wealth inequality is a major issue of our time. We delve into all things related to financial system corruption."
+            },
+            {
+              "type": "link",
+              "label": "Banking and Finance Information Center",
+              "url": "/topics/money/info-center-banking"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key Financial Corruption Topics"
+            },
+            {
+              "type": "link",
+              "label": "News Archive on Government Waste",
+              "url": "/news/category/government-waste"
+            },
+            {
+              "type": "link",
+              "label": "Federal Reseve: Neither Federal Nor a Reserve",
+              "url": "/topics/money/financialbankingcoverup"
+            },
+            {
+              "type": "link",
+              "label": "Former Ass. Sect. of HUD: Trillions Missing From US Government",
+              "url": "/topics/money/banking_finance/trillions-missing-catherine-austin-fitts"
+            },
+            {
+              "type": "link",
+              "label": "Confessions of An Economic Hitman Summary",
+              "url": "/books/economic-hitman-perkins"
+            },
+            {
+              "type": "link",
+              "label": "Tragedy and Hope: History of Banking and Money",
+              "url": "/topics/money/tragedy-hope-quigley"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Wealth Inequality News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "incomeinequality"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Wealth Inequality News"
+            },
+            {
+              "type": "link",
+              "label": "See all wealth inequality news.",
+              "url": "/news/category/incomeinequality"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Financial Corruption News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "financial"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Financial Corruption News"
+            },
+            {
+              "type": "link",
+              "label": "See all financial corruption news.",
+              "url": "/news/category/financial"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Reimagining Our Economic System"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "reimagining-the-economy"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Reimagining Our Economic System"
+            },
+            {
+              "type": "link",
+              "label": "See all inspiring news on economic system reform.",
+              "url": "/news/category/reimagining-the-economy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tech",
+      "title": "Tech",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Tech"
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Technology is a powerful force that has helped shape and define human life since the very beginning. Yet when exploited, technology comes with environmental, human rights, and existential costs while Big Tech corporations profit immensely. Now, "
+                },
+                {
+                  "type": "link",
+                  "label": "the world’s biggest tech companies are becoming more powerful",
+                  "url": "/news/big-tech-companies-becoming-more-powerful-than-nationstates"
+                },
+                {
+                  "type": "text",
+                  "text": " than most countries."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key Tech Topics"
+            },
+            {
+              "type": "link",
+              "label": "Artificial Intelligence",
+              "url": "/news/category/AI"
+            },
+            {
+              "type": "link",
+              "label": "Biotech Dangers",
+              "url": "/news/category/biotech-dangers"
+            },
+            {
+              "type": "link",
+              "label": "Wireless Radiation",
+              "url": "/news/category/cell-phones-wireless-dangers"
+            },
+            {
+              "type": "link",
+              "label": "The Militarization of Big Tech (Video)",
+              "url": "https://www.youtube.com/watch?v=xUTM6MT-0B8"
+            },
+            {
+              "type": "link",
+              "label": "Non-Lethal Weapons",
+              "url": "/news/category/nonlethalweapons"
+            },
+            {
+              "type": "link",
+              "label": "Microchip Implants",
+              "url": "/news/category/microchipsimplants"
+            },
+            {
+              "type": "link",
+              "label": "Geoengineering",
+              "url": "/news/category/chemtrails"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Big Tech Corruption"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "big-tech"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Big Tech Corruption"
+            },
+            {
+              "type": "link",
+              "label": "See all news on Big Tech.",
+              "url": "/news/category/big-tech"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Privacy and Mass Surveillance News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "privacy"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Privacy and Mass Surveillance News"
+            },
+            {
+              "type": "link",
+              "label": "See all privacy and mass surveillance news.",
+              "url": "/news/category/privacy"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Tech For Good News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "tech-for-good"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Tech For Good News"
+            },
+            {
+              "type": "link",
+              "label": "See all inspiring technology news.",
+              "url": "/news/category/tech-for-good"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Media",
+      "title": "Media",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Media"
+            },
+            {
+              "type": "paragraph",
+              "text": "Our media landscape is heavily manipulated. Mainstream narratives rarely tell the whole story. Becoming aware of the special interests driving what we see, hear, and read can help us navigate censorship, propaganda and misinformation campaigns that serve powerful interests over open, democratic debate."
+            },
+            {
+              "type": "link",
+              "label": "Media Manipulation Information Center",
+              "url": "/topics/media/info-center-media"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key Media Topics"
+            },
+            {
+              "type": "link",
+              "label": "Transforming Media Polarization, One Echo Chamber At A Time | 31-Min Mini-Documentary",
+              "url": "https://www.youtube.com/watch?v=Cia4mv0QyMk"
+            },
+            {
+              "type": "link",
+              "label": "Leading Journalists Expose Major Media Corruption",
+              "url": "/news/category/mediacorruption"
+            },
+            {
+              "type": "link",
+              "label": "Operation Mockingbird: CIA Infiltration of Media",
+              "url": "/military-intelligence-corruption-information#mockingbird"
+            },
+            {
+              "type": "link",
+              "label": "10 Tips for Navigating the Media Landscape",
+              "url": "https://www.wanttoknow.info/g/using-sensemaking-to-navigate-the-media-landscape"
+            },
+            {
+              "type": "link",
+              "label": "Interview with Visionary Media Activist Tony Brasunas",
+              "url": "https://www.wanttoknow.info/interview-media-activist-tony-brasunas-red-white-blind"
+            },
+            {
+              "type": "link",
+              "label": "Interview with Project Censored Director Mickey Huff",
+              "url": "https://www.youtube.com/watch?v=3uL_SCaFI9s"
+            },
+            {
+              "type": "link",
+              "label": "Major Mass Media Cover-Ups",
+              "url": "/news/category/massmedia"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Media Manipulation News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "massmedia"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Media Manipulation News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on media manipulation.",
+              "url": "/news/category/massmedia"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Censorship News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "censorship"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Censorship News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on censorship.",
+              "url": "/news/category/censorship"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "War",
+      "title": "War",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "War"
+            },
+            {
+              "type": "paragraph",
+              "text": "The mainstream press often downplays how ineffective, harmful, and wasteful our current national security strategy is. While entrenched bureaucracy are partly responsible for this, deeper covert actions and major cover-ups within the military-intelligence complex continue to remain largely hidden from public awareness."
+            },
+            {
+              "type": "link",
+              "label": "Military-Intelligence Corruption Info Center",
+              "url": "/topics/war/"
+            },
+            {
+              "type": "link",
+              "label": "9/11 Info Center",
+              "url": "/topics/deep-history/info-center-911"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key War Topics"
+            },
+            {
+              "type": "link",
+              "label": "The War on Drugs: A Complete Timeline",
+              "url": "https://peerservice.substack.com/p/how-the-deep-state-won-the-war-on"
+            },
+            {
+              "type": "link",
+              "label": "Military Paranormal Science: The Fascinating World of Remote Viewing",
+              "url": "https://www.wanttoknow.info/remoteviewing/remote-viewing"
+            },
+            {
+              "type": "link",
+              "label": "Warfare Technologies",
+              "url": "/news/category/warfare-tech"
+            },
+            {
+              "type": "link",
+              "label": "Weapons of Mass Destruction",
+              "url": "/news/category/weapons-mass-destruction"
+            },
+            {
+              "type": "link",
+              "label": "Terrorism in the News",
+              "url": "/news/category/terrorism"
+            },
+            {
+              "type": "link",
+              "label": "Non-Lethal Weapons",
+              "url": "/topics/war/info-center-milint#nonlethal"
+            },
+            {
+              "type": "link",
+              "label": "A Brief History of US War Failures and Lies",
+              "url": "/war/history-war-failures-lies-brutalities"
+            },
+            {
+              "type": "link",
+              "label": "False Flag Operations",
+              "url": "https://www.wanttoknow.info/falseflag"
+            },
+            {
+              "type": "link",
+              "label": "Top General Exposes Major War Corruption",
+              "url": "/topics/war/smedley-butler-summary"
+            },
+            {
+              "type": "link",
+              "label": "Inspiring: Healing the War Machine",
+              "url": "/news/category/healing-the-war-machine"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Intelligence Agency Corruption"
+            },
+            {
+              "type": "link",
+              "label": "Intelligence Agency Corruption News Articles",
+              "url": "/news/category/intelligenceagency"
+            },
+            {
+              "type": "link",
+              "label": "The Rise of the CIA",
+              "url": "/topics/war/info-center-milint#cia"
+            },
+            {
+              "type": "link",
+              "label": "The CIA's Mighty Wurlitzer",
+              "url": "/topics/war/info-center-milint#wurlitzer"
+            },
+            {
+              "type": "link",
+              "label": "Psychic Spies and Remote Viewing",
+              "url": "/topics/consciousness/psychic-spies-jon-ronson"
+            },
+            {
+              "type": "link",
+              "label": "The CIA's Nazi Connection",
+              "url": "/topics/war/info-center-milint#paperclip"
+            },
+            {
+              "type": "link",
+              "label": "More Military Corruption Resources",
+              "url": "/topics/war/"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Military Corruption News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "militarycorruption"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Military Corruption News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on military corruption.",
+              "url": "/news/category/militarycorruption"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Intelligence Agency Abuses"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "intelligenceagency"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Intelligence Agency Abuses"
+            },
+            {
+              "type": "link",
+              "label": "See all news on intelligence agency corruption.",
+              "url": "/news/category/intelligenceagency"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key War Articles from the Archive"
+            },
+            {
+              "type": "news_feed",
+              "ids": [
+                "762",
+                "846",
+                "19",
+                "296"
+              ],
+              "limit": 4,
+              "label": "Key War Articles from the Archive"
+            },
+            {
+              "type": "link",
+              "label": "See all news on war.",
+              "url": "/news/category/war"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Mind Control",
+      "title": "Mind Control",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Mind Control"
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "We dive into the long history of mind control experiments in highly secret, US government-sponsored operations. "
+                },
+                {
+                  "type": "link",
+                  "label": "Declassified CIA documents",
+                  "url": "/topics/abuse-and-trafficking/mkultra-doc-highlights"
+                },
+                {
+                  "type": "text",
+                  "text": " prove the existence of secret government programs involving hypnosis, drugs, electric shock, mind control, and more. Some of these programs were designed to create super spies, terrorists, and assassins."
+                }
+              ]
+            },
+            {
+              "type": "link",
+              "label": "Mind Control Information Center",
+              "url": "/topics/mind-control/info-center-mind-control"
+            },
+            {
+              "type": "link",
+              "label": "Mind Control News Database",
+              "url": "/topics/mind-control"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key Mind Control Resources"
+            },
+            {
+              "type": "link",
+              "label": "Secrets of Mind Control",
+              "url": "/topics/mind-control/mindcontrol"
+            },
+            {
+              "type": "link",
+              "label": "Declassified CIA Documents Reveal Sex Abuse, More",
+              "url": "/mind_control/cia_mind_control_experiments_sex_abuse"
+            },
+            {
+              "type": "link",
+              "label": "MKULTRA Program",
+              "url": "/topics/war/info-center-milint#mkultra"
+            },
+            {
+              "type": "link",
+              "label": "Operation Bluebird/Artichoke",
+              "url": "/topics/mind-control/bluebird10pg"
+            },
+            {
+              "type": "link",
+              "label": "A Nation Betrayed , MKUltra Survivor’s Story",
+              "url": "/topics/mind-control/nationbetrayed10pg"
+            },
+            {
+              "type": "link",
+              "label": "Mind Controllers Summary",
+              "url": "/topics/mind-control/mindcontrollers10pg"
+            },
+            {
+              "type": "link",
+              "label": "Brief History of Humans Used as Guinea Pigs by U.S. Government and Military",
+              "url": "/timelines/human-guinea-pigs"
+            },
+            {
+              "type": "link",
+              "label": "CIA's Operation Midnight Climax: Deadly LSD & Sex Escapades",
+              "url": "https://www.wanttoknow.info/mk/cia-lsd-sex-climax"
+            },
+            {
+              "type": "link",
+              "label": "Manchurian Candidate: The Secret Government Project",
+              "url": "https://www.wanttoknow.info/manchuriancandidate"
+            },
+            {
+              "type": "link",
+              "label": "Cults, Ritual Abuse, and Mind Control",
+              "url": "/topics/mind-control/cults_ritual_abuse_mind_control"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Mind Control in the News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "mindcontrol"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "Mind Control in the News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on mind control.",
+              "url": "/news/category/mindcontrol"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key Mind Control Articles from the Archive"
+            },
+            {
+              "type": "news_feed",
+              "ids": [
+                "1241",
+                "896",
+                "19",
+                "9699"
+              ],
+              "limit": 4,
+              "label": "Key Mind Control Articles from the Archive"
+            },
+            {
+              "type": "link",
+              "label": "See best archived news on mind control.",
+              "url": "/topics/mind-control/mindcontrol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "UFO/UAP",
+      "title": "UFO/UAP",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "UFO/UAP"
+            },
+            {
+              "type": "paragraph",
+              "text": "There are areas of our lives that have the potential to change our assumptions about reality and what is possible. UFO encounters come in a wide variety of mysterious forms. Some involve experimental military aircraft and secret technologies, while others point to the serious possibility of extraterrestrial or interdimensional life."
+            },
+            {
+              "type": "link",
+              "label": "UFO Information Center",
+              "url": "/topics/ufo/"
+            },
+            {
+              "type": "link",
+              "label": "UFO News Database",
+              "url": "/news/category/ufos/"
+            },
+            {
+              "type": "paragraph",
+              "text": "Over 20+ years, we’ve documented some of the best, most reliable resources on UFOs. Instead of speculating ourselves, we describe what has been documented and backed by credible evidence. UFO experts and government officials with first-hand experiences have made meaningful contributions to our site."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "UFO Educational Videos"
+            },
+            {
+              "type": "link",
+              "label": "UFO Disclosure Explained: New Solutions for Humanity w/ Daniel Sheehan and Amber Yang",
+              "url": "https://www.youtube.com/watch?v=Db28o20ChAI"
+            },
+            {
+              "type": "link",
+              "label": "UFO Disclosure: Breakthrough Technology and Awakening Human Consciousness",
+              "url": "https://www.youtube.com/watch?v=whqM1HPSCeo"
+            },
+            {
+              "type": "link",
+              "label": "Black Budget Tech and UFOs with Aerospace Expert Michael Schratt",
+              "url": "https://www.youtube.com/watch?v=bOT0tPeQwzI&"
+            },
+            {
+              "type": "link",
+              "label": "Let's Speculate: UFO/UAP Technology",
+              "url": "https://www.youtube.com/watch?v=CPOcEXmEDmc"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key UFO Resources"
+            },
+            {
+              "type": "link",
+              "label": "UFO Disclosure Timeline",
+              "url": "/timelines/disclosure"
+            },
+            {
+              "type": "link",
+              "label": "Controlling the UFO Narrative: Government Cover-Ups",
+              "url": "/topics/ufo/info-center-ufo#coverup"
+            },
+            {
+              "type": "link",
+              "label": "UFO Testimonies of Government and Military Officials",
+              "url": "/topics/ufo/ufocover-up10pg"
+            },
+            {
+              "type": "link",
+              "label": "SciFi Channel's Explosive Documentary Out of the Blue",
+              "url": "https://www.wanttoknow.info/060602ufosvideosfootage"
+            },
+            {
+              "type": "link",
+              "label": "Other Documentaries on UFO Phenomena",
+              "url": "/topics/ufo/info-center-ufo#video"
+            },
+            {
+              "type": "link",
+              "label": "More UFO/UAP Resources",
+              "url": "/topics/ufo/"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "UFO/UAP in the News"
+            },
+            {
+              "type": "news_feed",
+              "tags": [
+                "ufos"
+              ],
+              "limit": 4,
+              "sort": "newest",
+              "label": "UFO/UAP in the News"
+            },
+            {
+              "type": "link",
+              "label": "See all news on UFO/UAPs.",
+              "url": "/news/category/ufos/s"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Key UFO/UAP Articles from the Archive"
+            },
+            {
+              "type": "news_feed",
+              "ids": [
+                "3401",
+                "9962",
+                "9182",
+                "1937"
+              ],
+              "limit": 4,
+              "label": "Key UFO/UAP Articles from the Archive"
+            },
+            {
+              "type": "link",
+              "label": "See best archived news on UFOs/UAPs.",
+              "url": "/news/category/ufos/s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "More",
+      "title": "More",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "More Resources"
+            },
+            {
+              "type": "paragraph",
+              "text": "We can’t shift the chaos we’re in until we name it. When we can recognize what’s pushing us — in our personal lives and as a society — we already have a degree of freedom from it. Challenging information can paradoxically remind us of the greater good. It is the courage of the people and the love for the common good that brings these injustices to light—fueling open dialogue and constructive action."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Political Assassinations"
+            },
+            {
+              "type": "link",
+              "label": "Top Assassination News Articles",
+              "url": "/news/category/assassinations"
+            },
+            {
+              "type": "link",
+              "label": "Martin Luther King Jr. Assassination",
+              "url": "https://www.wanttoknow.info/assassinations/king-martin-luther/uncensored-history-of-king-assassination"
+            },
+            {
+              "type": "link",
+              "label": "John F. Kennedy Assassination",
+              "url": "https://www.wanttoknow.info/assassinations/kennedy/kennedy-assassination-jfk-rfk"
+            },
+            {
+              "type": "link",
+              "label": "MKUltra CIA Program: The Creation of Unsuspected Assassinations",
+              "url": "/topics/mind-control/mindcontrol"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Sexual Abuse Scandals"
+            },
+            {
+              "type": "link",
+              "label": "Sexual Abuse Scandals in the News",
+              "url": "/news/category/sexabusescandals"
+            },
+            {
+              "type": "link",
+              "label": "Sexual Abuse in Medicine",
+              "url": "/news/category/sex-abuse-doctors"
+            },
+            {
+              "type": "link",
+              "label": "Jeffrey Epstein: Child Sex Trafficking and Political Blackmail",
+              "url": "/news/category/jeffrey-epstein"
+            },
+            {
+              "type": "link",
+              "label": "U.S. Government Child Abuse Scandals",
+              "url": "/topics/mind-control/cults_ritual_abuse_mind_control"
+            },
+            {
+              "type": "link",
+              "label": "60 Minutes Exposes Top Politicians as Pedophiles",
+              "url": "https://www.wanttoknow.info/sexabuse/pedophiles-politicians"
+            },
+            {
+              "type": "link",
+              "label": "Discovery Channel Documentary: Major Child Sex Abuse Ring Among Washington’s Political Elite",
+              "url": "/topics/abuse-and-trafficking/conspiracy-of-silence"
+            },
+            {
+              "type": "link",
+              "label": "Imperium Documentary: Major Child Sex Trafficking Rings Involving High Levels of Government Around the World",
+              "url": "/topics/abuse-and-trafficking/imperium-child-trafficking-film"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Summaries"
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Over the years, we've compiled "
+                },
+                {
+                  "type": "link",
+                  "label": "revealing 2-page and 10-page summaries",
+                  "url": "https://www.wanttoknow.info/summaries"
+                },
+                {
+                  "type": "text",
+                  "text": " with concise, powerful information on many of the vital topics covered by WantToKnow\\.info. Links are provided to explore our comprehensive information centers and online lessons."
+                }
+              ]
+            },
+            {
+              "type": "link",
+              "label": "Key Summaries",
+              "url": "/summaries"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Secret Government Programs"
+            },
+            {
+              "type": "link",
+              "label": "Operation Northwoods",
+              "url": "https://www.wanttoknow.info/010501operationnorthwoods"
+            },
+            {
+              "type": "link",
+              "label": "Operation Mockingbird",
+              "url": "/topics/war/info-center-milint#mockingbird"
+            },
+            {
+              "type": "link",
+              "label": "Operation Paperclip",
+              "url": "/topics/war/info-center-milint#paperclip"
+            },
+            {
+              "type": "link",
+              "label": "Operation Bluebird",
+              "url": "/topics/mind-control/bluebird10pg"
+            },
+            {
+              "type": "link",
+              "label": "COINTELPRO",
+              "url": "/books/lifting-the-veil-silver#8"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "More"
+            },
+            {
+              "type": "link",
+              "label": "Feeling Overwhelmed?",
+              "url": "https://www.wanttoknow.info/overwhelmed"
+            },
+            {
+              "type": "link",
+              "label": "Lifting the Veil: Free Online Book",
+              "url": "/books/lifting-the-veil-silver"
+            },
+            {
+              "type": "link",
+              "label": "HAARP Weather Control Project",
+              "url": "/topics/science-in-environment/old-haarp-page"
+            },
+            {
+              "type": "link",
+              "label": "Online Courses",
+              "url": "https://www.wisdomcourses.net/"
+            },
+            {
+              "type": "link",
+              "label": "Overview of Key Cover-Ups and Corruption",
+              "url": "https://www.wanttoknow.info/bestsummaries"
+            },
+            {
+              "type": "link",
+              "label": "Free Videos from Our Archive",
+              "url": "https://www.wanttoknow.info/truthvideos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Our Work",
+      "title": "Our Work",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Our Work"
+            },
+            {
+              "type": "paragraph",
+              "text": "We integrate the best of the media landscape with our own original investigations, written articles and videos. Our organization was founded by White House whistleblower Fred Burks in 2003, after he discovered significant levels of global deception and manipulation in his work as a language interpreter for presidents and top government officials around the world."
+            },
+            {
+              "type": "link",
+              "label": "Meet Our Team",
+              "url": "/#about"
+            },												
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Free Weekly Newsletter"
+            },
+            {
+              "type": "paragraph",
+              "text": "Every week we bring you concise summaries of key news stories that challenge mainstream narratives on important issues shaping society. Every weekly news summary is entered into our news database of 13,000+ articles across 100+ categories—a research tool used by thousands of journalists, researchers, activists, and everyday truth seekers since our founding."
+            },
+            {
+              "type": "link",
+              "label": "Subscribe",
+              "url": "/subscribe"
+            }
+          ]
+        },
+        {
+          "blocks": [
+            {
+              "type": "social_links",
+              "items": [
+                {
+                  "platform": "YouTube",
+                  "url": "https://www.youtube.com/@PEERSconsciousmedia",
+                  "image": "/assets/images/social-youtube.png",
+                  "imageColor": "/assets/images/social-youtube-color.png"
+                },
+                {
+                  "platform": "Facebook",
+                  "url": "https://www.facebook.com/WTK.info",
+                  "image": "/assets/images/social-facebook.png",
+                  "imageColor": "/assets/images/social-facebook-color.png"
+                },
+                {
+                  "platform": "Instagram",
+                  "url": "https://www.instagram.com/wtkconsciousmedia/",
+                  "image": "/assets/images/social-instagram.png",
+                  "imageColor": "/assets/images/social-instagram-color.png"
+                },
+                {
+                  "platform": "Twitter",
+                  "url": "https://twitter.com/WantToKnowPEERS",
+                  "image": "/assets/images/social-twitter.png",
+                  "imageColor": "/assets/images/social-twitter-color.png"
+                },
+                {
+                  "platform": "Telegram",
+                  "url": "https://t.me/wanttoknow_official",
+                  "image": "/assets/images/social-telegram.png",
+                  "imageColor": "/assets/images/social-telegram-color.png"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "src": "/assets/images/wtk-art1.png",
+              "alt": "Welcome to WantToKnow.info"
+            }												
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Database",
+      "title": "Database",
+      "columns": [
+        {
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The WantToKnow.info Database"
+            },
+            {
+              "type": "paragraph",
+              "text": "Our database stands as one of the most comprehensive collections of conspiracy and corruption news, featuring over 13,000+ news article summaries from reliable and credible media sources and many categories for in-depth exploration. We also have over 3,000 news article summaries and 18 subcategories focused on inspirational news and solutions. Our archive has been used by journalists, educators, serious researchers, and everyday truth seekers since our founding."
+            },
+            {
+              "type": "link",
+              "label": "Explore the WTK Database",
+              "url": "/search"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Declassified CIA MK ULTRA Document Search"
+            },
+            {
+              "type": "paragraph",
+              "text": "We've created a search engine to explore 21,237 pages of declassified CIA documents related to MK ULTRA. These documents have been in the public domain since 1977, but they haven't been fully searchable until now."
+            },
+            {
+              "type": "link",
+              "label": "Research CIA mind control programs",
+              "url": "/search/mkultra/"
+            }
+          ]
+        },
+								{
+										"blocks": [
+												{
+														"type": "dot_animation",
+														"src": "/data/elements/database-dot-art.json",
+														"fps": 15
+												}
+										]
+								}								
+      ]
+    }
+  ]
+}

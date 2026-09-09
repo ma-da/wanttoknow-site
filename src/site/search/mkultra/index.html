@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="Search page transcriptions from the original MKULTRA FOIA records."
+  >
+
+  <title>MKULTRA Archive Search | WantToKnow.info</title>
+
+  <link
+    rel="stylesheet"
+    href="assets/css/ultra-search.css?v=3"
+  >
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to search
+  </a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="https://wanttoknow.info">
+        <span class="brand-mark" aria-hidden="true">WTK</span>
+        <span class="brand-name">WantToKnow.info</span>
+      </a>
+
+      <span class="archive-label">ULTRA Archive</span>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Declassified-document research
+          </p>
+
+          <h1>
+            Search the <span>MKULTRA</span> archive
+          </h1>
+
+          <p class="hero-lede">
+            This collection documents human rights abuses and mind control research undertaken by the US government. This material has been public since 1977, but it hasn't been easy to search until now.
+          </p>
+        </div>
+
+        <div class="hero-sidebar">
+          <aside class="archive-resources" aria-labelledby="archive-resources-title">
+            <p class="sidebar-label" id="archive-resources-title">
+              Explore the archive
+            </p>
+            <ul class="resource-links">
+              <li>
+                <a href="https://wanttoknow.info/military-intelligence-corruption-information#mkultra">
+                  Introduction to MKULTRA
+                </a>
+                <span>
+                  Read an overview of the program and its historical
+                  context.
+                </span>
+              </li>
+
+              <li>
+                <a href="/topics/abuse-and-trafficking/mkultra-doc-highlights">
+                  Selected experiments and key documents
+                </a>
+                <span>
+                  Review documents concerning covert experiments, abuse, and
+                  research into creating unwitting assassins.
+                </span>
+              </li>
+
+              <li>
+                <a href="https://wanttoknow.info/mind_control/cia_mind_control_documents_orig/">
+                  Original MKULTRA FOIA documents
+                </a>
+                <span>
+                  Browse the original document collection published by
+                  WantToKnow.info.
+                </span>
+              </li>
+
+              <li>
+                <a href="https://huggingface.co/datasets/peers-ai/mkultra-foia-mineru-archive">
+                  Explore the raw dataset
+                </a>
+                <span>
+                  This site's underlying dataset is documented extensively and publicly available.
+                </span>
+              </li>
+
+            </ul>
+          </aside>
+
+          <aside class="archive-stats" aria-label="Archive statistics">
+            <div class="stat-item">
+              <strong id="page-total">0</strong>
+              <span>pages</span>
+            </div>
+
+            <div class="stat-item">
+              <strong id="document-total">0</strong>
+              <span>documents</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <form id="search-form" class="search-panel" role="search">
+          <label for="search-input">
+            Search text, MORI ID, date, or subproject
+          </label>
+
+          <div class="search-row">
+            <input
+              id="search-input"
+              type="search"
+              autocomplete="off"
+              placeholder='Try “hypnosis”, “Subproject 35”, or “April 1953”'
+            >
+
+            <button class="button" type="submit">
+              Search
+            </button>
+          </div>
+
+          <p id="status" class="status" aria-live="polite">
+            Loading archive…
+          </p>
+        </form>
+      </div>
+    </section>
+
+	<section class="results-section">
+	  <div class="container">
+		<div class="results-heading">
+		  <div>
+			<p class="eyebrow">Search results</p>
+			<h2 id="results-title">Ready to search</h2>
+		  </div>
+
+		  <span id="result-count" class="result-count"></span>
+		</div>
+
+		<div class="results-column">
+		  <div id="results" class="results-list"></div>
+		</div>
+	  </div>
+	</section>
+
+	<section
+	  id="transcription-panel"
+	  class="transcription-section"
+	  hidden
+	>
+	  <div class="transcription-card">
+		<div class="transcription-heading">
+		  <div>
+			<p class="eyebrow">Selected page</p>
+			<h2 id="transcription-title">Transcription</h2>
+		  </div>
+
+		  <button
+			id="close-transcription"
+			class="icon-button"
+			type="button"
+			aria-label="Close transcription"
+		  >
+			×
+		  </button>
+		</div>
+
+		<div id="transcription-meta" class="metadata-row"></div>
+
+		<div id="transcription-text" class="transcription-text"></div>
+	  </div>
+	</section>
+  </main>
+
+  <dialog id="image-modal" class="image-modal">
+    <div class="modal-header">
+      <strong id="modal-title">Original page image</strong>
+
+      <button
+        id="close-modal"
+        class="icon-button"
+        type="button"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="modal-stage">
+      <img id="modal-image" alt="">
+    </div>
+  </dialog>
+
+  <script
+    src="assets/js/ultra-search.js"
+    defer
+  ></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wanttoknow.info/schemas/youtube-v1.schema.json",
+  "title": "WantToKnow.info YouTubeRecord v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "video_id",
+    "title",
+    "url",
+    "published_at",
+    "channel",
+    "description",
+    "playlists",
+    "topics",
+    "caption_type",
+    "caption_language",
+    "full_transcript",
+    "full_transcript_word_count",
+    "timestamp_transcript_word_count",
+    "timestamp_snippet_count",
+    "transcript_chunks",
+    "chunk_count",
+    "source",
+    "priority",
+    "qc_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_type": {
+      "const": "youtube"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^youtube:[A-Za-z0-9_-]{11}$"
+    },
+    "video_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{11}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "published_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "channel": {
+      "type": "object",
+      "required": [
+        "name",
+        "channel_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "playlists": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "caption_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "caption_language": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "full_transcript": {
+      "type": "string"
+    },
+    "full_transcript_word_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "timestamp_transcript_word_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "timestamp_snippet_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "transcript_chunks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "record_type",
+          "video_id",
+          "chunk_index",
+          "word_count",
+          "timestamp_seconds",
+          "timestamp_formatted",
+          "timestamp_url",
+          "end_seconds",
+          "source_snippet_start",
+          "source_snippet_end",
+          "text",
+          "text_sha256",
+          "qc_flags"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^youtube:[A-Za-z0-9_-]{11}:chunk:[0-9]{4,}$"
+          },
+          "record_type": {
+            "const": "youtube_chunk"
+          },
+          "video_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "chunk_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "word_count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 320
+          },
+          "timestamp_seconds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "timestamp_formatted": {
+            "type": "string",
+            "pattern": "^[0-9]+:[0-5][0-9]:[0-5][0-9]$"
+          },
+          "timestamp_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "end_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "source_snippet_start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_snippet_end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "qc_flags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "chunk_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "platform"
+      ],
+      "properties": {
+        "platform": {
+          "const": "youtube"
+        }
+      },
+      "additionalProperties": false
+    },
+    "priority": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "qc_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

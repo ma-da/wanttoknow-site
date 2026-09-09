@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.wanttoknow.info/schemas/page-v1.schema.json",
+  "title": "WantToKnow.info PageRecord v1",
+  "description": "Canonical schema for migrated non-news pages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "slug",
+    "path",
+    "directory",
+    "filename",
+    "section",
+    "topic",
+    "legacy_urls",
+    "redirects",
+    "title",
+    "page_type",
+    "status",
+    "topics",
+    "summary_markdown",
+    "content_markdown",
+    "authors",
+    "publication_date",
+    "updated_date",
+    "priority",
+    "word_count",
+    "content_sha256",
+    "page_navigation",
+    "source",
+    "qc_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_type": {
+      "const": "page"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 6,
+      "pattern": "^page:[A-Za-z0-9][A-Za-z0-9_-]*$"
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^/.+\\.html$"
+    },
+    "directory": {
+      "type": "string",
+      "pattern": "^/[A-Za-z0-9][A-Za-z0-9/_-]*$"
+    },
+    "filename": {
+      "type": "string",
+      "pattern": "^[^/]+\\.html$"
+    },
+    "section": {
+      "type": "string",
+      "enum": [
+        "books",
+        "essays",
+        "inspiring",
+        "poetry",
+        "speculation",
+        "tech",
+        "topics"
+      ]
+    },
+    "topic": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "legacy_urls": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "redirects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^/.+\\.html$"
+          }
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "published",
+        "draft",
+        "archived"
+      ]
+    },
+    "topics": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "summary_markdown": {
+      "type": "string"
+    },
+    "content_markdown": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "priority": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "page_navigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "strategy",
+        "toc_levels",
+        "anchors"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "toc"
+          ]
+        },
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "book-structure",
+            "chapter-headings",
+            "compact-primary-level",
+            "none",
+            "none-large-index",
+            "standard"
+          ]
+        },
+        "toc_levels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          }
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "heading_index",
+              "id",
+              "label",
+              "level",
+              "toc"
+            ],
+            "properties": {
+              "heading_index": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 6
+              },
+              "toc": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "legacy_url",
+        "conversion_json"
+      ],
+      "properties": {
+        "legacy_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conversion_json": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "qc_flags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

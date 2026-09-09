@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   WantToKnow.info Content Pages
+   PageRecord v1 static-page styles
+
+   Uses the design tokens and shell defined in global.css.
+   No generated page uses a hero component.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Shared reading layout
+   ========================================================================== */
+
+.page-document {
+  padding-top:
+    clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.page-reading-column {
+  width:
+    min(100%, 50.625rem);
+
+  margin-inline:
+    auto;
+}
+
+
+/* ==========================================================================
+   2. Page heading
+   ========================================================================== */
+
+.page-document__header {
+  margin-bottom:
+    clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.page-document__title,
+.collection-index__title {
+  max-width:
+    17ch;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(2.75rem, 7vw, 5.4rem);
+
+  font-weight:
+    var(--font-weight-heavy);
+
+  line-height:
+    0.96;
+
+  letter-spacing:
+    -0.055em;
+
+  text-wrap:
+    balance;
+}
+
+
+/* ==========================================================================
+   3. Table of contents
+   ========================================================================== */
+
+.page-toc {
+  margin:
+    0
+    0
+    clamp(2rem, 4vw, 3rem);
+
+  padding:
+    var(--space-5)
+    0;
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--border-color-strong);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--border-color);
+}
+
+.page-toc__heading {
+  margin-bottom:
+    var(--space-4);
+
+  color:
+    var(--color-brand-orange);
+
+  font-size:
+    var(--font-size-xs);
+
+  font-weight:
+    var(--font-weight-bold);
+
+  letter-spacing:
+    var(--letter-spacing-eyebrow);
+
+  text-transform:
+    uppercase;
+}
+
+.page-toc__list {
+  display:
+    grid;
+
+  gap:
+    0.45rem;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+
+  counter-reset:
+    page-toc;
+}
+
+.page-toc__item {
+  counter-increment:
+    page-toc;
+}
+
+.page-toc__link {
+  display:
+    grid;
+
+  grid-template-columns:
+    2.4rem
+    minmax(0, 1fr);
+
+  gap:
+    var(--space-2);
+
+  align-items:
+    baseline;
+
+  padding:
+    0.28rem
+    0;
+
+  color:
+    var(--color-text-soft);
+
+  font-size:
+    0.94rem;
+
+  font-weight:
+    var(--font-weight-medium);
+
+  line-height:
+    1.4;
+
+  text-decoration:
+    none;
+}
+
+.page-toc__link::before {
+  color:
+    var(--color-text-muted);
+
+  font-size:
+    var(--font-size-xs);
+
+  letter-spacing:
+    0.04em;
+
+  content:
+    counter(page-toc, decimal-leading-zero);
+}
+
+.page-toc__link:hover {
+  color:
+    var(--color-brand-purple-dark);
+}
+
+.page-toc__item[data-toc-depth="1"] {
+  padding-left:
+    var(--space-5);
+}
+
+.page-toc__item[data-toc-depth="2"] {
+  padding-left:
+    var(--space-10);
+}
+
+
+/* ==========================================================================
+   4. Long-form prose
+   ========================================================================== */
+
+.page-content {
+  font-size:
+    1rem;
+
+  line-height:
+    1.8;
+
+  text-wrap:
+    pretty;
+
+  overflow-wrap:
+    anywhere;
+}
+
+.page-content > :first-child {
+  margin-top:
+    0;
+}
+
+.page-content > :last-child {
+  margin-bottom:
+    0;
+}
+
+.page-content p,
+.page-content ul,
+.page-content ol,
+.page-content blockquote,
+.page-content pre,
+.page-content table,
+.page-content figure {
+  margin-top:
+    0;
+
+  margin-bottom:
+    1.35rem;
+}
+
+.page-content h2 {
+  margin:
+    clamp(2.6rem, 5vw, 4rem)
+    0
+    var(--space-4);
+
+  font-size:
+    clamp(1.85rem, 4vw, 2.8rem);
+
+  font-weight:
+    var(--font-weight-heavy);
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.04em;
+
+  scroll-margin-top:
+    calc(
+      var(--layout-header-height)
+      + var(--space-8)
+    );
+}
+
+.page-content h3 {
+  margin:
+    clamp(2rem, 4vw, 3rem)
+    0
+    var(--space-3);
+
+  font-size:
+    clamp(1.35rem, 2.8vw, 1.8rem);
+
+  font-weight:
+    var(--font-weight-bold);
+
+  line-height:
+    1.18;
+
+  letter-spacing:
+    -0.025em;
+
+  scroll-margin-top:
+    calc(
+      var(--layout-header-height)
+      + var(--space-8)
+    );
+}
+
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+  margin:
+    var(--space-8)
+    0
+    var(--space-3);
+
+  font-weight:
+    var(--font-weight-bold);
+
+  line-height:
+    1.25;
+
+  scroll-margin-top:
+    calc(
+      var(--layout-header-height)
+      + var(--space-8)
+    );
+}
+
+.page-content h4 {
+  font-size:
+    1.15rem;
+}
+
+.page-content h5,
+.page-content h6 {
+  font-size:
+    1rem;
+}
+
+.page-content a {
+  color:
+    var(--color-brand-purple-dark);
+
+  text-decoration-thickness:
+    0.08em;
+}
+
+.page-content a:hover {
+  color:
+    var(--color-brand-orange);
+}
+
+.page-content strong {
+  font-weight:
+    var(--font-weight-bold);
+}
+
+.page-content em {
+  font-style:
+    italic;
+}
+
+.page-content ul,
+.page-content ol {
+  padding-left:
+    1.45rem;
+}
+
+.page-content li + li {
+  margin-top:
+    0.38rem;
+}
+
+.page-content li > ul,
+.page-content li > ol {
+  margin-top:
+    0.45rem;
+
+  margin-bottom:
+    0;
+}
+
+.page-content blockquote {
+  margin-inline:
+    0;
+
+  padding:
+    var(--space-4)
+    var(--space-5);
+
+  border-left:
+    0.25rem
+    solid
+    var(--color-brand-lavender);
+
+  color:
+    var(--color-text-soft);
+
+  background:
+    rgba(240, 237, 255, 0.45);
+}
+
+.page-content blockquote > :last-child {
+  margin-bottom:
+    0;
+}
+
+.page-content hr {
+  margin:
+    clamp(2.25rem, 5vw, 3.5rem)
+    0;
+
+  border:
+    0;
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--border-color);
+}
+
+.page-content img {
+  width:
+    auto;
+
+  height:
+    auto;
+
+  margin-inline:
+    auto;
+}
+
+.page-content figure {
+  margin-inline:
+    0;
+}
+
+.page-content figcaption {
+  margin-top:
+    var(--space-2);
+
+  color:
+    var(--color-text-muted);
+
+  font-size:
+    var(--font-size-sm);
+
+  line-height:
+    1.45;
+}
+
+.page-content code {
+  padding:
+    0.1em
+    0.28em;
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  background:
+    var(--color-surface-muted);
+
+  font-size:
+    0.9em;
+}
+
+.page-content pre {
+  max-width:
+    100%;
+
+  overflow-x:
+    auto;
+
+  padding:
+    var(--space-4);
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  background:
+    var(--color-surface-muted);
+
+  line-height:
+    1.55;
+}
+
+.page-content pre code {
+  padding:
+    0;
+
+  border:
+    0;
+
+  background:
+    transparent;
+}
+
+.page-content table {
+  width:
+    100%;
+
+  border-collapse:
+    collapse;
+
+  font-size:
+    var(--font-size-sm);
+}
+
+.page-content th,
+.page-content td {
+  padding:
+    0.65rem
+    0.75rem;
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  text-align:
+    left;
+
+  vertical-align:
+    top;
+}
+
+.page-content th {
+  background:
+    var(--color-surface-muted);
+
+  font-weight:
+    var(--font-weight-bold);
+}
+
+
+/* ==========================================================================
+   5. Books
+   ========================================================================== */
+
+.page-document--book .page-content {
+  font-family:
+    var(--font-family-body);
+}
+
+.page-document--book .page-content h2 {
+  padding-top:
+    var(--space-2);
+}
+
+
+/* ==========================================================================
+   6. Topic "More Resources"
+   ========================================================================== */
+
+.more-resources {
+  margin-top:
+    clamp(3rem, 6vw, 5rem);
+
+  padding-top:
+    clamp(2rem, 4vw, 3rem);
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--border-color);
+}
+
+.more-resources__heading {
+  margin:
+    0
+    0
+    var(--space-5);
+
+  font-size:
+    clamp(2rem, 4vw, 3rem);
+
+  font-weight:
+    var(--font-weight-heavy);
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.resource-pill-list {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    0.55rem;
+}
+
+.resource-pill {
+  min-height:
+    2.15rem;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  padding:
+    0.42rem
+    0.8rem;
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  border-radius:
+    var(--radius-none);
+
+  color:
+    var(--color-text);
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    var(--font-weight-semibold);
+
+  line-height:
+    1.25;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform
+      var(--motion-duration-fast)
+      var(--motion-easing-standard),
+    border-color
+      var(--motion-duration-fast)
+      var(--motion-easing-standard),
+    background-color
+      var(--motion-duration-fast)
+      var(--motion-easing-standard),
+    box-shadow
+      var(--motion-duration-fast)
+      var(--motion-easing-standard);
+}
+
+.resource-pill:hover {
+  border-color:
+    transparent;
+
+  color:
+    var(--color-text);
+
+  background:
+    var(--color-brand-lavender-soft);
+
+  box-shadow:
+    var(--shadow-low);
+
+  transform:
+    translateY(-0.18rem);
+}
+
+
+/* ==========================================================================
+   7. Reusable collection navigation indexes
+   ========================================================================== */
+
+.collection-index {
+  padding-top:
+    clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.collection-index__inner {
+  width:
+    min(100%, 50.625rem);
+
+  margin-inline:
+    auto;
+}
+
+.collection-index__intro {
+  margin-bottom:
+    clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.collection-index__lede {
+  max-width:
+    var(--layout-reading-width);
+
+  margin:
+    var(--space-5)
+    0
+    0;
+
+  color:
+    var(--color-text-soft);
+
+  font-size:
+    clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
+
+  line-height:
+    1.65;
+
+  text-wrap:
+    pretty;
+}
+
+.collection-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(min(100%, 20rem), 1fr)
+    );
+
+  gap:
+    var(--layout-grid-gap);
+}
+
+.collection-tile {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    space-between;
+
+  gap:
+    var(--space-6);
+
+  padding:
+    clamp(1.25rem, 2.5vw, 1.8rem);
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  border-radius:
+    var(--radius-none);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  color:
+    var(--color-text);
+
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
+
+  pointer-events:
+    auto;
+
+  box-shadow:
+    0
+    0.25rem
+    1rem
+    rgba(35, 23, 55, 0.035);
+
+  transition:
+    transform
+      var(--motion-duration-medium)
+      var(--motion-easing-standard),
+    border-color
+      var(--motion-duration-fast)
+      var(--motion-easing-standard),
+    box-shadow
+      var(--motion-duration-medium)
+      var(--motion-easing-standard);
+}
+
+.collection-tile:hover {
+  border-color:
+    var(--color-brand-lavender);
+
+  box-shadow:
+    var(--shadow-low);
+
+  transform:
+    translateY(-0.22rem);
+}
+
+.collection-tile__eyebrow {
+  margin:
+    0
+    0
+    var(--space-3);
+
+  color:
+    var(--color-brand-orange);
+
+  font-size:
+    var(--font-size-xs);
+
+  font-weight:
+    var(--font-weight-bold);
+
+  letter-spacing:
+    var(--letter-spacing-eyebrow);
+
+  text-transform:
+    uppercase;
+}
+
+.collection-tile__title {
+  margin:
+    0;
+
+  font-size:
+    clamp(1.55rem, 2.5vw, 2.15rem);
+
+  line-height:
+    1.08;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.collection-tile:hover .collection-tile__title,
+.collection-tile:focus-visible .collection-tile__title {
+  color:
+    var(--color-brand-purple-dark);
+}
+
+.collection-tile__author {
+  margin:
+    var(--space-3)
+    0
+    0;
+
+  color:
+    var(--color-text-muted);
+
+  font-size:
+    var(--font-size-sm);
+
+  font-weight:
+    var(--font-weight-semibold);
+}
+
+.collection-tile__description {
+  margin:
+    var(--space-4)
+    0
+    0;
+
+  color:
+    var(--color-text-soft);
+
+  font-size:
+    0.95rem;
+
+  line-height:
+    1.6;
+}
+
+.collection-tile__link {
+  align-self:
+    flex-start;
+
+  font-size:
+    var(--font-size-sm);
+
+  font-weight:
+    var(--font-weight-bold);
+
+  text-decoration:
+    none;
+}
+
+/* ==========================================================================
+   Topic news section
+   ========================================================================== */
+
+.topic-news-section {
+  padding-top:
+    clamp(2.5rem, 5vw, 4rem);
+
+  padding-bottom:
+    clamp(2.5rem, 5vw, 4rem);
+}
+
+
+.topic-news-section__inner {
+  width:
+    min(100%, 50.625rem);
+
+  margin-inline:
+    auto;
+}
+
+
+.topic-news-section__heading {
+  margin-bottom:
+    clamp(1.5rem, 3vw, 2.25rem);
+}
+
+
+.topic-news-section__heading-row {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    var(--space-5);
+}
+
+
+.topic-news-section__heading-row
+.section-intro {
+  max-width:
+    42rem;
+}
+
+
+.topic-news-section__heading-row
+.button {
+  align-self:
+    flex-start;
+}
+
+
+/* Feed gets a subtle contained surface without changing
+   the shared news-feed component itself. */
+
+.topic-news-section__feed {
+  padding:
+    clamp(1rem, 2.5vw, 1.5rem);
+
+  border:
+    var(--border-width)
+    solid
+    var(--border-color);
+
+  background:
+    var(--color-surface);
+
+  box-shadow:
+    var(--shadow-low);
+}
+
+
+/* Give a browse-page feed room to breathe. */
+
+.topic-news-section__feed
+.news-feed-list {
+  max-height:
+    52rem;
+
+  overflow-y:
+    auto;
+
+  overscroll-behavior:
+    contain;
+
+  scrollbar-gutter:
+    stable;
+}
+
+
+/* Desktop heading layout */
+
+@media (min-width: 43.75rem) {
+
+  .topic-news-section__heading-row {
+    flex-direction:
+      row;
+
+    align-items:
+      end;
+
+    justify-content:
+      space-between;
+  }
+
+  .topic-news-section__heading-row
+  .button {
+    flex:
+      0 0 auto;
+  }
+
+}
+
+
+/* ==========================================================================
+   8. Responsive adjustments
+   ========================================================================== */
+
+@media (min-width: 43.75rem) {
+  .page-toc__list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap:
+      var(--space-8);
+  }
+
+  .page-toc__item[data-toc-depth="1"],
+  .page-toc__item[data-toc-depth="2"] {
+    padding-left:
+      0;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .resource-pill,
+  .collection-tile {
+    transition:
+      none;
+  }
+
+  .resource-pill:hover,
+  .collection-tile:hover {
+    transform:
+      none;
+  }
+}

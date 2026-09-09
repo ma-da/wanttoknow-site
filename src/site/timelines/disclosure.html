@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A chronological guide to major UFO and UAP disclosure events, government programs, whistleblower testimony, investigations, and legislation.">
+  <meta name="theme-color" content="#fbfafc">
+
+  <title>UFO Disclosure Timeline | WantToKnow.info</title>
+
+  <!-- Keep global.css beside this file, or change this path to your deployed asset URL. -->
+  <link rel="stylesheet" href="../global.css">
+
+  <style>
+/* ======================================================================
+       Disclosure timeline — page-specific styles
+       Uses only tokens defined in global.css.
+       ====================================================================== */
+
+    :root {
+      --timeline-line-width: 0.625rem;
+      --timeline-node-size: 1.325rem;
+      --timeline-reading-width: 61rem;
+    }
+
+    body.timeline-page {
+      min-height: 100%;
+    }
+
+    .timeline-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(3rem, 10vw, 7.5rem) 0 clamp(2.75rem, 8vw, 5rem);
+      border-bottom: var(--border-width) solid var(--border-color);
+    }
+
+    .timeline-hero::before,
+    .timeline-hero::after {
+      position: absolute;
+      z-index: -1;
+      border-radius: var(--radius-round);
+      content: "";
+      pointer-events: none;
+    }
+
+    .timeline-hero::before {
+      top: -8rem;
+      right: -6rem;
+      width: clamp(18rem, 42vw, 38rem);
+      aspect-ratio: 1;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(118, 88, 246, 0.3), transparent 62%),
+        repeating-radial-gradient(circle at 50% 50%, transparent 0 2rem, rgba(118, 88, 246, 0.13) 2.05rem 2.12rem);
+      animation: timeline-orbit 28s linear infinite;
+    }
+
+    .timeline-hero::after {
+      bottom: -10rem;
+      left: -8rem;
+      width: 24rem;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(255, 215, 106, 0.46), transparent 67%);
+      filter: blur(0.25rem);
+    }
+
+    .timeline-hero-grid {
+      display: grid;
+      gap: var(--space-8);
+      align-items: end;
+    }
+
+    .timeline-hero-copy {
+      max-width: 62rem;
+    }
+
+    .timeline-hero-title {
+      max-width: 62rem;
+      margin: 0;
+      font-family: var(--font-family-brand);
+      font-size: clamp(3.6rem, 2.25rem + 7vw, 8.6rem);
+      font-weight: 760;
+      line-height: 0.82;
+      letter-spacing: -0.065em;
+    }
+
+    .timeline-hero-title .outline {
+      color: transparent;
+      -webkit-text-stroke: clamp(0.0625rem, 0.11vw, 0.1rem) var(--color-text);
+    }
+
+    .timeline-hero-lede {
+      max-width: 47rem;
+      margin: var(--space-6) 0 0;
+      color: var(--color-text-soft);
+      font-size: var(--font-size-lg);
+    }
+
+    .timeline-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+      max-width: 31rem;
+    }
+
+    .timeline-metric {
+      padding: var(--space-4);
+      border-block: var(--border-width) solid var(--border-color-strong);
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(0.75rem);
+    }
+
+    .timeline-metric strong {
+      display: block;
+      color: var(--color-brand-purple-dark);
+      font-family: var(--font-family-heading);
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: var(--font-weight-regular);
+      line-height: 1;
+      letter-spacing: var(--letter-spacing-heading);
+    }
+
+    .timeline-metric span {
+      display: block;
+      margin-top: var(--space-2);
+      color: var(--color-text-muted);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: var(--letter-spacing-label);
+      text-transform: uppercase;
+    }
+
+    .timeline-toolbar-section {
+      position: relative;
+      z-index: 5;
+      padding: var(--space-4) 0;
+      border-bottom: var(--border-width) solid var(--border-color);
+      background: rgba(251, 250, 252, 0.88);
+      backdrop-filter: blur(1rem);
+    }
+
+    .timeline-toolbar {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .timeline-search-label {
+      display: grid;
+      gap: var(--space-2);
+      color: var(--color-text-soft);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .timeline-search {
+      width: 100%;
+      min-height: var(--size-input-min-height);
+      padding: 0.72rem 0.9rem;
+      border: var(--border-width) solid var(--border-color-strong);
+      border-radius: var(--radius-none);
+      color: var(--color-text);
+      background: var(--color-surface);
+    }
+
+    .timeline-toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .timeline-toolbar-actions .button {
+      flex: 1 1 8rem;
+    }
+
+    .timeline-section {
+      position: relative;
+      overflow-x: clip;
+      padding-block: clamp(3rem, 9vw, 7rem);
+    }
+
+    .timeline-intro {
+      max-width: var(--layout-reading-width);
+      margin: 0 auto clamp(2.5rem, 7vw, 5rem);
+      text-align: center;
+    }
+
+    .timeline-intro p {
+      margin: var(--space-4) 0 0;
+      color: var(--color-text-soft);
+    }
+
+    .timeline-status {
+      min-height: 1.5em;
+      margin: var(--space-4) 0 0;
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+    }
+
+    .timeline-stage {
+      position: relative;
+      width: min(100%, var(--timeline-reading-width));
+      margin-inline: auto;
+    }
+
+    .timeline-path-svg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .timeline-path-base,
+    .timeline-path-progress {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .timeline-path-base {
+      stroke: var(--color-border-strong);
+      stroke-width: 0.16rem;
+    }
+
+    .timeline-path-progress {
+      stroke: var(--color-brand-purple);
+      stroke-width: 0.23rem;
+      filter: drop-shadow(0 0 0.42rem rgba(118, 88, 246, 0.42));
+    }
+
+    .timeline-list {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: grid;
+      gap: clamp(1.5rem, 5vw, 3rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline-item {
+      --timeline-node-x: 1rem;
+      position: relative;
+      min-width: 0;
+      padding-left: 3.5rem;
+    }
+
+    .timeline-item:nth-child(even) {
+      --timeline-node-x: 1.7rem;
+    }
+
+    .timeline-item[hidden] {
+      display: none !important;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 2rem;
+      left: var(--timeline-node-x);
+      z-index: 1;
+      width: calc(3.15rem - var(--timeline-node-x));
+      border-top: 0.125rem solid var(--color-border-strong);
+      content: "";
+      pointer-events: none;
+    }
+
+    .timeline-item.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .timeline-node {
+      position: absolute;
+      top: 1.45rem;
+      left: calc(var(--timeline-node-x) - (var(--timeline-node-size) / 2));
+      z-index: 3;
+      width: var(--timeline-node-size);
+      aspect-ratio: 1;
+      border: 0.1875rem solid var(--color-page-background);
+      border-radius: var(--radius-round);
+      background: var(--color-brand-orange-bright);
+      box-shadow:
+        0 0 0 var(--border-width) var(--color-brand-orange),
+        0 0 0.9rem rgba(242, 112, 59, 0.36);
+      transition:
+        background-color var(--motion-duration-medium) var(--motion-easing-standard),
+        box-shadow var(--motion-duration-medium) var(--motion-easing-standard),
+        transform var(--motion-duration-medium) var(--motion-easing-standard);
+    }
+
+    .timeline-item.is-open .timeline-node {
+      background: var(--color-brand-purple);
+      box-shadow:
+        0 0 0 var(--border-width) var(--color-brand-purple-dark),
+        0 0 1.5rem rgba(118, 88, 246, 0.58);
+      transform: scale(1.18);
+    }
+
+    .timeline-entry {
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--radius-none);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-low);
+      transition:
+        border-color var(--motion-duration-medium) var(--motion-easing-standard),
+        box-shadow var(--motion-duration-medium) var(--motion-easing-standard),
+        transform var(--motion-duration-medium) var(--motion-easing-standard);
+    }
+
+    .timeline-entry:hover,
+    .timeline-entry[open] {
+      border-color: var(--color-brand-purple);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .timeline-entry[open] {
+      transform: translateY(-0.1875rem);
+    }
+
+    .timeline-summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(5.6rem, auto) minmax(0, 1fr) auto;
+      gap: var(--space-4);
+      align-items: center;
+      padding: 1.15rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .timeline-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .timeline-date {
+      color: var(--color-brand-orange);
+      font-family: var(--font-family-heading);
+      font-size: clamp(1.55rem, 5vw, 2.4rem);
+      font-weight: var(--font-weight-regular);
+      line-height: 1;
+      letter-spacing: var(--letter-spacing-heading);
+    }
+
+    .timeline-entry-title {
+      margin: 0;
+      font-size: clamp(1rem, 0.93rem + 0.35vw, 1.3rem);
+      line-height: var(--line-height-tight);
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-toggle-icon {
+      position: relative;
+      width: 1.4rem;
+      aspect-ratio: 1;
+      color: var(--color-brand-purple-dark);
+    }
+
+    .timeline-toggle-icon::before,
+    .timeline-toggle-icon::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 0.125rem;
+      background: currentColor;
+      content: "";
+      transform: translate(-50%, -50%);
+      transition: transform var(--motion-duration-medium) var(--motion-easing-standard);
+    }
+
+    .timeline-toggle-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .timeline-entry[open] .timeline-toggle-icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .timeline-entry-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
+    }
+
+    .timeline-entry[open] .timeline-entry-content {
+      grid-template-rows: 1fr;
+    }
+
+    .timeline-entry-content-inner {
+      overflow: hidden;
+    }
+
+    .timeline-entry-body {
+      padding: 0 1.15rem 1.25rem;
+      border-top: var(--border-width) solid var(--border-color);
+    }
+
+    .timeline-entry-body p {
+      margin: var(--space-4) 0 0;
+      color: var(--color-text-soft);
+    }
+
+    .timeline-sources {
+      display: grid;
+      gap: var(--space-2);
+      margin: var(--space-5) 0 0;
+      padding: var(--space-4) 0 0;
+      border-top: var(--border-width) solid var(--border-color);
+      list-style: none;
+    }
+
+    .timeline-source-link {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+    }
+
+    .timeline-source-link::before {
+      flex: 0 0 auto;
+      color: var(--color-brand-purple);
+      content: "↗";
+    }
+
+    .timeline-empty,
+    .timeline-error {
+      padding: var(--space-8);
+      border: var(--border-width) solid var(--border-color);
+      background: var(--color-surface);
+      text-align: center;
+    }
+
+    .timeline-error {
+      background: var(--color-danger-surface);
+    }
+
+    .timeline-ending-note {
+      max-width: var(--layout-reading-width);
+      margin: clamp(2.5rem, 8vw, 5rem) auto 0;
+      padding: var(--space-6);
+      border-left: 0.25rem solid var(--color-brand-yellow);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow-low);
+      color: var(--color-text-soft);
+    }
+
+    .timeline-noscript {
+      margin: var(--space-8) auto;
+      padding: var(--space-6);
+      border: var(--border-width) solid var(--border-color-strong);
+      background: var(--color-danger-surface);
+    }
+
+    @keyframes timeline-orbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (min-width: 43.75rem) {
+      .timeline-toolbar {
+        grid-template-columns: minmax(15rem, 1fr) auto;
+        align-items: end;
+      }
+
+      .timeline-toolbar-actions .button {
+        flex: 0 0 auto;
+      }
+    }
+
+    @media (min-width: 56.25rem) {
+      .timeline-hero-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(19rem, 0.5fr);
+      }
+
+      .timeline-toolbar-section {
+        position: sticky;
+        top: var(--layout-header-height);
+      }
+
+      .timeline-stage {
+        width: min(100%, 68rem);
+      }
+
+      .timeline-list {
+        gap: clamp(2.75rem, 5vw, 4.75rem);
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        --timeline-node-x: auto;
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .timeline-item:nth-child(odd) {
+        justify-content: flex-start;
+        padding-right: 24%;
+        padding-left: 10%;
+      }
+
+      .timeline-item:nth-child(even) {
+        justify-content: flex-end;
+        padding-right: 10%;
+        padding-left: 24%;
+      }
+
+      .timeline-entry {
+        width: 100%;
+      }
+
+      .timeline-node,
+      .timeline-item:nth-child(even) .timeline-node {
+        top: 1.55rem;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-node {
+        right: auto;
+        left: calc(4.5% - (var(--timeline-node-size) / 2));
+      }
+
+      .timeline-item:nth-child(even) .timeline-node {
+        right: calc(4.5% - (var(--timeline-node-size) / 2));
+        left: auto;
+      }
+
+      .timeline-item::before {
+        top: 2.05rem;
+        width: calc(5.5% - (var(--timeline-node-size) / 2));
+      }
+
+      .timeline-item:nth-child(odd)::before {
+        right: auto;
+        left: 4.5%;
+      }
+
+      .timeline-item:nth-child(even)::before {
+        right: 4.5%;
+        left: auto;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-summary,
+      .timeline-item:nth-child(even) .timeline-summary {
+        grid-template-columns: minmax(5.6rem, auto) minmax(0, 1fr) auto;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-entry-title,
+      .timeline-item:nth-child(even) .timeline-entry-title,
+      .timeline-item:nth-child(odd) .timeline-date,
+      .timeline-item:nth-child(even) .timeline-date,
+      .timeline-item:nth-child(odd) .timeline-toggle-icon,
+      .timeline-item:nth-child(even) .timeline-toggle-icon {
+        grid-column: auto;
+        grid-row: auto;
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-hero::before {
+        animation: none;
+      }
+
+      .timeline-item {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="timeline-page" data-timeline-src="disclosure.json">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header" data-site-header>
+  <div class="header-bar">
+    <div class="container header-bar-inner">
+      <a class="brand" href="/" aria-label="WantToKnow.info home">
+        <span class="brand-mark" aria-hidden="true">?</span>
+        <span class="brand-name">WantToKnow.info</span>
+      </a>
+
+      <form class="header-search header-search-desktop" action="/search" method="get" role="search">
+        <label class="visually-hidden" for="site-search-desktop">Search WantToKnow.info</label>
+        <input id="site-search-desktop" name="q" type="search" placeholder="Search WantToKnow.info" autocomplete="off"/>
+        <button type="submit" aria-label="Search">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="10.8" cy="10.8" r="6.7"></circle>
+            <path d="m16 16 4.2 4.2"></path>
+          </svg>
+        </button>
+      </form>
+
+      <button class="topics-toggle" id="topics-toggle" type="button" aria-expanded="false" aria-controls="topics-dropdown" aria-haspopup="true">
+        <span>Topics</span>
+        <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3 6 5 5 5-5"></path></svg>
+      </button>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-haspopup="dialog" aria-label="Open site menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-search-row">
+    <div class="container">
+      <form class="header-search header-search-mobile" action="/search" method="get" role="search">
+        <label class="visually-hidden" for="site-search-mobile">Search WantToKnow.info</label>
+        <input id="site-search-mobile" name="q" type="search" placeholder="Search WantToKnow.info" autocomplete="off"/>
+        <button type="submit" aria-label="Search">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="10.8" cy="10.8" r="6.7"></circle>
+            <path d="m16 16 4.2 4.2"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="topics-dropdown" id="topics-dropdown" hidden>
+    <div class="container topics-dropdown-inner">
+      <div class="topics-dropdown-heading">
+        <strong>Explore by topic</strong>
+        <a href="/topics/">View all topics <span aria-hidden="true">→</span></a>
+      </div>
+      <nav class="topic-menu-list" aria-label="Primary topics">
+        <a class="menu-shift-link" href="/topics/inspiring/"><span>Inspiring</span></a>
+        <a class="menu-shift-link" href="/topics/health/"><span>Health + Medicine</span></a>
+        <a class="menu-shift-link" href="/topics/money/"><span>Money + Power</span></a>
+        <a class="menu-shift-link" href="/topics/media/"><span>Media</span></a>
+        <a class="menu-shift-link" href="/topics/tech/"><span>Privacy + Technology</span></a>
+        <a class="menu-shift-link" href="/topics/government/"><span>Government + Intelligence</span></a>
+        <a class="menu-shift-link" href="/topics/war/"><span>War + Security</span></a>
+        <a class="menu-shift-link" href="/topics/mind-control/"><span>Mind Control</span></a>
+        <a class="menu-shift-link" href="/topics/abuse-and-trafficking/"><span>Abuse + Trafficking</span></a>
+        <a class="menu-shift-link" href="/topics/science-and-environment/"><span>Environment + Science</span></a>
+        <a class="menu-shift-link" href="/topics/consciousness/"><span>Reality + Consciousness</span></a>
+        <a class="menu-shift-link" href="/topics/ufo/"><span>UFO/UAP Disclosure</span></a>
+        <a class="menu-shift-link" href="/topics/deep-history/"><span>Deep History</span></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content">
+    <section class="timeline-hero" aria-labelledby="timeline-title">
+      <div class="container timeline-hero-grid">
+        <div class="timeline-hero-copy">
+          <p class="eyebrow" id="timeline-eyebrow">Research timeline</p>
+          <h1 class="timeline-hero-title" id="timeline-title">
+            UFO <span class="outline">Disclosure</span> Timeline
+          </h1>
+          <p class="timeline-hero-lede" id="timeline-description">
+            Loading the disclosure timeline…
+          </p>
+        </div>
+
+        <div class="timeline-metrics" aria-label="Timeline summary">
+          <div class="timeline-metric">
+            <strong id="entry-count">—</strong>
+            <span>Major events</span>
+          </div>
+          <div class="timeline-metric">
+            <strong id="year-span">—</strong>
+            <span>Years covered</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-toolbar-section" aria-label="Timeline controls">
+      <div class="container timeline-toolbar">
+        <label class="timeline-search-label" for="timeline-search">
+          Search this timeline
+          <input
+            class="timeline-search"
+            id="timeline-search"
+            type="search"
+            inputmode="search"
+            placeholder="Try “Pentagon,” “videos,” or “2017”"
+            autocomplete="off"
+          >
+        </label>
+
+        <div class="timeline-toolbar-actions">
+          <button class="button button-secondary button-small" id="expand-all" type="button">Expand all</button>
+          <button class="button button-secondary button-small" id="close-all" type="button">Close all</button>
+        </div>
+      </div>
+    </section>
+
+	<section class="timeline-section">
+	  <div class="container">
+		<div class="timeline-intro">
+		  <p class="eyebrow">Chronology</p>
+		  <h2 class="section-title">Follow the record</h2>
+		  <p>
+			Select any event to reveal its full description and source links.
+			Every entry begins closed.
+		  </p>
+		  <p
+			class="timeline-status"
+			id="timeline-status"
+			aria-live="polite"
+		  ></p>
+		</div>
+
+		<div class="timeline-stage" id="timeline-stage">
+		  <svg
+			class="timeline-path-svg"
+			id="timeline-path-svg"
+			aria-hidden="true"
+			focusable="false"
+			preserveAspectRatio="none"
+		  >
+			<path
+			  class="timeline-path-base"
+			  id="timeline-path-base"
+			></path>
+
+			<path
+			  class="timeline-path-progress"
+			  id="timeline-path-progress"
+			></path>
+		  </svg>
+
+		  <ol
+			class="timeline-list"
+			id="timeline-list"
+			aria-label="UFO disclosure events"
+		  >
+			<li class="timeline-empty" id="timeline-loading">
+			  Loading timeline data…
+			</li>
+		  </ol>
+		</div>
+
+		<p
+		  class="timeline-ending-note"
+		  id="timeline-ending-note"
+		  hidden
+		></p>
+
+		<noscript>
+		  <p class="timeline-noscript">
+			JavaScript is required to load the JSON timeline.
+		  </p>
+		</noscript>
+	  </div>
+	</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true">W</span>
+            <span class="brand-name">WantToKnow.info</span>
+          </a>
+          <p>Independent information and reliable sources for people who question deeply and verify carefully.</p>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="/news">News archive</a></li>
+            <li><a href="/research">Research tools</a></li>
+            <li><a href="/timelines">Timelines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2>About</h2>
+          <ul class="footer-links">
+            <li><a href="/about">Our mission</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/donate">Support our work</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2>Follow</h2>
+          <ul class="footer-links">
+            <li><a href="/subscribe">Newsletter</a></li>
+            <li><a href="https://wtkconsciousmedia.substack.com/">Substack</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="current-year"></span> WantToKnow.info</span>
+        <span>Question deeply. Verify carefully.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+	  const state = {
+	    data: null,
+	    entries: [],
+	    query: "",
+	    pathLength: 0,
+	    pathFrame: 0,
+	    pathObserver: null
+	  };
+
+      const elements = {
+        body: document.body,
+        menuToggle: document.querySelector("#menu-toggle"),
+        primaryNav: document.querySelector("#primary-nav"),
+        eyebrow: document.querySelector("#timeline-eyebrow"),
+        title: document.querySelector("#timeline-title"),
+        description: document.querySelector("#timeline-description"),
+        entryCount: document.querySelector("#entry-count"),
+        yearSpan: document.querySelector("#year-span"),
+        search: document.querySelector("#timeline-search"),
+        expandAll: document.querySelector("#expand-all"),
+        closeAll: document.querySelector("#close-all"),
+        status: document.querySelector("#timeline-status"),
+        list: document.querySelector("#timeline-list"),
+								stage: document.querySelector("#timeline-stage"),
+								pathSvg: document.querySelector("#timeline-path-svg"),
+								pathBase: document.querySelector("#timeline-path-base"),
+								pathProgress: document.querySelector("#timeline-path-progress"),
+        endingNote: document.querySelector("#timeline-ending-note"),
+        currentYear: document.querySelector("#current-year")
+      };
+
+      const makeElement = (tagName, className, text) => {
+        const element = document.createElement(tagName);
+        if (className) element.className = className;
+        if (typeof text === "string") element.textContent = text;
+        return element;
+      };
+
+      const normalizeSearchText = (entry) => {
+        const sources = Array.isArray(entry.sources)
+          ? entry.sources.map((source) => source.label || "").join(" ")
+          : "";
+
+        return [
+          entry.dateLabel,
+          entry.title,
+          ...(Array.isArray(entry.paragraphs) ? entry.paragraphs : []),
+          sources
+        ]
+          .join(" ")
+          .toLocaleLowerCase();
+      };
+
+      const validateUrl = (value) => {
+        try {
+          const url = new URL(value, window.location.href);
+          return ["http:", "https:"].includes(url.protocol) ? url.href : null;
+        } catch {
+          return null;
+        }
+      };
+
+      const renderHeroTitle = (data) => {
+        const parts = data.titleParts;
+        if (!parts || !parts.lead || !parts.outline) {
+          elements.title.textContent = data.title || "Disclosure Timeline";
+          return;
+        }
+
+        const outline = makeElement("span", "outline", parts.outline);
+        elements.title.replaceChildren(
+          document.createTextNode(`${parts.lead} `),
+          outline,
+          document.createTextNode(parts.tail ? ` ${parts.tail}` : "")
+        );
+      };
+
+      const createTimelineEntry = (entry, index) => {
+        const item = makeElement("li", "timeline-item");
+        item.id = entry.id;
+        item.dataset.searchText = normalizeSearchText(entry);
+        item.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
+
+        const node = makeElement("span", "timeline-node");
+        node.setAttribute("aria-hidden", "true");
+
+        const details = makeElement("details", "timeline-entry");
+        details.dataset.entryId = entry.id;
+
+        const summary = makeElement("summary", "timeline-summary");
+        const date = makeElement("span", "timeline-date", entry.dateLabel);
+        const title = makeElement("h3", "timeline-entry-title", entry.title);
+        const icon = makeElement("span", "timeline-toggle-icon");
+        icon.setAttribute("aria-hidden", "true");
+
+        summary.append(date, title, icon);
+
+        const content = makeElement("div", "timeline-entry-content");
+        const contentInner = makeElement("div", "timeline-entry-content-inner");
+        const body = makeElement("div", "timeline-entry-body");
+
+        for (const paragraphText of entry.paragraphs || []) {
+          body.append(makeElement("p", "", paragraphText));
+        }
+
+        if (Array.isArray(entry.sources) && entry.sources.length) {
+          const sourceList = makeElement("ul", "timeline-sources");
+          sourceList.setAttribute("aria-label", `Sources for ${entry.title}`);
+
+          for (const source of entry.sources) {
+            const safeUrl = validateUrl(source.url);
+            if (!safeUrl) continue;
+
+            const sourceItem = makeElement("li");
+            const sourceLink = makeElement("a", "timeline-source-link", source.label);
+            sourceLink.href = safeUrl;
+            sourceLink.target = "_blank";
+            sourceLink.rel = "noopener noreferrer";
+            sourceItem.append(sourceLink);
+            sourceList.append(sourceItem);
+          }
+
+          if (sourceList.childElementCount) body.append(sourceList);
+        }
+
+        contentInner.append(body);
+        content.append(contentInner);
+        details.append(summary, content);
+        item.append(node, details);
+
+								details.addEventListener("toggle", () => {
+										item.classList.toggle("is-open", details.open);
+
+										if (details.open) {
+												history.replaceState(null, "", `#${entry.id}`);
+										} else if (window.location.hash === `#${entry.id}`) {
+												history.replaceState(
+														null,
+														"",
+														window.location.pathname + window.location.search
+												);
+										}
+
+										scheduleTimelinePathUpdate();
+
+										/*
+											* Redraw again when the CSS opening animation has finished.
+											* ResizeObserver will normally handle this, but this is a
+											* fallback for browsers with unusual observer behavior.
+											*/
+										window.setTimeout(scheduleTimelinePathUpdate, 300);
+								});
+
+        return item;
+      };
+
+      const updateMetrics = () => {
+        const entries = state.entries;
+        elements.entryCount.textContent = String(entries.length);
+
+        if (!entries.length) {
+          elements.yearSpan.textContent = "0";
+          return;
+        }
+
+        const years = entries
+          .map((entry) => Number.parseInt(String(entry.dateLabel), 10))
+          .filter(Number.isFinite);
+
+        const firstYear = Math.min(...years);
+        const lastYear = Math.max(...years);
+        elements.yearSpan.textContent = String(lastYear - firstYear + 1);
+      };
+
+      const updateStatus = () => {
+        const visible = [...elements.list.children].filter((item) => !item.hidden).length;
+        const total = state.entries.length;
+
+        elements.status.textContent = state.query
+          ? `${visible} of ${total} events match “${state.query}”.`
+          : `${total} events. Select an entry to read more.`;
+      };
+
+						const updateTimelineProgress = () => {
+								if (
+							!elements.stage ||
+							!elements.pathProgress ||
+							!state.pathLength
+								) {
+							return;
+								}
+
+								const rect = elements.stage.getBoundingClientRect();
+								const viewportAnchor = window.innerHeight * 0.62;
+								const traveled = viewportAnchor - rect.top;
+
+								const progress = Math.max(
+							0,
+							Math.min(1, traveled / Math.max(1, rect.height))
+								);
+
+								const remainingLength = state.pathLength * (1 - progress);
+
+								elements.pathProgress.style.strokeDashoffset =
+							String(remainingLength);
+						};
+
+						const drawTimelinePath = () => {
+								if (
+							!elements.stage ||
+							!elements.pathSvg ||
+							!elements.pathBase ||
+							!elements.pathProgress
+								) {
+							return;
+								}
+
+								const stageRect = elements.stage.getBoundingClientRect();
+								const width = Math.max(1, stageRect.width);
+								const height = Math.max(1, stageRect.height);
+
+								elements.pathSvg.setAttribute(
+							"viewBox",
+							`0 0 ${width} ${height}`
+								);
+
+								const visibleItems = [
+							...elements.list.querySelectorAll(".timeline-item")
+								].filter((item) => !item.hidden);
+
+								const points = visibleItems
+							.map((item) => {
+									const node = item.querySelector(".timeline-node");
+
+									if (!node) {
+								return null;
+									}
+
+									const nodeRect = node.getBoundingClientRect();
+
+									return {
+								x:
+										nodeRect.left -
+										stageRect.left +
+										nodeRect.width / 2,
+								y:
+										nodeRect.top -
+										stageRect.top +
+										nodeRect.height / 2
+									};
+							})
+							.filter(Boolean);
+
+								if (points.length < 2) {
+							elements.pathBase.removeAttribute("d");
+							elements.pathProgress.removeAttribute("d");
+							state.pathLength = 0;
+							return;
+								}
+
+								let pathData =
+							`M ${points[0].x.toFixed(2)} ` +
+							`${points[0].y.toFixed(2)}`;
+
+								for (let index = 1; index < points.length; index += 1) {
+							const previous = points[index - 1];
+							const current = points[index];
+							const deltaY = current.y - previous.y;
+
+							/*
+								* 0.50 = current curve
+								* 0.60 = broader, rounder curve
+								* 0.70 = very pronounced curve
+								*
+								* Avoid going much above 0.75 because the control points begin
+								* crossing strongly and can create an exaggerated S shape.
+								*/
+							const curveStrength = 0.90;
+
+							const firstControlY =
+									previous.y + deltaY * curveStrength;
+
+							const secondControlY =
+									current.y - deltaY * curveStrength;
+
+							pathData +=
+									` C ${previous.x.toFixed(2)} ${firstControlY.toFixed(2)},` +
+									` ${current.x.toFixed(2)} ${secondControlY.toFixed(2)},` +
+									` ${current.x.toFixed(2)} ${current.y.toFixed(2)}`;
+								}
+
+								elements.pathBase.setAttribute("d", pathData);
+								elements.pathProgress.setAttribute("d", pathData);
+
+								state.pathLength = elements.pathProgress.getTotalLength();
+
+								elements.pathProgress.style.strokeDasharray =
+							`${state.pathLength} ${state.pathLength}`;
+
+								elements.pathProgress.style.strokeDashoffset =
+							String(state.pathLength);
+
+								updateTimelineProgress();
+						};
+
+						const scheduleTimelinePathUpdate = () => {
+								window.cancelAnimationFrame(state.pathFrame);
+
+								state.pathFrame = window.requestAnimationFrame(() => {
+							/*
+								* The second frame allows layout changes, including opened
+								* details elements and filtered entries, to finish first.
+								*/
+							state.pathFrame = window.requestAnimationFrame(
+									drawTimelinePath
+							);
+								});
+						};
+
+						const setupTimelinePathObserver = () => {
+								if (
+							!elements.stage ||
+							!("ResizeObserver" in window)
+								) {
+							return;
+								}
+
+								state.pathObserver?.disconnect();
+
+								state.pathObserver = new ResizeObserver(() => {
+							scheduleTimelinePathUpdate();
+								});
+
+								state.pathObserver.observe(elements.stage);
+						};
+
+      const revealItem = (item) => {
+        item.classList.add("is-visible");
+
+        if (
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          typeof item.animate === "function"
+        ) {
+          item.animate(
+            [
+              { opacity: 0, transform: "translateY(1.25rem)" },
+              { opacity: 1, transform: "translateY(0)" }
+            ],
+            {
+              duration: 480,
+              easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+              fill: "both"
+            }
+          );
+        }
+      };
+
+      const setupRevealObserver = () => {
+        const items = [...elements.list.querySelectorAll(".timeline-item")];
+
+        if (!("IntersectionObserver" in window)) {
+          items.forEach(revealItem);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, currentObserver) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              revealItem(entry.target);
+              currentObserver.unobserve(entry.target);
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.04 }
+        );
+
+        items.forEach((item) => observer.observe(item));
+
+        /* Safety net: entries are already visible, but this releases any
+           animation fill state if an unusual browser never reports them. */
+        window.setTimeout(() => {
+          items.forEach((item) => {
+            if (!item.classList.contains("is-visible")) revealItem(item);
+          });
+          observer.disconnect();
+        }, 1200);
+      };
+
+      const openHashTarget = () => {
+        const id = decodeURIComponent(window.location.hash.slice(1));
+        if (!id) return;
+
+        const target = document.getElementById(id);
+        const details = target?.querySelector("details");
+        if (!target || !details) return;
+
+        details.open = true;
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+          details.querySelector("summary")?.focus({ preventScroll: true });
+        });
+      };
+
+      const render = () => {
+        const fragment = document.createDocumentFragment();
+        elements.list.replaceChildren();
+
+        for (const [index, entry] of state.entries.entries()) {
+          fragment.append(createTimelineEntry(entry, index));
+        }
+
+        elements.list.append(fragment);
+        updateMetrics();
+        updateStatus();
+								setupRevealObserver();
+								setupTimelinePathObserver();
+								scheduleTimelinePathUpdate();
+								openHashTarget();
+      };
+
+      const filterTimeline = () => {
+        state.query = elements.search.value.trim();
+        const normalizedQuery = state.query.toLocaleLowerCase();
+
+        for (const item of elements.list.children) {
+          const isMatch = !normalizedQuery || item.dataset.searchText.includes(normalizedQuery);
+          item.hidden = !isMatch;
+        }
+
+        updateStatus();
+        scheduleTimelinePathUpdate();
+      };
+
+      const setAllEntries = (open) => {
+        for (const item of elements.list.children) {
+          if (item.hidden) continue;
+          const details = item.querySelector("details");
+          if (details) details.open = open;
+        }
+
+        if (!open && window.location.hash) {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+								scheduleTimelinePathUpdate();
+        window.setTimeout(scheduleTimelinePathUpdate, 300);
+      };
+
+      const setupNavigation = () => {
+        elements.menuToggle?.addEventListener("click", () => {
+          const isOpen = elements.primaryNav.classList.toggle("is-open");
+          elements.menuToggle.setAttribute("aria-expanded", String(isOpen));
+          elements.menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+          elements.body.classList.toggle("menu-open", isOpen);
+        });
+      };
+
+      const loadTimeline = async () => {
+        const source = elements.body.dataset.timelineSrc || "disclosure.json";
+
+        try {
+          if (window.location.protocol === "file:") {
+            throw new Error(
+              "LOCAL_FILE_MODE: Browsers block JSON fetches from pages opened directly from disk."
+            );
+          }
+
+          const sourceUrl = new URL(source, document.baseURI);
+          const response = await fetch(sourceUrl, {
+            credentials: "same-origin",
+            cache: "no-store"
+          });
+          if (!response.ok) throw new Error(`Timeline request failed with status ${response.status}.`);
+
+          const data = await response.json();
+          if (!data || !Array.isArray(data.entries)) {
+            throw new Error("Timeline JSON does not contain an entries array.");
+          }
+
+          state.data = data;
+          state.entries = [...data.entries].sort((a, b) => Number(a.sortYear) - Number(b.sortYear));
+
+          elements.eyebrow.textContent = data.eyebrow || "Research timeline";
+          renderHeroTitle(data);
+          elements.description.textContent = data.description || "";
+
+          if (data.endingNote) {
+            elements.endingNote.textContent = data.endingNote;
+            elements.endingNote.hidden = false;
+          }
+
+          render();
+        } catch (error) {
+          console.error(error);
+
+          const isLocalFile = String(error?.message || "").startsWith("LOCAL_FILE_MODE:");
+          const errorText = isLocalFile
+            ? "This page was opened directly from disk. Start a local web server in this folder, then open the http://localhost address so the browser can read disclosure.json."
+            : `The timeline JSON could not be loaded from “${source}”. Confirm that the JSON file is deployed at that path and that the server returns it with HTTP 200.`;
+
+          const message = makeElement("li", "timeline-error", errorText);
+          elements.list.replaceChildren(message);
+          elements.description.textContent = "The page loaded, but its timeline data did not.";
+          elements.entryCount.textContent = "0";
+          elements.yearSpan.textContent = "0";
+          elements.status.textContent = "Timeline load failed.";
+        }
+      };
+
+      elements.search.addEventListener("input", filterTimeline);
+      elements.expandAll.addEventListener("click", () => setAllEntries(true));
+      elements.closeAll.addEventListener("click", () => setAllEntries(false));
+      window.addEventListener("hashchange", openHashTarget);
+      window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+						window.addEventListener("resize", () => {
+								scheduleTimelinePathUpdate();
+								updateTimelineProgress();
+						});
+
+      elements.currentYear.textContent = String(new Date().getFullYear());
+      setupNavigation();
+      loadTimeline();
+    })();
+  </script>
+</body>
+</html>

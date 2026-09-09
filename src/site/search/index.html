@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en" data-api-base="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Search | WantToKnow.info</title>
+  <meta
+    name="description"
+    content="Search WantToKnow.info news summaries, research pages, PEERS Substack posts, and PEERS Conscious Media transcripts.">
+  <link rel="canonical" href="https://www.wanttoknow.info/search/">
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/search.css">
+
+  <script src="/assets/js/global.js" defer></script>
+  <script src="/assets/vendor/d3/d3-7.9.0.min.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+</head>
+
+<body class="search-page">
+  <a class="skip-link" href="#main-content">Skip to search</a>
+
+  <div data-global-header></div>
+
+  <main id="main-content">
+            <section class="hero search-hero" aria-labelledby="search-page-title">
+
+
+
+            <div class="search-column">
+												
+
+                <p class="eyebrow">wanttoknow.info archive search</p>
+
+                <h1
+                    class="search-hero__title"
+                    id="search-page-title">
+                    Find what you're looking for
+                </h1>
+
+											
+												
+                <div class="search-interface">
+
+                    <form
+                        class="search-form"
+                        id="search-form"
+                        action="/search/"
+                        method="get"
+                        role="search">
+
+                        <label
+                            class="visually-hidden"
+                            for="search-query">
+                            Search WantToKnow.info
+                        </label>
+
+                        <input
+                            id="search-query"
+                            name="query"
+                            type="search"
+                            placeholder="Search people, events, organizations, topics…"
+                            autocomplete="off"
+                            enterkeyhint="search"
+                            aria-controls="search-results"
+                            autofocus>
+
+                        <button
+                            class="search-form__submit"
+                            type="submit">
+                            <svg aria-hidden="true" viewBox="0 0 24 24">
+                                <circle cx="10.8" cy="10.8" r="6.7"></circle>
+                                <path d="m16 16 4.2 4.2"></path>
+                            </svg>
+                            <span>Search</span>
+                        </button>
+
+                        <button
+                            class="search-form__ai"
+                            id="search-ai-summary"
+                            type="button"
+                            disabled
+                            aria-controls="search-ai-panel"
+                            title="Run an optional AI synthesis of the top ranked results">
+                            AI Summary
+                        </button>
+                    </form>
+																				<div
+																								class="search-control-row"
+																								aria-label="Search tools and filters">
+
+																								<!-- LEFT SIDE -------------------------------------------------------- -->
+
+																												<fieldset class="search-type-filters">
+																																<legend class="visually-hidden">
+																																				Content type
+																																</legend>
+
+																																<label class="search-type-option">
+																																				<input
+																																								name="search-content-type"
+																																								type="checkbox"
+																																								value="news"
+																																								checked>
+																																				<span>News</span>
+																																</label>
+
+																																<label class="search-type-option">
+																																				<input
+																																								name="search-content-type"
+																																								type="checkbox"
+																																								value="substack_chunk"
+																																								checked>
+																																				<span>Substack</span>
+																																</label>
+
+																																<label class="search-type-option">
+																																				<input
+																																								name="search-content-type"
+																																								type="checkbox"
+																																								value="page_chunk"
+																																								checked>
+																																				<span>Pages</span>
+																																</label>
+
+																																<label class="search-type-option">
+																																				<input
+																																								name="search-content-type"
+																																								type="checkbox"
+																																								value="youtube_chunk"
+																																								checked>
+																																				<span>Videos</span>
+																																</label>
+																												</fieldset>
+																								<div class="search-control-group search-control-group--left">
+
+																												<button
+																																class="search-inspiring-toggle"
+																																id="search-inspiring-only"
+																																type="button"
+																																aria-pressed="false"
+																																aria-label="Inspiring only: off"
+																																title="Limit results to inspiring news and pages under /inspiring">
+
+																																<span class="search-inspiring-toggle__label">
+																																				Inspiring Only
+																																</span>
+
+																																<span
+																																				class="search-inspiring-toggle__switch"
+																																				aria-hidden="true">
+																																				<span class="search-inspiring-toggle__knob"></span>
+																																</span>
+
+																																<span
+																																				class="search-inspiring-toggle__state"
+																																				data-inspiring-state>
+																																				Off
+																																</span>
+																												</button>
+																								</div>
+
+
+																								<!-- RIGHT SIDE ------------------------------------------------------- -->
+																								<div class="search-control-group search-control-group--right">
+
+																												<div class="search-compact-filter search-compact-filter--publisher">
+																																<label
+																																				class="visually-hidden"
+																																				for="search-publisher">
+																																				Publisher
+																																</label>
+
+																																<select
+																																				id="search-publisher"
+																																				aria-label="Publisher">
+																																				<option value="">
+																																								All publishers
+																																				</option>
+																																</select>
+																												</div>
+
+
+																												<div class="search-compact-filter search-compact-filter--topic">
+																																<label
+																																				class="visually-hidden"
+																																				for="search-term">
+																																				Topic/category
+																																</label>
+
+																																<select
+																																				id="search-term"
+																																				aria-label="Topic or category">
+																																				<option value="">
+																																								All topics/categories
+																																				</option>
+																																</select>
+																												</div>
+
+
+																												<button
+																																class="search-tune-button"
+																																id="search-tools-open"
+																																type="button"
+																																aria-haspopup="dialog"
+																																aria-controls="search-tools-modal">
+																																Tools
+																												</button>
+
+
+																												<button
+																																class="search-reset-button"
+																																id="search-reset"
+																																type="button">
+																																Reset
+																												</button>
+
+
+																												<span
+																																class="visually-hidden"
+																																id="search-ranking-status">
+																																Default ranking
+																												</span>
+
+																								</div>
+
+																				</div>
+
+                    <p
+                        class="search-corpus-summary"
+                        data-corpus-summary>
+                        Search news, WTK pages, Substack posts, and PEERS video transcripts.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="search-workspace" aria-label="Search results">
+            <div class="search-column">
+                <div class="search-interface">
+          <div class="search-results-heading">
+            <div>
+              <p class="search-results-status" id="search-status" aria-live="polite">
+                Enter a search above to begin.
+              </p>
+              <p class="search-results-detail" id="search-results-detail"></p>
+            </div>
+          </div>
+
+												<section
+														class="search-ai-panel"
+														id="search-ai-panel"
+														aria-label="AI summary"
+														hidden>
+            <div class="search-ai-panel__header">
+              <div class="search-ai-panel__heading">
+              </div>
+
+              <div class="search-ai-panel__tools" aria-label="AI synthesis tools">
+                <button
+                  class="search-ai-panel__tool"
+                  id="search-ai-copy"
+                  type="button"
+                  disabled
+                  aria-label="Copy AI synthesis to clipboard"
+                  title="Copy synthesis">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <rect x="8" y="8" width="11" height="11" rx="1"></rect>
+                    <path d="M16 8V5H5v11h3"></path>
+                  </svg>
+                </button>
+
+																<button
+																		class="search-ai-panel__log-toggle"
+																		id="search-ai-log-toggle"
+																		type="button"
+																		aria-pressed="true"
+																		aria-label="Quality classification: plus. Click to classify as minus."
+																		title="Quality classification: plus. Click to classify as minus.">
+																		<span data-ai-log-symbol aria-hidden="true">+</span>
+																</button>
+              </div>
+            </div>
+
+            <p
+              class="search-ai-panel__status"
+              id="search-ai-status"
+              aria-live="polite">
+              AI synthesis is available after a deliberate click. Normal search remains independent.
+            </p>
+
+            <div
+              class="search-ai-panel__output"
+              id="search-ai-output"
+              hidden>
+              <div class="search-ai-panel__stream" data-ai-stream>
+                <span data-ai-stream-text></span><span
+                  class="search-ai-panel__caret"
+                  data-ai-caret
+                  aria-hidden="true"
+                  hidden></span>
+              </div>
+            </div>
+
+            <div
+              class="search-ai-panel__sources"
+              id="search-ai-sources"
+              hidden>
+            </div>
+          </section>
+
+          <div class="search-results" id="search-results"></div>
+
+          <div class="search-load-more-wrap" id="search-load-more-wrap" hidden>
+            <button
+              class="button button-secondary"
+              id="search-load-more"
+              type="button">
+              Load more results
+            </button>
+          </div>
+
+          <noscript>
+            <div class="search-state search-state--error">
+              JavaScript is required for the interactive search interface.
+            </div>
+          </noscript>
+        </div>
+      </div>
+    </section>
+				<div class="search-column"><p><em>This is a keyword search with results that can be summarized by AI at your request. This AI isn't interactive. It won't talk back to you or respond to questions. It only reports what was in your search results and provides references, so you can verify everything easily. All AI responses are recorded for quality purposes, and our records store only a timestamp, a query, and the response.</em></p></div>
+  </main>
+
+  <div data-global-footer></div>
+
+  <div
+    class="search-tools-modal"
+    id="search-tools-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="search-tools-title"
+    aria-hidden="true"
+    hidden>
+
+    <div class="search-tools-modal__backdrop" data-search-tools-close></div>
+
+    <div class="search-tools-modal__panel" role="document">
+      <div class="search-tools-modal__header">
+        <div>
+          <p class="eyebrow">Advanced search</p>
+          <h2 id="search-tools-title">Search Tools</h2>
+        </div>
+
+        <button
+          class="search-tools-modal__close"
+          type="button"
+          data-search-tools-close
+          aria-label="Close Search Tools">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M5 5l14 14M19 5 5 19"></path>
+          </svg>
+        </button>
+      </div>
+
+      <p class="search-tools-modal__intro">
+        Importance of each info type in search.
+      </p>
+						<div class="search-tools-modal__model">
+								<span class="search-tools-modal__model-label">
+										AI Summary model
+								</span>
+
+								<code id="search-ai-model">
+										Loading…
+								</code>
+						</div>						
+
+      <div class="search-weight-list">
+        <div class="search-weight" data-weight="title">
+          <div class="search-weight__heading">
+            <label for="weight-title-range">Title</label>
+            <span data-default-weight-label="title">Default 3</span>
+          </div>
+          <div class="search-weight__controls">
+            <input id="weight-title-range" type="range" min="0" max="20" step="0.25" value="3">
+            <input id="weight-title-number" type="number" min="0" max="20" step="0.25" value="3" inputmode="decimal" aria-label="Title weight">
+          </div>
+        </div>
+
+        <div class="search-weight" data-weight="text">
+          <div class="search-weight__heading">
+            <label for="weight-text-range">Text</label>
+            <span data-default-weight-label="text">Default 6</span>
+          </div>
+          <div class="search-weight__controls">
+            <input id="weight-text-range" type="range" min="0" max="20" step="0.25" value="6">
+            <input id="weight-text-number" type="number" min="0" max="20" step="0.25" value="6" inputmode="decimal" aria-label="Text weight">
+          </div>
+        </div>
+
+        <div class="search-weight" data-weight="publisher">
+          <div class="search-weight__heading">
+            <label for="weight-publisher-range">Publisher</label>
+            <span data-default-weight-label="publisher">Default 2</span>
+          </div>
+          <div class="search-weight__controls">
+            <input id="weight-publisher-range" type="range" min="0" max="20" step="0.25" value="2">
+            <input id="weight-publisher-number" type="number" min="0" max="20" step="0.25" value="2" inputmode="decimal" aria-label="Publisher weight">
+          </div>
+        </div>
+
+        <div class="search-weight" data-weight="topics">
+          <div class="search-weight__heading">
+            <label for="weight-topics-range">Topics</label>
+            <span data-default-weight-label="topics">Default 2.5</span>
+          </div>
+          <div class="search-weight__controls">
+            <input id="weight-topics-range" type="range" min="0" max="20" step="0.25" value="2.5">
+            <input id="weight-topics-number" type="number" min="0" max="20" step="0.25" value="2.5" inputmode="decimal" aria-label="Topics weight">
+          </div>
+        </div>
+      </div>
+
+      <div class="search-tools-modal__footer">
+        <button
+          class="button button-secondary"
+          id="search-tools-reset"
+          type="button">
+          Reset defaults
+        </button>
+
+        <button
+          class="button"
+          id="search-tools-apply"
+          type="button">
+          Apply ranking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="search-video-modal"
+    id="search-video-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="search-video-modal-title"
+    aria-hidden="true"
+    hidden>
+
+    <div
+      class="search-video-modal__backdrop"
+      data-search-video-close></div>
+
+    <div class="search-video-modal__panel" role="document">
+      <div class="search-video-modal__header">
+        <div>
+          <p class="eyebrow">PEERS Conscious Media</p>
+          <h2 id="search-video-modal-title">Video</h2>
+        </div>
+
+        <button
+          class="search-video-modal__close"
+          type="button"
+          data-search-video-close
+          aria-label="Close video player">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M5 5l14 14M19 5 5 19"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="search-video-modal__frame-wrap">
+        <iframe
+										id="search-video-frame"
+										title="YouTube video player"
+										src=""
+										allow="
+												accelerometer;
+												autoplay;
+												clipboard-write;
+												encrypted-media;
+												gyroscope;
+												picture-in-picture;
+												web-share
+										"
+										allowfullscreen>
+								</iframe>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="search-related-modal"
+    id="search-related-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="search-related-modal-title"
+    aria-hidden="true"
+    hidden>
+
+    <div
+      class="search-related-modal__backdrop"
+      data-search-related-close></div>
+
+    <div class="search-related-modal__panel" role="document">
+      <div class="search-related-modal__header">
+        <div>
+          <p class="eyebrow">Related articles</p>
+          <h2 id="search-related-modal-title">Related articles</h2>
+        </div>
+
+        <button
+          class="search-related-modal__close"
+          type="button"
+          data-search-related-close
+          aria-label="Close related articles">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M5 5l14 14M19 5 5 19"></path>
+          </svg>
+        </button>
+      </div>
+
+      <p class="search-related-modal__intro">
+      </p>
+
+      <div
+        class="search-related-modal__graph"
+        id="search-related-graph"
+        aria-live="polite">
+        <p class="search-related-modal__state">Loading related articles…</p>
+      </div>
+
+      <div class="search-related-modal__legend" aria-hidden="true">
+        <span>Center circle opens the current target.</span>
+        <span>Related rectangles refocus the graph.</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

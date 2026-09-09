@@ -1,0 +1,5524 @@
+{
+  "version": 2,
+  "match_mode": "exact",
+  "apply_before_text_normalization": true,
+  "unmapped_policy": "retain_raw_and_flag_for_review",
+  "detail_policy": "Retain the untouched legacy Publication value as provenance/detail when it differs from the canonical publication group.",
+  "publications": {
+    "11alive-com": {
+      "slug": "11alive-com",
+      "display_name": "11Alive.com",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "11.Alive.com"
+      ]
+    },
+    "13-wthr-tv": {
+      "slug": "13-wthr-tv",
+      "display_name": "13-WTHR TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "abc": {
+      "slug": "abc",
+      "display_name": "ABC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "ABC Action News",
+        "ABC New",
+        "ABC News",
+        "ABC News 20",
+        "ABC News Australia",
+        "ABC News Blog",
+        "ABC News blog",
+        "ABC News blogs",
+        "ABC News Good Morning America",
+        "ABC News Nightline",
+        "ABC15",
+        "abc4.com",
+        "ABC6",
+        "abcnews.com",
+        "ABCs Arizona Affiliate",
+        "WCPO - Cincinnatis ABC Affiliate",
+        "WXYZ - Detroits ABC News Affiliate"
+      ]
+    },
+    "abc-nightline": {
+      "slug": "abc-nightline",
+      "display_name": "ABC Nightline",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "aclu": {
+      "slug": "aclu",
+      "display_name": "ACLU",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "africa-news": {
+      "slug": "africa-news",
+      "display_name": "Africa News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "agence-france-presse": {
+      "slug": "agence-france-presse",
+      "display_name": "Agence France Presse",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "air-force-magazine": {
+      "slug": "air-force-magazine",
+      "display_name": "Air Force Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "air-force-times": {
+      "slug": "air-force-times",
+      "display_name": "Air Force Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "akron-beacon-journal": {
+      "slug": "akron-beacon-journal",
+      "display_name": "Akron Beacon Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "al-jazeera": {
+      "slug": "al-jazeera",
+      "display_name": "Al Jazeera",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "AlJazeera"
+      ]
+    },
+    "albuquerque-journal": {
+      "slug": "albuquerque-journal",
+      "display_name": "Albuquerque Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "all-thats-interesting": {
+      "slug": "all-thats-interesting",
+      "display_name": "All Thats Interesting",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "alternet": {
+      "slug": "alternet",
+      "display_name": "Alternet",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "AlterNet"
+      ]
+    },
+    "american-academy-of-environmental-medicine": {
+      "slug": "american-academy-of-environmental-medicine",
+      "display_name": "American Academy of Environmental Medicine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "american-civil-liberties-union": {
+      "slug": "american-civil-liberties-union",
+      "display_name": "American Civil Liberties Union",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "american-psychological-association": {
+      "slug": "american-psychological-association",
+      "display_name": "American Psychological Association",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "anchorage-daily-news": {
+      "slug": "anchorage-daily-news",
+      "display_name": "Anchorage Daily News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "aol": {
+      "slug": "aol",
+      "display_name": "AOL",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Aol"
+      ]
+    },
+    "aol-news": {
+      "slug": "aol-news",
+      "display_name": "AOL News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Aol News"
+      ]
+    },
+    "architects-and-engineers-for-9": {
+      "slug": "architects-and-engineers-for-9",
+      "display_name": "Architects and Engineers for 9",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "arizona-central": {
+      "slug": "arizona-central",
+      "display_name": "Arizona Central",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "arizona-republic": {
+      "slug": "arizona-republic",
+      "display_name": "Arizona Republic",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "army-research-office": {
+      "slug": "army-research-office",
+      "display_name": "Army Research Office",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "army-times": {
+      "slug": "army-times",
+      "display_name": "Army Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ars-technica": {
+      "slug": "ars-technica",
+      "display_name": "Ars Technica",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "asiatimes": {
+      "slug": "asiatimes",
+      "display_name": "AsiaTimes",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "associated-press": {
+      "slug": "associated-press",
+      "display_name": "Associated Press",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "astrobiology-at-nasa": {
+      "slug": "astrobiology-at-nasa",
+      "display_name": "Astrobiology at NASA",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "atlanta-journal-constitution": {
+      "slug": "atlanta-journal-constitution",
+      "display_name": "Atlanta Journal-Constitution",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "atlantic-monthly": {
+      "slug": "atlantic-monthly",
+      "display_name": "Atlantic Monthly",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "atmos": {
+      "slug": "atmos",
+      "display_name": "Atmos",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "australian-broadcasting-corporation": {
+      "slug": "australian-broadcasting-corporation",
+      "display_name": "Australian Broadcasting Corporation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "az-central": {
+      "slug": "az-central",
+      "display_name": "AZ Central",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "azcentral.com"
+      ]
+    },
+    "baltimore-sun": {
+      "slug": "baltimore-sun",
+      "display_name": "Baltimore Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bangkok-post": {
+      "slug": "bangkok-post",
+      "display_name": "Bangkok Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bank-for-international-settlements": {
+      "slug": "bank-for-international-settlements",
+      "display_name": "Bank for International Settlements",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bbc": {
+      "slug": "bbc",
+      "display_name": "BBC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "BBC Blogs",
+        "BBC News",
+        "BBC News blog",
+        "BBC Radio"
+      ]
+    },
+    "big-think": {
+      "slug": "big-think",
+      "display_name": "Big Think",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "billings-gazette": {
+      "slug": "billings-gazette",
+      "display_name": "Billings Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bloomberg": {
+      "slug": "bloomberg",
+      "display_name": "Bloomberg",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Bloomberg Businessweek",
+        "Bloomberg News",
+        "Bloomberg News Service",
+        "BloombergBusinessweek",
+        "BloombergBusinessWeek",
+        "Businessweek",
+        "BusinessWeek",
+        "BusinessWeek Magazine",
+        "BusinessWeek magazine"
+      ]
+    },
+    "bloomberg-businessweek": {
+      "slug": "bloomberg-businessweek",
+      "display_name": "Bloomberg BusinessWeek",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bloomberg-law": {
+      "slug": "bloomberg-law",
+      "display_name": "Bloomberg Law",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "book-into-the-buzzsaw-by-emmy-award-winning-kristina-borjesson": {
+      "slug": "book-into-the-buzzsaw-by-emmy-award-winning-kristina-borjesson",
+      "display_name": "Book - Into the Buzzsaw by Emmy Award Winning Kristina Borjesson",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "boston-globe": {
+      "slug": "boston-globe",
+      "display_name": "Boston Globe",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "boston-university": {
+      "slug": "boston-university",
+      "display_name": "Boston University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "boston-com": {
+      "slug": "boston-com",
+      "display_name": "Boston.com",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "boston.com"
+      ]
+    },
+    "breitbart-news": {
+      "slug": "breitbart-news",
+      "display_name": "Breitbart News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "brennan-center-for-justice": {
+      "slug": "brennan-center-for-justice",
+      "display_name": "Brennan Center for Justice",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "british-medical-journal": {
+      "slug": "british-medical-journal",
+      "display_name": "British Medical Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "british-psychological-society": {
+      "slug": "british-psychological-society",
+      "display_name": "British Psychological Society",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "broadview": {
+      "slug": "broadview",
+      "display_name": "Broadview",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "brookings-institute": {
+      "slug": "brookings-institute",
+      "display_name": "Brookings Institute",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "brookings-institution": {
+      "slug": "brookings-institution",
+      "display_name": "Brookings Institution",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "brownstone-institute": {
+      "slug": "brownstone-institute",
+      "display_name": "Brownstone Institute",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Brownstone Institute"
+      ]
+    },
+    "bulletin-of-the-atomic-scientists": {
+      "slug": "bulletin-of-the-atomic-scientists",
+      "display_name": "Bulletin of the Atomic Scientists",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bureau-of-investigative-journalism": {
+      "slug": "bureau-of-investigative-journalism",
+      "display_name": "Bureau of Investigative Journalism",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "business-2-0-magazine": {
+      "slug": "business-2-0-magazine",
+      "display_name": "Business 2.0 magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "business-insider": {
+      "slug": "business-insider",
+      "display_name": "Business Insider",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "business-spectator": {
+      "slug": "business-spectator",
+      "display_name": "Business Spectator",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "business-standard": {
+      "slug": "business-standard",
+      "display_name": "Business Standard",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "business-week": {
+      "slug": "business-week",
+      "display_name": "Business Week",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "buzzfeed": {
+      "slug": "buzzfeed",
+      "display_name": "BuzzFeed",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "byline-times": {
+      "slug": "byline-times",
+      "display_name": "Byline Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "c-span": {
+      "slug": "c-span",
+      "display_name": "C-SPAN",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "calgary-herald": {
+      "slug": "calgary-herald",
+      "display_name": "Calgary Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "campaign-zero": {
+      "slug": "campaign-zero",
+      "display_name": "Campaign Zero",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "canadian-runner": {
+      "slug": "canadian-runner",
+      "display_name": "Canadian Runner",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cbc": {
+      "slug": "cbc",
+      "display_name": "CBC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Canadian Broadcasting Corporation",
+        "CBC News",
+        "CBC News [Canadas Public Broadcasting System]"
+      ]
+    },
+    "cbs": {
+      "slug": "cbs",
+      "display_name": "CBS",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "CBS 60 Minutes",
+        "CBS Affiliate KUTV",
+        "CBS Atlanta",
+        "CBS Cleveland",
+        "CBS Las Vegas Affiliate",
+        "CBS Los Angeles",
+        "CBS News",
+        "CBS News 60 Minutes",
+        "CBS News 60 Minutes Overtime",
+        "CBS News blog",
+        "CBS News Chicago, Associated Press",
+        "CBS News, Sacramento Affiliate",
+        "CBS News, Stockton Affiliate",
+        "CBS Philly",
+        "CBS4-TV",
+        "KCBS",
+        "WCBS News - New York CBS Affiliate"
+      ]
+    },
+    "cbs-news-san-francisco-affiliate": {
+      "slug": "cbs-news-san-francisco-affiliate",
+      "display_name": "CBS News San Francisco Affiliate",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cbs-dc": {
+      "slug": "cbs-dc",
+      "display_name": "CBS-DC",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cbs4-tv": {
+      "slug": "cbs4-tv",
+      "display_name": "CBS4 TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "center-for-responsive-politics": {
+      "slug": "center-for-responsive-politics",
+      "display_name": "Center for Responsive Politics",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "chalkbeat": {
+      "slug": "chalkbeat",
+      "display_name": "Chalkbeat",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "channel-news-asia": {
+      "slug": "channel-news-asia",
+      "display_name": "Channel News Asia",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "chek-news": {
+      "slug": "chek-news",
+      "display_name": "Chek News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "chicago-sun-times": {
+      "slug": "chicago-sun-times",
+      "display_name": "Chicago Sun-Times",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Chicago Sun-Times News Group"
+      ]
+    },
+    "chicago-tribune": {
+      "slug": "chicago-tribune",
+      "display_name": "Chicago Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "childrens-health-defense": {
+      "slug": "childrens-health-defense",
+      "display_name": "Childrens Health Defense",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "christian-science-monitor": {
+      "slug": "christian-science-monitor",
+      "display_name": "Christian Science Monitor",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "chronicle-of-higher-education": {
+      "slug": "chronicle-of-higher-education",
+      "display_name": "Chronicle of Higher Education",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cia-website": {
+      "slug": "cia-website",
+      "display_name": "CIA Website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cia-gov": {
+      "slug": "cia-gov",
+      "display_name": "CIA.gov",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "civil-eats": {
+      "slug": "civil-eats",
+      "display_name": "Civil Eats",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cnbc": {
+      "slug": "cnbc",
+      "display_name": "CNBC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "CNBC News"
+      ]
+    },
+    "cnet": {
+      "slug": "cnet",
+      "display_name": "CNET",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Cnet",
+        "CNET.com",
+        "Cnet.com"
+      ]
+    },
+    "cnn": {
+      "slug": "cnn",
+      "display_name": "CNN",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "CNN blog",
+        "CNN International",
+        "CNN Larry King Live",
+        "CNN Lou Dobbs Tonight",
+        "CNN Money",
+        "CNN News",
+        "CNN The Situation Room",
+        "CNN Video Clip",
+        "CNN World"
+      ]
+    },
+    "coda": {
+      "slug": "coda",
+      "display_name": "Coda",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "colombia-journalism-review": {
+      "slug": "colombia-journalism-review",
+      "display_name": "Colombia Journalism Review",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "colorado-public-radio": {
+      "slug": "colorado-public-radio",
+      "display_name": "Colorado Public Radio",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "colorado-public-television": {
+      "slug": "colorado-public-television",
+      "display_name": "Colorado Public Television",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "colorado-sun": {
+      "slug": "colorado-sun",
+      "display_name": "Colorado Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "columbia-tribune": {
+      "slug": "columbia-tribune",
+      "display_name": "Columbia Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "committee-on-oversight-and-accountability": {
+      "slug": "committee-on-oversight-and-accountability",
+      "display_name": "Committee on Oversight and Accountability",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "common-dreams": {
+      "slug": "common-dreams",
+      "display_name": "Common Dreams",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "CommonDreams.org"
+      ]
+    },
+    "comptroller-general-of-the-united-states": {
+      "slug": "comptroller-general-of-the-united-states",
+      "display_name": "Comptroller General of the United States",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "computerworld": {
+      "slug": "computerworld",
+      "display_name": "Computerworld",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "consumer-reports": {
+      "slug": "consumer-reports",
+      "display_name": "Consumer Reports",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cornell-university-news-service": {
+      "slug": "cornell-university-news-service",
+      "display_name": "Cornell University News Service",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cosmos": {
+      "slug": "cosmos",
+      "display_name": "Cosmos",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "counterpunch": {
+      "slug": "counterpunch",
+      "display_name": "Counterpunch",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "CounterPunch"
+      ]
+    },
+    "courthouse-news": {
+      "slug": "courthouse-news",
+      "display_name": "Courthouse News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "covert-action-magazine": {
+      "slug": "covert-action-magazine",
+      "display_name": "CovertAction Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Covert Action"
+      ]
+    },
+    "ctv": {
+      "slug": "ctv",
+      "display_name": "CTV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ctv-news": {
+      "slug": "ctv-news",
+      "display_name": "CTV News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cu-boulder-today": {
+      "slug": "cu-boulder-today",
+      "display_name": "CU Boulder Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "cureus": {
+      "slug": "cureus",
+      "display_name": "Cureus",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-express": {
+      "slug": "daily-express",
+      "display_name": "Daily Express",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-good": {
+      "slug": "daily-good",
+      "display_name": "Daily Good",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "DailyGood"
+      ]
+    },
+    "daily-kos": {
+      "slug": "daily-kos",
+      "display_name": "Daily Kos",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-mail": {
+      "slug": "daily-mail",
+      "display_name": "Daily Mail",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Daily Mail"
+      ]
+    },
+    "daily-record": {
+      "slug": "daily-record",
+      "display_name": "Daily Record",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-star": {
+      "slug": "daily-star",
+      "display_name": "Daily Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-times": {
+      "slug": "daily-times",
+      "display_name": "Daily Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daisyluther-com": {
+      "slug": "daisyluther-com",
+      "display_name": "DaisyLuther.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dallas-morning-news": {
+      "slug": "dallas-morning-news",
+      "display_name": "Dallas Morning News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dallas-news": {
+      "slug": "dallas-news",
+      "display_name": "Dallas News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dallas-observer-blog": {
+      "slug": "dallas-observer-blog",
+      "display_name": "Dallas Observer blog",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "declassified-cia-document": {
+      "slug": "declassified-cia-document",
+      "display_name": "Declassified CIA Document",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "defense-link": {
+      "slug": "defense-link",
+      "display_name": "Defense Link",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dennis-kucinich-on-substack": {
+      "slug": "dennis-kucinich-on-substack",
+      "display_name": "Dennis Kucinich on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "denver-post": {
+      "slug": "denver-post",
+      "display_name": "Denver Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "department-of-defense-inspector-generals-website": {
+      "slug": "department-of-defense-inspector-generals-website",
+      "display_name": "Department of Defense Inspector Generals Website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "department-of-the-navy": {
+      "slug": "department-of-the-navy",
+      "display_name": "Department of the Navy",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "der-speigel": {
+      "slug": "der-speigel",
+      "display_name": "Der Speigel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "der-spiegel": {
+      "slug": "der-spiegel",
+      "display_name": "Der Spiegel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "deseret-news": {
+      "slug": "deseret-news",
+      "display_name": "Deseret News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "detroit-free-press": {
+      "slug": "detroit-free-press",
+      "display_name": "Detroit Free Press",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "digital-journal": {
+      "slug": "digital-journal",
+      "display_name": "Digital Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "disclosure-project": {
+      "slug": "disclosure-project",
+      "display_name": "Disclosure Project",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "discover": {
+      "slug": "discover",
+      "display_name": "Discover",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Discover Magazine"
+      ]
+    },
+    "discovery-channel": {
+      "slug": "discovery-channel",
+      "display_name": "Discovery Channel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dropsite-news": {
+      "slug": "dropsite-news",
+      "display_name": "Dropsite News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "duluth-news-tribune": {
+      "slug": "duluth-news-tribune",
+      "display_name": "Duluth News Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dutchnews-nl": {
+      "slug": "dutchnews-nl",
+      "display_name": "DutchNews.nl",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "dw-com": {
+      "slug": "dw-com",
+      "display_name": "DW.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "east-county-magazine": {
+      "slug": "east-county-magazine",
+      "display_name": "East County Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "economic-times": {
+      "slug": "economic-times",
+      "display_name": "Economic Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ecowatch": {
+      "slug": "ecowatch",
+      "display_name": "EcoWatch",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "editor-and-publisher": {
+      "slug": "editor-and-publisher",
+      "display_name": "Editor and Publisher",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "edmonton-journal": {
+      "slug": "edmonton-journal",
+      "display_name": "Edmonton Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "electrek": {
+      "slug": "electrek",
+      "display_name": "Electrek",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "electronic-freedom-foundation": {
+      "slug": "electronic-freedom-foundation",
+      "display_name": "Electronic Freedom Foundation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "electronic-frontier-foundation": {
+      "slug": "electronic-frontier-foundation",
+      "display_name": "Electronic Frontier Foundation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "environmental-health-news": {
+      "slug": "environmental-health-news",
+      "display_name": "Environmental Health News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "environmental-working-group": {
+      "slug": "environmental-working-group",
+      "display_name": "Environmental Working Group",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "epoch-times": {
+      "slug": "epoch-times",
+      "display_name": "Epoch Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "espn": {
+      "slug": "espn",
+      "display_name": "ESPN",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "esquire": {
+      "slug": "esquire",
+      "display_name": "Esquire",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Esquire Magazine"
+      ]
+    },
+    "euro-news": {
+      "slug": "euro-news",
+      "display_name": "Euro News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "european-commission": {
+      "slug": "european-commission",
+      "display_name": "European Commission",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "european-journal-of-epidemiology": {
+      "slug": "european-journal-of-epidemiology",
+      "display_name": "European Journal of Epidemiology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "euroweekly-news": {
+      "slug": "euroweekly-news",
+      "display_name": "EuroWeekly News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "evolution-news": {
+      "slug": "evolution-news",
+      "display_name": "Evolution News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fair-observer": {
+      "slug": "fair-observer",
+      "display_name": "Fair Observer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fairness-and-accuracy-in-reporting": {
+      "slug": "fairness-and-accuracy-in-reporting",
+      "display_name": "Fairness & Accuracy In Reporting",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Fairness & Accuracy in Reporting"
+      ]
+    },
+    "fast-company": {
+      "slug": "fast-company",
+      "display_name": "Fast Company",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fbi-website-ufo-vault": {
+      "slug": "fbi-website-ufo-vault",
+      "display_name": "FBI Website, UFO Vault",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fda-subcommittee-on-science-and-technology": {
+      "slug": "fda-subcommittee-on-science-and-technology",
+      "display_name": "FDA Subcommittee on Science and Technology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "feds-give-customs-agents-free-hand-to-seize-travelers-documents": {
+      "slug": "feds-give-customs-agents-free-hand-to-seize-travelers-documents",
+      "display_name": "Feds give customs agents free hand to seize travelers documents",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "financial-post": {
+      "slug": "financial-post",
+      "display_name": "Financial Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "financial-times": {
+      "slug": "financial-times",
+      "display_name": "Financial Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "forbes": {
+      "slug": "forbes",
+      "display_name": "Forbes",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Forbes blog",
+        "Forbes India Magazine",
+        "Forbes Magazine",
+        "Forbes magazine",
+        "Forbes.com",
+        "Forbes.com blog"
+      ]
+    },
+    "foreign-affairs": {
+      "slug": "foreign-affairs",
+      "display_name": "Foreign Affairs",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Foreign Affairs,"
+      ]
+    },
+    "foreign-policy": {
+      "slug": "foreign-policy",
+      "display_name": "Foreign Policy",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Foreign Policy Journal",
+        "Foreign Policy Magazine May"
+      ]
+    },
+    "fort-worth-star-telegram": {
+      "slug": "fort-worth-star-telegram",
+      "display_name": "Fort Worth Star-Telegram",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fortune": {
+      "slug": "fortune",
+      "display_name": "Fortune",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Fortune magazine"
+      ]
+    },
+    "foundation-for-economic-education": {
+      "slug": "foundation-for-economic-education",
+      "display_name": "Foundation for Economic Education",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "fox": {
+      "slug": "fox",
+      "display_name": "FOX",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Fox 19",
+        "FOX News",
+        "Fox News Affiliate",
+        "Fox News Chicago",
+        "Fox News video clip",
+        "WJBK Fox 2"
+      ]
+    },
+    "fox-news": {
+      "slug": "fox-news",
+      "display_name": "Fox News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "france-24": {
+      "slug": "france-24",
+      "display_name": "France 24",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "free-press": {
+      "slug": "free-press",
+      "display_name": "Free Press",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "free-ranger-burma": {
+      "slug": "free-ranger-burma",
+      "display_name": "Free Ranger Burma",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "freethink": {
+      "slug": "freethink",
+      "display_name": "FreeThink",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Freethink"
+      ]
+    },
+    "fresno-bee": {
+      "slug": "fresno-bee",
+      "display_name": "Fresno Bee",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "frontiers-in-psychology": {
+      "slug": "frontiers-in-psychology",
+      "display_name": "Frontiers in Psychology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "frontline": {
+      "slug": "frontline",
+      "display_name": "Frontline",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "futurism": {
+      "slug": "futurism",
+      "display_name": "Futurism",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "gainesville-sun": {
+      "slug": "gainesville-sun",
+      "display_name": "Gainesville Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "gallup": {
+      "slug": "gallup",
+      "display_name": "Gallup",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "gizmodo": {
+      "slug": "gizmodo",
+      "display_name": "Gizmodo",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "global-investigative-journalism-network": {
+      "slug": "global-investigative-journalism-network",
+      "display_name": "Global Investigative Journalism Network",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "global-news": {
+      "slug": "global-news",
+      "display_name": "Global News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "global-research": {
+      "slug": "global-research",
+      "display_name": "Global Research",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "good-magazine": {
+      "slug": "good-magazine",
+      "display_name": "GOOD Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "good-news-network": {
+      "slug": "good-news-network",
+      "display_name": "Good News Network",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "goodgoodgood": {
+      "slug": "goodgoodgood",
+      "display_name": "GoodGoodGood",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Goodgoodgood"
+      ]
+    },
+    "goop-com": {
+      "slug": "goop-com",
+      "display_name": "Goop.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "government-accountability-office": {
+      "slug": "government-accountability-office",
+      "display_name": "Government Accountability Office",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "government-executive": {
+      "slug": "government-executive",
+      "display_name": "Government Executive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "gq": {
+      "slug": "gq",
+      "display_name": "GQ",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "GQ Magazine"
+      ]
+    },
+    "greater-good": {
+      "slug": "greater-good",
+      "display_name": "Greater Good",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Greater Good Magazine"
+      ]
+    },
+    "grist": {
+      "slug": "grist",
+      "display_name": "Grist",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "haaretz": {
+      "slug": "haaretz",
+      "display_name": "Haaretz",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harm-reduction-international": {
+      "slug": "harm-reduction-international",
+      "display_name": "Harm Reduction International",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harpers-magazine": {
+      "slug": "harpers-magazine",
+      "display_name": "Harpers Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Harpers magazine"
+      ]
+    },
+    "harvard-business-review": {
+      "slug": "harvard-business-review",
+      "display_name": "Harvard Business Review",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-gazette": {
+      "slug": "harvard-gazette",
+      "display_name": "Harvard Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-magazine": {
+      "slug": "harvard-magazine",
+      "display_name": "Harvard Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-medicine": {
+      "slug": "harvard-medicine",
+      "display_name": "Harvard Medicine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-school-of-engineering-and-applied-sciences": {
+      "slug": "harvard-school-of-engineering-and-applied-sciences",
+      "display_name": "Harvard School of Engineering and Applied Sciences",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-school-of-public-health": {
+      "slug": "harvard-school-of-public-health",
+      "display_name": "Harvard School of Public Health",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "harvard-university-gazette": {
+      "slug": "harvard-university-gazette",
+      "display_name": "Harvard University Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "hawaii-tribune-herald": {
+      "slug": "hawaii-tribune-herald",
+      "display_name": "Hawaii Tribune-Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "health-news-florida": {
+      "slug": "health-news-florida",
+      "display_name": "Health News Florida",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "healthcare-victoria": {
+      "slug": "healthcare-victoria",
+      "display_name": "Healthcare Victoria",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "herald-sun": {
+      "slug": "herald-sun",
+      "display_name": "Herald Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "history-channel": {
+      "slug": "history-channel",
+      "display_name": "History Channel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "hollywood-reporter": {
+      "slug": "hollywood-reporter",
+      "display_name": "Hollywood Reporter",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "houston-chronicle": {
+      "slug": "houston-chronicle",
+      "display_name": "Houston Chronicle",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "houston-chronicle-science-blog": {
+      "slug": "houston-chronicle-science-blog",
+      "display_name": "Houston Chronicle Science Blog",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "howstuffworks-com": {
+      "slug": "howstuffworks-com",
+      "display_name": "Howstuffworks.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "http": {
+      "slug": "http",
+      "display_name": "http:",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "huffington-post": {
+      "slug": "huffington-post",
+      "display_name": "Huffington Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "i-news": {
+      "slug": "i-news",
+      "display_name": "i News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "iai-news": {
+      "slug": "iai-news",
+      "display_name": "iai News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "idaho-state-journal": {
+      "slug": "idaho-state-journal",
+      "display_name": "Idaho State Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "image": {
+      "slug": "image",
+      "display_name": "Image",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "inc-com": {
+      "slug": "inc-com",
+      "display_name": "Inc.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "independent-online": {
+      "slug": "independent-online",
+      "display_name": "Independent Online",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "indiana-star": {
+      "slug": "indiana-star",
+      "display_name": "Indiana Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "indianapolis-star": {
+      "slug": "indianapolis-star",
+      "display_name": "Indianapolis Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "inside-edition": {
+      "slug": "inside-edition",
+      "display_name": "Inside Edition",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "inside-higher-ed": {
+      "slug": "inside-higher-ed",
+      "display_name": "Inside Higher Ed",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "inside-science-news": {
+      "slug": "inside-science-news",
+      "display_name": "Inside Science News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "intercontinental-cry": {
+      "slug": "intercontinental-cry",
+      "display_name": "Intercontinental Cry",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "interdisciplinary-toxicology": {
+      "slug": "interdisciplinary-toxicology",
+      "display_name": "Interdisciplinary Toxicology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "interesting-engineering": {
+      "slug": "interesting-engineering",
+      "display_name": "Interesting Engineering",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "international-business-times": {
+      "slug": "international-business-times",
+      "display_name": "International Business Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "international-consortium-of-investigative-journalists": {
+      "slug": "international-consortium-of-investigative-journalists",
+      "display_name": "International Consortium of Investigative Journalists",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "international-herald-tribune": {
+      "slug": "international-herald-tribune",
+      "display_name": "International Herald Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "international-journal-of-vaccines-and-vaccination": {
+      "slug": "international-journal-of-vaccines-and-vaccination",
+      "display_name": "International Journal of Vaccines and Vaccination",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "irish-times": {
+      "slug": "irish-times",
+      "display_name": "Irish Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "issues-in-science-and-technology": {
+      "slug": "issues-in-science-and-technology",
+      "display_name": "Issues in Science and Technology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "jacobin": {
+      "slug": "jacobin",
+      "display_name": "Jacobin",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "jakarta-post": {
+      "slug": "jakarta-post",
+      "display_name": "Jakarta Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "johns-hopkins-university": {
+      "slug": "johns-hopkins-university",
+      "display_name": "Johns Hopkins University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "journal-of-experimental-psychology": {
+      "slug": "journal-of-experimental-psychology",
+      "display_name": "Journal of Experimental Psychology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "journal-of-geography-environment-and-earth-science-international": {
+      "slug": "journal-of-geography-environment-and-earth-science-international",
+      "display_name": "Journal of Geography, Environment and Earth Science International",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "journal-of-personality-and-social-psychology": {
+      "slug": "journal-of-personality-and-social-psychology",
+      "display_name": "Journal of Personality and Social Psychology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "journal-of-the-royal-society-of-medicine": {
+      "slug": "journal-of-the-royal-society-of-medicine",
+      "display_name": "Journal of the Royal Society of Medicine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "journal-of-toxicology-and-environmental-health": {
+      "slug": "journal-of-toxicology-and-environmental-health",
+      "display_name": "Journal of Toxicology and Environmental Health",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "july-4-2006-prweb": {
+      "slug": "july-4-2006-prweb",
+      "display_name": "July 4, 2006, PRWeb",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kabc-tv": {
+      "slug": "kabc-tv",
+      "display_name": "KABC-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kansas-city-star": {
+      "slug": "kansas-city-star",
+      "display_name": "Kansas City Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kbdi-tv": {
+      "slug": "kbdi-tv",
+      "display_name": "KBDI-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kcbs-news": {
+      "slug": "kcbs-news",
+      "display_name": "KCBS News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kcop-tv": {
+      "slug": "kcop-tv",
+      "display_name": "KCOP-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kdvr-tv": {
+      "slug": "kdvr-tv",
+      "display_name": "KDVR-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kfor-news": {
+      "slug": "kfor-news",
+      "display_name": "KFOR News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kgo": {
+      "slug": "kgo",
+      "display_name": "KGO",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kgo-radio": {
+      "slug": "kgo-radio",
+      "display_name": "KGO Radio",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kgo-tv": {
+      "slug": "kgo-tv",
+      "display_name": "KGO-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kgo-tv-channel-7": {
+      "slug": "kgo-tv-channel-7",
+      "display_name": "KGO-TV Channel 7",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "khou-tv": {
+      "slug": "khou-tv",
+      "display_name": "KHOU-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kinder": {
+      "slug": "kinder",
+      "display_name": "Kinder",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kings-university-college-university-of-western-ontario": {
+      "slug": "kings-university-college-university-of-western-ontario",
+      "display_name": "Kings University College, University of Western Ontario",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kion-tv": {
+      "slug": "kion-tv",
+      "display_name": "KION-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "klas-tv": {
+      "slug": "klas-tv",
+      "display_name": "KLAS-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kmox-tv": {
+      "slug": "kmox-tv",
+      "display_name": "KMOX-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kmph-tv": {
+      "slug": "kmph-tv",
+      "display_name": "KMPH-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "knowable-magazine": {
+      "slug": "knowable-magazine",
+      "display_name": "Knowable Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kpbs-org": {
+      "slug": "kpbs-org",
+      "display_name": "KPBS.org",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kpix-tv": {
+      "slug": "kpix-tv",
+      "display_name": "KPIX TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kqed": {
+      "slug": "kqed",
+      "display_name": "KQED",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kqre": {
+      "slug": "kqre",
+      "display_name": "KQRE",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ksdk-com": {
+      "slug": "ksdk-com",
+      "display_name": "KSDK.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ksl-tv": {
+      "slug": "ksl-tv",
+      "display_name": "KSL-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ksla-tv": {
+      "slug": "ksla-tv",
+      "display_name": "KSLA-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktar": {
+      "slug": "ktar",
+      "display_name": "KTAR",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktla-tv-los-angeles": {
+      "slug": "ktla-tv-los-angeles",
+      "display_name": "KTLA-TV Los Angeles",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktrk-tv": {
+      "slug": "ktrk-tv",
+      "display_name": "KTRK-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktva": {
+      "slug": "ktva",
+      "display_name": "KTVA",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktvn-news": {
+      "slug": "ktvn-news",
+      "display_name": "KTVN News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ktvu": {
+      "slug": "ktvu",
+      "display_name": "KTVU",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kutv": {
+      "slug": "kutv",
+      "display_name": "KUTV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kxly-tv": {
+      "slug": "kxly-tv",
+      "display_name": "KXLY-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "la-jolla-light": {
+      "slug": "la-jolla-light",
+      "display_name": "La Jolla Light",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "la-progressive": {
+      "slug": "la-progressive",
+      "display_name": "LA Progressive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "lampoon": {
+      "slug": "lampoon",
+      "display_name": "Lampoon",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "las-vegas-tribune": {
+      "slug": "las-vegas-tribune",
+      "display_name": "Las Vegas Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "lasvegasnow-com": {
+      "slug": "lasvegasnow-com",
+      "display_name": "lasvegasnow.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "lee-fang-on-substack": {
+      "slug": "lee-fang-on-substack",
+      "display_name": "Lee Fang on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "life-magazine": {
+      "slug": "life-magazine",
+      "display_name": "Life magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "lighthouse-reports": {
+      "slug": "lighthouse-reports",
+      "display_name": "Lighthouse Reports",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "live-science": {
+      "slug": "live-science",
+      "display_name": "Live Science",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "london-times": {
+      "slug": "london-times",
+      "display_name": "London Times",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Sunday Times",
+        "The Times",
+        "Times of London"
+      ]
+    },
+    "los-angeles-times": {
+      "slug": "los-angeles-times",
+      "display_name": "Los Angeles Times",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "LA Times",
+        "Los Angeles Times blog",
+        "The Los Angeles Times"
+      ]
+    },
+    "lund-university": {
+      "slug": "lund-university",
+      "display_name": "Lund University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "lynnemctaggart-com": {
+      "slug": "lynnemctaggart-com",
+      "display_name": "lynnemctaggart.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mad-in-america": {
+      "slug": "mad-in-america",
+      "display_name": "Mad in America",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "marin-independent-journal": {
+      "slug": "marin-independent-journal",
+      "display_name": "Marin Independent Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Marin Independent-Journal"
+      ]
+    },
+    "marketwatch": {
+      "slug": "marketwatch",
+      "display_name": "MarketWatch",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Market Watch",
+        "MarketWatch.com"
+      ]
+    },
+    "matt-taibbi-on-substack": {
+      "slug": "matt-taibbi-on-substack",
+      "display_name": "Matt Taibbi on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mayo-clinic-news-network": {
+      "slug": "mayo-clinic-news-network",
+      "display_name": "Mayo Clinic News Network",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mcclatchy-news": {
+      "slug": "mcclatchy-news",
+      "display_name": "McClatchy News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mcclatchy-news-service": {
+      "slug": "mcclatchy-news-service",
+      "display_name": "McClatchy News Service",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mcclatchy-newspapers": {
+      "slug": "mcclatchy-newspapers",
+      "display_name": "McClatchy Newspapers",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mcgill-university": {
+      "slug": "mcgill-university",
+      "display_name": "McGill University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "media-channel": {
+      "slug": "media-channel",
+      "display_name": "Media Channel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "medical-news-today": {
+      "slug": "medical-news-today",
+      "display_name": "Medical News Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "medium-com": {
+      "slug": "medium-com",
+      "display_name": "Medium.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "medpage-today": {
+      "slug": "medpage-today",
+      "display_name": "MedPage Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mercola-com": {
+      "slug": "mercola-com",
+      "display_name": "Mercola.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "metro": {
+      "slug": "metro",
+      "display_name": "Metro",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "metro-co-uk": {
+      "slug": "metro-co-uk",
+      "display_name": "Metro.co.uk",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "metroactive": {
+      "slug": "metroactive",
+      "display_name": "MetroActive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "miami-herald": {
+      "slug": "miami-herald",
+      "display_name": "Miami Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "miami-new-times": {
+      "slug": "miami-new-times",
+      "display_name": "Miami New Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "michigan-city-news-dispatch": {
+      "slug": "michigan-city-news-dispatch",
+      "display_name": "Michigan City News-Dispatch",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "michigan-live": {
+      "slug": "michigan-live",
+      "display_name": "Michigan Live",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "military-times": {
+      "slug": "military-times",
+      "display_name": "Military Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "military-com": {
+      "slug": "military-com",
+      "display_name": "Military.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "minnesota-post": {
+      "slug": "minnesota-post",
+      "display_name": "Minnesota Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mintpress-news": {
+      "slug": "mintpress-news",
+      "display_name": "MintPress News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Mint Press News",
+        "Mintpress News"
+      ]
+    },
+    "mirage": {
+      "slug": "mirage",
+      "display_name": "Mirage",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mit-news": {
+      "slug": "mit-news",
+      "display_name": "MIT News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mit-press-reader": {
+      "slug": "mit-press-reader",
+      "display_name": "MIT Press Reader",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mit-technology-review": {
+      "slug": "mit-technology-review",
+      "display_name": "MIT Technology Review",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "money-magazine": {
+      "slug": "money-magazine",
+      "display_name": "Money magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mongabay": {
+      "slug": "mongabay",
+      "display_name": "Mongabay",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "montreal-gazette": {
+      "slug": "montreal-gazette",
+      "display_name": "Montreal Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mother-jones": {
+      "slug": "mother-jones",
+      "display_name": "Mother Jones",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Mother Jones Magazine"
+      ]
+    },
+    "msn-news": {
+      "slug": "msn-news",
+      "display_name": "MSN News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "MSN",
+        "MSN Canada",
+        "MSN Money",
+        "MSN of Australia"
+      ]
+    },
+    "msnbc": {
+      "slug": "msnbc",
+      "display_name": "MSNBC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "MSNBC News",
+        "MSNBC The Rachel Maddow Show",
+        "MSNBC Today",
+        "MSNBC: Keith Olbermann blog"
+      ]
+    },
+    "msnbc-countdown-with-keith-olberman": {
+      "slug": "msnbc-countdown-with-keith-olberman",
+      "display_name": "MSNBC Countdown With Keith Olberman",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "msu-today": {
+      "slug": "msu-today",
+      "display_name": "MSU Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mt-shasta-herald": {
+      "slug": "mt-shasta-herald",
+      "display_name": "Mt. Shasta Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mysterious-ufos-spotted-along-us-coast": {
+      "slug": "mysterious-ufos-spotted-along-us-coast",
+      "display_name": "Mysterious UFOs Spotted Along US Coast",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nasa": {
+      "slug": "nasa",
+      "display_name": "NASA",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nasa-websites-technology-gateway": {
+      "slug": "nasa-websites-technology-gateway",
+      "display_name": "NASA Websites Technology Gateway",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nasa-gov": {
+      "slug": "nasa-gov",
+      "display_name": "Nasa.gov",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "national-geographic": {
+      "slug": "national-geographic",
+      "display_name": "National Geographic",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "National Geographic News",
+        "National Geographic October 2004 Issue",
+        "NationalGeographic.com",
+        "NationalGeographic.com blog"
+      ]
+    },
+    "national-post": {
+      "slug": "national-post",
+      "display_name": "National Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "national-security-agency-website-nsa-technical-journal-vol-xi": {
+      "slug": "national-security-agency-website-nsa-technical-journal-vol-xi",
+      "display_name": "National Security Agency Website, NSA Technical Journal, Vol. XI",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "national-security-archive": {
+      "slug": "national-security-archive",
+      "display_name": "National Security Archive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "national-toxicology-program": {
+      "slug": "national-toxicology-program",
+      "display_name": "National Toxicology Program",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nature": {
+      "slug": "nature",
+      "display_name": "Nature",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Nature Magazine"
+      ]
+    },
+    "nbc": {
+      "slug": "nbc",
+      "display_name": "NBC",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "NBC Chicago",
+        "NBC Los Angeles",
+        "NBC Miami",
+        "NBC Milwaukee Affiliate",
+        "NBC New York",
+        "NBC News",
+        "NBC Oklahoma City",
+        "NBC Philadelphia",
+        "NBC Right Now",
+        "NBC Today",
+        "NBC Washington"
+      ]
+    },
+    "ndtv": {
+      "slug": "ndtv",
+      "display_name": "NDTV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "neoscope": {
+      "slug": "neoscope",
+      "display_name": "Neoscope",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-atlas": {
+      "slug": "new-atlas",
+      "display_name": "New Atlas",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-energy-video": {
+      "slug": "new-energy-video",
+      "display_name": "New Energy Video",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-england-journal-of-medicine": {
+      "slug": "new-england-journal-of-medicine",
+      "display_name": "New England Journal of Medicine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-england-journal-of-medicine-nejm": {
+      "slug": "new-england-journal-of-medicine-nejm",
+      "display_name": "New England Journal of Medicine - NEJM",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-paradigm-institute": {
+      "slug": "new-paradigm-institute",
+      "display_name": "New Paradigm Institute",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-scientist": {
+      "slug": "new-scientist",
+      "display_name": "New Scientist",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "New Scientist magazine"
+      ]
+    },
+    "new-straits-times": {
+      "slug": "new-straits-times",
+      "display_name": "New Straits Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-york-daily-news": {
+      "slug": "new-york-daily-news",
+      "display_name": "New York Daily News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-york-magazine": {
+      "slug": "new-york-magazine",
+      "display_name": "New York Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "New York magazine"
+      ]
+    },
+    "new-york-post": {
+      "slug": "new-york-post",
+      "display_name": "New York Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-york-review-of-books": {
+      "slug": "new-york-review-of-books",
+      "display_name": "New York Review of Books",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-york-sun": {
+      "slug": "new-york-sun",
+      "display_name": "New York Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "new-york-times": {
+      "slug": "new-york-times",
+      "display_name": "New York Times",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "New York Times Blog",
+        "New York Times blog",
+        "New York Times Magazine",
+        "The New York Times"
+      ]
+    },
+    "new-yorker": {
+      "slug": "new-yorker",
+      "display_name": "New Yorker",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The New Yorker",
+        "The New Yorker magazine"
+      ]
+    },
+    "new-zealand-herald": {
+      "slug": "new-zealand-herald",
+      "display_name": "New Zealand Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "news-24": {
+      "slug": "news-24",
+      "display_name": "News 24",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "news-com-au": {
+      "slug": "news-com-au",
+      "display_name": "News.com.au",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "news.com.au"
+      ]
+    },
+    "newsday": {
+      "slug": "newsday",
+      "display_name": "Newsday",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "newsnation": {
+      "slug": "newsnation",
+      "display_name": "NewsNation",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "News Nation"
+      ]
+    },
+    "newsweek": {
+      "slug": "newsweek",
+      "display_name": "Newsweek",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Newsweek blog",
+        "Newsweek magazine",
+        "Newsweek Magazine",
+        "Newsweek magazine blog"
+      ]
+    },
+    "newswise-com": {
+      "slug": "newswise-com",
+      "display_name": "Newswise.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "next-city": {
+      "slug": "next-city",
+      "display_name": "Next City",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "noema": {
+      "slug": "noema",
+      "display_name": "Noema",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "north-county-times": {
+      "slug": "north-county-times",
+      "display_name": "North County Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "northeastern-university": {
+      "slug": "northeastern-university",
+      "display_name": "Northeastern University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "northwestern-university-news-center": {
+      "slug": "northwestern-university-news-center",
+      "display_name": "Northwestern University News Center",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "notus": {
+      "slug": "notus",
+      "display_name": "NOTUS",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "npr": {
+      "slug": "npr",
+      "display_name": "NPR",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Minnesota Public Radio",
+        "National Public Radio",
+        "NPR All Things Considered",
+        "NPR Blog",
+        "NPR blog",
+        "NPR News"
+      ]
+    },
+    "nrc-international": {
+      "slug": "nrc-international",
+      "display_name": "NRC International",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nsa-archive": {
+      "slug": "nsa-archive",
+      "display_name": "NSA Archive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "nsa-website": {
+      "slug": "nsa-website",
+      "display_name": "NSA Website",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "National Security Agency  Website",
+        "National Security Agency  Website, NSA Technical Journal, Vol. XI",
+        "NSA Technical Journal, Vol. XI",
+        "U.S. National Security Agency Website"
+      ]
+    },
+    "occ": {
+      "slug": "occ",
+      "display_name": "OCC",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ode-magazine": {
+      "slug": "ode-magazine",
+      "display_name": "Ode Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Ode magazine",
+        "Ode Magazine, July 2005 Issue",
+        "Ode Magazine, June 2005 Issue"
+      ]
+    },
+    "official-government-website-of-u-s-senator-bernie-sanders": {
+      "slug": "official-government-website-of-u-s-senator-bernie-sanders",
+      "display_name": "Official Government Website of U.S. Senator Bernie Sanders",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "official-website-of-congressman-weldon": {
+      "slug": "official-website-of-congressman-weldon",
+      "display_name": "Official Website of Congressman Weldon",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "official-white-house-website": {
+      "slug": "official-white-house-website",
+      "display_name": "Official White House Website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ogden-standard-examiner": {
+      "slug": "ogden-standard-examiner",
+      "display_name": "Ogden Standard-Examiner",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "opednews-com": {
+      "slug": "opednews-com",
+      "display_name": "OpEdNews.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "open-the-books-on-substack": {
+      "slug": "open-the-books-on-substack",
+      "display_name": "Open the Books on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "openthebooks": {
+      "slug": "openthebooks",
+      "display_name": "OpenTheBooks",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "orange-county-register": {
+      "slug": "orange-county-register",
+      "display_name": "Orange County Register",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "organics-international": {
+      "slug": "organics-international",
+      "display_name": "Organics International",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "orlando-sentinel": {
+      "slug": "orlando-sentinel",
+      "display_name": "Orlando Sentinel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ottawa-citizen": {
+      "slug": "ottawa-citizen",
+      "display_name": "Ottawa Citizen",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ottawa-sun": {
+      "slug": "ottawa-sun",
+      "display_name": "Ottawa Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "oxfam": {
+      "slug": "oxfam",
+      "display_name": "Oxfam",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "palm-beach-daily-news": {
+      "slug": "palm-beach-daily-news",
+      "display_name": "Palm Beach Daily News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "palm-beach-post": {
+      "slug": "palm-beach-post",
+      "display_name": "Palm Beach Post",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "parade-magazine": {
+      "slug": "parade-magazine",
+      "display_name": "Parade Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Parade magazine"
+      ]
+    },
+    "pasadena-weekly": {
+      "slug": "pasadena-weekly",
+      "display_name": "Pasadena Weekly",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "pbs": {
+      "slug": "pbs",
+      "display_name": "PBS",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "PBS Bill Moyers Journal",
+        "PBS Blog",
+        "PBS Frontline",
+        "PBS News",
+        "PBS Newshour",
+        "PBS Nova Program",
+        "PBS, CBS, Fox compilation"
+      ]
+    },
+    "pbs-news-hour": {
+      "slug": "pbs-news-hour",
+      "display_name": "PBS News Hour",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "peace-direct": {
+      "slug": "peace-direct",
+      "display_name": "Peace Direct",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "peace-insight": {
+      "slug": "peace-insight",
+      "display_name": "Peace Insight",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "pegasus": {
+      "slug": "pegasus",
+      "display_name": "Pegasus",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "people": {
+      "slug": "people",
+      "display_name": "People",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "People Magazine"
+      ]
+    },
+    "philadelphia-enquirer": {
+      "slug": "philadelphia-enquirer",
+      "display_name": "Philadelphia Enquirer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "philadelphia-inquirer": {
+      "slug": "philadelphia-inquirer",
+      "display_name": "Philadelphia Inquirer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "philadephia-enquirer": {
+      "slug": "philadephia-enquirer",
+      "display_name": "Philadephia Enquirer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "philadephia-inquirer": {
+      "slug": "philadephia-inquirer",
+      "display_name": "Philadephia Inquirer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "phoenix-business-journal": {
+      "slug": "phoenix-business-journal",
+      "display_name": "Phoenix Business Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "phys-org": {
+      "slug": "phys-org",
+      "display_name": "Phys.org",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "PhysOrg",
+        "PHYSORG.COM"
+      ]
+    },
+    "pittsburgh-post-gazette": {
+      "slug": "pittsburgh-post-gazette",
+      "display_name": "Pittsburgh Post-Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "pocono-record": {
+      "slug": "pocono-record",
+      "display_name": "Pocono Record",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "politico": {
+      "slug": "politico",
+      "display_name": "Politico",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "popular-mechanics": {
+      "slug": "popular-mechanics",
+      "display_name": "Popular Mechanics",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "popular-science": {
+      "slug": "popular-science",
+      "display_name": "Popular Science",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Popular Science - March 2007 Issue",
+        "Popular Science Magazine",
+        "Popular Science magazine"
+      ]
+    },
+    "portland-tribune": {
+      "slug": "portland-tribune",
+      "display_name": "Portland Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "positive-news": {
+      "slug": "positive-news",
+      "display_name": "Positive News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Positive.News"
+      ]
+    },
+    "pr-newswire": {
+      "slug": "pr-newswire",
+      "display_name": "PR Newswire",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "press-herald": {
+      "slug": "press-herald",
+      "display_name": "Press Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "prison-policy-initiative": {
+      "slug": "prison-policy-initiative",
+      "display_name": "Prison Policy Initiative",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "prison-writers": {
+      "slug": "prison-writers",
+      "display_name": "Prison Writers",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "project-censored": {
+      "slug": "project-censored",
+      "display_name": "Project Censored",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "project-on-government-oversight": {
+      "slug": "project-on-government-oversight",
+      "display_name": "Project on Government Oversight",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "promarket": {
+      "slug": "promarket",
+      "display_name": "Promarket",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "propublica": {
+      "slug": "propublica",
+      "display_name": "ProPublica",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "providence-journal": {
+      "slug": "providence-journal",
+      "display_name": "Providence Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "psychcentral": {
+      "slug": "psychcentral",
+      "display_name": "PsychCentral",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "psychology-today": {
+      "slug": "psychology-today",
+      "display_name": "Psychology Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "psypost": {
+      "slug": "psypost",
+      "display_name": "PsyPost",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "public": {
+      "slug": "public",
+      "display_name": "Public",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "public-news": {
+      "slug": "public-news",
+      "display_name": "Public News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "public-on-substack": {
+      "slug": "public-on-substack",
+      "display_name": "Public on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "publishers-weekly": {
+      "slug": "publishers-weekly",
+      "display_name": "Publishers Weekly",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "q13-fox-tv": {
+      "slug": "q13-fox-tv",
+      "display_name": "Q13 FOX-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "quartz": {
+      "slug": "quartz",
+      "display_name": "Quartz",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "quincy-center-for-responsible-statecraft": {
+      "slug": "quincy-center-for-responsible-statecraft",
+      "display_name": "Quincy Center for Responsible Statecraft",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "quincy-institute-for-responsible-statecraft": {
+      "slug": "quincy-institute-for-responsible-statecraft",
+      "display_name": "Quincy Institute for Responsible Statecraft",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "rasmussen-reports": {
+      "slug": "rasmussen-reports",
+      "display_name": "Rasmussen Reports",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "re-generation": {
+      "slug": "re-generation",
+      "display_name": "Re-Generation",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Re-generation"
+      ]
+    },
+    "readers-digest": {
+      "slug": "readers-digest",
+      "display_name": "Readers Digest",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "real-clear-investigations": {
+      "slug": "real-clear-investigations",
+      "display_name": "Real Clear Investigations",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "real-news-network": {
+      "slug": "real-news-network",
+      "display_name": "Real News Network",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "reason": {
+      "slug": "reason",
+      "display_name": "Reason",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "reasons-to-be-cheerful": {
+      "slug": "reasons-to-be-cheerful",
+      "display_name": "Reasons to be Cheerful",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Reasons to be cheerful"
+      ]
+    },
+    "rensselaer-polytechnic-institute": {
+      "slug": "rensselaer-polytechnic-institute",
+      "display_name": "Rensselaer Polytechnic Institute",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "researchgate": {
+      "slug": "researchgate",
+      "display_name": "ResearchGate",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "reuters": {
+      "slug": "reuters",
+      "display_name": "Reuters",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Reuters blog",
+        "Reuters Health",
+        "Reuters News",
+        "Reuters News Agency"
+      ]
+    },
+    "revista-harvard-review-of-latin-america": {
+      "slug": "revista-harvard-review-of-latin-america",
+      "display_name": "Revista: Harvard Review of Latin America",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "rocky-mountain-news": {
+      "slug": "rocky-mountain-news",
+      "display_name": "Rocky Mountain News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "rolling-stone": {
+      "slug": "rolling-stone",
+      "display_name": "Rolling Stone",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Rolling Stone blog",
+        "Rolling Stone magazine"
+      ]
+    },
+    "runners-world": {
+      "slug": "runners-world",
+      "display_name": "Runners World",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "russia-today": {
+      "slug": "russia-today",
+      "display_name": "Russia Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sacramento-bee": {
+      "slug": "sacramento-bee",
+      "display_name": "Sacramento Bee",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Sacramento Bee"
+      ]
+    },
+    "salon": {
+      "slug": "salon",
+      "display_name": "Salon",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Salon.com"
+      ]
+    },
+    "salt-lake-city-tribune": {
+      "slug": "salt-lake-city-tribune",
+      "display_name": "Salt Lake City Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "salt-lake-tribune": {
+      "slug": "salt-lake-tribune",
+      "display_name": "Salt Lake Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "san-diego-6-tv": {
+      "slug": "san-diego-6-tv",
+      "display_name": "San Diego 6-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "san-diego-tribune": {
+      "slug": "san-diego-tribune",
+      "display_name": "San Diego Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "san-diego-union-tribune": {
+      "slug": "san-diego-union-tribune",
+      "display_name": "San Diego Union-Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "San Diego Union Tribune"
+      ]
+    },
+    "san-francisco-chronicle": {
+      "slug": "san-francisco-chronicle",
+      "display_name": "San Francisco Chronicle",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "San Francisco Chronicle SFs leading newspaper)",
+        "The San Francisco Chronicle"
+      ]
+    },
+    "san-francisco-examiner": {
+      "slug": "san-francisco-examiner",
+      "display_name": "San Francisco Examiner",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "san-jose-mercury-news": {
+      "slug": "san-jose-mercury-news",
+      "display_name": "San Jose Mercury News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "santa-barbara-independent": {
+      "slug": "santa-barbara-independent",
+      "display_name": "Santa Barbara Independent",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sarasota-herald-tribune": {
+      "slug": "sarasota-herald-tribune",
+      "display_name": "Sarasota Herald Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Sarasota Herald-Tribune"
+      ]
+    },
+    "sbs": {
+      "slug": "sbs",
+      "display_name": "SBS",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "scheerpost": {
+      "slug": "scheerpost",
+      "display_name": "ScheerPost",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "science": {
+      "slug": "science",
+      "display_name": "Science",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Science Magazine"
+      ]
+    },
+    "science-alert": {
+      "slug": "science-alert",
+      "display_name": "Science Alert",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "science-daily": {
+      "slug": "science-daily",
+      "display_name": "Science Daily",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "science-world-report": {
+      "slug": "science-world-report",
+      "display_name": "Science World Report",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "science-public-health-policy-and-the-law": {
+      "slug": "science-public-health-policy-and-the-law",
+      "display_name": "Science, Public Health Policy and the Law",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sciencenews": {
+      "slug": "sciencenews",
+      "display_name": "ScienceNews",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "scientific-american": {
+      "slug": "scientific-american",
+      "display_name": "Scientific American",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Scientific American blog",
+        "Scientific American Blog"
+      ]
+    },
+    "scitech-daily": {
+      "slug": "scitech-daily",
+      "display_name": "SciTech Daily",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "scitech-news": {
+      "slug": "scitech-news",
+      "display_name": "SciTech News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "seattle-post-intelligencer": {
+      "slug": "seattle-post-intelligencer",
+      "display_name": "Seattle Post-Intelligencer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "seattle-times": {
+      "slug": "seattle-times",
+      "display_name": "Seattle Times",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Seattle times",
+        "Seattle Times blog"
+      ]
+    },
+    "seattle-weekly-blog": {
+      "slug": "seattle-weekly-blog",
+      "display_name": "Seattle Weekly blog",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "semafor": {
+      "slug": "semafor",
+      "display_name": "Semafor",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "senate-permanent-subcommittee-on-investigations": {
+      "slug": "senate-permanent-subcommittee-on-investigations",
+      "display_name": "Senate Permanent Subcommittee on Investigations",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sentient-media": {
+      "slug": "sentient-media",
+      "display_name": "Sentient Media",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sentient-policy": {
+      "slug": "sentient-policy",
+      "display_name": "Sentient Policy",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "september": {
+      "slug": "september",
+      "display_name": "September",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "shareable": {
+      "slug": "shareable",
+      "display_name": "Shareable",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "significance": {
+      "slug": "significance",
+      "display_name": "Significance",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sky-news": {
+      "slug": "sky-news",
+      "display_name": "Sky News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "slate": {
+      "slug": "slate",
+      "display_name": "Slate",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "smithsonian-magazine": {
+      "slug": "smithsonian-magazine",
+      "display_name": "Smithsonian Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Smithsonian.com"
+      ]
+    },
+    "space-daily": {
+      "slug": "space-daily",
+      "display_name": "Space Daily",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "space-com": {
+      "slug": "space-com",
+      "display_name": "Space.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sports-illustrated": {
+      "slug": "sports-illustrated",
+      "display_name": "Sports Illustrated",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "st-louis-post-dispatch": {
+      "slug": "st-louis-post-dispatch",
+      "display_name": "St. Louis Post-Dispatch",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "st-paul-pioneer-press": {
+      "slug": "st-paul-pioneer-press",
+      "display_name": "St. Paul Pioneer Press",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "stanford-graduate-school-of-business": {
+      "slug": "stanford-graduate-school-of-business",
+      "display_name": "Stanford Graduate School of Business",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "stanford-report-of-stanford-university": {
+      "slug": "stanford-report-of-stanford-university",
+      "display_name": "Stanford Report of Stanford University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "stanford-review": {
+      "slug": "stanford-review",
+      "display_name": "Stanford Review",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "star-tribune": {
+      "slug": "star-tribune",
+      "display_name": "Star Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Minneapolis Star Tribune",
+        "Minneapolis Star-Tribune",
+        "StarTribune"
+      ]
+    },
+    "star-telegram": {
+      "slug": "star-telegram",
+      "display_name": "Star-Telegram",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "stat-news": {
+      "slug": "stat-news",
+      "display_name": "Stat News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "status-report-of-the-house-judiciary-committee-democratic-staff": {
+      "slug": "status-report-of-the-house-judiciary-committee-democratic-staff",
+      "display_name": "Status Report of the House Judiciary Committee Democratic Staff",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "studyfinds": {
+      "slug": "studyfinds",
+      "display_name": "StudyFinds",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sun-journal": {
+      "slug": "sun-journal",
+      "display_name": "Sun Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sun-sentinel": {
+      "slug": "sun-sentinel",
+      "display_name": "Sun Sentinel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sun-times": {
+      "slug": "sun-times",
+      "display_name": "Sun Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sunday-express": {
+      "slug": "sunday-express",
+      "display_name": "Sunday Express",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sunday-herald": {
+      "slug": "sunday-herald",
+      "display_name": "Sunday Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sunny-skyz": {
+      "slug": "sunny-skyz",
+      "display_name": "Sunny Skyz",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "sydney-morning-herald": {
+      "slug": "sydney-morning-herald",
+      "display_name": "Sydney Morning Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Sydney Mountain Herald"
+      ]
+    },
+    "tablet": {
+      "slug": "tablet",
+      "display_name": "Tablet",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "talk-of-the-nation": {
+      "slug": "talk-of-the-nation",
+      "display_name": "Talk of the Nation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tampa-bay-times": {
+      "slug": "tampa-bay-times",
+      "display_name": "Tampa Bay Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "task-and-purpose": {
+      "slug": "task-and-purpose",
+      "display_name": "Task and Purpose",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "techcrunch": {
+      "slug": "techcrunch",
+      "display_name": "TechCrunch",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Tech Crunch"
+      ]
+    },
+    "technology-review": {
+      "slug": "technology-review",
+      "display_name": "Technology Review",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "telegraph-journal": {
+      "slug": "telegraph-journal",
+      "display_name": "Telegraph-Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-age": {
+      "slug": "the-age",
+      "display_name": "The Age",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-american-conservative": {
+      "slug": "the-american-conservative",
+      "display_name": "The American Conservative",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-atlantic": {
+      "slug": "the-atlantic",
+      "display_name": "The Atlantic",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Atlantic Magazine",
+        "The Atlantic Monthly"
+      ]
+    },
+    "the-australian": {
+      "slug": "the-australian",
+      "display_name": "The Australian",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-blaze": {
+      "slug": "the-blaze",
+      "display_name": "The Blaze",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "bmj": {
+      "slug": "bmj",
+      "display_name": "The BMJ",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The BMJ"
+      ]
+    },
+    "the-capital-times": {
+      "slug": "the-capital-times",
+      "display_name": "The Capital Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-capitol-times": {
+      "slug": "the-capitol-times",
+      "display_name": "The Capitol Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-conversation": {
+      "slug": "the-conversation",
+      "display_name": "The Conversation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-cool-down": {
+      "slug": "the-cool-down",
+      "display_name": "The Cool Down",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "daily-beast": {
+      "slug": "daily-beast",
+      "display_name": "The Daily Beast",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Daily Beast"
+      ]
+    },
+    "the-daily-skeptic": {
+      "slug": "the-daily-skeptic",
+      "display_name": "The Daily Skeptic",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-debrief": {
+      "slug": "the-debrief",
+      "display_name": "The Debrief",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-defender": {
+      "slug": "the-defender",
+      "display_name": "The Defender",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-denver-channel-7": {
+      "slug": "the-denver-channel-7",
+      "display_name": "The Denver Channel 7",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "detroit-news": {
+      "slug": "detroit-news",
+      "display_name": "The Detroit News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Detroit News"
+      ]
+    },
+    "the-disinformation-chronicle-on-substack": {
+      "slug": "the-disinformation-chronicle-on-substack",
+      "display_name": "The DisInformation Chronicle on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-economist": {
+      "slug": "the-economist",
+      "display_name": "The Economist",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Economist blog",
+        "The Economist magazine",
+        "The Economist Magazine"
+      ]
+    },
+    "the-equation": {
+      "slug": "the-equation",
+      "display_name": "The Equation",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-examination": {
+      "slug": "the-examination",
+      "display_name": "The Examination",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-free-press": {
+      "slug": "the-free-press",
+      "display_name": "The Free Press",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "globe-and-mail": {
+      "slug": "globe-and-mail",
+      "display_name": "The Globe and Mail",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Globe and Mail"
+      ]
+    },
+    "the-grayzone": {
+      "slug": "the-grayzone",
+      "display_name": "The Grayzone",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-guardian": {
+      "slug": "the-guardian",
+      "display_name": "The Guardian",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "A Guardian blog",
+        "Guardian",
+        "The Guardian",
+        "The Guardian blog"
+      ]
+    },
+    "the-herald-tribune": {
+      "slug": "the-herald-tribune",
+      "display_name": "The Herald-Tribune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-hill": {
+      "slug": "the-hill",
+      "display_name": "The Hill",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-hindu": {
+      "slug": "the-hindu",
+      "display_name": "The Hindu",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-illusion-of-consensus-on-substack": {
+      "slug": "the-illusion-of-consensus-on-substack",
+      "display_name": "The Illusion of Consensus on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-independent": {
+      "slug": "the-independent",
+      "display_name": "The Independent",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Independent",
+        "The The The The The The The Independent",
+        "The The The The The The The The Independent"
+      ]
+    },
+    "the-intelligent-optimist": {
+      "slug": "the-intelligent-optimist",
+      "display_name": "The Intelligent Optimist",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Intelligent Optimist Magazine"
+      ]
+    },
+    "the-intercept": {
+      "slug": "the-intercept",
+      "display_name": "The Intercept",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Intercept With Glenn Greenwald",
+        "The Intercept with Glenn Greenwald"
+      ]
+    },
+    "the-irish-independent": {
+      "slug": "the-irish-independent",
+      "display_name": "The Irish Independent",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-journal-gazette": {
+      "slug": "the-journal-gazette",
+      "display_name": "The Journal-Gazette",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-kucinich-report": {
+      "slug": "the-kucinich-report",
+      "display_name": "The Kucinich Report",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-kucinich-report-on-substack": {
+      "slug": "the-kucinich-report-on-substack",
+      "display_name": "The Kucinich Report on Substack",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-lancet": {
+      "slug": "the-lancet",
+      "display_name": "The Lancet",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-lever": {
+      "slug": "the-lever",
+      "display_name": "The Lever",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-marginalian": {
+      "slug": "the-marginalian",
+      "display_name": "The Marginalian",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-marshall-project": {
+      "slug": "the-marshall-project",
+      "display_name": "The Marshall Project",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "mercury-news": {
+      "slug": "mercury-news",
+      "display_name": "The Mercury News",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Mercury News"
+      ]
+    },
+    "the-mind-unleashed": {
+      "slug": "the-mind-unleashed",
+      "display_name": "The Mind Unleashed",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-nation": {
+      "slug": "the-nation",
+      "display_name": "The Nation",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Nation magazine",
+        "The Nation Magazine"
+      ]
+    },
+    "the-national-security-archive-george-washington-university": {
+      "slug": "the-national-security-archive-george-washington-university",
+      "display_name": "The National Security Archive, George Washington University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-new-american": {
+      "slug": "the-new-american",
+      "display_name": "The New American",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-new-daily": {
+      "slug": "the-new-daily",
+      "display_name": "The New Daily",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-new-lede": {
+      "slug": "the-new-lede",
+      "display_name": "The New Lede",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-observer": {
+      "slug": "the-observer",
+      "display_name": "The Observer",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-optimist": {
+      "slug": "the-optimist",
+      "display_name": "The Optimist",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "optimist-daily": {
+      "slug": "optimist-daily",
+      "display_name": "The Optimist Daily",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Optimist Daily"
+      ]
+    },
+    "the-oregonian": {
+      "slug": "the-oregonian",
+      "display_name": "The Oregonian",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "philadelphia-citizen": {
+      "slug": "philadelphia-citizen",
+      "display_name": "The Philadelphia Citizen",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Philadelphia Citizen"
+      ]
+    },
+    "the-progressive": {
+      "slug": "the-progressive",
+      "display_name": "The Progressive",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-pulse": {
+      "slug": "the-pulse",
+      "display_name": "The Pulse",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-red-letter": {
+      "slug": "the-red-letter",
+      "display_name": "The Red Letter",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-root": {
+      "slug": "the-root",
+      "display_name": "The Root",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-society-for-personality-and-social-psychology": {
+      "slug": "the-society-for-personality-and-social-psychology",
+      "display_name": "The Society for Personality and Social Psychology",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-star": {
+      "slug": "the-star",
+      "display_name": "The Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-street": {
+      "slug": "the-street",
+      "display_name": "The Street",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-sun": {
+      "slug": "the-sun",
+      "display_name": "The Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-sunday-times": {
+      "slug": "the-sunday-times",
+      "display_name": "The Sunday Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-telegraph": {
+      "slug": "the-telegraph",
+      "display_name": "The Telegraph",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Daily Telegraph",
+        "Telegraph",
+        "The Telegraph blogs"
+      ]
+    },
+    "the-tennessean": {
+      "slug": "the-tennessean",
+      "display_name": "The Tennessean",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-times-herald": {
+      "slug": "the-times-herald",
+      "display_name": "The Times Herald",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-times-of-israel": {
+      "slug": "the-times-of-israel",
+      "display_name": "The Times of Israel",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Times of Israel"
+      ]
+    },
+    "the-travel": {
+      "slug": "the-travel",
+      "display_name": "The Travel",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-urban-activist": {
+      "slug": "the-urban-activist",
+      "display_name": "The Urban Activist",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-verge": {
+      "slug": "the-verge",
+      "display_name": "The Verge",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-week": {
+      "slug": "the-week",
+      "display_name": "The Week",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Week Magazine"
+      ]
+    },
+    "the-white-house": {
+      "slug": "the-white-house",
+      "display_name": "The White House",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-white-house-press-office": {
+      "slug": "the-white-house-press-office",
+      "display_name": "The White House Press Office",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tikkun-magazine": {
+      "slug": "tikkun-magazine",
+      "display_name": "Tikkun Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Tikkun Magazine - March"
+      ]
+    },
+    "time": {
+      "slug": "time",
+      "display_name": "Time",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Time magazine",
+        "Time Magazine",
+        "TIME Magazine",
+        "Time Magazine blog"
+      ]
+    },
+    "times-higher-education": {
+      "slug": "times-higher-education",
+      "display_name": "Times Higher Education",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "times-picayune": {
+      "slug": "times-picayune",
+      "display_name": "Times-Picayune",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "today": {
+      "slug": "today",
+      "display_name": "Today",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Today.com"
+      ]
+    },
+    "toledo-blade": {
+      "slug": "toledo-blade",
+      "display_name": "Toledo Blade",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tomdispatch": {
+      "slug": "tomdispatch",
+      "display_name": "TomDispatch",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tomflocco-com": {
+      "slug": "tomflocco-com",
+      "display_name": "tomflocco.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tooele-transcript-bulletin": {
+      "slug": "tooele-transcript-bulletin",
+      "display_name": "Tooele Transcript Bulletin",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "toronto-star": {
+      "slug": "toronto-star",
+      "display_name": "Toronto Star",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "toronto-sun": {
+      "slug": "toronto-sun",
+      "display_name": "Toronto Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "treehugger": {
+      "slug": "treehugger",
+      "display_name": "Treehugger",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Tree Hugger"
+      ]
+    },
+    "triple-pundit": {
+      "slug": "triple-pundit",
+      "display_name": "Triple Pundit",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "trump-s-war-on-drugs": {
+      "slug": "trump-s-war-on-drugs",
+      "display_name": "Trump’s War on Drugs",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "truth-in-media": {
+      "slug": "truth-in-media",
+      "display_name": "Truth in Media",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "truthdig": {
+      "slug": "truthdig",
+      "display_name": "TruthDig",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Truthdig"
+      ]
+    },
+    "truthout": {
+      "slug": "truthout",
+      "display_name": "Truthout",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Truth-Out.org",
+        "TruthOut",
+        "TruthOut.org"
+      ]
+    },
+    "tv-guide": {
+      "slug": "tv-guide",
+      "display_name": "TV Guide",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tvnz": {
+      "slug": "tvnz",
+      "display_name": "TVNZ",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "tvnz-co-nz": {
+      "slug": "tvnz-co-nz",
+      "display_name": "TVNZ.co.nz",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "twz": {
+      "slug": "twz",
+      "display_name": "TWZ",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The War Zone"
+      ]
+    },
+    "twz-newsletter": {
+      "slug": "twz-newsletter",
+      "display_name": "TWZ Newsletter",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-army-website-strategic-studies-institute": {
+      "slug": "u-s-army-website-strategic-studies-institute",
+      "display_name": "U.S. Army Website, Strategic Studies Institute",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-department-of-defense-website": {
+      "slug": "u-s-department-of-defense-website",
+      "display_name": "U.S. Department of Defense website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-department-of-energy-website": {
+      "slug": "u-s-department-of-energy-website",
+      "display_name": "U.S. Department of Energy Website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-department-of-health-and-human-services": {
+      "slug": "u-s-department-of-health-and-human-services",
+      "display_name": "U.S. Department of Health and Human Services",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-department-of-homeland-security": {
+      "slug": "u-s-department-of-homeland-security",
+      "display_name": "U.S. Department of Homeland Security",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-department-of-state": {
+      "slug": "u-s-department-of-state",
+      "display_name": "U.S. Department of State",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-office-of-the-under-secretary-of-defense": {
+      "slug": "u-s-office-of-the-under-secretary-of-defense",
+      "display_name": "U.S. Office of the Under Secretary of Defense",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "u-s-senate-testimony": {
+      "slug": "u-s-senate-testimony",
+      "display_name": "U.S. Senate Testimony",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "uc-berkeleys-alumni-publication-the-promise-of-berkeley": {
+      "slug": "uc-berkeleys-alumni-publication-the-promise-of-berkeley",
+      "display_name": "UC Berkeleys alumni publication The Promise of Berkeley.",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ucla-news": {
+      "slug": "ucla-news",
+      "display_name": "UCLA News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "ucla-school-of-law": {
+      "slug": "ucla-school-of-law",
+      "display_name": "UCLA School of Law",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "uga-today": {
+      "slug": "uga-today",
+      "display_name": "UGA Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "un-news-centre": {
+      "slug": "un-news-centre",
+      "display_name": "UN News Centre",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "unherd": {
+      "slug": "unherd",
+      "display_name": "UnHerd",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "unicef": {
+      "slug": "unicef",
+      "display_name": "UNICEF",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "united-nations-environment-programme": {
+      "slug": "united-nations-environment-programme",
+      "display_name": "United Nations Environment Programme",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "united-nations-news": {
+      "slug": "united-nations-news",
+      "display_name": "United Nations News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "united-states-national-archives": {
+      "slug": "united-states-national-archives",
+      "display_name": "United States National Archives",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "university-of-british-columbia": {
+      "slug": "university-of-british-columbia",
+      "display_name": "University of British Columbia",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "university-of-pennsylvania": {
+      "slug": "university-of-pennsylvania",
+      "display_name": "University of Pennsylvania",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "university-of-southern-california-school-of-engineering": {
+      "slug": "university-of-southern-california-school-of-engineering",
+      "display_name": "University of Southern California, School of Engineering",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "university-of-washington-news": {
+      "slug": "university-of-washington-news",
+      "display_name": "University of Washington News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "unlimited-hangout": {
+      "slug": "unlimited-hangout",
+      "display_name": "Unlimited Hangout",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "upi": {
+      "slug": "upi",
+      "display_name": "UPI",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "upworthy": {
+      "slug": "upworthy",
+      "display_name": "Upworthy",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "urban-gardening-digest": {
+      "slug": "urban-gardening-digest",
+      "display_name": "Urban Gardening Digest",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "us-air-force-air-university": {
+      "slug": "us-air-force-air-university",
+      "display_name": "US Air Force Air University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "us-department-of-defense-inspector-general": {
+      "slug": "us-department-of-defense-inspector-general",
+      "display_name": "US Department of Defense Inspector General",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "us-house-of-representatives-judiciary-committee": {
+      "slug": "us-house-of-representatives-judiciary-committee",
+      "display_name": "US House of Representatives Judiciary Committee",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "us-house-of-representatives-website-of-curt-weldon": {
+      "slug": "us-house-of-representatives-website-of-curt-weldon",
+      "display_name": "US House of Representatives Website of Curt Weldon",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "us-news-and-world-report": {
+      "slug": "us-news-and-world-report",
+      "display_name": "US News and World Report",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "U.S. News & World Report",
+        "U.S. News & World Report blog",
+        "U.S. News &amp; World Report blog",
+        "U.S. News and World Report",
+        "US News & World Report",
+        "US News & World Report magazine"
+      ]
+    },
+    "us-patent-and-trademark-office": {
+      "slug": "us-patent-and-trademark-office",
+      "display_name": "US Patent and Trademark Office",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "US Patent and Trademark Office Website"
+      ]
+    },
+    "us-right-to-know": {
+      "slug": "us-right-to-know",
+      "display_name": "US Right to Know",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "U.S. Right to Know"
+      ]
+    },
+    "us-senate-permanent-subcommittee-on-investigations": {
+      "slug": "us-senate-permanent-subcommittee-on-investigations",
+      "display_name": "US Senate Permanent Subcommittee on Investigations",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "usa-today": {
+      "slug": "usa-today",
+      "display_name": "USA Today",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "utne-reader-magazine": {
+      "slug": "utne-reader-magazine",
+      "display_name": "Utne Reader Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "vancouver-sun": {
+      "slug": "vancouver-sun",
+      "display_name": "Vancouver Sun",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "vanity-fair": {
+      "slug": "vanity-fair",
+      "display_name": "Vanity Fair",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Vanity Fair August 2006 Issue",
+        "Vanity Fair magazine",
+        "Vanity Fair September 2005 Issue"
+      ]
+    },
+    "vera": {
+      "slug": "vera",
+      "display_name": "Vera",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "vice": {
+      "slug": "vice",
+      "display_name": "Vice",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "vice-news": {
+      "slug": "vice-news",
+      "display_name": "Vice News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "village-voice": {
+      "slug": "village-voice",
+      "display_name": "Village Voice",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "voice-of-america": {
+      "slug": "voice-of-america",
+      "display_name": "Voice of America",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "vox": {
+      "slug": "vox",
+      "display_name": "Vox",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wabc": {
+      "slug": "wabc",
+      "display_name": "WABC",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wafb": {
+      "slug": "wafb",
+      "display_name": "WAFB",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "waging-nonviolence": {
+      "slug": "waging-nonviolence",
+      "display_name": "Waging Nonviolence",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "waking-times": {
+      "slug": "waking-times",
+      "display_name": "Waking Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wall-street-journal": {
+      "slug": "wall-street-journal",
+      "display_name": "Wall Street Journal",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Full Page Ad in Wall Street Journal",
+        "The Wall Street Journal",
+        "Wall Street Journal Article by Former FBI Director Louis Freeh",
+        "Wall Street Journal Blog",
+        "Wall Street Journal blog"
+      ]
+    },
+    "wanttoknow-info": {
+      "slug": "wanttoknow-info",
+      "display_name": "WantToKnow.info",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "washington-examiner": {
+      "slug": "washington-examiner",
+      "display_name": "Washington Examiner",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "washington-post": {
+      "slug": "washington-post",
+      "display_name": "Washington Post",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "The Washington Post",
+        "Washginton Post",
+        "Washingon Post",
+        "Washington post",
+        "Washington Post Blog",
+        "Washington Post blog",
+        "washingtonpost.com"
+      ]
+    },
+    "washington-times": {
+      "slug": "washington-times",
+      "display_name": "Washington Times",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wbur": {
+      "slug": "wbur",
+      "display_name": "WBUR",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wbur-fm": {
+      "slug": "wbur-fm",
+      "display_name": "WBUR-FM",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wcpo-tv": {
+      "slug": "wcpo-tv",
+      "display_name": "WCPO-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "weboflove-org": {
+      "slug": "weboflove-org",
+      "display_name": "weboflove.org",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "website-of-fbi": {
+      "slug": "website-of-fbi",
+      "display_name": "Website of FBI",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "website-of-pulitzer-prize-winning-journalist-carl-bernstein": {
+      "slug": "website-of-pulitzer-prize-winning-journalist-carl-bernstein",
+      "display_name": "Website of Pulitzer Prize Winning Journalist Carl Bernstein",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wesleyan-university": {
+      "slug": "wesleyan-university",
+      "display_name": "Wesleyan University",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wfie-tv": {
+      "slug": "wfie-tv",
+      "display_name": "WFIE TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wftv-com": {
+      "slug": "wftv-com",
+      "display_name": "WFTV.com",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "when-your-power-meter-becomes-a-tool-of-mass-surveillance": {
+      "slug": "when-your-power-meter-becomes-a-tool-of-mass-surveillance",
+      "display_name": "When Your Power Meter Becomes a Tool of Mass Surveillance",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "whitehouse-gov": {
+      "slug": "whitehouse-gov",
+      "display_name": "Whitehouse.gov",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "whnt-tv": {
+      "slug": "whnt-tv",
+      "display_name": "WHNT-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wired": {
+      "slug": "wired",
+      "display_name": "Wired",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Wired Magazine",
+        "Wired magazine"
+      ]
+    },
+    "wjbk-tv": {
+      "slug": "wjbk-tv",
+      "display_name": "WJBK-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wjw-tv": {
+      "slug": "wjw-tv",
+      "display_name": "WJW-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wkbt-tv": {
+      "slug": "wkbt-tv",
+      "display_name": "WKBT TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wkyc": {
+      "slug": "wkyc",
+      "display_name": "WKYC",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wls-tv": {
+      "slug": "wls-tv",
+      "display_name": "WLS-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wlwt-tv": {
+      "slug": "wlwt-tv",
+      "display_name": "WLWT-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "world-economic-forum": {
+      "slug": "world-economic-forum",
+      "display_name": "World Economic Forum",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wowt": {
+      "slug": "wowt",
+      "display_name": "WOWT",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wpfb-tv": {
+      "slug": "wpfb-tv",
+      "display_name": "WPFB-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wptv-newschannel-5": {
+      "slug": "wptv-newschannel-5",
+      "display_name": "WPTV NewsChannel 5",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wreg-tv": {
+      "slug": "wreg-tv",
+      "display_name": "WREG-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wsmv-tv": {
+      "slug": "wsmv-tv",
+      "display_name": "WSMV-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wspa": {
+      "slug": "wspa",
+      "display_name": "WSPA",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wthr-tv": {
+      "slug": "wthr-tv",
+      "display_name": "WTHR-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wtsp-tv": {
+      "slug": "wtsp-tv",
+      "display_name": "WTSP-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wxyz-tv": {
+      "slug": "wxyz-tv",
+      "display_name": "WXYZ-TV",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "wyoming-secretary-of-state-website": {
+      "slug": "wyoming-secretary-of-state-website",
+      "display_name": "Wyoming Secretary of State Website",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "yahoo": {
+      "slug": "yahoo",
+      "display_name": "Yahoo",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Yahoo Finance",
+        "Yahoo News",
+        "Yahoo!",
+        "Yahoo! Finance",
+        "Yahoo! News",
+        "Yahoo! News Australia"
+      ]
+    },
+    "yahoo-tech": {
+      "slug": "yahoo-tech",
+      "display_name": "Yahoo Tech",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "yale-environment-360": {
+      "slug": "yale-environment-360",
+      "display_name": "Yale Environment 360",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "yale-news": {
+      "slug": "yale-news",
+      "display_name": "Yale News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "yes-magazine": {
+      "slug": "yes-magazine",
+      "display_name": "Yes! Magazine",
+      "retain_legacy_as_detail": true,
+      "aliases": [
+        "Yes!"
+      ]
+    },
+    "ynet-news": {
+      "slug": "ynet-news",
+      "display_name": "Ynet News",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "zerohedge": {
+      "slug": "zerohedge",
+      "display_name": "Zerohedge",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "zmescience": {
+      "slug": "zmescience",
+      "display_name": "ZMEscience",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    }
+  },
+  "legacy_lookup": {
+    "11.Alive.com": "11alive-com",
+    "11alive.com": "11alive-com",
+    "13-WTHR TV": "13-wthr-tv",
+    "A Guardian blog": "the-guardian",
+    "ABC": "abc",
+    "ABC Action News": "abc",
+    "ABC New": "abc",
+    "ABC News": "abc",
+    "ABC News 20": "abc",
+    "ABC News Australia": "abc",
+    "ABC News blog": "abc",
+    "ABC News Blog": "abc",
+    "ABC News blogs": "abc",
+    "ABC News Good Morning America": "abc",
+    "ABC News Nightline": "abc",
+    "ABC Nightline": "abc-nightline",
+    "ABC15": "abc",
+    "abc4.com": "abc",
+    "ABC6": "abc",
+    "abcnews.com": "abc",
+    "ABCs Arizona Affiliate": "abc",
+    "ACLU": "aclu",
+    "Africa News": "africa-news",
+    "Agence France Presse": "agence-france-presse",
+    "Air Force Magazine": "air-force-magazine",
+    "Air Force Times": "air-force-times",
+    "Akron Beacon Journal": "akron-beacon-journal",
+    "Al Jazeera": "al-jazeera",
+    "Albuquerque Journal": "albuquerque-journal",
+    "AlJazeera": "al-jazeera",
+    "All Thats Interesting": "all-thats-interesting",
+    "Alternet": "alternet",
+    "AlterNet": "alternet",
+    "American Academy of Environmental Medicine": "american-academy-of-environmental-medicine",
+    "American Civil Liberties Union": "american-civil-liberties-union",
+    "American Psychological Association": "american-psychological-association",
+    "Anchorage Daily News": "anchorage-daily-news",
+    "AOL": "aol",
+    "Aol": "aol",
+    "AOL News": "aol-news",
+    "Aol News": "aol-news",
+    "Architects and Engineers for 9": "architects-and-engineers-for-9",
+    "Arizona Central": "arizona-central",
+    "Arizona Republic": "arizona-republic",
+    "Army Research Office": "army-research-office",
+    "Army Times": "army-times",
+    "Ars Technica": "ars-technica",
+    "AsiaTimes": "asiatimes",
+    "Associated Press": "associated-press",
+    "Astrobiology at NASA": "astrobiology-at-nasa",
+    "Atlanta Journal-Constitution": "atlanta-journal-constitution",
+    "Atlantic Monthly": "atlantic-monthly",
+    "Atmos": "atmos",
+    "Australian Broadcasting Corporation": "australian-broadcasting-corporation",
+    "AZ Central": "az-central",
+    "azcentral.com": "az-central",
+    "Baltimore Sun": "baltimore-sun",
+    "Bangkok Post": "bangkok-post",
+    "Bank for International Settlements": "bank-for-international-settlements",
+    "BBC": "bbc",
+    "BBC Blogs": "bbc",
+    "BBC News": "bbc",
+    "BBC News blog": "bbc",
+    "BBC Radio": "bbc",
+    "Big Think": "big-think",
+    "Billings Gazette": "billings-gazette",
+    "Bloomberg": "bloomberg",
+    "Bloomberg Businessweek": "bloomberg",
+    "Bloomberg BusinessWeek": "bloomberg-businessweek",
+    "Bloomberg Law": "bloomberg-law",
+    "Bloomberg News": "bloomberg",
+    "Bloomberg News Service": "bloomberg",
+    "BloombergBusinessWeek": "bloomberg",
+    "BloombergBusinessweek": "bloomberg",
+    "BMJ": "bmj",
+    "Book - Into the Buzzsaw by Emmy Award Winning Kristina Borjesson": "book-into-the-buzzsaw-by-emmy-award-winning-kristina-borjesson",
+    "Boston Globe": "boston-globe",
+    "Boston University": "boston-university",
+    "Boston.com": "boston-com",
+    "boston.com": "boston-com",
+    "Breitbart News": "breitbart-news",
+    "Brennan Center for Justice": "brennan-center-for-justice",
+    "British Medical Journal": "british-medical-journal",
+    "British Psychological Society": "british-psychological-society",
+    "Broadview": "broadview",
+    "Brookings Institute": "brookings-institute",
+    "Brookings Institution": "brookings-institution",
+    "Brownstone Institute": "brownstone-institute",
+    "Bulletin of the Atomic Scientists": "bulletin-of-the-atomic-scientists",
+    "Bureau of Investigative Journalism": "bureau-of-investigative-journalism",
+    "Business 2.0 magazine": "business-2-0-magazine",
+    "Business Insider": "business-insider",
+    "Business Spectator": "business-spectator",
+    "Business Standard": "business-standard",
+    "Business Week": "business-week",
+    "Businessweek": "bloomberg",
+    "BusinessWeek": "bloomberg",
+    "BusinessWeek magazine": "bloomberg",
+    "BusinessWeek Magazine": "bloomberg",
+    "BuzzFeed": "buzzfeed",
+    "Byline Times": "byline-times",
+    "C-SPAN": "c-span",
+    "Calgary Herald": "calgary-herald",
+    "Campaign Zero": "campaign-zero",
+    "Canadian Broadcasting Corporation": "cbc",
+    "Canadian Runner": "canadian-runner",
+    "CBC": "cbc",
+    "CBC News": "cbc",
+    "CBC News [Canadas Public Broadcasting System]": "cbc",
+    "CBS": "cbs",
+    "CBS 60 Minutes": "cbs",
+    "CBS Affiliate KUTV": "cbs",
+    "CBS Atlanta": "cbs",
+    "CBS Cleveland": "cbs",
+    "CBS Las Vegas Affiliate": "cbs",
+    "CBS Los Angeles": "cbs",
+    "CBS News": "cbs",
+    "CBS News 60 Minutes": "cbs",
+    "CBS News 60 Minutes Overtime": "cbs",
+    "CBS News blog": "cbs",
+    "CBS News Chicago, Associated Press": "cbs",
+    "CBS News San Francisco Affiliate": "cbs-news-san-francisco-affiliate",
+    "CBS News, Sacramento Affiliate": "cbs",
+    "CBS News, Stockton Affiliate": "cbs",
+    "CBS Philly": "cbs",
+    "CBS-DC": "cbs-dc",
+    "CBS4 TV": "cbs4-tv",
+    "CBS4-TV": "cbs",
+    "Center for Responsive Politics": "center-for-responsive-politics",
+    "Chalkbeat": "chalkbeat",
+    "Channel News Asia": "channel-news-asia",
+    "Chek News": "chek-news",
+    "Chicago Sun-Times": "chicago-sun-times",
+    "Chicago Sun-Times News Group": "chicago-sun-times",
+    "Chicago Tribune": "chicago-tribune",
+    "Childrens Health Defense": "childrens-health-defense",
+    "Christian Science Monitor": "christian-science-monitor",
+    "Chronicle of Higher Education": "chronicle-of-higher-education",
+    "CIA Website": "cia-website",
+    "CIA.gov": "cia-gov",
+    "Civil Eats": "civil-eats",
+    "CNBC": "cnbc",
+    "CNBC News": "cnbc",
+    "CNET": "cnet",
+    "Cnet": "cnet",
+    "Cnet.com": "cnet",
+    "CNET.com": "cnet",
+    "CNN": "cnn",
+    "CNN blog": "cnn",
+    "CNN International": "cnn",
+    "CNN Larry King Live": "cnn",
+    "CNN Lou Dobbs Tonight": "cnn",
+    "CNN Money": "cnn",
+    "CNN News": "cnn",
+    "CNN The Situation Room": "cnn",
+    "CNN Video Clip": "cnn",
+    "CNN World": "cnn",
+    "Coda": "coda",
+    "Colombia Journalism Review": "colombia-journalism-review",
+    "Colorado Public Radio": "colorado-public-radio",
+    "Colorado Public Television": "colorado-public-television",
+    "Colorado Sun": "colorado-sun",
+    "Columbia Tribune": "columbia-tribune",
+    "Committee on Oversight and Accountability": "committee-on-oversight-and-accountability",
+    "Common Dreams": "common-dreams",
+    "CommonDreams.org": "common-dreams",
+    "Comptroller General of the United States": "comptroller-general-of-the-united-states",
+    "Computerworld": "computerworld",
+    "Consumer Reports": "consumer-reports",
+    "Cornell University News Service": "cornell-university-news-service",
+    "Cosmos": "cosmos",
+    "Counterpunch": "counterpunch",
+    "CounterPunch": "counterpunch",
+    "Courthouse News": "courthouse-news",
+    "Covert Action": "covert-action-magazine",
+    "Covert Action Magazine": "covert-action-magazine",
+    "CTV": "ctv",
+    "CTV News": "ctv-news",
+    "CU Boulder Today": "cu-boulder-today",
+    "Cureus": "cureus",
+    "Daily Beast": "daily-beast",
+    "Daily Express": "daily-express",
+    "Daily Good": "daily-good",
+    "Daily Kos": "daily-kos",
+    "Daily Mail": "daily-mail",
+    "Daily Record": "daily-record",
+    "Daily Star": "daily-star",
+    "Daily Telegraph": "the-telegraph",
+    "Daily Times": "daily-times",
+    "DailyGood": "daily-good",
+    "DaisyLuther.com": "daisyluther-com",
+    "Dallas Morning News": "dallas-morning-news",
+    "Dallas News": "dallas-news",
+    "Dallas Observer blog": "dallas-observer-blog",
+    "Declassified CIA Document": "declassified-cia-document",
+    "Defense Link": "defense-link",
+    "Dennis Kucinich on Substack": "dennis-kucinich-on-substack",
+    "Denver Post": "denver-post",
+    "Department of Defense Inspector Generals Website": "department-of-defense-inspector-generals-website",
+    "Department of the Navy": "department-of-the-navy",
+    "Der Speigel": "der-speigel",
+    "Der Spiegel": "der-spiegel",
+    "Deseret News": "deseret-news",
+    "Detroit Free Press": "detroit-free-press",
+    "Detroit News": "detroit-news",
+    "Digital Journal": "digital-journal",
+    "Disclosure Project": "disclosure-project",
+    "Discover": "discover",
+    "Discover Magazine": "discover",
+    "Discovery Channel": "discovery-channel",
+    "Dropsite News": "dropsite-news",
+    "Duluth News Tribune": "duluth-news-tribune",
+    "DutchNews.nl": "dutchnews-nl",
+    "DW.com": "dw-com",
+    "East County Magazine": "east-county-magazine",
+    "Economic Times": "economic-times",
+    "EcoWatch": "ecowatch",
+    "Editor and Publisher": "editor-and-publisher",
+    "Edmonton Journal": "edmonton-journal",
+    "Electrek": "electrek",
+    "Electronic Freedom Foundation": "electronic-freedom-foundation",
+    "Electronic Frontier Foundation": "electronic-frontier-foundation",
+    "Environmental Health News": "environmental-health-news",
+    "Environmental Working Group": "environmental-working-group",
+    "Epoch Times": "epoch-times",
+    "ESPN": "espn",
+    "Esquire": "esquire",
+    "Esquire Magazine": "esquire",
+    "Euro News": "euro-news",
+    "European Commission": "european-commission",
+    "European Journal of Epidemiology": "european-journal-of-epidemiology",
+    "EuroWeekly News": "euroweekly-news",
+    "Evolution News": "evolution-news",
+    "Fair Observer": "fair-observer",
+    "Fairness & Accuracy In Reporting": "fairness-and-accuracy-in-reporting",
+    "Fairness & Accuracy in Reporting": "fairness-and-accuracy-in-reporting",
+    "Fast Company": "fast-company",
+    "FBI Website, UFO Vault": "fbi-website-ufo-vault",
+    "FDA Subcommittee on Science and Technology": "fda-subcommittee-on-science-and-technology",
+    "Feds give customs agents free hand to seize travelers documents": "feds-give-customs-agents-free-hand-to-seize-travelers-documents",
+    "Financial Post": "financial-post",
+    "Financial Times": "financial-times",
+    "Forbes": "forbes",
+    "Forbes blog": "forbes",
+    "Forbes India Magazine": "forbes",
+    "Forbes Magazine": "forbes",
+    "Forbes magazine": "forbes",
+    "Forbes.com": "forbes",
+    "Forbes.com blog": "forbes",
+    "Foreign Affairs": "foreign-affairs",
+    "Foreign Affairs,": "foreign-affairs",
+    "Foreign Policy": "foreign-policy",
+    "Foreign Policy Journal": "foreign-policy",
+    "Foreign Policy Magazine May": "foreign-policy",
+    "Fort Worth Star-Telegram": "fort-worth-star-telegram",
+    "Fortune": "fortune",
+    "Fortune magazine": "fortune",
+    "Foundation for Economic Education": "foundation-for-economic-education",
+    "FOX": "fox",
+    "Fox 19": "fox",
+    "FOX News": "fox",
+    "Fox News": "fox-news",
+    "Fox News Affiliate": "fox",
+    "Fox News Chicago": "fox",
+    "Fox News video clip": "fox",
+    "France 24": "france-24",
+    "Free Press": "free-press",
+    "Free Ranger Burma": "free-ranger-burma",
+    "FreeThink": "freethink",
+    "Freethink": "freethink",
+    "Fresno Bee": "fresno-bee",
+    "Frontiers in Psychology": "frontiers-in-psychology",
+    "Frontline": "frontline",
+    "Full Page Ad in Wall Street Journal": "wall-street-journal",
+    "Futurism": "futurism",
+    "Gainesville Sun": "gainesville-sun",
+    "Gallup": "gallup",
+    "Gizmodo": "gizmodo",
+    "Global Investigative Journalism Network": "global-investigative-journalism-network",
+    "Global News": "global-news",
+    "Global Research": "global-research",
+    "Globe and Mail": "globe-and-mail",
+    "GOOD Magazine": "good-magazine",
+    "Good News Network": "good-news-network",
+    "GoodGoodGood": "goodgoodgood",
+    "Goodgoodgood": "goodgoodgood",
+    "Goop.com": "goop-com",
+    "Government Accountability Office": "government-accountability-office",
+    "Government Executive": "government-executive",
+    "GQ": "gq",
+    "GQ Magazine": "gq",
+    "Greater Good": "greater-good",
+    "Greater Good Magazine": "greater-good",
+    "Grist": "grist",
+    "Guardian": "the-guardian",
+    "Haaretz": "haaretz",
+    "Harm Reduction International": "harm-reduction-international",
+    "Harpers magazine": "harpers-magazine",
+    "Harpers Magazine": "harpers-magazine",
+    "Harvard Business Review": "harvard-business-review",
+    "Harvard Gazette": "harvard-gazette",
+    "Harvard Magazine": "harvard-magazine",
+    "Harvard Medicine": "harvard-medicine",
+    "Harvard School of Engineering and Applied Sciences": "harvard-school-of-engineering-and-applied-sciences",
+    "Harvard School of Public Health": "harvard-school-of-public-health",
+    "Harvard University Gazette": "harvard-university-gazette",
+    "Hawaii Tribune-Herald": "hawaii-tribune-herald",
+    "Health News Florida": "health-news-florida",
+    "Healthcare Victoria": "healthcare-victoria",
+    "Herald Sun": "herald-sun",
+    "History Channel": "history-channel",
+    "Hollywood Reporter": "hollywood-reporter",
+    "Houston Chronicle": "houston-chronicle",
+    "Houston Chronicle Science Blog": "houston-chronicle-science-blog",
+    "Howstuffworks.com": "howstuffworks-com",
+    "http:": "http",
+    "Huffington Post": "huffington-post",
+    "i News": "i-news",
+    "iai News": "iai-news",
+    "Idaho State Journal": "idaho-state-journal",
+    "Image": "image",
+    "Inc.com": "inc-com",
+    "Independent": "the-independent",
+    "Independent Online": "independent-online",
+    "Indiana Star": "indiana-star",
+    "Indianapolis Star": "indianapolis-star",
+    "Inside Edition": "inside-edition",
+    "Inside Higher Ed": "inside-higher-ed",
+    "Inside Science News": "inside-science-news",
+    "Intercontinental Cry": "intercontinental-cry",
+    "Interdisciplinary Toxicology": "interdisciplinary-toxicology",
+    "Interesting Engineering": "interesting-engineering",
+    "International Business Times": "international-business-times",
+    "International Consortium of Investigative Journalists": "international-consortium-of-investigative-journalists",
+    "International Herald Tribune": "international-herald-tribune",
+    "International Journal of Vaccines and Vaccination": "international-journal-of-vaccines-and-vaccination",
+    "Irish Times": "irish-times",
+    "Issues in Science and Technology": "issues-in-science-and-technology",
+    "Jacobin": "jacobin",
+    "Jakarta Post": "jakarta-post",
+    "Johns Hopkins University": "johns-hopkins-university",
+    "Journal of Experimental Psychology": "journal-of-experimental-psychology",
+    "Journal of Geography, Environment and Earth Science International": "journal-of-geography-environment-and-earth-science-international",
+    "Journal of Personality and Social Psychology": "journal-of-personality-and-social-psychology",
+    "Journal of the Royal Society of Medicine": "journal-of-the-royal-society-of-medicine",
+    "Journal of Toxicology and Environmental Health": "journal-of-toxicology-and-environmental-health",
+    "July 4, 2006, PRWeb": "july-4-2006-prweb",
+    "KABC-TV": "kabc-tv",
+    "Kansas City Star": "kansas-city-star",
+    "KBDI-TV": "kbdi-tv",
+    "KCBS": "cbs",
+    "KCBS News": "kcbs-news",
+    "KCOP-TV": "kcop-tv",
+    "KDVR-TV": "kdvr-tv",
+    "KFOR News": "kfor-news",
+    "KGO": "kgo",
+    "KGO Radio": "kgo-radio",
+    "KGO-TV": "kgo-tv",
+    "KGO-TV Channel 7": "kgo-tv-channel-7",
+    "KHOU-TV": "khou-tv",
+    "Kinder": "kinder",
+    "Kings University College, University of Western Ontario": "kings-university-college-university-of-western-ontario",
+    "KION-TV": "kion-tv",
+    "KLAS-TV": "klas-tv",
+    "KMOX-TV": "kmox-tv",
+    "KMPH-TV": "kmph-tv",
+    "Knowable Magazine": "knowable-magazine",
+    "KPBS.org": "kpbs-org",
+    "KPIX TV": "kpix-tv",
+    "KQED": "kqed",
+    "KQRE": "kqre",
+    "KSDK.com": "ksdk-com",
+    "KSL-TV": "ksl-tv",
+    "KSLA-TV": "ksla-tv",
+    "KTAR": "ktar",
+    "KTLA-TV Los Angeles": "ktla-tv-los-angeles",
+    "KTRK-TV": "ktrk-tv",
+    "KTVA": "ktva",
+    "KTVN News": "ktvn-news",
+    "KTVU": "ktvu",
+    "KUTV": "kutv",
+    "KXLY-TV": "kxly-tv",
+    "La Jolla Light": "la-jolla-light",
+    "LA Progressive": "la-progressive",
+    "LA Times": "los-angeles-times",
+    "Lampoon": "lampoon",
+    "Las Vegas Tribune": "las-vegas-tribune",
+    "lasvegasnow.com": "lasvegasnow-com",
+    "Lee Fang on Substack": "lee-fang-on-substack",
+    "Life magazine": "life-magazine",
+    "Lighthouse Reports": "lighthouse-reports",
+    "Live Science": "live-science",
+    "London Times": "london-times",
+    "Los Angeles Times": "los-angeles-times",
+    "Los Angeles Times blog": "los-angeles-times",
+    "Lund University": "lund-university",
+    "lynnemctaggart.com": "lynnemctaggart-com",
+    "Mad in America": "mad-in-america",
+    "Marin Independent Journal": "marin-independent-journal",
+    "Marin Independent-Journal": "marin-independent-journal",
+    "Market Watch": "marketwatch",
+    "MarketWatch": "marketwatch",
+    "MarketWatch.com": "marketwatch",
+    "Matt Taibbi on Substack": "matt-taibbi-on-substack",
+    "Mayo Clinic News Network": "mayo-clinic-news-network",
+    "McClatchy News": "mcclatchy-news",
+    "McClatchy News Service": "mcclatchy-news-service",
+    "McClatchy Newspapers": "mcclatchy-newspapers",
+    "McGill University": "mcgill-university",
+    "Media Channel": "media-channel",
+    "Medical News Today": "medical-news-today",
+    "Medium.com": "medium-com",
+    "MedPage Today": "medpage-today",
+    "Mercola.com": "mercola-com",
+    "Mercury News": "mercury-news",
+    "Metro": "metro",
+    "Metro.co.uk": "metro-co-uk",
+    "MetroActive": "metroactive",
+    "Miami Herald": "miami-herald",
+    "Miami New Times": "miami-new-times",
+    "Michigan City News-Dispatch": "michigan-city-news-dispatch",
+    "Michigan Live": "michigan-live",
+    "Military Times": "military-times",
+    "Military.com": "military-com",
+    "Minneapolis Star Tribune": "star-tribune",
+    "Minneapolis Star-Tribune": "star-tribune",
+    "Minnesota Post": "minnesota-post",
+    "Minnesota Public Radio": "npr",
+    "Mint Press News": "mintpress-news",
+    "MintPress News": "mintpress-news",
+    "Mintpress News": "mintpress-news",
+    "Mirage": "mirage",
+    "MIT News": "mit-news",
+    "MIT Press Reader": "mit-press-reader",
+    "MIT Technology Review": "mit-technology-review",
+    "Money magazine": "money-magazine",
+    "Mongabay": "mongabay",
+    "Montreal Gazette": "montreal-gazette",
+    "Mother Jones": "mother-jones",
+    "Mother Jones Magazine": "mother-jones",
+    "MSN": "msn-news",
+    "MSN Canada": "msn-news",
+    "MSN Money": "msn-news",
+    "MSN News": "msn-news",
+    "MSN of Australia": "msn-news",
+    "MSNBC": "msnbc",
+    "MSNBC Countdown With Keith Olberman": "msnbc-countdown-with-keith-olberman",
+    "MSNBC News": "msnbc",
+    "MSNBC The Rachel Maddow Show": "msnbc",
+    "MSNBC Today": "msnbc",
+    "MSNBC: Keith Olbermann blog": "msnbc",
+    "MSU Today": "msu-today",
+    "Mt. Shasta Herald": "mt-shasta-herald",
+    "Mysterious UFOs Spotted Along US Coast": "mysterious-ufos-spotted-along-us-coast",
+    "NASA": "nasa",
+    "NASA Websites Technology Gateway": "nasa-websites-technology-gateway",
+    "Nasa.gov": "nasa-gov",
+    "National Geographic": "national-geographic",
+    "National Geographic News": "national-geographic",
+    "National Geographic October 2004 Issue": "national-geographic",
+    "National Post": "national-post",
+    "National Public Radio": "npr",
+    "National Security Agency  Website": "nsa-website",
+    "National Security Agency  Website, NSA Technical Journal, Vol. XI": "nsa-website",
+    "National Security Agency Website, NSA Technical Journal, Vol. XI": "national-security-agency-website-nsa-technical-journal-vol-xi",
+    "National Security Archive": "national-security-archive",
+    "National Toxicology Program": "national-toxicology-program",
+    "NationalGeographic.com": "national-geographic",
+    "NationalGeographic.com blog": "national-geographic",
+    "Nature": "nature",
+    "Nature Magazine": "nature",
+    "NBC": "nbc",
+    "NBC Chicago": "nbc",
+    "NBC Los Angeles": "nbc",
+    "NBC Miami": "nbc",
+    "NBC Milwaukee Affiliate": "nbc",
+    "NBC New York": "nbc",
+    "NBC News": "nbc",
+    "NBC Oklahoma City": "nbc",
+    "NBC Philadelphia": "nbc",
+    "NBC Right Now": "nbc",
+    "NBC Today": "nbc",
+    "NBC Washington": "nbc",
+    "NDTV": "ndtv",
+    "Neoscope": "neoscope",
+    "New Atlas": "new-atlas",
+    "New Energy Video": "new-energy-video",
+    "New England Journal of Medicine": "new-england-journal-of-medicine",
+    "New England Journal of Medicine - NEJM": "new-england-journal-of-medicine-nejm",
+    "New Paradigm Institute": "new-paradigm-institute",
+    "New Scientist": "new-scientist",
+    "New Scientist magazine": "new-scientist",
+    "New Straits Times": "new-straits-times",
+    "New York Daily News": "new-york-daily-news",
+    "New York Magazine": "new-york-magazine",
+    "New York magazine": "new-york-magazine",
+    "New York Post": "new-york-post",
+    "New York Review of Books": "new-york-review-of-books",
+    "New York Sun": "new-york-sun",
+    "New York Times": "new-york-times",
+    "New York Times Blog": "new-york-times",
+    "New York Times blog": "new-york-times",
+    "New York Times Magazine": "new-york-times",
+    "New Yorker": "new-yorker",
+    "New Zealand Herald": "new-zealand-herald",
+    "News 24": "news-24",
+    "News Nation": "newsnation",
+    "News.com.au": "news-com-au",
+    "news.com.au": "news-com-au",
+    "Newsday": "newsday",
+    "NewsNation": "newsnation",
+    "Newsweek": "newsweek",
+    "Newsweek blog": "newsweek",
+    "Newsweek magazine": "newsweek",
+    "Newsweek Magazine": "newsweek",
+    "Newsweek magazine blog": "newsweek",
+    "Newswise.com": "newswise-com",
+    "Next City": "next-city",
+    "Noema": "noema",
+    "North County Times": "north-county-times",
+    "Northeastern University": "northeastern-university",
+    "Northwestern University News Center": "northwestern-university-news-center",
+    "NOTUS": "notus",
+    "NPR": "npr",
+    "NPR All Things Considered": "npr",
+    "NPR blog": "npr",
+    "NPR Blog": "npr",
+    "NPR News": "npr",
+    "NRC International": "nrc-international",
+    "NSA Archive": "nsa-archive",
+    "NSA Technical Journal, Vol. XI": "nsa-website",
+    "NSA Website": "nsa-website",
+    "OCC": "occ",
+    "Ode Magazine": "ode-magazine",
+    "Ode magazine": "ode-magazine",
+    "Ode Magazine, July 2005 Issue": "ode-magazine",
+    "Ode Magazine, June 2005 Issue": "ode-magazine",
+    "Official Government Website of U.S. Senator Bernie Sanders": "official-government-website-of-u-s-senator-bernie-sanders",
+    "Official Website of Congressman Weldon": "official-website-of-congressman-weldon",
+    "Official White House Website": "official-white-house-website",
+    "Ogden Standard-Examiner": "ogden-standard-examiner",
+    "OpEdNews.com": "opednews-com",
+    "Open the Books on Substack": "open-the-books-on-substack",
+    "OpenTheBooks": "openthebooks",
+    "Optimist Daily": "optimist-daily",
+    "Orange County Register": "orange-county-register",
+    "Organics International": "organics-international",
+    "Orlando Sentinel": "orlando-sentinel",
+    "Ottawa Citizen": "ottawa-citizen",
+    "Ottawa Sun": "ottawa-sun",
+    "Oxfam": "oxfam",
+    "Palm Beach Daily News": "palm-beach-daily-news",
+    "Palm Beach Post": "palm-beach-post",
+    "Parade Magazine": "parade-magazine",
+    "Parade magazine": "parade-magazine",
+    "Pasadena Weekly": "pasadena-weekly",
+    "PBS": "pbs",
+    "PBS Bill Moyers Journal": "pbs",
+    "PBS Blog": "pbs",
+    "PBS Frontline": "pbs",
+    "PBS News": "pbs",
+    "PBS News Hour": "pbs-news-hour",
+    "PBS Newshour": "pbs",
+    "PBS Nova Program": "pbs",
+    "PBS, CBS, Fox compilation": "pbs",
+    "Peace Direct": "peace-direct",
+    "Peace Insight": "peace-insight",
+    "Pegasus": "pegasus",
+    "People": "people",
+    "People Magazine": "people",
+    "Philadelphia Citizen": "philadelphia-citizen",
+    "Philadelphia Enquirer": "philadelphia-enquirer",
+    "Philadelphia Inquirer": "philadelphia-inquirer",
+    "Philadephia Enquirer": "philadephia-enquirer",
+    "Philadephia Inquirer": "philadephia-inquirer",
+    "Phoenix Business Journal": "phoenix-business-journal",
+    "Phys Org": "phys-org",
+    "PhysOrg": "phys-org",
+    "PHYSORG.COM": "phys-org",
+    "Pittsburgh Post-Gazette": "pittsburgh-post-gazette",
+    "Pocono Record": "pocono-record",
+    "Politico": "politico",
+    "Popular Mechanics": "popular-mechanics",
+    "Popular Science": "popular-science",
+    "Popular Science - March 2007 Issue": "popular-science",
+    "Popular Science Magazine": "popular-science",
+    "Popular Science magazine": "popular-science",
+    "Portland Tribune": "portland-tribune",
+    "Positive News": "positive-news",
+    "Positive.News": "positive-news",
+    "PR Newswire": "pr-newswire",
+    "Press Herald": "press-herald",
+    "Prison Policy Initiative": "prison-policy-initiative",
+    "Prison Writers": "prison-writers",
+    "Project Censored": "project-censored",
+    "Project on Government Oversight": "project-on-government-oversight",
+    "Promarket": "promarket",
+    "ProPublica": "propublica",
+    "Providence Journal": "providence-journal",
+    "PsychCentral": "psychcentral",
+    "Psychology Today": "psychology-today",
+    "PsyPost": "psypost",
+    "Public": "public",
+    "Public News": "public-news",
+    "Public on Substack": "public-on-substack",
+    "Publishers Weekly": "publishers-weekly",
+    "Q13 FOX-TV": "q13-fox-tv",
+    "Quartz": "quartz",
+    "Quincy Center for Responsible Statecraft": "quincy-center-for-responsible-statecraft",
+    "Quincy Institute for Responsible Statecraft": "quincy-institute-for-responsible-statecraft",
+    "Rasmussen Reports": "rasmussen-reports",
+    "Re-Generation": "re-generation",
+    "Re-generation": "re-generation",
+    "Readers Digest": "readers-digest",
+    "Real Clear Investigations": "real-clear-investigations",
+    "Real News Network": "real-news-network",
+    "Reason": "reason",
+    "Reasons to be Cheerful": "reasons-to-be-cheerful",
+    "Reasons to be cheerful": "reasons-to-be-cheerful",
+    "Rensselaer Polytechnic Institute": "rensselaer-polytechnic-institute",
+    "ResearchGate": "researchgate",
+    "Reuters": "reuters",
+    "Reuters blog": "reuters",
+    "Reuters Health": "reuters",
+    "Reuters News": "reuters",
+    "Reuters News Agency": "reuters",
+    "Revista: Harvard Review of Latin America": "revista-harvard-review-of-latin-america",
+    "Rocky Mountain News": "rocky-mountain-news",
+    "Rolling Stone": "rolling-stone",
+    "Rolling Stone blog": "rolling-stone",
+    "Rolling Stone magazine": "rolling-stone",
+    "Runners World": "runners-world",
+    "Russia Today": "russia-today",
+    "Sacramento Bee": "sacramento-bee",
+    "Salon": "salon",
+    "Salon.com": "salon",
+    "Salt Lake City Tribune": "salt-lake-city-tribune",
+    "Salt Lake Tribune": "salt-lake-tribune",
+    "San Diego 6-TV": "san-diego-6-tv",
+    "San Diego Tribune": "san-diego-tribune",
+    "San Diego Union Tribune": "san-diego-union-tribune",
+    "San Diego Union-Tribune": "san-diego-union-tribune",
+    "San Francisco Chronicle": "san-francisco-chronicle",
+    "San Francisco Chronicle SFs leading newspaper)": "san-francisco-chronicle",
+    "San Francisco Examiner": "san-francisco-examiner",
+    "San Jose Mercury News": "san-jose-mercury-news",
+    "Santa Barbara Independent": "santa-barbara-independent",
+    "Sarasota Herald Tribune": "sarasota-herald-tribune",
+    "Sarasota Herald-Tribune": "sarasota-herald-tribune",
+    "SBS": "sbs",
+    "ScheerPost": "scheerpost",
+    "Science": "science",
+    "Science Alert": "science-alert",
+    "Science Daily": "science-daily",
+    "Science Magazine": "science",
+    "Science World Report": "science-world-report",
+    "Science, Public Health Policy and the Law": "science-public-health-policy-and-the-law",
+    "ScienceNews": "sciencenews",
+    "Scientific American": "scientific-american",
+    "Scientific American Blog": "scientific-american",
+    "Scientific American blog": "scientific-american",
+    "SciTech Daily": "scitech-daily",
+    "SciTech News": "scitech-news",
+    "Seattle Post-Intelligencer": "seattle-post-intelligencer",
+    "Seattle Times": "seattle-times",
+    "Seattle times": "seattle-times",
+    "Seattle Times blog": "seattle-times",
+    "Seattle Weekly blog": "seattle-weekly-blog",
+    "Semafor": "semafor",
+    "Senate Permanent Subcommittee on Investigations": "senate-permanent-subcommittee-on-investigations",
+    "Sentient Media": "sentient-media",
+    "Sentient Policy": "sentient-policy",
+    "September": "september",
+    "Shareable": "shareable",
+    "Significance": "significance",
+    "Sky News": "sky-news",
+    "Slate": "slate",
+    "Smithsonian Magazine": "smithsonian-magazine",
+    "Smithsonian.com": "smithsonian-magazine",
+    "Space Daily": "space-daily",
+    "Space.com": "space-com",
+    "Sports Illustrated": "sports-illustrated",
+    "St. Louis Post-Dispatch": "st-louis-post-dispatch",
+    "St. Paul Pioneer Press": "st-paul-pioneer-press",
+    "Stanford Graduate School of Business": "stanford-graduate-school-of-business",
+    "Stanford Report of Stanford University": "stanford-report-of-stanford-university",
+    "Stanford Review": "stanford-review",
+    "Star Tribune": "star-tribune",
+    "Star-Telegram": "star-telegram",
+    "StarTribune": "star-tribune",
+    "Stat News": "stat-news",
+    "Status Report of the House Judiciary Committee Democratic Staff": "status-report-of-the-house-judiciary-committee-democratic-staff",
+    "StudyFinds": "studyfinds",
+    "Sun Journal": "sun-journal",
+    "Sun Sentinel": "sun-sentinel",
+    "Sun Times": "sun-times",
+    "Sunday Express": "sunday-express",
+    "Sunday Herald": "sunday-herald",
+    "Sunday Times": "london-times",
+    "Sunny Skyz": "sunny-skyz",
+    "Sydney Morning Herald": "sydney-morning-herald",
+    "Sydney Mountain Herald": "sydney-morning-herald",
+    "Tablet": "tablet",
+    "Talk of the Nation": "talk-of-the-nation",
+    "Tampa Bay Times": "tampa-bay-times",
+    "Task and Purpose": "task-and-purpose",
+    "Tech Crunch": "techcrunch",
+    "TechCrunch": "techcrunch",
+    "Technology Review": "technology-review",
+    "Telegraph": "the-telegraph",
+    "Telegraph-Journal": "telegraph-journal",
+    "The Age": "the-age",
+    "The American Conservative": "the-american-conservative",
+    "The Atlantic": "the-atlantic",
+    "The Atlantic Magazine": "the-atlantic",
+    "The Atlantic Monthly": "the-atlantic",
+    "The Australian": "the-australian",
+    "The Blaze": "the-blaze",
+    "The BMJ": "bmj",
+    "The Brownstone Institute": "brownstone-institute",
+    "The Capital Times": "the-capital-times",
+    "The Capitol Times": "the-capitol-times",
+    "The Conversation": "the-conversation",
+    "The Cool Down": "the-cool-down",
+    "The Daily Beast": "daily-beast",
+    "The Daily Mail": "daily-mail",
+    "The Daily Skeptic": "the-daily-skeptic",
+    "The Debrief": "the-debrief",
+    "The Defender": "the-defender",
+    "The Denver Channel 7": "the-denver-channel-7",
+    "The Detroit News": "detroit-news",
+    "The DisInformation Chronicle on Substack": "the-disinformation-chronicle-on-substack",
+    "The Economist": "the-economist",
+    "The Economist blog": "the-economist",
+    "The Economist Magazine": "the-economist",
+    "The Economist magazine": "the-economist",
+    "The Equation": "the-equation",
+    "The Examination": "the-examination",
+    "The Free Press": "the-free-press",
+    "The Globe and Mail": "globe-and-mail",
+    "The Grayzone": "the-grayzone",
+    "The Guardian": "the-guardian",
+    "The Guardian blog": "the-guardian",
+    "The Herald-Tribune": "the-herald-tribune",
+    "The Hill": "the-hill",
+    "The Hindu": "the-hindu",
+    "The Illusion of Consensus on Substack": "the-illusion-of-consensus-on-substack",
+    "The Independent": "the-independent",
+    "The Intelligent Optimist": "the-intelligent-optimist",
+    "The Intelligent Optimist Magazine": "the-intelligent-optimist",
+    "The Intercept": "the-intercept",
+    "The Intercept With Glenn Greenwald": "the-intercept",
+    "The Intercept with Glenn Greenwald": "the-intercept",
+    "The Irish Independent": "the-irish-independent",
+    "The Journal-Gazette": "the-journal-gazette",
+    "The Kucinich Report": "the-kucinich-report",
+    "The Kucinich Report on Substack": "the-kucinich-report-on-substack",
+    "The Lancet": "the-lancet",
+    "The Lever": "the-lever",
+    "The Los Angeles Times": "los-angeles-times",
+    "The Marginalian": "the-marginalian",
+    "The Marshall Project": "the-marshall-project",
+    "The Mercury News": "mercury-news",
+    "The Mind Unleashed": "the-mind-unleashed",
+    "The Nation": "the-nation",
+    "The Nation magazine": "the-nation",
+    "The Nation Magazine": "the-nation",
+    "The National Security Archive, George Washington University": "the-national-security-archive-george-washington-university",
+    "The New American": "the-new-american",
+    "The New Daily": "the-new-daily",
+    "The New Lede": "the-new-lede",
+    "The New York Times": "new-york-times",
+    "The New Yorker": "new-yorker",
+    "The New Yorker magazine": "new-yorker",
+    "The Observer": "the-observer",
+    "The Optimist": "the-optimist",
+    "The Optimist Daily": "optimist-daily",
+    "The Oregonian": "the-oregonian",
+    "The Philadelphia Citizen": "philadelphia-citizen",
+    "The Progressive": "the-progressive",
+    "The Pulse": "the-pulse",
+    "The Red Letter": "the-red-letter",
+    "The Root": "the-root",
+    "The Sacramento Bee": "sacramento-bee",
+    "The San Francisco Chronicle": "san-francisco-chronicle",
+    "The Society for Personality and Social Psychology": "the-society-for-personality-and-social-psychology",
+    "The Star": "the-star",
+    "The Street": "the-street",
+    "The Sun": "the-sun",
+    "The Sunday Times": "the-sunday-times",
+    "The Telegraph": "the-telegraph",
+    "The Telegraph blogs": "the-telegraph",
+    "The Tennessean": "the-tennessean",
+    "The The The The The The The Independent": "the-independent",
+    "The The The The The The The The Independent": "the-independent",
+    "The Times": "london-times",
+    "The Times Herald": "the-times-herald",
+    "The Times of Israel": "the-times-of-israel",
+    "The Travel": "the-travel",
+    "The Urban Activist": "the-urban-activist",
+    "The Verge": "the-verge",
+    "The Wall Street Journal": "wall-street-journal",
+    "The Washington Post": "washington-post",
+    "The Week": "the-week",
+    "The Week Magazine": "the-week",
+    "The White House": "the-white-house",
+    "The White House Press Office": "the-white-house-press-office",
+    "Tikkun Magazine": "tikkun-magazine",
+    "Tikkun Magazine - March": "tikkun-magazine",
+    "Time": "time",
+    "Time magazine": "time",
+    "Time Magazine": "time",
+    "TIME Magazine": "time",
+    "Time Magazine blog": "time",
+    "Times Higher Education": "times-higher-education",
+    "Times of Israel": "the-times-of-israel",
+    "Times of London": "london-times",
+    "Times-Picayune": "times-picayune",
+    "Today": "today",
+    "Today.com": "today",
+    "Toledo Blade": "toledo-blade",
+    "TomDispatch": "tomdispatch",
+    "tomflocco.com": "tomflocco-com",
+    "Tooele Transcript Bulletin": "tooele-transcript-bulletin",
+    "Toronto Star": "toronto-star",
+    "Toronto Sun": "toronto-sun",
+    "Tree Hugger": "treehugger",
+    "Treehugger": "treehugger",
+    "Triple Pundit": "triple-pundit",
+    "Trump’s War on Drugs": "trump-s-war-on-drugs",
+    "Truth in Media": "truth-in-media",
+    "Truth-Out.org": "truthout",
+    "TruthDig": "truthdig",
+    "Truthdig": "truthdig",
+    "Truthout": "truthout",
+    "TruthOut": "truthout",
+    "TruthOut.org": "truthout",
+    "TV Guide": "tv-guide",
+    "TVNZ": "tvnz",
+    "TVNZ.co.nz": "tvnz-co-nz",
+    "TWZ": "twz",
+    "TWZ Newsletter": "twz-newsletter",
+    "U.S. Army Website, Strategic Studies Institute": "u-s-army-website-strategic-studies-institute",
+    "U.S. Department of Defense website": "u-s-department-of-defense-website",
+    "U.S. Department of Energy Website": "u-s-department-of-energy-website",
+    "U.S. Department of Health and Human Services": "u-s-department-of-health-and-human-services",
+    "U.S. Department of Homeland Security": "u-s-department-of-homeland-security",
+    "U.S. Department of State": "u-s-department-of-state",
+    "U.S. National Security Agency Website": "nsa-website",
+    "U.S. News & World Report": "us-news-and-world-report",
+    "U.S. News & World Report blog": "us-news-and-world-report",
+    "U.S. News &amp; World Report blog": "us-news-and-world-report",
+    "U.S. News and World Report": "us-news-and-world-report",
+    "U.S. Office of the Under Secretary of Defense": "u-s-office-of-the-under-secretary-of-defense",
+    "U.S. Right to Know": "us-right-to-know",
+    "U.S. Senate Testimony": "u-s-senate-testimony",
+    "UC Berkeleys alumni publication The Promise of Berkeley.": "uc-berkeleys-alumni-publication-the-promise-of-berkeley",
+    "UCLA News": "ucla-news",
+    "UCLA School of Law": "ucla-school-of-law",
+    "UGA Today": "uga-today",
+    "UN News Centre": "un-news-centre",
+    "UnHerd": "unherd",
+    "UNICEF": "unicef",
+    "United Nations Environment Programme": "united-nations-environment-programme",
+    "United Nations News": "united-nations-news",
+    "United States National Archives": "united-states-national-archives",
+    "University of British Columbia": "university-of-british-columbia",
+    "University of Pennsylvania": "university-of-pennsylvania",
+    "University of Southern California, School of Engineering": "university-of-southern-california-school-of-engineering",
+    "University of Washington News": "university-of-washington-news",
+    "Unlimited Hangout": "unlimited-hangout",
+    "UPI": "upi",
+    "Upworthy": "upworthy",
+    "Urban Gardening Digest": "urban-gardening-digest",
+    "US Air Force Air University": "us-air-force-air-university",
+    "US Department of Defense Inspector General": "us-department-of-defense-inspector-general",
+    "US House of Representatives Judiciary Committee": "us-house-of-representatives-judiciary-committee",
+    "US House of Representatives Website of Curt Weldon": "us-house-of-representatives-website-of-curt-weldon",
+    "US News & World Report": "us-news-and-world-report",
+    "US News & World Report magazine": "us-news-and-world-report",
+    "US News and World Report": "us-news-and-world-report",
+    "US Patent and Trademark Office": "us-patent-and-trademark-office",
+    "US Patent and Trademark Office Website": "us-patent-and-trademark-office",
+    "US Right to Know": "us-right-to-know",
+    "US Senate Permanent Subcommittee on Investigations": "us-senate-permanent-subcommittee-on-investigations",
+    "USA Today": "usa-today",
+    "Utne Reader Magazine": "utne-reader-magazine",
+    "Vancouver Sun": "vancouver-sun",
+    "Vanity Fair": "vanity-fair",
+    "Vanity Fair August 2006 Issue": "vanity-fair",
+    "Vanity Fair magazine": "vanity-fair",
+    "Vanity Fair September 2005 Issue": "vanity-fair",
+    "Vera": "vera",
+    "Vice": "vice",
+    "Vice News": "vice-news",
+    "Village Voice": "village-voice",
+    "Voice of America": "voice-of-america",
+    "Vox": "vox",
+    "WABC": "wabc",
+    "WAFB": "wafb",
+    "Waging Nonviolence": "waging-nonviolence",
+    "Waking Times": "waking-times",
+    "Wall Street Journal": "wall-street-journal",
+    "Wall Street Journal Article by Former FBI Director Louis Freeh": "wall-street-journal",
+    "Wall Street Journal blog": "wall-street-journal",
+    "Wall Street Journal Blog": "wall-street-journal",
+    "WantToKnow.info": "wanttoknow-info",
+    "Washginton Post": "washington-post",
+    "Washingon Post": "washington-post",
+    "Washington Examiner": "washington-examiner",
+    "Washington Post": "washington-post",
+    "Washington post": "washington-post",
+    "Washington Post blog": "washington-post",
+    "Washington Post Blog": "washington-post",
+    "Washington Times": "washington-times",
+    "washingtonpost.com": "washington-post",
+    "WBUR": "wbur",
+    "WBUR-FM": "wbur-fm",
+    "WCBS News - New York CBS Affiliate": "cbs",
+    "WCPO - Cincinnatis ABC Affiliate": "abc",
+    "WCPO-TV": "wcpo-tv",
+    "weboflove.org": "weboflove-org",
+    "Website of FBI": "website-of-fbi",
+    "Website of Pulitzer Prize Winning Journalist Carl Bernstein": "website-of-pulitzer-prize-winning-journalist-carl-bernstein",
+    "Wesleyan University": "wesleyan-university",
+    "WFIE TV": "wfie-tv",
+    "WFTV.com": "wftv-com",
+    "When Your Power Meter Becomes a Tool of Mass Surveillance": "when-your-power-meter-becomes-a-tool-of-mass-surveillance",
+    "Whitehouse.gov": "whitehouse-gov",
+    "WHNT-TV": "whnt-tv",
+    "Wired": "wired",
+    "Wired magazine": "wired",
+    "Wired Magazine": "wired",
+    "WJBK Fox 2": "fox",
+    "WJBK-TV": "wjbk-tv",
+    "WJW-TV": "wjw-tv",
+    "WKBT TV": "wkbt-tv",
+    "WKYC": "wkyc",
+    "WLS-TV": "wls-tv",
+    "WLWT-TV": "wlwt-tv",
+    "World Economic Forum": "world-economic-forum",
+    "WOWT": "wowt",
+    "WPFB-TV": "wpfb-tv",
+    "WPTV NewsChannel 5": "wptv-newschannel-5",
+    "WREG-TV": "wreg-tv",
+    "WSMV-TV": "wsmv-tv",
+    "WSPA": "wspa",
+    "WTHR-TV": "wthr-tv",
+    "WTSP-TV": "wtsp-tv",
+    "WXYZ - Detroits ABC News Affiliate": "abc",
+    "WXYZ-TV": "wxyz-tv",
+    "Wyoming Secretary of State Website": "wyoming-secretary-of-state-website",
+    "Yahoo": "yahoo",
+    "Yahoo Finance": "yahoo",
+    "Yahoo News": "yahoo",
+    "Yahoo Tech": "yahoo-tech",
+    "Yahoo!": "yahoo",
+    "Yahoo! Finance": "yahoo",
+    "Yahoo! News": "yahoo",
+    "Yahoo! News Australia": "yahoo",
+    "Yale Environment 360": "yale-environment-360",
+    "Yale News": "yale-news",
+    "Yes!": "yes-magazine",
+    "Yes! Magazine": "yes-magazine",
+    "Ynet News": "ynet-news",
+    "Zerohedge": "zerohedge",
+    "ZMEscience": "zmescience"
+  },
+  "schema": {
+    "publication_group_slug": "Stable machine-facing identifier used for filtering, indexing, URLs, APIs, and admin values.",
+    "publication_group_display": "Human-facing publication/group name used in the site UI and admin.",
+    "legacy_lookup": "Exact legacy Publication value mapped to a publication group slug.",
+    "aliases": "Known legacy Publication values classified into the publication group."
+  }
+}

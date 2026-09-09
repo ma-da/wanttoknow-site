@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light">
+  <title>Admin Access | WantToKnow.info</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body class="admin-body admin-login-body">
+  <main class="admin-login-shell">
+    <section class="admin-login-card" aria-labelledby="login-title">
+      <p class="admin-eyebrow">Welcome Transformation Agent</p>
+      <h1 id="login-title">Authenticate</h1>
+      <p class="admin-login-card__intro">
+        Use your access code or flash your private key file
+      </p>
+
+      <form id="admin-login-form" class="admin-login-form">
+        <label class="admin-field">
+          <span>Access key</span>
+          <input
+            id="access-key"
+            name="access-key"
+            type="password"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            required
+          >
+        </label>
+
+        <button class="admin-primary-button" type="submit">Enter</button>
+      </form>
+
+      <div class="admin-login-divider"><span>or</span></div>
+
+      <label class="admin-keyfile-control">
+        <span>Choose key file</span>
+        <input id="key-file" type="file" accept=".key,text/plain">
+      </label>
+
+      <p id="login-status" class="admin-login-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="/admin/assets/login.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light">
+  <title>Edit Article | WantToKnow.info</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell admin-shell--editor" id="main-content">
+    <header class="admin-header admin-editor-header">
+      <div class="admin-editor-header__title">
+        <p class="admin-eyebrow">WantToKnow.info internal · SQLite working copy</p>
+        <h1 id="editor-heading">Edit article</h1>
+      </div>
+      <div class="admin-header__right">
+        <a class="admin-secondary-button" href="/admin/articles">← Articles</a>
+        <form method="post" action="/admin/logout">
+          <button class="admin-logout-button" type="submit">Logout</button>
+        </form>
+      </div>
+    </header>
+
+    <form id="article-edit-form" class="article-edit-form article-edit-form--wide" hidden>
+      <section class="article-edit-card article-meta-card">
+        <div class="article-title-state-row">
+          <label class="admin-field article-title-field">
+            <span>Title</span>
+            <input id="field-title" name="title" type="text" maxlength="500" required>
+          </label>
+          <div id="editor-state" class="article-edit-state"></div>
+        </div>
+
+        <label class="admin-field article-source-field">
+          <span>Source URL</span>
+          <input id="field-source-url" name="source_url" type="url" maxlength="4000" required>
+        </label>
+
+        <div class="article-meta-compact">
+          <label class="admin-field article-meta-compact__id">
+            <span>Article ID</span>
+            <input id="field-article-id" type="text" readonly>
+          </label>
+          <label class="admin-field article-meta-compact__priority">
+            <span>Priority</span>
+            <input id="field-priority" name="priority" type="number" min="0" max="1000" step="1" required>
+          </label>
+          <label class="admin-field article-meta-compact__publication">
+            <span>Canonical publication</span>
+            <input id="field-publication" type="text" list="publication-options" autocomplete="off">
+            <datalist id="publication-options"></datalist>
+          </label>
+          <label class="admin-field article-meta-compact__date">
+            <span>Publication date</span>
+            <input id="field-publication-date" name="publication_date" type="date">
+          </label>
+          <label class="admin-field article-meta-compact__date">
+            <span>WTK posted date</span>
+            <input id="field-posted-date" name="posted_date" type="date">
+          </label>
+        </div>
+      </section>
+
+      <section class="article-edit-card article-edit-card--fullwidth article-summary-card article-edit-card--plain">
+        <label class="admin-field admin-field--textarea article-summary-editor">
+          <span class="visually-hidden">Summary Markdown</span>
+          <textarea id="field-summary" name="summary_markdown" rows="18"></textarea>
+        </label>
+      </section>
+
+      <section class="article-edit-card article-edit-card--fullwidth article-note-card article-edit-card--plain">
+        <h2 class="article-note-label">Note</h2>
+        <label class="admin-field admin-field--textarea">
+          <span class="visually-hidden">WTK Note Markdown</span>
+          <textarea id="field-note" name="note_markdown" rows="4"></textarea>
+        </label>
+      </section>
+
+      <section class="article-edit-card article-categories-compact article-edit-card--plain">
+        <div id="category-list" class="article-category-list article-category-list--compact"></div>
+        <div class="article-category-footer">
+          <label class="article-category-filter">
+            <span class="visually-hidden">Filter categories</span>
+            <input id="category-filter" type="search" placeholder="Filter categories…" autocomplete="off">
+          </label>
+        </div>
+      </section>
+
+						<section class="article-edit-card article-image-card">
+								<div class="article-edit-card__heading">
+										<h2>Image</h2>
+										<span
+												id="image-stage-badge"
+												class="admin-status-pill"
+												hidden
+										>
+												Staged
+										</span>
+								</div>
+
+								<div class="article-image-layout">
+
+										<!-- LEFT COLUMN -->
+										<div class="article-image-main">
+
+												<figure
+														id="image-full-figure"
+														class="article-image-preview"
+														hidden
+												>
+														<img
+																id="image-full-preview"
+																src=""
+																alt="Article image preview"
+														>
+												</figure>
+
+												<div
+														id="image-empty-state"
+														class="article-image-empty"
+												>
+														No article image
+												</div>
+
+												<div class="article-image-actions">
+														<input
+																id="field-image-upload"
+																type="file"
+																accept="image/jpeg,image/png,image/webp"
+																hidden
+														>
+
+														<label
+																id="image-upload-label"
+																for="field-image-upload"
+																class="admin-secondary-button"
+														>
+																Choose image
+														</label>
+
+														<button
+																id="discard-staged-image"
+																class="admin-danger-button"
+																type="button"
+																hidden
+														>
+																Discard staged image
+														</button>
+												</div>
+
+												<p class="article-image-help">
+														JPEG, PNG or WebP · maximum 5 MB
+												</p>
+										</div>
+
+
+										<!-- RIGHT COLUMN -->
+										<div class="article-image-side">
+
+												<figure
+														id="image-thumb-figure"
+														class="article-image-thumb"
+														hidden
+												>
+														<img
+																id="image-thumb-preview"
+																src=""
+																alt="Article thumbnail preview"
+														>
+												</figure>
+
+												<div class="article-image-info">
+														<div id="image-filename"></div>
+														<div id="image-path"></div>
+														<div id="image-processing-meta"></div>
+												</div>
+
+												<label class="admin-field article-image-caption">
+														<span>Image caption</span>
+
+														<textarea
+																id="field-image-caption-markdown"
+																name="image_caption_markdown"
+																rows="4"
+																placeholder="Optional caption…"
+														></textarea>
+												</label>
+
+										</div>
+
+								</div>
+						</section>
+
+      <details class="article-edit-card article-edit-details">
+        <summary>Advanced article fields</summary>
+        <div class="article-edit-details__body">
+          <label class="admin-field">
+            <span>Slug</span>
+            <input id="field-slug" name="slug" type="text" maxlength="500" required>
+          </label>
+          <div class="article-edit-grid article-edit-grid--2">
+            <label class="admin-field">
+              <span>Generated path</span>
+              <input id="field-path" type="text" readonly>
+            </label>
+            <label class="admin-field">
+              <span>Generated URL</span>
+              <input id="field-url" type="text" readonly>
+            </label>
+          </div>
+          <label class="admin-field">
+            <span>Legacy URL</span>
+            <input id="field-legacy-url" name="legacy_url" type="text" maxlength="2000">
+          </label>
+          <div class="article-edit-grid article-edit-grid--2">
+            <label class="admin-field">
+              <span>Publication detail</span>
+              <input id="field-publication-detail" name="publication_detail" type="text" maxlength="1000">
+            </label>
+            <label class="admin-field">
+              <span>Publication raw</span>
+              <input id="field-publication-raw" name="publication_raw" type="text" maxlength="1000">
+            </label>
+          </div>
+          <div class="article-edit-system-fields">
+            <p><strong>Related articles:</strong> <span id="related-count">0</span></p>
+            <p><strong>QC flags:</strong> <span id="qc-count">0</span></p>
+            <p class="admin-help">System-managed for now; preserved unchanged.</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="article-save-bar">
+        <button id="delete-article" class="admin-danger-button article-delete-button" type="button" hidden>Delete Entry</button>
+        <button id="remove-article" class="admin-danger-button article-remove-button" type="button" hidden>Remove from Site</button>
+        <button id="cancel-removal" class="admin-secondary-button article-cancel-removal-button" type="button" hidden>Cancel Removal</button>
+        <p class="admin-save-safety">Save Draft updates SQLite only. Publishing remains a separate deliberate action.</p>
+        <button id="preview-newsletter" class="admin-secondary-button" type="button">Preview</button>
+        <button id="save-article" class="admin-primary-button" type="submit">Save Draft</button>
+        <button
+										id="publish-article"
+										class="admin-publish-button"
+										type="button"
+										disabled
+										title="Loading publication state…"
+								>
+										Publish to Site
+								</button>
+      </div>
+    </form>
+
+    <dialog id="withdraw-article-dialog" class="admin-withdraw-dialog" aria-labelledby="withdraw-article-heading">
+      <form id="withdraw-article-form" class="admin-withdraw-form">
+        <div class="admin-create-dialog__heading">
+          <div>
+            <p class="admin-eyebrow">Published article</p>
+            <h2 id="withdraw-article-heading">Remove from site</h2>
+          </div>
+          <button id="withdraw-article-close" class="admin-create-dialog__close" type="button" aria-label="Close">×</button>
+        </div>
+
+        <p class="admin-help">
+          This schedules the article for removal in the current draft batch. The live site and master JSONL remain unchanged until Publish to Site or Publish Draft Batch is run.
+        </p>
+
+        <label class="admin-field">
+          <span>Reason</span>
+          <select id="withdraw-reason" required>
+            <option value="">Choose a reason…</option>
+            <option value="takedown">Takedown request</option>
+            <option value="source_reliability">Source reliability</option>
+            <option value="duplicate">Duplicate</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
+        <label class="admin-field admin-field--textarea">
+          <span>Internal note</span>
+          <textarea id="withdraw-reason-text" rows="4" maxlength="2000" placeholder="Optional except when reason is Other"></textarea>
+        </label>
+
+        <label class="admin-field">
+          <span>Replacement path <small>(optional)</small></span>
+          <input id="withdraw-redirect-path" type="text" maxlength="2000" placeholder="/news/replacement-article">
+        </label>
+        <p class="admin-help">Leave replacement path blank for a future 410 Gone response. A replacement path will become a 301 redirect when the publishing service is enabled.</p>
+
+        <p id="withdraw-article-status" class="admin-create-status" aria-live="polite"></p>
+
+        <div class="admin-create-actions">
+          <button id="withdraw-article-cancel-dialog" class="admin-secondary-button" type="button">Cancel</button>
+          <button id="withdraw-article-submit" class="admin-danger-button" type="submit">Schedule Removal</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="newsletter-preview-dialog" class="newsletter-preview-dialog" aria-labelledby="newsletter-preview-heading">
+      <div class="newsletter-preview-dialog__bar">
+        <strong id="newsletter-preview-heading">Newsletter preview</strong>
+        <button id="close-newsletter-preview" class="newsletter-preview-dialog__close" type="button" aria-label="Close preview">×</button>
+      </div>
+      <div class="newsletter-preview-stage">
+        <article class="newsletter-preview" aria-live="polite">
+          <p class="newsletter-preview__header">
+            <span id="newsletter-preview-title" class="newsletter-preview__title"><strong>Article title</strong></span><br>
+            <span id="newsletter-preview-meta" class="newsletter-preview__date-pub"></span><br>
+            <a id="newsletter-preview-source" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+          <div id="newsletter-preview-summary" class="newsletter-preview__summary"></div>
+          <div id="newsletter-preview-note" class="newsletter-preview__note"></div>
+        </article>
+      </div>
+    </dialog>
+
+    <div id="editor-message" class="admin-editor-message" aria-live="polite"></div>
+  </main>
+
+  <script src="/admin/assets/article-edit.js" defer></script>
+</body>
+</html>

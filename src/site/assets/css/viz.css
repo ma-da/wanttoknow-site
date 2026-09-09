@@ -1,0 +1,679 @@
+/* ========================================================================== 
+   WantToKnow.info Archive Visualization
+   Component stylesheet for archive-viz-section.html
+
+   This file intentionally depends on the global design tokens in global.css,
+   while providing safe fallbacks for isolated development/testing.
+   ========================================================================== */
+
+.archive-viz {
+  --viz-surface: var(--color-surface, #ffffff);
+  --viz-surface-muted: var(--color-surface-muted, #f5f2fb);
+  --viz-text: var(--color-text, #17141f);
+  --viz-text-soft: var(--color-text-soft, #484250);
+  --viz-text-muted: var(--color-text-muted, #716a79);
+  --viz-border: var(--color-border, #ded9e5);
+  --viz-border-strong: var(--color-border-strong, #c8c0d2);
+  --viz-purple: var(--color-brand-purple, #7658f6);
+  --viz-purple-dark: var(--color-brand-purple-dark, #5b3fe0);
+  --viz-lavender: var(--color-brand-lavender, #ded6ff);
+  --viz-lavender-soft: var(--color-brand-lavender-soft, #f0edff);
+  --viz-orange: var(--color-brand-orange, #df5622);
+  --viz-yellow: var(--color-brand-yellow, #ffd76a);
+  --viz-success: var(--color-success, #137653);
+  --viz-font-body: var(--font-family-body, system-ui, sans-serif);
+  --viz-font-heading: var(--font-family-heading, "Arial Narrow", sans-serif);
+  --viz-fast: var(--motion-duration-fast, 160ms);
+  --viz-medium: var(--motion-duration-medium, 260ms);
+  --viz-ease: var(--motion-easing-standard, cubic-bezier(0.2, 0.8, 0.2, 1));
+
+  padding-block: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.archive-viz__header {
+  margin-bottom: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.archive-viz__heading-row {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.archive-viz__summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border-top: 0.0625rem solid var(--viz-border-strong);
+  border-left: 0.0625rem solid var(--viz-border-strong);
+  background: var(--viz-surface);
+}
+
+.archive-viz__summary > div {
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-right: 0.0625rem solid var(--viz-border-strong);
+  border-bottom: 0.0625rem solid var(--viz-border-strong);
+}
+
+.archive-viz__summary dt {
+  margin-bottom: 0.15rem;
+  color: var(--viz-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.archive-viz__summary dd {
+  margin: 0;
+  color: var(--viz-text);
+  font-family: var(--viz-font-heading);
+  font-size: clamp(1.6rem, 1.25rem + 1vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: 0.035em;
+}
+
+.archive-viz__panel {
+  position: relative;
+  border: 0.0625rem solid var(--viz-border-strong);
+  background: var(--viz-surface);
+  box-shadow: var(--shadow-low, 0 0.5rem 1.5rem rgba(35, 23, 55, 0.09));
+}
+
+.archive-viz__view-header {
+  display: grid;
+  gap: 0.75rem 2rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-bottom: 0.0625rem solid var(--viz-border);
+}
+
+.archive-viz__view-kicker {
+  margin: 0 0 0.25rem;
+  color: var(--viz-orange);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.archive-viz__view-title {
+  margin: 0;
+  font-family: var(--viz-font-heading);
+  font-size: clamp(1.8rem, 1.45rem + 1vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.045em;
+}
+
+.archive-viz__view-description,
+.archive-viz__view-note {
+  color: var(--viz-text-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.archive-viz__view-description {
+  max-width: 46rem;
+  margin: 0.45rem 0 0;
+}
+
+.archive-viz__view-note {
+  align-self: end;
+  margin: 0;
+}
+
+.archive-viz__stage {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  background:
+    linear-gradient(to right, rgba(222, 217, 229, 0.18) 0.0625rem, transparent 0.0625rem),
+    linear-gradient(to bottom, rgba(222, 217, 229, 0.13) 0.0625rem, transparent 0.0625rem),
+    var(--viz-surface);
+  background-size: 4rem 4rem;
+}
+
+.archive-viz__loading,
+.archive-viz__error,
+.archive-viz__empty {
+  min-height: 29rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.75rem;
+  color: var(--viz-text-muted);
+  text-align: center;
+}
+
+.archive-viz__loading-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0.1875rem solid var(--viz-lavender);
+  border-top-color: var(--viz-purple);
+  border-radius: 50%;
+  animation: archive-viz-spin 0.9s linear infinite;
+}
+
+.archive-viz__error strong {
+  color: var(--viz-text);
+}
+
+/* --------------------------------------------------------------------------
+   Visualization controls
+
+   The grid automatically divides available width among however many
+   controls are present. No view count is hard-coded.
+   -------------------------------------------------------------------------- */
+
+.archive-viz__controls {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(min(100%, 10rem), 1fr)
+    );
+
+  gap: var(--border-width, 0.0625rem);
+
+  border-bottom:
+    var(--border-width, 0.0625rem)
+    solid
+    var(--viz-border-strong);
+
+  background:
+    var(--viz-border-strong);
+}
+
+
+.archive-viz__control {
+  min-width: 0;
+  min-height: 3.5rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  padding: 0.75rem 1rem;
+
+  border: 0;
+
+  color:
+    var(--viz-text-soft);
+
+  background:
+    var(--viz-surface-muted);
+
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color
+      var(--viz-fast)
+      var(--viz-ease),
+    background-color
+      var(--viz-fast)
+      var(--viz-ease);
+}
+
+
+.archive-viz__control:hover,
+.archive-viz__control:focus-visible {
+  color:
+    var(--viz-purple-dark);
+
+  background:
+    var(--viz-lavender-soft);
+}
+
+
+.archive-viz__control.is-active,
+.archive-viz__control[aria-pressed="true"] {
+  color: #ffffff;
+
+  background:
+    var(--viz-purple);
+}
+
+
+.archive-viz__control-index {
+  color: currentColor;
+
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0.68;
+}
+
+.archive-viz__noscript {
+  padding: 1rem;
+  border: 0.0625rem solid var(--viz-border);
+  background: var(--viz-surface-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Shared SVG typography
+   -------------------------------------------------------------------------- */
+
+.archive-viz svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--viz-font-body);
+}
+
+.archive-viz .viz-axis text {
+  fill: var(--viz-text-muted);
+  font-size: 0.72rem;
+}
+
+.archive-viz .viz-axis line,
+.archive-viz .viz-axis path {
+  stroke: var(--viz-border);
+}
+
+.archive-viz .viz-grid line {
+  stroke: var(--viz-border);
+  stroke-dasharray: 2 5;
+}
+
+.archive-viz .viz-grid path {
+  display: none;
+}
+
+.archive-viz__tooltip {
+  position: fixed;
+  z-index: 4000;
+  max-width: 17rem;
+  padding: 0.55rem 0.7rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  background: rgba(23, 20, 31, 0.95);
+  box-shadow: 0 0.65rem 1.8rem rgba(23, 20, 31, 0.22);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition:
+    opacity var(--viz-fast) var(--viz-ease),
+    transform var(--viz-fast) var(--viz-ease);
+}
+
+.archive-viz__tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.archive-viz__tooltip strong {
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Publishers: horizontal bars
+   -------------------------------------------------------------------------- */
+
+.archive-viz__publisher-chart {
+  min-height: 32rem;
+}
+
+.archive-viz .viz-publisher-label {
+  fill: var(--viz-text);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.archive-viz .viz-publisher-value {
+  fill: var(--viz-text-muted);
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.archive-viz .viz-publisher-bar {
+  fill: var(--viz-purple);
+  transition: fill var(--viz-fast) var(--viz-ease);
+}
+
+.archive-viz .viz-publisher-row:hover .viz-publisher-bar,
+.archive-viz .viz-publisher-row:focus .viz-publisher-bar {
+  fill: var(--viz-purple-dark);
+}
+
+.archive-viz .viz-publisher-bar.is-other {
+  fill: var(--viz-lavender);
+}
+
+/* --------------------------------------------------------------------------
+   Categories: treemap
+   -------------------------------------------------------------------------- */
+
+.archive-viz__treemap {
+  min-height: 32rem;
+}
+
+.archive-viz .viz-category-node {
+  outline: none;
+}
+
+.archive-viz .viz-category-node rect {
+  stroke: var(--viz-surface);
+  stroke-width: 0.125rem;
+  transition:
+    filter var(--viz-fast) var(--viz-ease),
+    opacity var(--viz-fast) var(--viz-ease);
+}
+
+.archive-viz .viz-category-node:hover rect,
+.archive-viz .viz-category-node:focus-visible rect {
+  filter: brightness(0.94) saturate(1.08);
+}
+
+.archive-viz .viz-category-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.archive-viz .viz-category-count {
+  font-size: 0.62rem;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Eras: donut + legend
+   -------------------------------------------------------------------------- */
+
+.archive-viz__era-layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  min-height: 31rem;
+}
+
+.archive-viz__era-chart {
+  width: min(100%, 28rem);
+  margin-inline: auto;
+}
+
+.archive-viz .viz-era-segment {
+  stroke: var(--viz-surface);
+  stroke-width: 0.1875rem;
+  transition:
+    opacity var(--viz-fast) var(--viz-ease),
+    transform var(--viz-fast) var(--viz-ease);
+  transform-origin: center;
+}
+
+.archive-viz .viz-era-segment:hover,
+.archive-viz .viz-era-segment:focus-visible {
+  opacity: 0.86;
+}
+
+.archive-viz .viz-era-center-value {
+  fill: var(--viz-text);
+  font-family: var(--viz-font-heading);
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  text-anchor: middle;
+}
+
+.archive-viz .viz-era-center-label {
+  fill: var(--viz-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.archive-viz__era-legend {
+  display: grid;
+  gap: 0;
+  border-top: 0.0625rem solid var(--viz-border);
+}
+
+.archive-viz__era-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 0.0625rem solid var(--viz-border);
+}
+
+.archive-viz__era-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.archive-viz__era-name {
+  display: block;
+  color: var(--viz-text);
+  font-weight: 700;
+}
+
+.archive-viz__era-range {
+  display: block;
+  margin-top: 0.05rem;
+  color: var(--viz-text-muted);
+  font-size: 0.72rem;
+}
+
+.archive-viz__era-value {
+  text-align: right;
+}
+
+.archive-viz__era-value strong {
+  display: block;
+  color: var(--viz-text);
+  font-family: var(--viz-font-heading);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.035em;
+}
+
+.archive-viz__era-value span {
+  color: var(--viz-text-muted);
+  font-size: 0.68rem;
+}
+
+.archive-viz__era-years {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: end;
+  gap: 0.125rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.archive-viz__era-year-bar {
+  min-width: 0.125rem;
+  flex: 1 1 0;
+  background: var(--viz-border-strong);
+  opacity: 0.72;
+}
+
+/* --------------------------------------------------------------------------
+   Topics: linked topic/category map
+   -------------------------------------------------------------------------- */
+
+.archive-viz__topic-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.archive-viz__topic-card {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+  border: 0.0625rem solid var(--viz-border);
+  background: rgba(255, 255, 255, 0.9);
+  transition:
+    border-color var(--viz-fast) var(--viz-ease),
+    box-shadow var(--viz-fast) var(--viz-ease),
+    transform var(--viz-fast) var(--viz-ease);
+}
+
+.archive-viz__topic-card:hover {
+  border-color: var(--viz-border-strong);
+  box-shadow: 0 0.5rem 1.25rem rgba(35, 23, 55, 0.08);
+  transform: translateY(-0.125rem);
+}
+
+.archive-viz__topic-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.125rem solid var(--topic-accent, var(--viz-purple));
+}
+
+.archive-viz__topic-link {
+  color: var(--viz-text);
+  font-family: var(--viz-font-heading);
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: 0.045em;
+  text-decoration: none;
+}
+
+.archive-viz__topic-link:hover,
+.archive-viz__topic-link:focus-visible {
+  color: var(--viz-purple-dark);
+}
+
+.archive-viz__topic-count {
+  color: var(--viz-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.archive-viz__category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.archive-viz__category-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 1.85rem;
+  padding: 0.28rem 0.48rem;
+  border: 0.0625rem solid var(--viz-border);
+  color: var(--viz-text-soft);
+  background: var(--viz-surface);
+  font-size: 0.69rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    color var(--viz-fast) var(--viz-ease),
+    border-color var(--viz-fast) var(--viz-ease),
+    background-color var(--viz-fast) var(--viz-ease);
+}
+
+.archive-viz__category-link:hover,
+.archive-viz__category-link:focus-visible {
+  border-color: var(--topic-accent, var(--viz-purple));
+  color: var(--viz-text);
+  background: var(--viz-lavender-soft);
+}
+
+.archive-viz__category-count {
+  color: var(--viz-text-muted);
+  font-size: 0.61rem;
+  font-weight: 700;
+}
+
+.archive-viz__topic-unmapped {
+  grid-column: 1 / -1;
+  padding: 0.8rem 1rem;
+  border: 0.0625rem dashed var(--viz-border-strong);
+  color: var(--viz-text-muted);
+  background: rgba(245, 242, 251, 0.72);
+  font-size: 0.75rem;
+}
+
+@keyframes archive-viz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Standalone topics widget
+   -------------------------------------------------------------------------- */
+
+.archive-viz--topics .archive-viz__stage {
+  min-height: 0;
+}
+
+.archive-viz--topics .archive-viz__topic-map {
+  padding: 0;
+}
+
+@media (min-width: 43.75rem) {
+  .archive-viz__summary {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+  .archive-viz__view-header {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(12rem, 22rem);
+
+    align-items: end;
+  }
+
+  .archive-viz__era-layout {
+    grid-template-columns:
+      minmax(18rem, 0.85fr)
+      minmax(20rem, 1fr);
+  }
+
+  .archive-viz__topic-map {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 67.5rem) {
+  .archive-viz__heading-row {
+    grid-template-columns: minmax(0, 1fr) minmax(32rem, 0.72fr);
+  }
+
+  .archive-viz__topic-map {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-viz__loading-mark {
+    animation: none;
+  }
+
+  .archive-viz__topic-card,
+  .archive-viz__tooltip,
+  .archive-viz .viz-publisher-bar,
+  .archive-viz .viz-era-segment {
+    transition: none;
+  }
+}

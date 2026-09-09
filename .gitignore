@@ -1,0 +1,101 @@
+# Python environments / caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Admin/runtime state — NEVER COMMIT
+backend/var/
+backend/runtime/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Secrets / environment
+.env
+.env.*
+*.key
+*.pem
+
+# Generated/transient publication state
+publish-runs/
+publish-backups/
+image-staging/
+
+# Build/reports that can be regenerated
+reports/
+dist/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Local Git configuration if present
+.gitconfig
+
+# Python/package caches
+.cache/
+
+# Historical/manual backup copies
+*.bak-*
+*.before-*
+
+# Generated search databases
+src/site/data/search/*.sqlite
+src/site/data/search/*.sqlite3
+src/site/data/search/*.db
+
+# Generated search/recommendation indexes
+src/site/data/article-tfidf-matrix.npz
+src/site/data/article-tfidf-features.json
+src/site/data/article-related-24.json
+src/site/data/article-related-24-with-scores.json
+src/site/data/search/related-content.json
+src/site/data/wtk_articles_master.jsonl.bak-*
+
+# ----------------------------------------------------------------------
+# Large durable media - stored outside normal Git history
+# ----------------------------------------------------------------------
+src/site/assets/images/article-images/
+src/site/assets/images/article-thumbs/
+
+src/site/search/mkultra/images/
+src/site/search/mkultra/thumbs/
+
+# ----------------------------------------------------------------------
+# Generated public pages
+# ----------------------------------------------------------------------
+src/site/news/
+
+# ----------------------------------------------------------------------
+# Generated article/search data
+# ----------------------------------------------------------------------
+src/site/data/search/*.sqlite
+src/site/data/search/*.sqlite3
+src/site/data/search/*.db
+
+src/site/data/article-tfidf-matrix.npz
+src/site/data/article-tfidf-features.json
+src/site/data/article-related-24.json
+src/site/data/article-related-24-with-scores.json
+src/site/data/search/related-content.json
+
+# Master CSV is an export/working representation; JSONL is canonical.
+src/site/data/wtk_articles_master.csv
+
+# ----------------------------------------------------------------------
+# Historical/manual working backups
+# ----------------------------------------------------------------------
+*.bak-*
+*.before-*
+
+# ----------------------------------------------------------------------
+# Package/download caches
+# ----------------------------------------------------------------------
+.cache/

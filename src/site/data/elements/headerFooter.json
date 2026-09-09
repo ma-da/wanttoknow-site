@@ -1,0 +1,257 @@
+{
+  "brand": {
+    "name": "WantToKnow.info",
+    "mark": "?",
+    "home": "/",
+    "ariaLabel": "WantToKnow.info home",
+    "footerDescription": "Verifiable information and news on corruption and cover-ups—and the powerful forces creating positive change and transformation."
+  },
+
+  "search": {
+    "action": "/search",
+    "parameter": "query",
+    "desktopPlaceholder": "Search WantToKnow",
+    "mobilePlaceholder": "Search WantToKnow.info",
+    "ariaLabel": "Search WantToKnow.info"
+  },
+
+  "topics": {
+    "label": "Topics",
+    "heading": "Explore by topic",
+    "viewAll": {
+      "label": "View all topics",
+      "href": "/topics/"
+    },
+    "items": [
+      {
+        "label": "Inspiring",
+        "href": "/topics/inspiring/"
+      },
+      {
+        "label": "Health + Medicine",
+        "href": "/topics/health/"
+      },
+      {
+        "label": "Money + Power",
+        "href": "/topics/money/"
+      },
+      {
+        "label": "Media",
+        "href": "/topics/media/"
+      },
+      {
+        "label": "Privacy + Technology",
+        "href": "/topics/tech/"
+      },
+      {
+        "label": "Government + Intelligence",
+        "href": "/topics/government/"
+      },
+      {
+        "label": "War + Security",
+        "href": "/topics/war/"
+      },
+      {
+        "label": "Mind Control",
+        "href": "/topics/mind-control/"
+      },
+      {
+        "label": "Abuse + Trafficking",
+        "href": "/topics/abuse-and-trafficking/"
+      },
+      {
+        "label": "Environment + Science",
+        "href": "/topics/science-and-environment/"
+      },
+      {
+        "label": "Reality + Consciousness",
+        "href": "/topics/consciousness/"
+      },
+      {
+        "label": "UFO/UAP Disclosure",
+        "href": "/topics/ufo/"
+      },
+      {
+        "label": "Deep History",
+        "href": "/topics/deep-history/"
+      }
+    ]
+  },
+
+  "menu": {
+    "priority": [
+      {
+        "label": "Newsletter",
+        "description": "Get the latest from WantToKnow.info",
+        "href": "https://www.wanttoknow.info/subscribe"
+      },
+      {
+        "label": "Donate",
+        "description": "Support independent nonprofit research",
+        "href": "/donate/",
+        "accent": true
+      },
+      {
+        "label": "Contact",
+        "description": "Questions, feedback, and media inquiries",
+        "href": "/contact/"
+      }
+    ],
+
+    "columns": [
+      {
+        "heading": "Explore",
+        "items": [
+          {
+            "label": "News",
+            "href": "/news/"
+          },
+          {
+            "label": "Inspiring Center",
+            "href": "/inspiring/"
+          },
+          {
+            "label": "Timelines",
+            "href": "/timelines/"
+          },										
+          {
+            "label": "Books",
+            "href": "/books/"
+          },
+          {
+            "label": "Essays",
+            "href": "/essays/"
+          },
+          {
+            "label": "Poetry",
+            "href": "/poetry/"
+          }										
+        ]
+      },
+      {
+        "heading": "Research",
+        "items": [
+          {
+            "label": "Archive Search Portal",
+            "href": "/search/"
+          },
+          {
+            "label": "MKULTRA Search Engine",
+            "href": "/search/mkultra/"
+          },
+          {
+            "label": "Speculation",
+            "href": "/speculation/"
+          }										
+        ]
+      },
+      {
+        "heading": "About",
+        "items": [
+          {
+            "label": "About WantToKnow.info",
+            "href": "/about/"
+          },
+          {
+            "label": "Contributors",
+            "href": "/about/contributors/"
+          },
+          {
+            "label": "Founder",
+            "href": "/about/founder/"
+          },
+          {
+            "label": "How We Use AI",
+            "href": "/about/ai/"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy/"
+          }
+        ]
+      }
+    ]
+  },
+
+  "social": {
+    "youtube": "https://www.youtube.com/@PEERSconsciousmedia",
+    "telegram": "https://t.me/wanttoknow_official"
+  },
+
+  "footer": {
+    "columns": [
+      {
+        "heading": "Explore",
+        "items": [
+          {
+            "label": "News",
+            "href": "/news"
+          },
+          {
+            "label": "Inspiring",
+            "href": "/inspiring"
+          },
+          {
+            "label": "All topics",
+            "href": "/topics"
+          }
+        ]
+      },
+      {
+        "heading": "Research",
+        "items": [
+          {
+            "label": "Search portal",
+            "href": "/search"
+          },
+          {
+            "label": "Specialized Timelines",
+            "href": "/timelines/"
+          },
+          {
+            "label": "MK ULTRA Search Engine",
+            "href": "/search/mkultra"
+          }
+        ]
+      },
+      {
+        "heading": "Organization",
+        "items": [
+          {
+            "label": "About",
+            "href": "/about"
+          },
+          {
+            "label": "Team",
+            "href": "/about/team"
+          },
+										{
+												"label": "Contact",
+												"href": "/contact"
+										},										
+          {
+            "label": "Donate",
+            "href": "/donate"
+          }
+        ]
+      }
+    ],
+
+    "copyright": "WantToKnow.info / PEERS. Educational nonprofit. Website by Mark Bailey.",
+
+    "legal": [
+      {
+        "label": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms",
+        "href": "/terms"
+      },
+      {
+        "label": "AI Policy",
+        "href": "/about/ai/"
+      }						
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wanttoknow.info/schemas/document-chunk-v1.schema.json",
+  "title": "WantToKnow.info DocumentChunk v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "ref_id",
+    "source_key",
+    "source_id",
+    "chunk_index",
+    "title",
+    "url",
+    "section",
+    "topic",
+    "topics",
+    "tags",
+    "heading",
+    "headings",
+    "heading_paths",
+    "published_at",
+    "updated_at",
+    "priority",
+    "word_count",
+    "text",
+    "text_sha256",
+    "source_word_start",
+    "source_word_end",
+    "source_word_count",
+    "qc_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "page_chunk",
+        "substack_chunk"
+      ]
+    },
+    "ref_id": {
+      "type": "integer",
+      "minimum": 100000,
+      "maximum": 999999
+    },
+    "source_key": {
+      "type": "string",
+      "pattern": "^(?:page:.+|substack:[0-9]+):chunk:[0-9]{4,}$"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chunk_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "section": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "topic": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "heading": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "headings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "heading_paths": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "published_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "priority": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 320
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "text_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_word_start": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_word_end": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_word_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "qc_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

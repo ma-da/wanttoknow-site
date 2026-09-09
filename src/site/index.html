@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#7658f6"/>
+  <meta name="color-scheme" content="light"/>
+
+  <!-- PAGE-SPECIFIC: generate these values for every public page. -->
+  <title>WantToKnow.info — Verifiable News, Hidden History &amp; Inspiring Solutions</title>
+  <meta name="description" content="Explore verifiable news, hidden history, research tools, and inspiring solutions. WantToKnow.info connects the dots with source-linked summaries and educational resources."/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.wanttoknow.info/"/>
+
+  <!-- PAGE-SPECIFIC SOCIAL PREVIEW: title, description, URL, image, and image alt. -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="WantToKnow.info"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://www.wanttoknow.info/"/>
+  <meta property="og:title" content="WantToKnow.info — Verifiable News, Hidden History &amp; Inspiring Solutions"/>
+  <meta property="og:description" content="Source-linked news, hidden history, practical research tools, and inspiring solutions for deeper understanding."/>
+  <meta property="og:image" content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"/>
+  <meta property="og:image:type" content="image/jpeg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="WantToKnow.info — verifiable information and inspiring solutions"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="WantToKnow.info — Verifiable News, Hidden History &amp; Inspiring Solutions"/>
+  <meta name="twitter:description" content="Source-linked news, hidden history, practical research tools, and inspiring solutions for deeper understanding."/>
+  <meta name="twitter:image" content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"/>
+  <meta name="twitter:image:alt" content="WantToKnow.info — verifiable information and inspiring solutions"/>
+
+		<!-- SITE-WIDE: keep these values consistent across the site. -->
+		<meta name="application-name" content="WantToKnow.info"/>
+		<meta name="apple-mobile-web-app-title" content="WantToKnow.info"/>
+
+		<!-- RSS -->
+		<link
+				rel="alternate"
+				type="application/rss+xml"
+				title="WTK Conscious Media"
+				href="https://wtkconsciousmedia.substack.com/feed"/>
+
+		<!-- Browser favicons -->
+		<link
+				rel="icon"
+				type="image/x-icon"
+				href="/assets/images/favicon.ico"/>
+
+		<link
+				rel="icon"
+				type="image/png"
+				sizes="32x32"
+				href="/assets/images/favicon-32x32.png"/>
+
+		<link
+				rel="icon"
+				type="image/png"
+				sizes="16x16"
+				href="/assets/images/favicon-16x16.png"/>
+
+		<!-- Apple / iOS -->
+		<link
+				rel="apple-touch-icon"
+				sizes="180x180"
+				href="/assets/images/apple-touch-icon.png"/>
+
+		<!-- Android / installable site metadata -->
+		<link
+				rel="manifest"
+				href="/site.webmanifest"/>
+
+  <!-- HOMEPAGE STRUCTURED DATA. Internal pages should emit their own page-type JSON-LD. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.wanttoknow.info/#organization",
+        "name": "WantToKnow.info",
+        "url": "https://www.wanttoknow.info/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.wanttoknow.info/assets/brand/wtk-logo.png"
+        }
+      },
+						{
+								"@type": "WebSite",
+								"@id": "https://www.wanttoknow.info/#website",
+								"url": "https://www.wanttoknow.info/",
+								"name": "WantToKnow.info",
+								"description": "Verifiable news, hidden history, research tools, and inspiring solutions.",
+								"publisher": {
+										"@id": "https://www.wanttoknow.info/#organization"
+								},
+								"inLanguage": "en-US",
+								"potentialAction": {
+										"@type": "SearchAction",
+										"target": {
+												"@type": "EntryPoint",
+												"urlTemplate": "https://www.wanttoknow.info/search?query={query}",
+												"httpMethod": "GET"
+										},
+										"query-input": "required name=query"
+								}
+						},
+      {
+        "@type": "WebPage",
+        "@id": "https://www.wanttoknow.info/#webpage",
+        "url": "https://www.wanttoknow.info/",
+        "name": "WantToKnow.info — Verifiable News, Hidden History & Inspiring Solutions",
+        "description": "Explore verifiable news, hidden history, research tools, and inspiring solutions. WantToKnow.info connects the dots with source-linked summaries and educational resources.",
+        "isPartOf": { "@id": "https://www.wanttoknow.info/#website" },
+        "about": { "@id": "https://www.wanttoknow.info/#organization" },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/global.css"/>
+		
+<style>
+/* ==========================================================================
+   Hero — overlapping light bulbs
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+/* ==========================================================================
+   Hero layout
+   ========================================================================== */
+
+.hero-grid {
+  position: relative;
+
+  /*
+   * Artwork is absolutely positioned, so it does not need
+   * its own grid column.
+   */
+  display: block;
+}
+
+
+/* ==========================================================================
+   Hero copy
+   ========================================================================== */
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  /*
+   * Allow copy to extend underneath roughly the left third
+   * of the artwork.
+   */
+  width: min(72%, 58rem);
+
+  min-width: 0;
+}
+
+.hero__content > .eyebrow {
+  margin-top: 0;
+}
+
+
+/* ==========================================================================
+   Hero artwork — desktop
+   ========================================================================== */
+
+.hero-bulbs {
+  --bulb-left-x: 30%;
+  --bulb-left-y: 22%;
+
+  --bulb-right-x: 62%;
+  --bulb-right-y: 22%;
+
+  --bulb-center-x: 46.3%;
+  --bulb-center-y: 23%;
+
+  /*
+   * Remove artwork from document flow.
+   * The hero's height is determined entirely by the copy,
+   * including the action buttons.
+   */
+  position: absolute;
+
+  /*
+   * Align artwork with the top of the eyebrow
+   * and the bottom of the complete hero content.
+   */
+  top: 0;
+  bottom: -4rem;
+
+  /*
+   * Push the right edge from the container edge
+   * to the right edge of the viewport.
+   */
+  right: calc((100vw - 100%) / -2);
+
+  z-index: 1;
+
+  /*
+   * Height is determined by top + bottom.
+   * Width follows automatically from the artwork ratio.
+   */
+  height: auto;
+  width: auto;
+
+  aspect-ratio: 583 / 685;
+
+  margin: 0;
+
+  pointer-events: none;
+}
+
+
+/* Transparent PNG */
+
+.hero-bulbs__image {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: top right;
+
+  opacity: 1;
+}
+
+
+/*
+ * Transparent PNG artwork.
+ */
+
+.hero-bulbs__image {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  opacity: 1;
+
+  transition:
+    opacity
+    var(--motion-duration-medium)
+    var(--motion-easing-standard);
+}
+
+
+/* ==========================================================================
+   Disable old overlap animation
+   ========================================================================== */
+
+/*
+ * This lets you leave the overlap SVG in the HTML for now.
+ * It simply does not render.
+ */
+
+.hero-bulbs__overlap {
+  display: none;
+}
+
+
+/* ==========================================================================
+   Point lights
+   ========================================================================== */
+
+.hero-bulbs__light {
+  position: absolute;
+  z-index: 3;
+
+  width: clamp(0.4rem, 0.8vw, 0.65rem);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  background: #FAFAD2;
+
+  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.25);
+}
+
+
+/* Left bulb */
+
+.hero-bulbs__light--left {
+  left: var(--bulb-left-x);
+  top: var(--bulb-left-y);
+
+  animation:
+    hero-light-left
+    18s
+    ease-in-out
+    infinite;
+}
+
+
+/* Right bulb */
+
+.hero-bulbs__light--right {
+  left: var(--bulb-right-x);
+  top: var(--bulb-right-y);
+
+  animation:
+    hero-light-right
+    18s
+    ease-in-out
+    infinite;
+}
+
+
+/* Shared center */
+
+.hero-bulbs__light--center {
+  left: var(--bulb-center-x);
+  top: var(--bulb-center-y);
+
+  animation:
+    hero-light-center
+    18s
+    ease-in-out
+    infinite;
+}
+
+
+/* ==========================================================================
+   Animation — left bulb
+   ========================================================================== */
+
+@keyframes hero-light-left {
+
+  0%,
+  3% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+
+    box-shadow: none;
+  }
+
+
+  /* Slowly appear */
+
+  8% {
+    opacity: 0.55;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.65);
+  }
+
+
+  /* Reach full glow */
+
+  12% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    box-shadow:
+      0 0 0.35rem
+        rgba(255, 255, 255, 1),
+
+      0 0 0.9rem
+        rgba(255, 255, 245, 1),
+
+      0 0 2rem
+        rgba(255, 248, 215, 0.85),
+
+      0 0 3.5rem
+        rgba(255, 235, 175, 0.55);
+  }
+
+
+  /* Hold */
+
+  19% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    box-shadow:
+      0 0 0.4rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1rem
+        rgba(255, 255, 245, 1),
+
+      0 0 2.2rem
+        rgba(255, 248, 215, 0.9),
+
+      0 0 3.8rem
+        rgba(255, 235, 175, 0.6);
+  }
+
+
+  /* Fade */
+
+  27%,
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.3);
+
+    box-shadow: none;
+  }
+}
+
+
+/* ==========================================================================
+   Animation — right bulb
+   ========================================================================== */
+
+@keyframes hero-light-right {
+
+  0%,
+  28% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+
+    box-shadow: none;
+  }
+
+
+  /* Slowly appear */
+
+  33% {
+    opacity: 0.55;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.65);
+  }
+
+
+  /* Reach full glow */
+
+  37% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    box-shadow:
+      0 0 0.35rem
+        rgba(255, 255, 255, 1),
+
+      0 0 0.9rem
+        rgba(255, 255, 245, 1),
+
+      0 0 2rem
+        rgba(255, 248, 215, 0.85),
+
+      0 0 3.5rem
+        rgba(255, 235, 175, 0.55);
+  }
+
+
+  /* Hold */
+
+  44% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    box-shadow:
+      0 0 0.4rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1rem
+        rgba(255, 255, 245, 1),
+
+      0 0 2.2rem
+        rgba(255, 248, 215, 0.9),
+
+      0 0 3.8rem
+        rgba(255, 235, 175, 0.6);
+  }
+
+
+  /* Fade */
+
+  52%,
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.3);
+
+    box-shadow: none;
+  }
+}
+
+
+/* ==========================================================================
+   Animation — shared center
+   ========================================================================== */
+
+@keyframes hero-light-center {
+
+  0%,
+  53% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.2);
+
+    box-shadow: none;
+  }
+
+
+  /* Ignition */
+
+  58% {
+    opacity: 0.5;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.6);
+  }
+
+
+  /* Full illumination */
+
+  63% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.1);
+
+    box-shadow:
+      0 0 0.45rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1.1rem
+        rgba(255, 255, 255, 1),
+
+      0 0 2.5rem
+        rgba(255, 250, 225, 0.95),
+
+      0 0 4.5rem
+        rgba(255, 238, 185, 0.75),
+
+      0 0 7rem
+        rgba(255, 225, 150, 0.4);
+  }
+
+
+  /* Long bright hold */
+
+  72% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.2);
+
+    box-shadow:
+      0 0 0.5rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1.3rem
+        rgba(255, 255, 255, 1),
+
+      0 0 2.8rem
+        rgba(255, 250, 225, 1),
+
+      0 0 5rem
+        rgba(255, 238, 185, 0.8),
+
+      0 0 8rem
+        rgba(255, 225, 150, 0.45);
+  }
+
+
+  81% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.15);
+
+    box-shadow:
+      0 0 0.45rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1.2rem
+        rgba(255, 255, 255, 1),
+
+      0 0 2.5rem
+        rgba(255, 250, 225, 0.9),
+
+      0 0 4.5rem
+        rgba(255, 238, 185, 0.7),
+
+      0 0 7rem
+        rgba(255, 225, 150, 0.35);
+  }
+
+
+  /* Slow fade */
+
+  88% {
+    opacity: 0.65;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.85);
+
+    box-shadow:
+      0 0 0.35rem
+        rgba(255, 255, 255, 0.9),
+
+      0 0 1rem
+        rgba(255, 250, 225, 0.75),
+
+      0 0 3rem
+        rgba(255, 238, 185, 0.4);
+  }
+
+
+  96%,
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.25);
+
+    box-shadow: none;
+  }
+}
+
+
+/* ==========================================================================
+   Tablet / mobile
+   ========================================================================== */
+
+@media (max-width: 56.25rem) {
+
+  /*
+   * Stop using the desktop two-column layout.
+   */
+
+  .hero-grid {
+    display: block;
+  }
+
+
+  /*
+   * Hero text remains above everything.
+   */
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  /*
+   * Turn the illustration into centered background artwork.
+   */
+
+  .hero-bulbs {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    right: auto;
+    z-index: 1;
+
+    width: min(46rem, 115%);
+
+    margin: 0;
+
+    transform:
+      translate(-50%, -50%);
+  }
+
+
+  /*
+   * Fade only the illustration.
+   * The animated lights remain visible.
+   */
+
+  .hero-bulbs__image {
+    opacity: 0.2;
+  }
+}
+
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-bulbs__light {
+    animation: none;
+    opacity: 0;
+  }
+
+
+  /*
+   * Leave only a quiet static center glow.
+   */
+
+  .hero-bulbs__light--center {
+    opacity: 0.55;
+
+    background: #fff;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
+
+    box-shadow:
+      0 0 0.4rem
+        rgba(255, 255, 255, 1),
+
+      0 0 1rem
+        rgba(255, 255, 245, 0.85),
+
+      0 0 2rem
+        rgba(255, 248, 215, 0.55);
+  }
+}
+</style>		
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div id="global-header" data-global-header></div>
+
+<main id="main-content">
+<section class="hero" id="top">
+  <div class="container hero-grid">
+
+    <div class="hero__content">
+      <p class="eyebrow">
+        Reliable. Verifiable. Transformational.
+      </p>
+
+      <h1 class="hero-title">
+        Mindful media
+        <span class="outline">beyond</span>
+        the official
+        <span class="accent">story</span>
+      </h1>
+
+      <p class="hero-lede">
+        Our whistleblower-founded nonprofit has been educating the public
+        for 20+ years on the hidden forces shaping history and driving
+        global events today. We shine light on the darkness while spreading
+        the word about the real-world solutions that could transform our future.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="#news">
+          Explore latest news →
+        </a>
+
+        <a class="button button-secondary" href="/search">
+          Search the archive
+        </a>
+      </div>
+    </div>
+
+
+    <div class="hero-bulbs" aria-hidden="true">
+      <img
+        class="hero-bulbs__image"
+        src="/assets/graphics/hero-graphic.png"
+        alt=""
+      >
+
+      <svg
+        class="hero-bulbs__overlap"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="
+            M 50 0
+            C 88 25, 88 75, 50 100
+            C 12 75, 12 25, 50 0
+            Z
+          "
+        />
+      </svg>
+
+      <span
+        class="hero-bulbs__light hero-bulbs__light--left">
+      </span>
+
+      <span
+        class="hero-bulbs__light hero-bulbs__light--right">
+      </span>
+
+      <span
+        class="hero-bulbs__light hero-bulbs__light--center">
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section pathways" id="history">
+<div class="container">
+<p class="eyebrow">Explore</p>
+<h2 class="section-title">Follow Your <span>Curiosity</span></h2>
+<!-- <p class="section-intro">Each pathway can combine articles, summaries, information centers, videos, and timelines.</p>-->
+<div class="pathway-grid">
+<a class="pathway-card" href="/news"><span class="pathway-number">&ensp;CURRENT</span><h3 class="pathway-title">News Taboos</h3><p>Conscious explorations of censored and suppressed news on corruption, cover-ups, and human rights abuses at the highest levels of power.</p><span class="pathway-arrow">→</span></a>
+<a class="pathway-card" href="/news/category/inspirational"><span class="pathway-number">&ensp;POSSIBLE</span><h3 class="pathway-title">Inspiring</h3><p>Real-world solutions, bold ideas, and human stories exploring transformation at every level, from healing divides and reimagining our systems, to exploring consciousness and the deeper nature of reality.</p><span class="pathway-arrow">→</span></a>
+<a class="pathway-card" href="#multimedia"><span class="pathway-number">&ensp;MISSION</span><h3 class="pathway-title">Multimedia Journalism</h3><p>Original investigations, mini-documentaries, interviews, and visual storytelling bringing mindful media literacy to the most difficult and underreported issues.</p><span class="pathway-arrow">→</span></a>
+<a class="pathway-card" href="/timelines"><span class="pathway-number">&ensp;CONTEXT</span><h3 class="pathway-title">Timelines</h3><p>Trace the history and key events behind news topics rarely explored in depth, from UFOs, 9/11, remote viewing, unethical human experimentation, and the war on drugs.</p><span class="pathway-arrow">→</span></a>
+<a class="pathway-card" href="/search"><span class="pathway-number">&ensp;RESEARCH</span><h3 class="pathway-title">Conspiracy Encyclopedia</h3><p>Our search portal is a powerful tool for searching our news database, books, webpages, Substack investigations, and videos. AI summaries of search results available.</p><span class="pathway-arrow">→</span></a>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="news">
+  <div class="container">
+
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Mindful media</p>
+        <h2 class="section-title">Curated by hand</h2>
+        <p class="section-intro">
+          All information on WantToKnow.info is taken from the most reliable sources available. Our archive includes stories from respected media outlets, both corporate and independent, often grounded in primary sources such as government reports, declassified documents, congressional and whistleblower testimonies, court records, academic research, and investigative reports from watchdog, legal, and civil society organizations. The authenticity of any source can be verified using the links provided. To learn more, explore <a href="/reviews" data-reader-praise-open>reader reviews</a> or see <a href="/news">details about our archive</a>. 
+        </p>
+      </div>
+
+      <a
+        class="button button-secondary"
+        href="/topics/">
+        View all news
+      </a>
+    </div>
+
+				<div
+						class="pathways-menu-section"
+						aria-label="Explore topics"
+				>
+
+						<wtk-pathways-menu
+								src="/data/elements/pathways-menu-clean.json">
+						</wtk-pathways-menu>
+
+				</div>
+
+    <div class="home-news-feeds">
+
+      <!-- Latest news: appears first on mobile -->
+      <section
+        class="home-news-feed-panel"
+        aria-labelledby="latest-news-heading">
+
+        <header class="home-news-feed-heading">
+          <p class="eyebrow">Latest</p>
+
+          <h3 id="latest-news-heading">
+            Latest News
+          </h3>
+        </header>
+
+        <wtk-news-feed
+          class="home-news-feed"
+          limit="25"
+          sort="newest">
+        </wtk-news-feed>
+
+      </section>
+
+
+      <!-- Inspirational category -->
+      <section
+        class="home-news-feed-panel"
+        aria-labelledby="inspiring-news-heading">
+
+        <header class="home-news-feed-heading">
+          <p class="eyebrow">Inspiration</p>
+
+          <h3 id="inspiring-news-heading">
+            Latest Inspiration
+          </h3>
+        </header>
+
+        <wtk-news-feed
+          class="home-news-feed"
+          tags="inspirational"
+          limit="25"
+          sort="newest">
+        </wtk-news-feed>
+
+      </section>
+
+    </div>
+
+  </div>
+</section>
+
+<section
+  class="image-quote-banner"
+  style="
+    --quote-banner-image:
+      url('/assets/images/background-world.jpg');
+
+    --quote-banner-position:
+      center center;
+				padding-bottom: 0;		
+  ">
+
+  <div
+    class="image-quote-banner-overlay"
+    aria-hidden="true">
+  </div>
+
+  <div class="container image-quote-banner-inner">
+
+    <blockquote class="image-quote">
+
+      <p>
+        No society can understand itself without looking at its shadow side.
+      </p>
+
+      <cite>
+        — Gabor Maté
+      </cite>
+
+    </blockquote>
+
+  </div>
+
+</section>
+
+<!-- ====================================================================
+     Multimedia Journalism
+     ==================================================================== -->
+
+<section
+  class="section multimedia-section"
+  id="multimedia">
+
+  <div class="container">
+
+    <!-- ================================================================
+         Section heading
+         ================================================================ -->
+
+    <div class="multimedia-heading">
+
+      <p class="eyebrow">
+        PEERS Conscious Media
+      </p>
+
+      <h2 class="section-title">
+        Multimedia Journalism
+      </h2>
+
+      <p class="section-intro">
+        Original investigations, mini-documentaries, interviews, and visual storytelling bringing mindful media literacy to some of the most difficult and underreported issues of our time.
+      </p>
+
+    </div>
+
+
+    <!-- ================================================================
+         Two-column media grid
+         ================================================================ -->
+
+    <div class="multimedia-grid">
+
+
+      <!-- ==============================================================
+           Left — Conscious Media / Substack
+           ============================================================== -->
+
+      <section
+        class="multimedia-panel multimedia-panel--substack"
+        aria-labelledby="multimedia-substack-heading">
+
+        <header class="multimedia-panel__header">
+
+          <div class="multimedia-panel__heading-copy">
+
+            <p class="eyebrow">
+              In Depth Reporting
+            </p>
+
+            <h3 id="multimedia-substack-heading">
+              Substack Investigations
+            </h3>
+
+          </div>
+
+          <a
+            class="multimedia-panel__link"
+            href="https://wtkconsciousmedia.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            View all
+          </a>
+
+        </header>
+
+
+        <div
+          class="inspiring-substack multimedia-substack"
+          id="latest-articles"
+          data-rss-feed="https://wtkconsciousmedia.substack.com/feed">
+
+          <div
+            class="inspiring-substack-feed multimedia-substack-feed"
+            id="substack-posts"
+            aria-busy="true"
+            aria-live="polite">
+
+            <article class="substack-loading">
+              <p>
+                Loading the latest articles…
+              </p>
+            </article>
+
+          </div>
+
+
+          <noscript>
+
+            <p>
+              JavaScript is required to display the latest articles.
+              <a
+                href="https://wtkconsciousmedia.substack.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Read them on Substack
+              </a>.
+            </p>
+
+          </noscript>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==============================================================
+           Right — Transformation Series
+           ============================================================== -->
+
+      <wtk-youtube-playlist
+        playlist="transformation-series"
+        limit="6">
+      </wtk-youtube-playlist>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<section
+  class="social-section"
+  aria-label="Connect and share">
+
+  <div class="container">
+<!--
+    <h2
+      class="social-heading"
+      id="social-title">
+      Connect + Share
+    </h2>-->
+
+
+    <div class="social-logo-row">
+    <div class="social-logo-group">
+      <!-- YouTube -->
+
+						<a
+								class="social-logo"
+								href="https://www.youtube.com/@PEERSconsciousmedia"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="WantToKnow.info on YouTube">
+
+								<span class="social-logo-images">
+
+										<img
+												class="social-logo-default"
+												src="/assets/images/social-youtube.png"
+												alt=""
+												aria-hidden="true">
+
+										<img
+												class="social-logo-color"
+												src="/assets/images/social-youtube-color.png"
+												alt=""
+												aria-hidden="true">
+
+								</span>
+
+						</a>
+
+
+      <!-- Facebook -->
+
+      <a
+        class="social-logo"
+        id="shareFB"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share this page on Facebook">
+
+        <span class="social-logo-images">
+
+          <img
+            class="social-logo-default"
+            src="/assets/images/social-facebook.png"
+            alt=""
+            aria-hidden="true">
+
+          <img
+            class="social-logo-color"
+            src="/assets/images/social-facebook-color.png"
+            alt=""
+            aria-hidden="true">
+
+        </span>
+
+      </a>
+
+
+      <!-- Twitter / X -->
+
+      <a
+        class="social-logo"
+        id="shareTwitter"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share this page on X">
+
+        <span class="social-logo-images">
+
+          <img
+            class="social-logo-default"
+            src="/assets/images/social-twitter.png"
+            alt=""
+            aria-hidden="true">
+
+          <img
+            class="social-logo-color"
+            src="/assets/images/social-twitter-color.png"
+            alt=""
+            aria-hidden="true">
+
+        </span>
+
+      </a>
+
+
+      <!-- Instagram -->
+
+      <button
+        class="social-logo"
+        id="instagramShareBtn"
+        type="button"
+        aria-label="Share this page on Instagram">
+
+        <span class="social-logo-images">
+
+          <img
+            class="social-logo-default"
+            src="/assets/images/social-instagram.png"
+            alt=""
+            aria-hidden="true">
+
+          <img
+            class="social-logo-color"
+            src="/assets/images/social-instagram-color.png"
+            alt=""
+            aria-hidden="true">
+
+        </span>
+
+      </button>
+
+
+      <!-- Telegram -->
+
+						<a
+								class="social-logo"
+								href="https://t.me/wanttoknow_official"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Join WantToKnow.info on Telegram">
+
+								<span class="social-logo-images">
+
+										<img
+												class="social-logo-default"
+												src="/assets/images/social-telegram.png"
+												alt=""
+												aria-hidden="true">
+
+										<img
+												class="social-logo-color"
+												src="/assets/images/social-telegram-color.png"
+												alt=""
+												aria-hidden="true">
+
+								</span>
+
+						</a>
+    </div>
+    </div>
+
+
+    <p
+      class="share-status"
+      id="shareStatus"
+      role="status"
+      aria-live="polite">
+    </p>
+
+  </div>
+
+</section>
+
+<section
+  class="section support-section"
+  id="subscribe-donate">
+
+  <div class="container">
+
+    <div class="support-section-heading">
+
+      <p class="eyebrow">
+        Stay Connected + Support the Work
+      </p>
+
+      <h2 class="section-title">
+        The PEERS WantToKnow.info Email List
+      </h2>
+
+      <p class="section-intro">
+        Our list has over 13,000 subscribers from more than 160 countries around the world. Only a name and email address are required. The email messages will show PEERS as the sender, as the WantToKnow.info list is managed by PEERS (Public Education and Empowerment Resource Service), a 501(c)(3) nonprofit educational organization.
+      </p>
+
+    </div>
+
+
+    <div class="support-grid">
+
+      <!-- ================================================================
+           Subscribe
+           ================================================================ -->
+
+      <article class="support-card support-card--subscribe">
+
+        <div class="support-card-marker" aria-hidden="true">
+          GET ON THE LIST
+        </div>
+        <div class="support-stat-row">
+
+          <div class="support-stat">
+            <strong>13,000+</strong>
+            <span>Subscribers</span>
+          </div>
+
+          <div class="support-stat">
+            <strong>160+</strong>
+            <span>Countries</span>
+          </div>
+
+        </div>
+        <div class="support-card-heading">
+
+          <p>
+            Our free newsletters are carefully curated, drawing from the best of the corporate and independent media landscape. Each week, we research and summarize key media articles that challenge mainstream narratives on important issues shaping society. To bring balance to the challenging material on cover-ups and corruption, we also send out an inspiring story or news to a separate email list. Sign up for our inspiring list here.
+          </p>
+
+        </div>
+
+        <form
+          class="support-form"
+          method="post"
+          accept-charset="UTF-8"
+          action="https://www.aweber.com/scripts/addlead.pl">
+
+          <!-- Required AWeber configuration -->
+
+          <input
+            type="hidden"
+            name="meta_web_form_id"
+            value="503227784">
+
+          <input
+            type="hidden"
+            name="meta_split_id"
+            value="">
+
+          <input
+            type="hidden"
+            name="listname"
+            value="awlist4265185">
+
+          <input
+            type="hidden"
+            name="redirect"
+            value="/subscribe-welcome.html">
+
+          <input
+            type="hidden"
+            name="meta_adtracking"
+            value="WantToKnow.info_sign_up">
+
+          <input
+            type="hidden"
+            name="meta_message"
+            value="1">
+
+          <input
+            type="hidden"
+            name="meta_required"
+            value="name,email">
+
+          <input
+            type="hidden"
+            name="meta_tooltip"
+            value="">
+
+
+          <div class="support-form-fields">
+
+            <label class="support-field">
+
+              <span>
+                Name
+              </span>
+
+              <input
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder="Your name"
+                required>
+
+            </label>
+
+
+            <label class="support-field">
+
+              <span>
+                Email
+              </span>
+
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required>
+
+            </label>
+
+          </div>
+
+
+          <p class="support-privacy">
+            We respect your privacy. Your information is used only to manage
+            the mailing list and is not shared beyond our email service
+            provider. <a href="/about/privacy/">Read our privacy policy here</a>.
+          </p>
+
+
+          <div class="support-card-actions">
+
+            <button
+              class="button support-button support-button--subscribe"
+              type="submit">
+
+              Subscribe
+
+              <span aria-hidden="true">
+                →
+              </span>
+
+            </button>
+
+            <a
+              class="support-secondary-link"
+              href="/search">
+
+              Explore the news archive
+
+            </a>
+
+          </div>
+
+        </form>
+
+      </article>
+
+<!-- ================================================================
+     Newsletter Archive
+     ================================================================ -->
+
+						<article class="support-card support-card--archive">
+
+								<div
+										class="support-card-marker"
+										aria-hidden="true">
+										NEWSLETTER ARCHIVE
+								</div>
+
+								<div class="newsletter-archive__list">
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/8-murder-mit-fusion-scientist"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-08-31">
+														August 31, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Murder of MIT Fusion Scientist, Fauci Adviser Pleads Guilty to
+														Conspiring to Conceal COVID Records, Healing Social Isolation
+														with Sports, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/8-mind-control-nanoparticles"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-08-16">
+														August 16, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Mind Control Nanoparticles, Navy UFO Patents Filed, A New
+														Scientific Paradigm To Understand The World, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/8-fauci-diary-exposed"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-08-06">
+														August 6, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Fauci's Diary Exposed, US Regulators Serve the Pesticide
+														Industry, How Music Rewires the Brain, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/8-prison-letters-expose-underground-prison-torture"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-08-01">
+														August 1, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Prison Letters Expose Underground Prison Torture, Modern Day
+														Slavery All Around Us, Justice Department Withholds Epstein
+														Files, Restorative Justice for Sex Offenders, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/7-50-million-gardasil-vaccine-settlement"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-07-25">
+														July 25, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														$50 Million Gardasil Vaccine Settlement, Google's Plan to
+														Release GMO Mosquitoes into the Wild, Earth's Underground
+														Fungus Network, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/7-bohemian-grove-of-big-tech"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-07-10">
+														July 10, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														The Bohemian Grove of Big Tech, Whistleblower Silenced by Meta,
+														The Edible Cities Where Food is Free, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/7-everything-i-learned-about-suicide-i-learned-on-instagram"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-07-02">
+														July 2, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Instagram's Self-Harm and Suicide Algorithms, COVID Vaccine
+														Disabilities, How Art Saves People's Lives, More
+												</span>
+
+										</a>
+
+
+										<a
+												class="newsletter-archive__item"
+												href="https://www.wanttoknow.info/26/6-social-media-big-tobacco-moment"
+												target="_blank"
+												rel="noopener noreferrer">
+
+												<time datetime="2026-04-04">
+														April 4, 2026
+												</time>
+
+												<span class="newsletter-archive__title">
+														Social Media's Big Tobacco Moment, NDAs Shield AI Data Center
+														Boom, How Flowers Helped a Woman's Anorexia, More
+												</span>
+
+										</a>
+
+								</div>
+
+						</article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================================
+     Support Our Work
+     ==================================================================== -->
+
+<section
+  class="section support-work-section"
+  id="support-our-work">
+
+  <div class="container">
+
+    <div class="support-work">
+
+      <div class="support-work__grid">
+
+        <!-- ============================================================
+             40% — Testimonial
+             ============================================================ -->
+
+        <blockquote class="support-work__quote">
+
+          <p>
+            “It's my honor to financially support WantToKnow.info and
+            PEERS as the single best source for the most comprehensive
+            and accurate information on important topics. I have helped
+            shape over 300 briefs to Members of Congress on policy issues
+            for ending poverty. PEERS is always verifiably accurate with
+            the most revealing facts on an issue. I have shared this
+            site's information with confidence to colleagues for over
+            ten years. I have always had positive feedback, and never
+            received any criticism for inaccurate and/or biased
+            information. Thank you for your invaluable contributions to
+            truth, justice, and a brighter future for all.”
+          </p>
+
+          <footer>
+            — Carl Herman
+
+            <span>
+              National Board Certified Teacher in History,
+              Government, and Economics
+            </span>
+          </footer>
+
+        </blockquote>
+
+
+        <!-- ============================================================
+             40% — PEERS statement
+             ============================================================ -->
+
+        <div class="support-work__statement">
+
+          <h2>
+            Grassroots funding makes this work possible
+          </h2>
+
+          <p>
+            All of the information we provide on WantToKnow.info is free.
+            We depend on grassroots contributions to keep our website and
+            email list running.
+          </p>
+
+          <p>
+            Keeping corporate money and influence out of the news process
+            is something we value. Your tax-deductible donation, however
+            large or small, makes a big difference to us.
+          </p>
+
+          <p class="support-work__nonprofit">
+            WantToKnow.info is operated by
+            <a
+              href="https://www.peerservice.org"
+              target="_blank"
+              rel="noopener noreferrer">
+              PEERS
+            </a>,
+            Public Education and Empowerment Resource Service, a
+            501(c)(3) nonprofit educational organization.
+          </p>
+
+        </div>
+
+
+        <!-- ============================================================
+             20% — Actions
+             ============================================================ -->
+
+        <div class="support-work__actions">
+
+          <a
+            class="button support-button support-button--donate"
+            href="/donate">
+
+            Donate Today
+
+            <span aria-hidden="true">
+              →
+            </span>
+
+          </a>
+
+
+          <a
+            class="support-secondary-link"
+            href="https://www.peerservice.org"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Learn more about PEERS
+
+            <span aria-hidden="true">
+              →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="founder-section" id="founder">
+
+  <div class="founder-image-wrap">
+
+    <img
+      class="founder-image"
+      src="/assets/images/team/fred-banner.jpg"
+      alt="Fred Burks, founder of WantToKnow.info"
+      loading="lazy">
+
+  </div>
+
+
+  <div class="founder-content">
+
+    <div class="founder-content-inner">
+
+      <p class="founder-eyebrow">
+        Founder
+      </p>
+
+      <blockquote class="founder-quote">
+
+        <p>
+          "The collective fear, secrecy, polarization, and loss of purpose within all of us have allowed leaders to subvert democracy, and to take away our freedoms. By each one of us making a commitment to work on these issues both inside ourselves and out in the world, we are changing our collective direction for a brighter future."
+        </p>
+
+        <cite>
+          — Fred Burks, PEERS founder
+        </cite>
+
+      </blockquote>
+
+
+      <a
+        class="founder-link"
+        href="/about/founder/">
+
+        Meet our founder
+
+        <span aria-hidden="true">→</span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="about">
+
+  <div class="container about-grid">
+
+    <!-- ================================================================
+         About copy
+         ================================================================ -->
+
+    <div>
+
+      <p class="eyebrow">
+        Purpose
+      </p>
+
+      <h2 class="section-title">
+        What we're about
+      </h2>
+
+      <p>
+        Our website was founded by Fred Burks, who served as a language interpreter for presidents and other government officials around the world including G.W. Bush, Clinton, Gore, and Cheney. Late in his career, he began discovering significant levels of global deception and manipulation. His courageous whistleblowing was reported in the <a href="https://www.washingtonpost.com/wp-dyn/articles/A49449-2004Dec8.html" target="_blank"><em>Washington Post</em></a> and other major media. Learn more about the fascinating history of PEERS and WantToKnow.info.
+      </p>
+
+      <p>
+        We are a small organization with a large network of volunteers with diverse backgrounds in media activism, journalism, high-level government work, academia, social justice advocacy, grassroots organizing, and spiritual/metaphysical work. Our service relies on courageous, dedicated researchers and concerned citizens from around the globe who have made key contributions to our site. 
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="button"
+          href="/about">
+          Our mission and values
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="/about/team">
+          Team and Contributors
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================================
+         Right column
+         ================================================================ -->
+
+    <div class="about-side">
+
+      <!-- Statistics -->
+
+      <div
+        class="stats-grid"
+        aria-label="WantToKnow.info statistics">
+
+        <div class="stat">
+          <strong>2006</strong>
+          <span>Year established</span>
+        </div>
+
+        <div class="stat">
+          <strong>14K+</strong>
+          <span>Source-linked news summaries</span>
+        </div>
+
+      </div>
+
+
+      <!-- Board / team gallery -->
+
+      <div class="board-section">
+
+        <div class="board-heading">
+
+          <p class="eyebrow">
+            Our People
+          </p>
+
+          <h3 class="board-title">
+            Board + Leadership
+          </h3>
+
+        </div>
+
+
+        <div class="board-gallery">
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-amber.jpg"
+                alt="Amber"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>Amber</h4>
+              <p>Executive Director</p>
+            </div>
+
+          </article>
+
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-mark.png"
+                alt="Mark"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>Mark</h4>
+              <p>Chief Financial Officer</p>
+            </div>
+
+          </article>
+
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-joe.png"
+                alt="Joe"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>Joe</h4>
+              <p>Board Member</p>
+            </div>
+
+          </article>
+
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-josh.jpg"
+                alt="Josh"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>Josh</h4>
+              <p>Board Member</p>
+            </div>
+
+          </article>
+
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-john.jpg"
+                alt="John"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>John</h4>
+              <p>Board Member</p>
+            </div>
+
+          </article>
+
+
+          <article class="board-card">
+
+            <div class="board-photo">
+              <img
+                src="/assets/images/team/team-marc.png"
+                alt="Marc"
+                loading="lazy">
+            </div>
+
+            <div class="board-card-copy">
+              <h4>Marc</h4>
+              <p>Board Member</p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div aria-hidden="true" aria-labelledby="instagram-modal-title" aria-modal="true" class="share-modal" id="instagramShareModal" role="dialog">
+<div class="share-modal-dialog">
+<div class="share-modal-header">
+<div><h2 id="instagram-modal-title">Instagram share image</h2><p>A 1080 × 1350 image with a scannable link back to this page.</p></div>
+<button aria-label="Close Instagram share dialog" class="modal-close" id="instagramModalClose" type="button">×</button>
+</div>
+<div class="share-preview-wrap"><div class="share-preview share-preview-loading" id="instagramPreviewWrap">Creating preview…</div></div>
+<div class="share-modal-actions">
+<button class="button" id="shareInstagramImage" type="button">Share image</button>
+<button class="button button-secondary" id="downloadInstagramImage" type="button">Download image</button>
+<button class="button button-secondary" id="copyInstagramCaption" type="button">Copy caption</button>
+</div>
+<p class="share-modal-note">On a phone or tablet, choose Instagram from the native share sheet when it is available. Desktop browsers generally require downloading the image and uploading it in Instagram.</p>
+</div>
+</div>
+
+<dialog
+  class="youtube-video-modal"
+  id="youtube-video-modal"
+  aria-labelledby="youtube-video-modal-title">
+
+  <div class="youtube-video-modal-shell">
+
+    <div class="youtube-video-modal-header">
+
+      <h2 id="youtube-video-modal-title">
+        Video
+      </h2>
+
+      <button
+        class="youtube-video-modal-close"
+        type="button"
+        aria-label="Close video">
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="youtube-video-player"
+      id="youtube-video-player">
+    </div>
+
+  </div>
+
+</dialog>
+</main>
+<div id="global-footer" data-global-footer></div>
+
+<script src="/assets/js/global.js" defer></script>
+<script src="/assets/js/home.js" defer></script>
+<script
+  type="module"
+  src="/assets/js/components/pathways-menu.js">
+</script>
+<script
+  type="module"
+  src="/assets/js/components/news-feed.js">
+</script>
+<script
+  type="module"
+  src="/assets/js/components/youtube-playlists.js">
+</script>
+<script src="/assets/js/reader-praise.js" defer></script>
+</body>
+</html>

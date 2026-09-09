@@ -1,0 +1,9 @@
+bleach==6.2.0
+cryptography==50.0.0
+fastapi==0.141.1
+filelock==3.32.4
+httpx==0.28.1
+Markdown==3.10.3
+pydantic==2.13.4
+python-multipart==0.0.32
+uvicorn==0.52.3

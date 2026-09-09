@@ -1,0 +1,2941 @@
+{
+  "article_count": 14382,
+  "date_range": {
+    "first": "1904-03-27",
+    "last": "2026-08-20"
+  },
+  "dated_article_count": 14382,
+  "undated_article_count": 0,
+  "category_count": 93,
+  "publisher_group_count": 688,
+  "articles_with_images": 1633,
+  "articles_with_related": 14382,
+  "categories": {
+    "governmentcorruption": 6672,
+    "corporatecorruption": 2886,
+    "inspirational": 2802,
+    "health": 2299,
+    "intelligenceagency": 1573,
+    "war": 1411,
+    "militarycorruption": 1168,
+    "terrorism": 1158,
+    "secrecy": 1048,
+    "civilliberties": 1024,
+    "sexabusescandals": 898,
+    "financial": 789,
+    "privacy": 757,
+    "coronavirus": 730,
+    "massmedia": 677,
+    "pharmaceuticalcorruption": 560,
+    "911": 510,
+    "bigbrother": 484,
+    "newenergy": 473,
+    "food-corruption": 460,
+    "bankbailout": 442,
+    "incomeinequality": 418,
+    "corruptioninscience": 411,
+    "ufos": 391,
+    "elections": 343,
+    "police-corruption": 331,
+    "vaccines": 276,
+    "natureofreality": 275,
+    "mindcontrol": 274,
+    "geneticallymodifiedorganisms": 269,
+    "prisonscorruption": 269,
+    "coronavirus-vaccine-problems": 259,
+    "court-judicial-corruption": 221,
+    "newenergyinventions": 213,
+    "healing-our-relationships": 201,
+    "big-tech": 200,
+    "healing-our-earth": 183,
+    "jeffrey-epstein": 176,
+    "nuclear_power": 161,
+    "mindalteringdrugs": 158,
+    "toxic-chemicals": 150,
+    "globalwarming": 148,
+    "assassinations": 138,
+    "healing-our-bodies": 138,
+    "mental-health": 134,
+    "AI": 133,
+    "secretsocieties": 114,
+    "censorship": 107,
+    "tech-for-good": 100,
+    "biotech-dangers": 97,
+    "repairing-our-criminal-justice-system": 95,
+    "avianflubird": 91,
+    "reimagining-the-economy": 90,
+    "top-human-interest-stories": 89,
+    "warfare-tech": 87,
+    "cell-phones-wireless-dangers": 85,
+    "nonlethalweapons": 81,
+    "general": 79,
+    "microchipsimplants": 79,
+    "cancercures": 77,
+    "environmental-destruction": 67,
+    "inspiring-disabled-persons": 67,
+    "healing-the-war-machine": 66,
+    "war-on-drugs": 66,
+    "dolphinswhales": 62,
+    "government-waste": 62,
+    "neardeathexperiences": 59,
+    "weapons-mass-destruction": 59,
+    "hurricanekatrina": 58,
+    "immigration-enforcement-corruption": 53,
+    "reimagining-education": 50,
+    "animal-wonders": 48,
+    "kennedy-assassination": 46,
+    "archeologyhistory": 43,
+    "factory-farming": 39,
+    "amazing-seniors": 38,
+    "power-of-art": 38,
+    "sex-abuse-doctors": 30,
+    "abledanger": 28,
+    "ending-human-trafficking": 28,
+    "massanimaldeaths": 27,
+    "grassroots-alternative-systems": 26,
+    "microcreditmicroloans": 25,
+    "sibeledmonds": 23,
+    "chemtrails": 20,
+    "microplastics-solutions": 17,
+    "davidraygriffin": 16,
+    "911polls": 12,
+    "stevenjones": 12,
+    "zika-virus": 11,
+    "transgender-medicine": 10,
+    "rothschilds-family": 8,
+    "londonbombings": 7
+  },
+  "publishing_groups": {
+    "new-york-times": {
+      "name": "New York Times",
+      "count": 1671
+    },
+    "the-guardian": {
+      "name": "The Guardian",
+      "count": 1365
+    },
+    "washington-post": {
+      "name": "Washington Post",
+      "count": 1025
+    },
+    "san-francisco-chronicle": {
+      "name": "San Francisco Chronicle",
+      "count": 655
+    },
+    "cnn": {
+      "name": "CNN",
+      "count": 578
+    },
+    "abc": {
+      "name": "ABC",
+      "count": 487
+    },
+    "bbc": {
+      "name": "BBC",
+      "count": 439
+    },
+    "cbs": {
+      "name": "CBS",
+      "count": 421
+    },
+    "the-intercept": {
+      "name": "The Intercept",
+      "count": 363
+    },
+    "the-independent": {
+      "name": "The Independent",
+      "count": 358
+    },
+    "los-angeles-times": {
+      "name": "Los Angeles Times",
+      "count": 297
+    },
+    "npr": {
+      "name": "NPR",
+      "count": 242
+    },
+    "msnbc": {
+      "name": "MSNBC",
+      "count": 241
+    },
+    "the-telegraph": {
+      "name": "The Telegraph",
+      "count": 241
+    },
+    "nbc": {
+      "name": "NBC",
+      "count": 213
+    },
+    "usa-today": {
+      "name": "USA Today",
+      "count": 211
+    },
+    "newsweek": {
+      "name": "Newsweek",
+      "count": 204
+    },
+    "time": {
+      "name": "Time",
+      "count": 198
+    },
+    "forbes": {
+      "name": "Forbes",
+      "count": 184
+    },
+    "huffington-post": {
+      "name": "Huffington Post",
+      "count": 177
+    },
+    "msn-news": {
+      "name": "MSN News",
+      "count": 167
+    },
+    "bloomberg": {
+      "name": "Bloomberg",
+      "count": 162
+    },
+    "christian-science-monitor": {
+      "name": "Christian Science Monitor",
+      "count": 156
+    },
+    "reuters": {
+      "name": "Reuters",
+      "count": 135
+    },
+    "wall-street-journal": {
+      "name": "Wall Street Journal",
+      "count": 130
+    },
+    "boston-globe": {
+      "name": "Boston Globe",
+      "count": 129
+    },
+    "cnbc": {
+      "name": "CNBC",
+      "count": 127
+    },
+    "new-york-post": {
+      "name": "New York Post",
+      "count": 123
+    },
+    "chicago-tribune": {
+      "name": "Chicago Tribune",
+      "count": 117
+    },
+    "fox-news": {
+      "name": "Fox News",
+      "count": 110
+    },
+    "yahoo": {
+      "name": "Yahoo",
+      "count": 106
+    },
+    "cbc": {
+      "name": "CBC",
+      "count": 93
+    },
+    "miami-herald": {
+      "name": "Miami Herald",
+      "count": 90
+    },
+    "daily-mail": {
+      "name": "Daily Mail",
+      "count": 88
+    },
+    "pbs": {
+      "name": "PBS",
+      "count": 77
+    },
+    "london-times": {
+      "name": "London Times",
+      "count": 75
+    },
+    "reasons-to-be-cheerful": {
+      "name": "Reasons to be Cheerful",
+      "count": 74
+    },
+    "international-business-times": {
+      "name": "International Business Times",
+      "count": 71
+    },
+    "us-news-and-world-report": {
+      "name": "US News and World Report",
+      "count": 71
+    },
+    "yes-magazine": {
+      "name": "Yes! Magazine",
+      "count": 66
+    },
+    "sydney-morning-herald": {
+      "name": "Sydney Morning Herald",
+      "count": 59
+    },
+    "wired": {
+      "name": "Wired",
+      "count": 56
+    },
+    "rolling-stone": {
+      "name": "Rolling Stone",
+      "count": 55
+    },
+    "the-hill": {
+      "name": "The Hill",
+      "count": 49
+    },
+    "scientific-american": {
+      "name": "Scientific American",
+      "count": 48
+    },
+    "scheerpost": {
+      "name": "ScheerPost",
+      "count": 46
+    },
+    "associated-press": {
+      "name": "Associated Press",
+      "count": 43
+    },
+    "seattle-times": {
+      "name": "Seattle Times",
+      "count": 42
+    },
+    "truthout": {
+      "name": "Truthout",
+      "count": 40
+    },
+    "good-news-network": {
+      "name": "Good News Network",
+      "count": 38
+    },
+    "national-geographic": {
+      "name": "National Geographic",
+      "count": 36
+    },
+    "common-dreams": {
+      "name": "Common Dreams",
+      "count": 35
+    },
+    "the-atlantic": {
+      "name": "The Atlantic",
+      "count": 34
+    },
+    "daily-good": {
+      "name": "Daily Good",
+      "count": 33
+    },
+    "daily-beast": {
+      "name": "The Daily Beast",
+      "count": 32
+    },
+    "the-nation": {
+      "name": "The Nation",
+      "count": 32
+    },
+    "fortune": {
+      "name": "Fortune",
+      "count": 31
+    },
+    "sacramento-bee": {
+      "name": "Sacramento Bee",
+      "count": 31
+    },
+    "atlanta-journal-constitution": {
+      "name": "Atlanta Journal-Constitution",
+      "count": 28
+    },
+    "business-insider": {
+      "name": "Business Insider",
+      "count": 28
+    },
+    "houston-chronicle": {
+      "name": "Houston Chronicle",
+      "count": 28
+    },
+    "newsnation": {
+      "name": "NewsNation",
+      "count": 28
+    },
+    "toronto-star": {
+      "name": "Toronto Star",
+      "count": 28
+    },
+    "us-right-to-know": {
+      "name": "US Right to Know",
+      "count": 28
+    },
+    "the-economist": {
+      "name": "The Economist",
+      "count": 26
+    },
+    "popular-mechanics": {
+      "name": "Popular Mechanics",
+      "count": 24
+    },
+    "popular-science": {
+      "name": "Popular Science",
+      "count": 24
+    },
+    "financial-times": {
+      "name": "Financial Times",
+      "count": 23
+    },
+    "salon": {
+      "name": "Salon",
+      "count": 22
+    },
+    "the-marshall-project": {
+      "name": "The Marshall Project",
+      "count": 22
+    },
+    "washington-times": {
+      "name": "Washington Times",
+      "count": 22
+    },
+    "quincy-center-for-responsible-statecraft": {
+      "name": "Quincy Center for Responsible Statecraft",
+      "count": 21
+    },
+    "reason": {
+      "name": "Reason",
+      "count": 21
+    },
+    "jacobin": {
+      "name": "Jacobin",
+      "count": 20
+    },
+    "mother-jones": {
+      "name": "Mother Jones",
+      "count": 20
+    },
+    "new-yorker": {
+      "name": "New Yorker",
+      "count": 20
+    },
+    "salt-lake-tribune": {
+      "name": "Salt Lake Tribune",
+      "count": 20
+    },
+    "bmj": {
+      "name": "The BMJ",
+      "count": 19
+    },
+    "globe-and-mail": {
+      "name": "The Globe and Mail",
+      "count": 19
+    },
+    "mintpress-news": {
+      "name": "MintPress News",
+      "count": 19
+    },
+    "seattle-post-intelligencer": {
+      "name": "Seattle Post-Intelligencer",
+      "count": 19
+    },
+    "denver-post": {
+      "name": "Denver Post",
+      "count": 18
+    },
+    "marketwatch": {
+      "name": "MarketWatch",
+      "count": 18
+    },
+    "today": {
+      "name": "Today",
+      "count": 17
+    },
+    "star-tribune": {
+      "name": "Star Tribune",
+      "count": 16
+    },
+    "baltimore-sun": {
+      "name": "Baltimore Sun",
+      "count": 15
+    },
+    "new-york-daily-news": {
+      "name": "New York Daily News",
+      "count": 15
+    },
+    "greater-good": {
+      "name": "Greater Good",
+      "count": 14
+    },
+    "lee-fang-on-substack": {
+      "name": "Lee Fang on Substack",
+      "count": 14
+    },
+    "positive-news": {
+      "name": "Positive News",
+      "count": 14
+    },
+    "vice": {
+      "name": "Vice",
+      "count": 14
+    },
+    "vox": {
+      "name": "Vox",
+      "count": 14
+    },
+    "la-progressive": {
+      "name": "LA Progressive",
+      "count": 13
+    },
+    "smithsonian-magazine": {
+      "name": "Smithsonian Magazine",
+      "count": 13
+    },
+    "wanttoknow-info": {
+      "name": "WantToKnow.info",
+      "count": 13
+    },
+    "counterpunch": {
+      "name": "Counterpunch",
+      "count": 12
+    },
+    "fox": {
+      "name": "FOX",
+      "count": 12
+    },
+    "futurism": {
+      "name": "Futurism",
+      "count": 12
+    },
+    "propublica": {
+      "name": "ProPublica",
+      "count": 12
+    },
+    "fast-company": {
+      "name": "Fast Company",
+      "count": 11
+    },
+    "new-york-magazine": {
+      "name": "New York Magazine",
+      "count": 11
+    },
+    "optimist-daily": {
+      "name": "The Optimist Daily",
+      "count": 11
+    },
+    "aol-news": {
+      "name": "AOL News",
+      "count": 10
+    },
+    "covert-action-magazine": {
+      "name": "CovertAction Magazine",
+      "count": 10
+    },
+    "kansas-city-star": {
+      "name": "Kansas City Star",
+      "count": 10
+    },
+    "san-jose-mercury-news": {
+      "name": "San Jose Mercury News",
+      "count": 10
+    },
+    "the-debrief": {
+      "name": "The Debrief",
+      "count": 10
+    },
+    "the-defender": {
+      "name": "The Defender",
+      "count": 10
+    },
+    "foreign-policy": {
+      "name": "Foreign Policy",
+      "count": 9
+    },
+    "nature": {
+      "name": "Nature",
+      "count": 9
+    },
+    "new-zealand-herald": {
+      "name": "New Zealand Herald",
+      "count": 9
+    },
+    "politico": {
+      "name": "Politico",
+      "count": 9
+    },
+    "public-on-substack": {
+      "name": "Public on Substack",
+      "count": 9
+    },
+    "science": {
+      "name": "Science",
+      "count": 9
+    },
+    "science-daily": {
+      "name": "Science Daily",
+      "count": 9
+    },
+    "the-free-press": {
+      "name": "The Free Press",
+      "count": 9
+    },
+    "the-lever": {
+      "name": "The Lever",
+      "count": 9
+    },
+    "the-observer": {
+      "name": "The Observer",
+      "count": 9
+    },
+    "toronto-sun": {
+      "name": "Toronto Sun",
+      "count": 9
+    },
+    "vanity-fair": {
+      "name": "Vanity Fair",
+      "count": 9
+    },
+    "dallas-morning-news": {
+      "name": "Dallas Morning News",
+      "count": 8
+    },
+    "harvard-business-review": {
+      "name": "Harvard Business Review",
+      "count": 8
+    },
+    "new-scientist": {
+      "name": "New Scientist",
+      "count": 8
+    },
+    "ode-magazine": {
+      "name": "Ode Magazine",
+      "count": 8
+    },
+    "people": {
+      "name": "People",
+      "count": 8
+    },
+    "philadelphia-inquirer": {
+      "name": "Philadelphia Inquirer",
+      "count": 8
+    },
+    "the-conversation": {
+      "name": "The Conversation",
+      "count": 8
+    },
+    "the-pulse": {
+      "name": "The Pulse",
+      "count": 8
+    },
+    "cnet": {
+      "name": "CNET",
+      "count": 7
+    },
+    "detroit-news": {
+      "name": "The Detroit News",
+      "count": 7
+    },
+    "mit-technology-review": {
+      "name": "MIT Technology Review",
+      "count": 7
+    },
+    "psychology-today": {
+      "name": "Psychology Today",
+      "count": 7
+    },
+    "quartz": {
+      "name": "Quartz",
+      "count": 7
+    },
+    "sunday-express": {
+      "name": "Sunday Express",
+      "count": 7
+    },
+    "the-australian": {
+      "name": "The Australian",
+      "count": 7
+    },
+    "brownstone-institute": {
+      "name": "Brownstone Institute",
+      "count": 6
+    },
+    "chicago-sun-times": {
+      "name": "Chicago Sun-Times",
+      "count": 6
+    },
+    "deseret-news": {
+      "name": "Deseret News",
+      "count": 6
+    },
+    "haaretz": {
+      "name": "Haaretz",
+      "count": 6
+    },
+    "harpers-magazine": {
+      "name": "Harpers Magazine",
+      "count": 6
+    },
+    "ottawa-citizen": {
+      "name": "Ottawa Citizen",
+      "count": 6
+    },
+    "the-intelligent-optimist": {
+      "name": "The Intelligent Optimist",
+      "count": 6
+    },
+    "al-jazeera": {
+      "name": "Al Jazeera",
+      "count": 5
+    },
+    "bulletin-of-the-atomic-scientists": {
+      "name": "Bulletin of the Atomic Scientists",
+      "count": 5
+    },
+    "civil-eats": {
+      "name": "Civil Eats",
+      "count": 5
+    },
+    "the-new-lede": {
+      "name": "The New Lede",
+      "count": 5
+    },
+    "alternet": {
+      "name": "Alternet",
+      "count": 4
+    },
+    "brennan-center-for-justice": {
+      "name": "Brennan Center for Justice",
+      "count": 4
+    },
+    "free-press": {
+      "name": "Free Press",
+      "count": 4
+    },
+    "global-research": {
+      "name": "Global Research",
+      "count": 4
+    },
+    "indianapolis-star": {
+      "name": "Indianapolis Star",
+      "count": 4
+    },
+    "international-herald-tribune": {
+      "name": "International Herald Tribune",
+      "count": 4
+    },
+    "live-science": {
+      "name": "Live Science",
+      "count": 4
+    },
+    "news-com-au": {
+      "name": "News.com.au",
+      "count": 4
+    },
+    "phys-org": {
+      "name": "Phys.org",
+      "count": 4
+    },
+    "project-on-government-oversight": {
+      "name": "Project on Government Oversight",
+      "count": 4
+    },
+    "san-diego-union-tribune": {
+      "name": "San Diego Union-Tribune",
+      "count": 4
+    },
+    "shareable": {
+      "name": "Shareable",
+      "count": 4
+    },
+    "the-lancet": {
+      "name": "The Lancet",
+      "count": 4
+    },
+    "the-star": {
+      "name": "The Star",
+      "count": 4
+    },
+    "the-week": {
+      "name": "The Week",
+      "count": 4
+    },
+    "toledo-blade": {
+      "name": "Toledo Blade",
+      "count": 4
+    },
+    "unherd": {
+      "name": "UnHerd",
+      "count": 4
+    },
+    "waging-nonviolence": {
+      "name": "Waging Nonviolence",
+      "count": 4
+    },
+    "aol": {
+      "name": "AOL",
+      "count": 3
+    },
+    "arizona-republic": {
+      "name": "Arizona Republic",
+      "count": 3
+    },
+    "courthouse-news": {
+      "name": "Courthouse News",
+      "count": 3
+    },
+    "ctv-news": {
+      "name": "CTV News",
+      "count": 3
+    },
+    "discover": {
+      "name": "Discover",
+      "count": 3
+    },
+    "electronic-freedom-foundation": {
+      "name": "Electronic Freedom Foundation",
+      "count": 3
+    },
+    "environmental-working-group": {
+      "name": "Environmental Working Group",
+      "count": 3
+    },
+    "esquire": {
+      "name": "Esquire",
+      "count": 3
+    },
+    "foundation-for-economic-education": {
+      "name": "Foundation for Economic Education",
+      "count": 3
+    },
+    "mad-in-america": {
+      "name": "Mad in America",
+      "count": 3
+    },
+    "mcclatchy-news": {
+      "name": "McClatchy News",
+      "count": 3
+    },
+    "mercury-news": {
+      "name": "The Mercury News",
+      "count": 3
+    },
+    "mit-news": {
+      "name": "MIT News",
+      "count": 3
+    },
+    "new-york-review-of-books": {
+      "name": "New York Review of Books",
+      "count": 3
+    },
+    "newsday": {
+      "name": "Newsday",
+      "count": 3
+    },
+    "orlando-sentinel": {
+      "name": "Orlando Sentinel",
+      "count": 3
+    },
+    "palm-beach-post": {
+      "name": "Palm Beach Post",
+      "count": 3
+    },
+    "parade-magazine": {
+      "name": "Parade Magazine",
+      "count": 3
+    },
+    "project-censored": {
+      "name": "Project Censored",
+      "count": 3
+    },
+    "runners-world": {
+      "name": "Runners World",
+      "count": 3
+    },
+    "science-alert": {
+      "name": "Science Alert",
+      "count": 3
+    },
+    "slate": {
+      "name": "Slate",
+      "count": 3
+    },
+    "sports-illustrated": {
+      "name": "Sports Illustrated",
+      "count": 3
+    },
+    "st-louis-post-dispatch": {
+      "name": "St. Louis Post-Dispatch",
+      "count": 3
+    },
+    "stat-news": {
+      "name": "Stat News",
+      "count": 3
+    },
+    "tablet": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "the-examination": {
+      "name": "The Examination",
+      "count": 3
+    },
+    "the-street": {
+      "name": "The Street",
+      "count": 3
+    },
+    "the-sun": {
+      "name": "The Sun",
+      "count": 3
+    },
+    "the-times-of-israel": {
+      "name": "The Times of Israel",
+      "count": 3
+    },
+    "the-verge": {
+      "name": "The Verge",
+      "count": 3
+    },
+    "tomdispatch": {
+      "name": "TomDispatch",
+      "count": 3
+    },
+    "unlimited-hangout": {
+      "name": "Unlimited Hangout",
+      "count": 3
+    },
+    "11alive-com": {
+      "name": "11Alive.com",
+      "count": 2
+    },
+    "aclu": {
+      "name": "ACLU",
+      "count": 2
+    },
+    "all-thats-interesting": {
+      "name": "All Thats Interesting",
+      "count": 2
+    },
+    "american-civil-liberties-union": {
+      "name": "American Civil Liberties Union",
+      "count": 2
+    },
+    "army-times": {
+      "name": "Army Times",
+      "count": 2
+    },
+    "australian-broadcasting-corporation": {
+      "name": "Australian Broadcasting Corporation",
+      "count": 2
+    },
+    "az-central": {
+      "name": "AZ Central",
+      "count": 2
+    },
+    "big-think": {
+      "name": "Big Think",
+      "count": 2
+    },
+    "bloomberg-law": {
+      "name": "Bloomberg Law",
+      "count": 2
+    },
+    "boston-com": {
+      "name": "Boston.com",
+      "count": 2
+    },
+    "business-week": {
+      "name": "Business Week",
+      "count": 2
+    },
+    "buzzfeed": {
+      "name": "BuzzFeed",
+      "count": 2
+    },
+    "cbs-dc": {
+      "name": "CBS-DC",
+      "count": 2
+    },
+    "childrens-health-defense": {
+      "name": "Childrens Health Defense",
+      "count": 2
+    },
+    "cia-website": {
+      "name": "CIA Website",
+      "count": 2
+    },
+    "colombia-journalism-review": {
+      "name": "Colombia Journalism Review",
+      "count": 2
+    },
+    "daily-express": {
+      "name": "Daily Express",
+      "count": 2
+    },
+    "declassified-cia-document": {
+      "name": "Declassified CIA Document",
+      "count": 2
+    },
+    "defense-link": {
+      "name": "Defense Link",
+      "count": 2
+    },
+    "der-spiegel": {
+      "name": "Der Spiegel",
+      "count": 2
+    },
+    "discovery-channel": {
+      "name": "Discovery Channel",
+      "count": 2
+    },
+    "economic-times": {
+      "name": "Economic Times",
+      "count": 2
+    },
+    "epoch-times": {
+      "name": "Epoch Times",
+      "count": 2
+    },
+    "fairness-and-accuracy-in-reporting": {
+      "name": "Fairness & Accuracy In Reporting",
+      "count": 2
+    },
+    "foreign-affairs": {
+      "name": "Foreign Affairs",
+      "count": 2
+    },
+    "freethink": {
+      "name": "FreeThink",
+      "count": 2
+    },
+    "gizmodo": {
+      "name": "Gizmodo",
+      "count": 2
+    },
+    "goodgoodgood": {
+      "name": "GoodGoodGood",
+      "count": 2
+    },
+    "government-accountability-office": {
+      "name": "Government Accountability Office",
+      "count": 2
+    },
+    "gq": {
+      "name": "GQ",
+      "count": 2
+    },
+    "harvard-gazette": {
+      "name": "Harvard Gazette",
+      "count": 2
+    },
+    "herald-sun": {
+      "name": "Herald Sun",
+      "count": 2
+    },
+    "http": {
+      "name": "http:",
+      "count": 2
+    },
+    "iai-news": {
+      "name": "iai News",
+      "count": 2
+    },
+    "image": {
+      "name": "Image",
+      "count": 2
+    },
+    "international-journal-of-vaccines-and-vaccination": {
+      "name": "International Journal of Vaccines and Vaccination",
+      "count": 2
+    },
+    "kgo-tv-channel-7": {
+      "name": "KGO-TV Channel 7",
+      "count": 2
+    },
+    "klas-tv": {
+      "name": "KLAS-TV",
+      "count": 2
+    },
+    "knowable-magazine": {
+      "name": "Knowable Magazine",
+      "count": 2
+    },
+    "ktvu": {
+      "name": "KTVU",
+      "count": 2
+    },
+    "lasvegasnow-com": {
+      "name": "lasvegasnow.com",
+      "count": 2
+    },
+    "marin-independent-journal": {
+      "name": "Marin Independent Journal",
+      "count": 2
+    },
+    "matt-taibbi-on-substack": {
+      "name": "Matt Taibbi on Substack",
+      "count": 2
+    },
+    "mcclatchy-newspapers": {
+      "name": "McClatchy Newspapers",
+      "count": 2
+    },
+    "metro-co-uk": {
+      "name": "Metro.co.uk",
+      "count": 2
+    },
+    "nasa": {
+      "name": "NASA",
+      "count": 2
+    },
+    "national-post": {
+      "name": "National Post",
+      "count": 2
+    },
+    "national-security-archive": {
+      "name": "National Security Archive",
+      "count": 2
+    },
+    "new-straits-times": {
+      "name": "New Straits Times",
+      "count": 2
+    },
+    "oxfam": {
+      "name": "Oxfam",
+      "count": 2
+    },
+    "philadelphia-citizen": {
+      "name": "The Philadelphia Citizen",
+      "count": 2
+    },
+    "pittsburgh-post-gazette": {
+      "name": "Pittsburgh Post-Gazette",
+      "count": 2
+    },
+    "promarket": {
+      "name": "Promarket",
+      "count": 2
+    },
+    "public": {
+      "name": "Public",
+      "count": 2
+    },
+    "re-generation": {
+      "name": "Re-Generation",
+      "count": 2
+    },
+    "san-diego-tribune": {
+      "name": "San Diego Tribune",
+      "count": 2
+    },
+    "sarasota-herald-tribune": {
+      "name": "Sarasota Herald Tribune",
+      "count": 2
+    },
+    "science-public-health-policy-and-the-law": {
+      "name": "Science, Public Health Policy and the Law",
+      "count": 2
+    },
+    "scitech-daily": {
+      "name": "SciTech Daily",
+      "count": 2
+    },
+    "sunday-herald": {
+      "name": "Sunday Herald",
+      "count": 2
+    },
+    "tampa-bay-times": {
+      "name": "Tampa Bay Times",
+      "count": 2
+    },
+    "techcrunch": {
+      "name": "TechCrunch",
+      "count": 2
+    },
+    "the-blaze": {
+      "name": "The Blaze",
+      "count": 2
+    },
+    "the-disinformation-chronicle-on-substack": {
+      "name": "The DisInformation Chronicle on Substack",
+      "count": 2
+    },
+    "the-equation": {
+      "name": "The Equation",
+      "count": 2
+    },
+    "the-kucinich-report": {
+      "name": "The Kucinich Report",
+      "count": 2
+    },
+    "the-kucinich-report-on-substack": {
+      "name": "The Kucinich Report on Substack",
+      "count": 2
+    },
+    "the-sunday-times": {
+      "name": "The Sunday Times",
+      "count": 2
+    },
+    "treehugger": {
+      "name": "Treehugger",
+      "count": 2
+    },
+    "truthdig": {
+      "name": "TruthDig",
+      "count": 2
+    },
+    "twz": {
+      "name": "TWZ",
+      "count": 2
+    },
+    "united-nations-news": {
+      "name": "United Nations News",
+      "count": 2
+    },
+    "upi": {
+      "name": "UPI",
+      "count": 2
+    },
+    "us-patent-and-trademark-office": {
+      "name": "US Patent and Trademark Office",
+      "count": 2
+    },
+    "village-voice": {
+      "name": "Village Voice",
+      "count": 2
+    },
+    "wabc": {
+      "name": "WABC",
+      "count": 2
+    },
+    "waking-times": {
+      "name": "Waking Times",
+      "count": 2
+    },
+    "wbur": {
+      "name": "WBUR",
+      "count": 2
+    },
+    "wkyc": {
+      "name": "WKYC",
+      "count": 2
+    },
+    "world-economic-forum": {
+      "name": "World Economic Forum",
+      "count": 2
+    },
+    "wpfb-tv": {
+      "name": "WPFB-TV",
+      "count": 2
+    },
+    "wthr-tv": {
+      "name": "WTHR-TV",
+      "count": 2
+    },
+    "13-wthr-tv": {
+      "name": "13-WTHR TV",
+      "count": 1
+    },
+    "abc-nightline": {
+      "name": "ABC Nightline",
+      "count": 1
+    },
+    "africa-news": {
+      "name": "Africa News",
+      "count": 1
+    },
+    "agence-france-presse": {
+      "name": "Agence France Presse",
+      "count": 1
+    },
+    "air-force-magazine": {
+      "name": "Air Force Magazine",
+      "count": 1
+    },
+    "air-force-times": {
+      "name": "Air Force Times",
+      "count": 1
+    },
+    "akron-beacon-journal": {
+      "name": "Akron Beacon Journal",
+      "count": 1
+    },
+    "albuquerque-journal": {
+      "name": "Albuquerque Journal",
+      "count": 1
+    },
+    "american-academy-of-environmental-medicine": {
+      "name": "American Academy of Environmental Medicine",
+      "count": 1
+    },
+    "american-psychological-association": {
+      "name": "American Psychological Association",
+      "count": 1
+    },
+    "anchorage-daily-news": {
+      "name": "Anchorage Daily News",
+      "count": 1
+    },
+    "architects-and-engineers-for-9": {
+      "name": "Architects and Engineers for 9",
+      "count": 1
+    },
+    "arizona-central": {
+      "name": "Arizona Central",
+      "count": 1
+    },
+    "army-research-office": {
+      "name": "Army Research Office",
+      "count": 1
+    },
+    "ars-technica": {
+      "name": "Ars Technica",
+      "count": 1
+    },
+    "asiatimes": {
+      "name": "AsiaTimes",
+      "count": 1
+    },
+    "astrobiology-at-nasa": {
+      "name": "Astrobiology at NASA",
+      "count": 1
+    },
+    "atlantic-monthly": {
+      "name": "Atlantic Monthly",
+      "count": 1
+    },
+    "atmos": {
+      "name": "Atmos",
+      "count": 1
+    },
+    "bangkok-post": {
+      "name": "Bangkok Post",
+      "count": 1
+    },
+    "bank-for-international-settlements": {
+      "name": "Bank for International Settlements",
+      "count": 1
+    },
+    "billings-gazette": {
+      "name": "Billings Gazette",
+      "count": 1
+    },
+    "bloomberg-businessweek": {
+      "name": "Bloomberg BusinessWeek",
+      "count": 1
+    },
+    "book-into-the-buzzsaw-by-emmy-award-winning-kristina-borjesson": {
+      "name": "Book - Into the Buzzsaw by Emmy Award Winning Kristina Borjesson",
+      "count": 1
+    },
+    "boston-university": {
+      "name": "Boston University",
+      "count": 1
+    },
+    "breitbart-news": {
+      "name": "Breitbart News",
+      "count": 1
+    },
+    "british-medical-journal": {
+      "name": "British Medical Journal",
+      "count": 1
+    },
+    "british-psychological-society": {
+      "name": "British Psychological Society",
+      "count": 1
+    },
+    "broadview": {
+      "name": "Broadview",
+      "count": 1
+    },
+    "brookings-institute": {
+      "name": "Brookings Institute",
+      "count": 1
+    },
+    "bureau-of-investigative-journalism": {
+      "name": "Bureau of Investigative Journalism",
+      "count": 1
+    },
+    "business-2-0-magazine": {
+      "name": "Business 2.0 magazine",
+      "count": 1
+    },
+    "business-spectator": {
+      "name": "Business Spectator",
+      "count": 1
+    },
+    "business-standard": {
+      "name": "Business Standard",
+      "count": 1
+    },
+    "byline-times": {
+      "name": "Byline Times",
+      "count": 1
+    },
+    "c-span": {
+      "name": "C-SPAN",
+      "count": 1
+    },
+    "calgary-herald": {
+      "name": "Calgary Herald",
+      "count": 1
+    },
+    "campaign-zero": {
+      "name": "Campaign Zero",
+      "count": 1
+    },
+    "canadian-runner": {
+      "name": "Canadian Runner",
+      "count": 1
+    },
+    "cbs-news-san-francisco-affiliate": {
+      "name": "CBS News San Francisco Affiliate",
+      "count": 1
+    },
+    "cbs4-tv": {
+      "name": "CBS4 TV",
+      "count": 1
+    },
+    "center-for-responsive-politics": {
+      "name": "Center for Responsive Politics",
+      "count": 1
+    },
+    "chalkbeat": {
+      "name": "Chalkbeat",
+      "count": 1
+    },
+    "channel-news-asia": {
+      "name": "Channel News Asia",
+      "count": 1
+    },
+    "chek-news": {
+      "name": "Chek News",
+      "count": 1
+    },
+    "chronicle-of-higher-education": {
+      "name": "Chronicle of Higher Education",
+      "count": 1
+    },
+    "cia-gov": {
+      "name": "CIA.gov",
+      "count": 1
+    },
+    "coda": {
+      "name": "Coda",
+      "count": 1
+    },
+    "colorado-public-radio": {
+      "name": "Colorado Public Radio",
+      "count": 1
+    },
+    "colorado-public-television": {
+      "name": "Colorado Public Television",
+      "count": 1
+    },
+    "colorado-sun": {
+      "name": "Colorado Sun",
+      "count": 1
+    },
+    "columbia-tribune": {
+      "name": "Columbia Tribune",
+      "count": 1
+    },
+    "committee-on-oversight-and-accountability": {
+      "name": "Committee on Oversight and Accountability",
+      "count": 1
+    },
+    "comptroller-general-of-the-united-states": {
+      "name": "Comptroller General of the United States",
+      "count": 1
+    },
+    "computerworld": {
+      "name": "Computerworld",
+      "count": 1
+    },
+    "consumer-reports": {
+      "name": "Consumer Reports",
+      "count": 1
+    },
+    "cornell-university-news-service": {
+      "name": "Cornell University News Service",
+      "count": 1
+    },
+    "cosmos": {
+      "name": "Cosmos",
+      "count": 1
+    },
+    "ctv": {
+      "name": "CTV",
+      "count": 1
+    },
+    "cu-boulder-today": {
+      "name": "CU Boulder Today",
+      "count": 1
+    },
+    "cureus": {
+      "name": "Cureus",
+      "count": 1
+    },
+    "daily-kos": {
+      "name": "Daily Kos",
+      "count": 1
+    },
+    "daily-record": {
+      "name": "Daily Record",
+      "count": 1
+    },
+    "daily-star": {
+      "name": "Daily Star",
+      "count": 1
+    },
+    "daily-times": {
+      "name": "Daily Times",
+      "count": 1
+    },
+    "daisyluther-com": {
+      "name": "DaisyLuther.com",
+      "count": 1
+    },
+    "dallas-news": {
+      "name": "Dallas News",
+      "count": 1
+    },
+    "dallas-observer-blog": {
+      "name": "Dallas Observer blog",
+      "count": 1
+    },
+    "dennis-kucinich-on-substack": {
+      "name": "Dennis Kucinich on Substack",
+      "count": 1
+    },
+    "department-of-defense-inspector-generals-website": {
+      "name": "Department of Defense Inspector Generals Website",
+      "count": 1
+    },
+    "department-of-the-navy": {
+      "name": "Department of the Navy",
+      "count": 1
+    },
+    "der-speigel": {
+      "name": "Der Speigel",
+      "count": 1
+    },
+    "detroit-free-press": {
+      "name": "Detroit Free Press",
+      "count": 1
+    },
+    "digital-journal": {
+      "name": "Digital Journal",
+      "count": 1
+    },
+    "disclosure-project": {
+      "name": "Disclosure Project",
+      "count": 1
+    },
+    "dropsite-news": {
+      "name": "Dropsite News",
+      "count": 1
+    },
+    "duluth-news-tribune": {
+      "name": "Duluth News Tribune",
+      "count": 1
+    },
+    "dutchnews-nl": {
+      "name": "DutchNews.nl",
+      "count": 1
+    },
+    "dw-com": {
+      "name": "DW.com",
+      "count": 1
+    },
+    "east-county-magazine": {
+      "name": "East County Magazine",
+      "count": 1
+    },
+    "ecowatch": {
+      "name": "EcoWatch",
+      "count": 1
+    },
+    "editor-and-publisher": {
+      "name": "Editor and Publisher",
+      "count": 1
+    },
+    "edmonton-journal": {
+      "name": "Edmonton Journal",
+      "count": 1
+    },
+    "electrek": {
+      "name": "Electrek",
+      "count": 1
+    },
+    "electronic-frontier-foundation": {
+      "name": "Electronic Frontier Foundation",
+      "count": 1
+    },
+    "environmental-health-news": {
+      "name": "Environmental Health News",
+      "count": 1
+    },
+    "espn": {
+      "name": "ESPN",
+      "count": 1
+    },
+    "euro-news": {
+      "name": "Euro News",
+      "count": 1
+    },
+    "european-commission": {
+      "name": "European Commission",
+      "count": 1
+    },
+    "european-journal-of-epidemiology": {
+      "name": "European Journal of Epidemiology",
+      "count": 1
+    },
+    "euroweekly-news": {
+      "name": "EuroWeekly News",
+      "count": 1
+    },
+    "evolution-news": {
+      "name": "Evolution News",
+      "count": 1
+    },
+    "fair-observer": {
+      "name": "Fair Observer",
+      "count": 1
+    },
+    "fbi-website-ufo-vault": {
+      "name": "FBI Website, UFO Vault",
+      "count": 1
+    },
+    "fda-subcommittee-on-science-and-technology": {
+      "name": "FDA Subcommittee on Science and Technology",
+      "count": 1
+    },
+    "feds-give-customs-agents-free-hand-to-seize-travelers-documents": {
+      "name": "Feds give customs agents free hand to seize travelers documents",
+      "count": 1
+    },
+    "financial-post": {
+      "name": "Financial Post",
+      "count": 1
+    },
+    "fort-worth-star-telegram": {
+      "name": "Fort Worth Star-Telegram",
+      "count": 1
+    },
+    "france-24": {
+      "name": "France 24",
+      "count": 1
+    },
+    "free-ranger-burma": {
+      "name": "Free Ranger Burma",
+      "count": 1
+    },
+    "fresno-bee": {
+      "name": "Fresno Bee",
+      "count": 1
+    },
+    "frontiers-in-psychology": {
+      "name": "Frontiers in Psychology",
+      "count": 1
+    },
+    "frontline": {
+      "name": "Frontline",
+      "count": 1
+    },
+    "gainesville-sun": {
+      "name": "Gainesville Sun",
+      "count": 1
+    },
+    "gallup": {
+      "name": "Gallup",
+      "count": 1
+    },
+    "global-investigative-journalism-network": {
+      "name": "Global Investigative Journalism Network",
+      "count": 1
+    },
+    "global-news": {
+      "name": "Global News",
+      "count": 1
+    },
+    "good-magazine": {
+      "name": "GOOD Magazine",
+      "count": 1
+    },
+    "goop-com": {
+      "name": "Goop.com",
+      "count": 1
+    },
+    "government-executive": {
+      "name": "Government Executive",
+      "count": 1
+    },
+    "grist": {
+      "name": "Grist",
+      "count": 1
+    },
+    "harm-reduction-international": {
+      "name": "Harm Reduction International",
+      "count": 1
+    },
+    "harvard-magazine": {
+      "name": "Harvard Magazine",
+      "count": 1
+    },
+    "harvard-medicine": {
+      "name": "Harvard Medicine",
+      "count": 1
+    },
+    "harvard-school-of-engineering-and-applied-sciences": {
+      "name": "Harvard School of Engineering and Applied Sciences",
+      "count": 1
+    },
+    "harvard-school-of-public-health": {
+      "name": "Harvard School of Public Health",
+      "count": 1
+    },
+    "harvard-university-gazette": {
+      "name": "Harvard University Gazette",
+      "count": 1
+    },
+    "hawaii-tribune-herald": {
+      "name": "Hawaii Tribune-Herald",
+      "count": 1
+    },
+    "health-news-florida": {
+      "name": "Health News Florida",
+      "count": 1
+    },
+    "healthcare-victoria": {
+      "name": "Healthcare Victoria",
+      "count": 1
+    },
+    "history-channel": {
+      "name": "History Channel",
+      "count": 1
+    },
+    "hollywood-reporter": {
+      "name": "Hollywood Reporter",
+      "count": 1
+    },
+    "houston-chronicle-science-blog": {
+      "name": "Houston Chronicle Science Blog",
+      "count": 1
+    },
+    "howstuffworks-com": {
+      "name": "Howstuffworks.com",
+      "count": 1
+    },
+    "i-news": {
+      "name": "i News",
+      "count": 1
+    },
+    "idaho-state-journal": {
+      "name": "Idaho State Journal",
+      "count": 1
+    },
+    "inc-com": {
+      "name": "Inc.com",
+      "count": 1
+    },
+    "independent-online": {
+      "name": "Independent Online",
+      "count": 1
+    },
+    "indiana-star": {
+      "name": "Indiana Star",
+      "count": 1
+    },
+    "inside-edition": {
+      "name": "Inside Edition",
+      "count": 1
+    },
+    "inside-higher-ed": {
+      "name": "Inside Higher Ed",
+      "count": 1
+    },
+    "inside-science-news": {
+      "name": "Inside Science News",
+      "count": 1
+    },
+    "intercontinental-cry": {
+      "name": "Intercontinental Cry",
+      "count": 1
+    },
+    "interdisciplinary-toxicology": {
+      "name": "Interdisciplinary Toxicology",
+      "count": 1
+    },
+    "interesting-engineering": {
+      "name": "Interesting Engineering",
+      "count": 1
+    },
+    "international-consortium-of-investigative-journalists": {
+      "name": "International Consortium of Investigative Journalists",
+      "count": 1
+    },
+    "irish-times": {
+      "name": "Irish Times",
+      "count": 1
+    },
+    "issues-in-science-and-technology": {
+      "name": "Issues in Science and Technology",
+      "count": 1
+    },
+    "jakarta-post": {
+      "name": "Jakarta Post",
+      "count": 1
+    },
+    "johns-hopkins-university": {
+      "name": "Johns Hopkins University",
+      "count": 1
+    },
+    "journal-of-experimental-psychology": {
+      "name": "Journal of Experimental Psychology",
+      "count": 1
+    },
+    "journal-of-geography-environment-and-earth-science-international": {
+      "name": "Journal of Geography, Environment and Earth Science International",
+      "count": 1
+    },
+    "journal-of-personality-and-social-psychology": {
+      "name": "Journal of Personality and Social Psychology",
+      "count": 1
+    },
+    "journal-of-the-royal-society-of-medicine": {
+      "name": "Journal of the Royal Society of Medicine",
+      "count": 1
+    },
+    "journal-of-toxicology-and-environmental-health": {
+      "name": "Journal of Toxicology and Environmental Health",
+      "count": 1
+    },
+    "july-4-2006-prweb": {
+      "name": "July 4, 2006, PRWeb",
+      "count": 1
+    },
+    "kabc-tv": {
+      "name": "KABC-TV",
+      "count": 1
+    },
+    "kbdi-tv": {
+      "name": "KBDI-TV",
+      "count": 1
+    },
+    "kcbs-news": {
+      "name": "KCBS News",
+      "count": 1
+    },
+    "kcop-tv": {
+      "name": "KCOP-TV",
+      "count": 1
+    },
+    "kdvr-tv": {
+      "name": "KDVR-TV",
+      "count": 1
+    },
+    "kfor-news": {
+      "name": "KFOR News",
+      "count": 1
+    },
+    "kgo": {
+      "name": "KGO",
+      "count": 1
+    },
+    "kgo-radio": {
+      "name": "KGO Radio",
+      "count": 1
+    },
+    "kgo-tv": {
+      "name": "KGO-TV",
+      "count": 1
+    },
+    "khou-tv": {
+      "name": "KHOU-TV",
+      "count": 1
+    },
+    "kinder": {
+      "name": "Kinder",
+      "count": 1
+    },
+    "kings-university-college-university-of-western-ontario": {
+      "name": "Kings University College, University of Western Ontario",
+      "count": 1
+    },
+    "kion-tv": {
+      "name": "KION-TV",
+      "count": 1
+    },
+    "kmox-tv": {
+      "name": "KMOX-TV",
+      "count": 1
+    },
+    "kmph-tv": {
+      "name": "KMPH-TV",
+      "count": 1
+    },
+    "kpbs-org": {
+      "name": "KPBS.org",
+      "count": 1
+    },
+    "kpix-tv": {
+      "name": "KPIX TV",
+      "count": 1
+    },
+    "kqed": {
+      "name": "KQED",
+      "count": 1
+    },
+    "kqre": {
+      "name": "KQRE",
+      "count": 1
+    },
+    "ksdk-com": {
+      "name": "KSDK.com",
+      "count": 1
+    },
+    "ksl-tv": {
+      "name": "KSL-TV",
+      "count": 1
+    },
+    "ksla-tv": {
+      "name": "KSLA-TV",
+      "count": 1
+    },
+    "ktar": {
+      "name": "KTAR",
+      "count": 1
+    },
+    "ktla-tv-los-angeles": {
+      "name": "KTLA-TV Los Angeles",
+      "count": 1
+    },
+    "ktrk-tv": {
+      "name": "KTRK-TV",
+      "count": 1
+    },
+    "ktva": {
+      "name": "KTVA",
+      "count": 1
+    },
+    "ktvn-news": {
+      "name": "KTVN News",
+      "count": 1
+    },
+    "kutv": {
+      "name": "KUTV",
+      "count": 1
+    },
+    "kxly-tv": {
+      "name": "KXLY-TV",
+      "count": 1
+    },
+    "la-jolla-light": {
+      "name": "La Jolla Light",
+      "count": 1
+    },
+    "lampoon": {
+      "name": "Lampoon",
+      "count": 1
+    },
+    "las-vegas-tribune": {
+      "name": "Las Vegas Tribune",
+      "count": 1
+    },
+    "life-magazine": {
+      "name": "Life magazine",
+      "count": 1
+    },
+    "lighthouse-reports": {
+      "name": "Lighthouse Reports",
+      "count": 1
+    },
+    "lund-university": {
+      "name": "Lund University",
+      "count": 1
+    },
+    "lynnemctaggart-com": {
+      "name": "lynnemctaggart.com",
+      "count": 1
+    },
+    "mayo-clinic-news-network": {
+      "name": "Mayo Clinic News Network",
+      "count": 1
+    },
+    "mcclatchy-news-service": {
+      "name": "McClatchy News Service",
+      "count": 1
+    },
+    "mcgill-university": {
+      "name": "McGill University",
+      "count": 1
+    },
+    "media-channel": {
+      "name": "Media Channel",
+      "count": 1
+    },
+    "medical-news-today": {
+      "name": "Medical News Today",
+      "count": 1
+    },
+    "medium-com": {
+      "name": "Medium.com",
+      "count": 1
+    },
+    "medpage-today": {
+      "name": "MedPage Today",
+      "count": 1
+    },
+    "mercola-com": {
+      "name": "Mercola.com",
+      "count": 1
+    },
+    "metro": {
+      "name": "Metro",
+      "count": 1
+    },
+    "metroactive": {
+      "name": "MetroActive",
+      "count": 1
+    },
+    "miami-new-times": {
+      "name": "Miami New Times",
+      "count": 1
+    },
+    "michigan-city-news-dispatch": {
+      "name": "Michigan City News-Dispatch",
+      "count": 1
+    },
+    "michigan-live": {
+      "name": "Michigan Live",
+      "count": 1
+    },
+    "military-com": {
+      "name": "Military.com",
+      "count": 1
+    },
+    "military-times": {
+      "name": "Military Times",
+      "count": 1
+    },
+    "minnesota-post": {
+      "name": "Minnesota Post",
+      "count": 1
+    },
+    "mirage": {
+      "name": "Mirage",
+      "count": 1
+    },
+    "mit-press-reader": {
+      "name": "MIT Press Reader",
+      "count": 1
+    },
+    "money-magazine": {
+      "name": "Money magazine",
+      "count": 1
+    },
+    "mongabay": {
+      "name": "Mongabay",
+      "count": 1
+    },
+    "montreal-gazette": {
+      "name": "Montreal Gazette",
+      "count": 1
+    },
+    "msnbc-countdown-with-keith-olberman": {
+      "name": "MSNBC Countdown With Keith Olberman",
+      "count": 1
+    },
+    "msu-today": {
+      "name": "MSU Today",
+      "count": 1
+    },
+    "mt-shasta-herald": {
+      "name": "Mt. Shasta Herald",
+      "count": 1
+    },
+    "mysterious-ufos-spotted-along-us-coast": {
+      "name": "Mysterious UFOs Spotted Along US Coast",
+      "count": 1
+    },
+    "nasa-gov": {
+      "name": "Nasa.gov",
+      "count": 1
+    },
+    "nasa-websites-technology-gateway": {
+      "name": "NASA Websites Technology Gateway",
+      "count": 1
+    },
+    "national-security-agency-website-nsa-technical-journal-vol-xi": {
+      "name": "National Security Agency Website, NSA Technical Journal, Vol. XI",
+      "count": 1
+    },
+    "national-toxicology-program": {
+      "name": "National Toxicology Program",
+      "count": 1
+    },
+    "ndtv": {
+      "name": "NDTV",
+      "count": 1
+    },
+    "neoscope": {
+      "name": "Neoscope",
+      "count": 1
+    },
+    "new-atlas": {
+      "name": "New Atlas",
+      "count": 1
+    },
+    "new-energy-video": {
+      "name": "New Energy Video",
+      "count": 1
+    },
+    "new-england-journal-of-medicine": {
+      "name": "New England Journal of Medicine",
+      "count": 1
+    },
+    "new-england-journal-of-medicine-nejm": {
+      "name": "New England Journal of Medicine - NEJM",
+      "count": 1
+    },
+    "new-paradigm-institute": {
+      "name": "New Paradigm Institute",
+      "count": 1
+    },
+    "new-york-sun": {
+      "name": "New York Sun",
+      "count": 1
+    },
+    "news-24": {
+      "name": "News 24",
+      "count": 1
+    },
+    "newswise-com": {
+      "name": "Newswise.com",
+      "count": 1
+    },
+    "next-city": {
+      "name": "Next City",
+      "count": 1
+    },
+    "noema": {
+      "name": "Noema",
+      "count": 1
+    },
+    "north-county-times": {
+      "name": "North County Times",
+      "count": 1
+    },
+    "northeastern-university": {
+      "name": "Northeastern University",
+      "count": 1
+    },
+    "northwestern-university-news-center": {
+      "name": "Northwestern University News Center",
+      "count": 1
+    },
+    "notus": {
+      "name": "NOTUS",
+      "count": 1
+    },
+    "nrc-international": {
+      "name": "NRC International",
+      "count": 1
+    },
+    "nsa-archive": {
+      "name": "NSA Archive",
+      "count": 1
+    },
+    "nsa-website": {
+      "name": "NSA Website",
+      "count": 1
+    },
+    "occ": {
+      "name": "OCC",
+      "count": 1
+    },
+    "official-government-website-of-u-s-senator-bernie-sanders": {
+      "name": "Official Government Website of U.S. Senator Bernie Sanders",
+      "count": 1
+    },
+    "official-website-of-congressman-weldon": {
+      "name": "Official Website of Congressman Weldon",
+      "count": 1
+    },
+    "official-white-house-website": {
+      "name": "Official White House Website",
+      "count": 1
+    },
+    "ogden-standard-examiner": {
+      "name": "Ogden Standard-Examiner",
+      "count": 1
+    },
+    "opednews-com": {
+      "name": "OpEdNews.com",
+      "count": 1
+    },
+    "open-the-books-on-substack": {
+      "name": "Open the Books on Substack",
+      "count": 1
+    },
+    "openthebooks": {
+      "name": "OpenTheBooks",
+      "count": 1
+    },
+    "orange-county-register": {
+      "name": "Orange County Register",
+      "count": 1
+    },
+    "organics-international": {
+      "name": "Organics International",
+      "count": 1
+    },
+    "ottawa-sun": {
+      "name": "Ottawa Sun",
+      "count": 1
+    },
+    "palm-beach-daily-news": {
+      "name": "Palm Beach Daily News",
+      "count": 1
+    },
+    "pasadena-weekly": {
+      "name": "Pasadena Weekly",
+      "count": 1
+    },
+    "pbs-news-hour": {
+      "name": "PBS News Hour",
+      "count": 1
+    },
+    "peace-direct": {
+      "name": "Peace Direct",
+      "count": 1
+    },
+    "peace-insight": {
+      "name": "Peace Insight",
+      "count": 1
+    },
+    "pegasus": {
+      "name": "Pegasus",
+      "count": 1
+    },
+    "philadelphia-enquirer": {
+      "name": "Philadelphia Enquirer",
+      "count": 1
+    },
+    "philadephia-enquirer": {
+      "name": "Philadephia Enquirer",
+      "count": 1
+    },
+    "philadephia-inquirer": {
+      "name": "Philadephia Inquirer",
+      "count": 1
+    },
+    "phoenix-business-journal": {
+      "name": "Phoenix Business Journal",
+      "count": 1
+    },
+    "pocono-record": {
+      "name": "Pocono Record",
+      "count": 1
+    },
+    "portland-tribune": {
+      "name": "Portland Tribune",
+      "count": 1
+    },
+    "pr-newswire": {
+      "name": "PR Newswire",
+      "count": 1
+    },
+    "press-herald": {
+      "name": "Press Herald",
+      "count": 1
+    },
+    "prison-policy-initiative": {
+      "name": "Prison Policy Initiative",
+      "count": 1
+    },
+    "prison-writers": {
+      "name": "Prison Writers",
+      "count": 1
+    },
+    "providence-journal": {
+      "name": "Providence Journal",
+      "count": 1
+    },
+    "psychcentral": {
+      "name": "PsychCentral",
+      "count": 1
+    },
+    "psypost": {
+      "name": "PsyPost",
+      "count": 1
+    },
+    "public-news": {
+      "name": "Public News",
+      "count": 1
+    },
+    "publishers-weekly": {
+      "name": "Publishers Weekly",
+      "count": 1
+    },
+    "q13-fox-tv": {
+      "name": "Q13 FOX-TV",
+      "count": 1
+    },
+    "quincy-institute-for-responsible-statecraft": {
+      "name": "Quincy Institute for Responsible Statecraft",
+      "count": 1
+    },
+    "rasmussen-reports": {
+      "name": "Rasmussen Reports",
+      "count": 1
+    },
+    "readers-digest": {
+      "name": "Readers Digest",
+      "count": 1
+    },
+    "real-clear-investigations": {
+      "name": "Real Clear Investigations",
+      "count": 1
+    },
+    "real-news-network": {
+      "name": "Real News Network",
+      "count": 1
+    },
+    "rensselaer-polytechnic-institute": {
+      "name": "Rensselaer Polytechnic Institute",
+      "count": 1
+    },
+    "researchgate": {
+      "name": "ResearchGate",
+      "count": 1
+    },
+    "revista-harvard-review-of-latin-america": {
+      "name": "Revista: Harvard Review of Latin America",
+      "count": 1
+    },
+    "rocky-mountain-news": {
+      "name": "Rocky Mountain News",
+      "count": 1
+    },
+    "russia-today": {
+      "name": "Russia Today",
+      "count": 1
+    },
+    "salt-lake-city-tribune": {
+      "name": "Salt Lake City Tribune",
+      "count": 1
+    },
+    "san-diego-6-tv": {
+      "name": "San Diego 6-TV",
+      "count": 1
+    },
+    "san-francisco-examiner": {
+      "name": "San Francisco Examiner",
+      "count": 1
+    },
+    "santa-barbara-independent": {
+      "name": "Santa Barbara Independent",
+      "count": 1
+    },
+    "sbs": {
+      "name": "SBS",
+      "count": 1
+    },
+    "science-world-report": {
+      "name": "Science World Report",
+      "count": 1
+    },
+    "sciencenews": {
+      "name": "ScienceNews",
+      "count": 1
+    },
+    "scitech-news": {
+      "name": "SciTech News",
+      "count": 1
+    },
+    "seattle-weekly-blog": {
+      "name": "Seattle Weekly blog",
+      "count": 1
+    },
+    "semafor": {
+      "name": "Semafor",
+      "count": 1
+    },
+    "senate-permanent-subcommittee-on-investigations": {
+      "name": "Senate Permanent Subcommittee on Investigations",
+      "count": 1
+    },
+    "sentient-media": {
+      "name": "Sentient Media",
+      "count": 1
+    },
+    "sentient-policy": {
+      "name": "Sentient Policy",
+      "count": 1
+    },
+    "september": {
+      "name": "September",
+      "count": 1
+    },
+    "significance": {
+      "name": "Significance",
+      "count": 1
+    },
+    "sky-news": {
+      "name": "Sky News",
+      "count": 1
+    },
+    "space-com": {
+      "name": "Space.com",
+      "count": 1
+    },
+    "space-daily": {
+      "name": "Space Daily",
+      "count": 1
+    },
+    "st-paul-pioneer-press": {
+      "name": "St. Paul Pioneer Press",
+      "count": 1
+    },
+    "stanford-graduate-school-of-business": {
+      "name": "Stanford Graduate School of Business",
+      "count": 1
+    },
+    "stanford-report-of-stanford-university": {
+      "name": "Stanford Report of Stanford University",
+      "count": 1
+    },
+    "stanford-review": {
+      "name": "Stanford Review",
+      "count": 1
+    },
+    "star-telegram": {
+      "name": "Star-Telegram",
+      "count": 1
+    },
+    "status-report-of-the-house-judiciary-committee-democratic-staff": {
+      "name": "Status Report of the House Judiciary Committee Democratic Staff",
+      "count": 1
+    },
+    "studyfinds": {
+      "name": "StudyFinds",
+      "count": 1
+    },
+    "sun-journal": {
+      "name": "Sun Journal",
+      "count": 1
+    },
+    "sun-sentinel": {
+      "name": "Sun Sentinel",
+      "count": 1
+    },
+    "sun-times": {
+      "name": "Sun Times",
+      "count": 1
+    },
+    "sunny-skyz": {
+      "name": "Sunny Skyz",
+      "count": 1
+    },
+    "talk-of-the-nation": {
+      "name": "Talk of the Nation",
+      "count": 1
+    },
+    "task-and-purpose": {
+      "name": "Task and Purpose",
+      "count": 1
+    },
+    "technology-review": {
+      "name": "Technology Review",
+      "count": 1
+    },
+    "telegraph-journal": {
+      "name": "Telegraph-Journal",
+      "count": 1
+    },
+    "the-age": {
+      "name": "The Age",
+      "count": 1
+    },
+    "the-american-conservative": {
+      "name": "The American Conservative",
+      "count": 1
+    },
+    "the-capital-times": {
+      "name": "The Capital Times",
+      "count": 1
+    },
+    "the-capitol-times": {
+      "name": "The Capitol Times",
+      "count": 1
+    },
+    "the-cool-down": {
+      "name": "The Cool Down",
+      "count": 1
+    },
+    "the-daily-skeptic": {
+      "name": "The Daily Skeptic",
+      "count": 1
+    },
+    "the-denver-channel-7": {
+      "name": "The Denver Channel 7",
+      "count": 1
+    },
+    "the-grayzone": {
+      "name": "The Grayzone",
+      "count": 1
+    },
+    "the-herald-tribune": {
+      "name": "The Herald-Tribune",
+      "count": 1
+    },
+    "the-hindu": {
+      "name": "The Hindu",
+      "count": 1
+    },
+    "the-illusion-of-consensus-on-substack": {
+      "name": "The Illusion of Consensus on Substack",
+      "count": 1
+    },
+    "the-irish-independent": {
+      "name": "The Irish Independent",
+      "count": 1
+    },
+    "the-journal-gazette": {
+      "name": "The Journal-Gazette",
+      "count": 1
+    },
+    "the-marginalian": {
+      "name": "The Marginalian",
+      "count": 1
+    },
+    "the-mind-unleashed": {
+      "name": "The Mind Unleashed",
+      "count": 1
+    },
+    "the-national-security-archive-george-washington-university": {
+      "name": "The National Security Archive, George Washington University",
+      "count": 1
+    },
+    "the-new-american": {
+      "name": "The New American",
+      "count": 1
+    },
+    "the-new-daily": {
+      "name": "The New Daily",
+      "count": 1
+    },
+    "the-optimist": {
+      "name": "The Optimist",
+      "count": 1
+    },
+    "the-oregonian": {
+      "name": "The Oregonian",
+      "count": 1
+    },
+    "the-progressive": {
+      "name": "The Progressive",
+      "count": 1
+    },
+    "the-red-letter": {
+      "name": "The Red Letter",
+      "count": 1
+    },
+    "the-root": {
+      "name": "The Root",
+      "count": 1
+    },
+    "the-society-for-personality-and-social-psychology": {
+      "name": "The Society for Personality and Social Psychology",
+      "count": 1
+    },
+    "the-tennessean": {
+      "name": "The Tennessean",
+      "count": 1
+    },
+    "the-times-herald": {
+      "name": "The Times Herald",
+      "count": 1
+    },
+    "the-travel": {
+      "name": "The Travel",
+      "count": 1
+    },
+    "the-urban-activist": {
+      "name": "The Urban Activist",
+      "count": 1
+    },
+    "the-white-house": {
+      "name": "The White House",
+      "count": 1
+    },
+    "the-white-house-press-office": {
+      "name": "The White House Press Office",
+      "count": 1
+    },
+    "tikkun-magazine": {
+      "name": "Tikkun Magazine",
+      "count": 1
+    },
+    "times-higher-education": {
+      "name": "Times Higher Education",
+      "count": 1
+    },
+    "times-picayune": {
+      "name": "Times-Picayune",
+      "count": 1
+    },
+    "tomflocco-com": {
+      "name": "tomflocco.com",
+      "count": 1
+    },
+    "tooele-transcript-bulletin": {
+      "name": "Tooele Transcript Bulletin",
+      "count": 1
+    },
+    "triple-pundit": {
+      "name": "Triple Pundit",
+      "count": 1
+    },
+    "trump-s-war-on-drugs": {
+      "name": "Trump’s War on Drugs",
+      "count": 1
+    },
+    "truth-in-media": {
+      "name": "Truth in Media",
+      "count": 1
+    },
+    "tvnz": {
+      "name": "TVNZ",
+      "count": 1
+    },
+    "tvnz-co-nz": {
+      "name": "TVNZ.co.nz",
+      "count": 1
+    },
+    "twz-newsletter": {
+      "name": "TWZ Newsletter",
+      "count": 1
+    },
+    "u-s-army-website-strategic-studies-institute": {
+      "name": "U.S. Army Website, Strategic Studies Institute",
+      "count": 1
+    },
+    "u-s-department-of-defense-website": {
+      "name": "U.S. Department of Defense website",
+      "count": 1
+    },
+    "u-s-department-of-energy-website": {
+      "name": "U.S. Department of Energy Website",
+      "count": 1
+    },
+    "u-s-department-of-health-and-human-services": {
+      "name": "U.S. Department of Health and Human Services",
+      "count": 1
+    },
+    "u-s-department-of-homeland-security": {
+      "name": "U.S. Department of Homeland Security",
+      "count": 1
+    },
+    "u-s-department-of-state": {
+      "name": "U.S. Department of State",
+      "count": 1
+    },
+    "u-s-senate-testimony": {
+      "name": "U.S. Senate Testimony",
+      "count": 1
+    },
+    "uc-berkeleys-alumni-publication-the-promise-of-berkeley": {
+      "name": "UC Berkeleys alumni publication The Promise of Berkeley.",
+      "count": 1
+    },
+    "ucla-news": {
+      "name": "UCLA News",
+      "count": 1
+    },
+    "ucla-school-of-law": {
+      "name": "UCLA School of Law",
+      "count": 1
+    },
+    "uga-today": {
+      "name": "UGA Today",
+      "count": 1
+    },
+    "un-news-centre": {
+      "name": "UN News Centre",
+      "count": 1
+    },
+    "unicef": {
+      "name": "UNICEF",
+      "count": 1
+    },
+    "united-nations-environment-programme": {
+      "name": "United Nations Environment Programme",
+      "count": 1
+    },
+    "united-states-national-archives": {
+      "name": "United States National Archives",
+      "count": 1
+    },
+    "university-of-british-columbia": {
+      "name": "University of British Columbia",
+      "count": 1
+    },
+    "university-of-pennsylvania": {
+      "name": "University of Pennsylvania",
+      "count": 1
+    },
+    "university-of-southern-california-school-of-engineering": {
+      "name": "University of Southern California, School of Engineering",
+      "count": 1
+    },
+    "university-of-washington-news": {
+      "name": "University of Washington News",
+      "count": 1
+    },
+    "upworthy": {
+      "name": "Upworthy",
+      "count": 1
+    },
+    "urban-gardening-digest": {
+      "name": "Urban Gardening Digest",
+      "count": 1
+    },
+    "us-air-force-air-university": {
+      "name": "US Air Force Air University",
+      "count": 1
+    },
+    "us-department-of-defense-inspector-general": {
+      "name": "US Department of Defense Inspector General",
+      "count": 1
+    },
+    "us-house-of-representatives-judiciary-committee": {
+      "name": "US House of Representatives Judiciary Committee",
+      "count": 1
+    },
+    "us-house-of-representatives-website-of-curt-weldon": {
+      "name": "US House of Representatives Website of Curt Weldon",
+      "count": 1
+    },
+    "us-senate-permanent-subcommittee-on-investigations": {
+      "name": "US Senate Permanent Subcommittee on Investigations",
+      "count": 1
+    },
+    "utne-reader-magazine": {
+      "name": "Utne Reader Magazine",
+      "count": 1
+    },
+    "vancouver-sun": {
+      "name": "Vancouver Sun",
+      "count": 1
+    },
+    "vera": {
+      "name": "Vera",
+      "count": 1
+    },
+    "vice-news": {
+      "name": "Vice News",
+      "count": 1
+    },
+    "voice-of-america": {
+      "name": "Voice of America",
+      "count": 1
+    },
+    "wafb": {
+      "name": "WAFB",
+      "count": 1
+    },
+    "washington-examiner": {
+      "name": "Washington Examiner",
+      "count": 1
+    },
+    "wbur-fm": {
+      "name": "WBUR-FM",
+      "count": 1
+    },
+    "wcpo-tv": {
+      "name": "WCPO-TV",
+      "count": 1
+    },
+    "weboflove-org": {
+      "name": "weboflove.org",
+      "count": 1
+    },
+    "website-of-fbi": {
+      "name": "Website of FBI",
+      "count": 1
+    },
+    "website-of-pulitzer-prize-winning-journalist-carl-bernstein": {
+      "name": "Website of Pulitzer Prize Winning Journalist Carl Bernstein",
+      "count": 1
+    },
+    "wesleyan-university": {
+      "name": "Wesleyan University",
+      "count": 1
+    },
+    "wfie-tv": {
+      "name": "WFIE TV",
+      "count": 1
+    },
+    "wftv-com": {
+      "name": "WFTV.com",
+      "count": 1
+    },
+    "when-your-power-meter-becomes-a-tool-of-mass-surveillance": {
+      "name": "When Your Power Meter Becomes a Tool of Mass Surveillance",
+      "count": 1
+    },
+    "whitehouse-gov": {
+      "name": "Whitehouse.gov",
+      "count": 1
+    },
+    "whnt-tv": {
+      "name": "WHNT-TV",
+      "count": 1
+    },
+    "wjbk-tv": {
+      "name": "WJBK-TV",
+      "count": 1
+    },
+    "wjw-tv": {
+      "name": "WJW-TV",
+      "count": 1
+    },
+    "wkbt-tv": {
+      "name": "WKBT TV",
+      "count": 1
+    },
+    "wls-tv": {
+      "name": "WLS-TV",
+      "count": 1
+    },
+    "wlwt-tv": {
+      "name": "WLWT-TV",
+      "count": 1
+    },
+    "wowt": {
+      "name": "WOWT",
+      "count": 1
+    },
+    "wptv-newschannel-5": {
+      "name": "WPTV NewsChannel 5",
+      "count": 1
+    },
+    "wreg-tv": {
+      "name": "WREG-TV",
+      "count": 1
+    },
+    "wsmv-tv": {
+      "name": "WSMV-TV",
+      "count": 1
+    },
+    "wspa": {
+      "name": "WSPA",
+      "count": 1
+    },
+    "wtsp-tv": {
+      "name": "WTSP-TV",
+      "count": 1
+    },
+    "wxyz-tv": {
+      "name": "WXYZ-TV",
+      "count": 1
+    },
+    "yahoo-tech": {
+      "name": "Yahoo Tech",
+      "count": 1
+    },
+    "yale-environment-360": {
+      "name": "Yale Environment 360",
+      "count": 1
+    },
+    "yale-news": {
+      "name": "Yale News",
+      "count": 1
+    },
+    "ynet-news": {
+      "name": "Ynet News",
+      "count": 1
+    },
+    "zerohedge": {
+      "name": "Zerohedge",
+      "count": 1
+    },
+    "zmescience": {
+      "name": "ZMEscience",
+      "count": 1
+    }
+  },
+  "articles_by_year": {
+    "1904": 1,
+    "1915": 1,
+    "1917": 1,
+    "1921": 1,
+    "1922": 1,
+    "1923": 1,
+    "1930": 1,
+    "1931": 5,
+    "1934": 2,
+    "1940": 3,
+    "1944": 1,
+    "1946": 1,
+    "1947": 1,
+    "1950": 1,
+    "1951": 1,
+    "1952": 3,
+    "1954": 1,
+    "1960": 1,
+    "1961": 1,
+    "1963": 3,
+    "1965": 1,
+    "1966": 3,
+    "1969": 1,
+    "1970": 2,
+    "1971": 1,
+    "1972": 4,
+    "1973": 1,
+    "1974": 1,
+    "1975": 1,
+    "1976": 2,
+    "1977": 7,
+    "1978": 1,
+    "1979": 3,
+    "1980": 1,
+    "1984": 3,
+    "1985": 4,
+    "1986": 3,
+    "1987": 6,
+    "1988": 7,
+    "1989": 3,
+    "1990": 3,
+    "1991": 2,
+    "1992": 7,
+    "1993": 4,
+    "1994": 5,
+    "1995": 8,
+    "1996": 6,
+    "1997": 13,
+    "1998": 11,
+    "1999": 16,
+    "2000": 20,
+    "2001": 69,
+    "2002": 55,
+    "2003": 46,
+    "2004": 118,
+    "2005": 332,
+    "2006": 549,
+    "2007": 583,
+    "2008": 643,
+    "2009": 646,
+    "2010": 712,
+    "2011": 722,
+    "2012": 769,
+    "2013": 845,
+    "2014": 814,
+    "2015": 813,
+    "2016": 800,
+    "2017": 751,
+    "2018": 634,
+    "2019": 508,
+    "2020": 615,
+    "2021": 588,
+    "2022": 503,
+    "2023": 616,
+    "2024": 662,
+    "2025": 579,
+    "2026": 229
+  }
+}

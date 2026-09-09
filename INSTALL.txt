@@ -1,0 +1,31 @@
+WantToKnow.info search portal drop-in paths
+===========================================
+
+Copy files to:
+
+src/site/search/index.html
+src/site/assets/css/search.css
+src/site/assets/js/search.js
+backend/app/search_router.py
+
+Then register the FastAPI router in backend/app/main.py:
+
+    from app.search_router import router as search_router
+    app.include_router(search_router)
+
+The router defaults to:
+
+    <repo>/src/site/data/search/wanttoknow-search.sqlite
+
+Optional override:
+
+    export WTK_SEARCH_DB=/absolute/path/to/wanttoknow-search.sqlite
+
+API:
+
+    POST /api/search
+    GET  /api/search/options
+
+Production assumes the static site and FastAPI /api routes are same-origin.
+For split local-dev origins, set data-api-base on <html> in search/index.html
+and enable the corresponding CORS origin in your FastAPI app.

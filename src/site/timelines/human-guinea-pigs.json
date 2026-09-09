@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "id": "human-guinea-pigs",
+  "eyebrow": "Human experimentation history",
+  "title": "Human Guinea Pigs",
+  "description": "Are we being used as human guinea pigs? How much are government and business risking our lives and health with dangerous technologies? Below is a list of events illustrating the rampant use of humans as guinea pigs in government, military, and medical experiments over the last century. Links to reliable sources are provided to confirm the information on each item presented.",
+  "sourcePage": "https://www.wanttoknow.info/humanguineapigs",
+  "endingNote": "",
+  "titleParts": {
+    "lead": "Human",
+    "outline": "Guinea Pigs",
+    "tail": "Timeline"
+  },
+  "entries": [
+    {
+      "id": "1932-to-1972-in-the-infamous-tuskegee-syphilis-study-200-black-men-diagnosed-with-syphilis-are-never-told-of-their-illness-are-deni",
+      "dateLabel": "1932 to 1972",
+      "sortYear": 1932.0,
+      "title": "In the infamous Tuskegee syphilis study, 200 black men diagnosed with syphilis are never told of their illness, are denied treatment.",
+      "paragraphs": [
+        "In the infamous Tuskegee syphilis study, 200 black men diagnosed with syphilis are never told of their illness, are denied treatment. They are used as human guinea pigs in order to follow the progression and symptoms of the disease. They all subsequently die from syphilis, their families never told that they could have been treated. The study continues for four decades. ( NBC News , Time Magazine , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "NBC News",
+          "url": "http://www.nbcnews.com/id/39463624/ns/health-health_care/t/horrific-medical-tests-past-raise-concerns-today/"
+        },
+        {
+          "label": "Time Magazine",
+          "url": "https://web.archive.org/web/20110223135727/http://www.time.com/time/covers/1101020422/story2.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Tuskegee_syphilis_experiment"
+        }
+      ]
+    },
+    {
+      "id": "1939-at-an-orphanage-in-iowa-22-children-are-the-subjects-of-the-so-called-monster-experiment-which-attempts-to-use-psych",
+      "dateLabel": "1939",
+      "sortYear": 1939.0001,
+      "title": "At an orphanage in Iowa, 22 children are the subjects of the so-called \"monster\" experiment, which attempts to use psychological abuse to induce children who spoke normally to stutter.",
+      "paragraphs": [
+        "At an orphanage in Iowa, 22 children are the subjects of the so-called \"monster\" experiment, which attempts to use psychological abuse to induce children who spoke normally to stutter. The experiment is designed by Dr. Wendell Johnson, one of the nation's most prominent speech pathologists, for the purpose of testing one of his theories on the cause of stuttering. ( CBS News , San Jose Mercury News , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "CBS News",
+          "url": "http://www.cbsnews.com/stories/2003/08/06/health/main566882.shtml"
+        },
+        {
+          "label": "San Jose Mercury News",
+          "url": "https://web.archive.org/web/20120202183155/http://www-psych.stanford.edu/~bigopp/stutter.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/The_Monster_Study"
+        }
+      ]
+    },
+    {
+      "id": "1940-in-chicago-400-prisoners-are-infected-with-malaria-in-order-to-study-the-effects-of-new-and-experimental-drugs-to-comba",
+      "dateLabel": "1940",
+      "sortYear": 1940.0002,
+      "title": "In Chicago, 400 prisoners are infected with malaria in order to study the effects of new and experimental drugs to combat the disease.",
+      "paragraphs": [
+        "In Chicago, 400 prisoners are infected with malaria in order to study the effects of new and experimental drugs to combat the disease. Nazi doctors later on trial at Nuremberg cite this American study to defend their own actions during the Holocaust. ( Life Magazine , Life 2nd photo , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "Life Magazine",
+          "url": "https://web.archive.org/web/20110718170143/http://www.life.com/image/79382275"
+        },
+        {
+          "label": "Life 2nd photo",
+          "url": "https://web.archive.org/web/20111229155719/http://www.life.com/news-pictures/79381128/stateville-penitentiary-malaria-study"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Stateville_Penitentiary_Malaria_Study"
+        }
+      ]
+    },
+    {
+      "id": "1940-to-1979-the-u-k-ministry-of-defence-conducts-open-air-tests-using-disease-producing-bacteria-and-viruses-many-involved-releasi",
+      "dateLabel": "1940 to 1979",
+      "sortYear": 1940.0003,
+      "title": "The U.K. Ministry of Defence conducts open air tests",
+      "paragraphs": [
+        "The U.K. Ministry of Defence conducts open air tests using disease-producing bacteria and viruses. Many involved releasing potentially dangerous chemicals and micro-organisms over vast swaths of the population without the public being told. ( BBC News , Guardian )"
+      ],
+      "sources": [
+        {
+          "label": "BBC News",
+          "url": "http://news.bbc.co.uk/2/hi/uk_news/3744110.stm"
+        },
+        {
+          "label": "Guardian",
+          "url": "http://www.guardian.co.uk/politics/2002/apr/21/uk.medicalscience"
+        }
+      ]
+    },
+    {
+      "id": "1943-in-response-to-japan-s-full-scale-germ-warfare-program-the-u-s-begins-research-on-biological-weapons-at-fort-detrick",
+      "dateLabel": "1943",
+      "sortYear": 1943.0004,
+      "title": "In response to Japan's full-scale germ warfare program, the U.S.",
+      "paragraphs": [
+        "In response to Japan's full-scale germ warfare program, the U.S. begins research on biological weapons at Fort Detrick, MD. ( NPR , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "NPR",
+          "url": "http://www.npr.org/templates/story/story.php?storyId=93196647"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/United_States_biological_weapons_program"
+        }
+      ]
+    },
+    {
+      "id": "1944-the-u-s-navy-uses-human-subjects-to-test-gas-masks-and-protective-clothing-individuals-are-locked-in-a-gas-chamber-and",
+      "dateLabel": "1944",
+      "sortYear": 1944.0005,
+      "title": "The U.S. Navy uses human subjects to test gas masks",
+      "paragraphs": [
+        "The U.S. Navy uses human subjects to test gas masks and protective clothing. Individuals are locked in a gas chamber and exposed to poisonous mustard gas and lewisite. By the time the war is over, more than 60,0000 U.S. servicemen have been used as human subjects in chemical defense research programs. They are told that they should never reveal the nature of the experiments. ( Telegraph , Institute of Medicine )"
+      ],
+      "sources": [
+        {
+          "label": "Telegraph",
+          "url": "http://www.independent.co.uk/news/world/us-navy-tested-mustard-gas-on-its-own-sailors-in-1943-the-americans-used-humans-in-secret-experiments-patrick-cockburn-in-washington-reports-on-the-survivors-who-bear-the-scars-1497508.html"
+        },
+        {
+          "label": "Institute of Medicine",
+          "url": "https://web.archive.org/web/20130311003324/http://www.iom.edu/Reports/1993/Veterans-at-Risk-The-Health-Effects-of-Mustard-Gas-and-Lewisite.aspx"
+        }
+      ]
+    },
+    {
+      "id": "1945-project-paperclip-is-initiated-in-this-top-secret-program-the-u-s-state-department-army-intelligence-and-the-cia-re",
+      "dateLabel": "1945",
+      "sortYear": 1945.0006,
+      "title": "Project Paperclip is initiated.",
+      "paragraphs": [
+        "Project Paperclip is initiated. In this top secret program, the U.S. State Department, Army intelligence, and the CIA recruit Nazi scientists and offer them immunity and secret identities in exchange for work on secret projects in the US. ( BBC News , New York Times , MSNBC/AP )"
+      ],
+      "sources": [
+        {
+          "label": "BBC News",
+          "url": "http://news.bbc.co.uk/2/hi/uk_news/magazine/4443934.stm"
+        },
+        {
+          "label": "New York Times",
+          "url": "http://www.nytimes.com/2010/11/14/us/14nazis.html"
+        },
+        {
+          "label": "MSNBC/AP",
+          "url": "https://web.archive.org/web/20110210103630/http://www.msnbc.msn.com/id/40605965/ns/us_news-crime_and_courts/"
+        }
+      ]
+    },
+    {
+      "id": "1945-program-f-is-implemented-by-the-u-s-atomic-energy-commission-this-is-the-most-extensive-u-s-study-of-the-health-eff",
+      "dateLabel": "1945",
+      "sortYear": 1945.0007,
+      "title": "\"Program F\" is implemented by the U.S.",
+      "paragraphs": [
+        "\"Program F\" is implemented by the U.S. Atomic Energy Commission. This is the most extensive U.S. study of the health effects of fluoride, which was a critical chemical component in atomic bomb production. The use of fluoride in drinking water, it is found, causes adverse effects to the central nervous system. But much of the information is squelched in the name of \"national security\" because of fear that lawsuits would undermine full-scale production of atomic bombs. ( Project Censored , BBC producer , Fluoride Action Network )"
+      ],
+      "sources": [
+        {
+          "label": "Project Censored",
+          "url": "https://www.projectcensored.org/18-manhattan-project-covered-up-effects-of-fluoride-toxicity/"
+        },
+        {
+          "label": "BBC producer",
+          "url": "https://www.youtube.com/results?search_query=%22The+Fluoride+Deceptiion%22+bryson"
+        },
+        {
+          "label": "Fluoride Action Network",
+          "url": "http://www.fluoridealert.org/wastenot414.htm"
+        }
+      ]
+    },
+    {
+      "id": "1946-to-1953-in-an-experiment-sponsored-by-the-u-s-atomic-energy-commission-and-the-quaker-oats-corporation-at-the-walter-e-fernald",
+      "dateLabel": "1946 to 1953",
+      "sortYear": 1946.0008,
+      "title": "In an experiment sponsored by the U.S.",
+      "paragraphs": [
+        "In an experiment sponsored by the U.S. Atomic Energy Commission and the Quaker Oats corporation at the Walter E. Fernald State School in Massachusetts, 73 mentally disabled children are fed oatmeal containing radioactive calcium and other radioisotopes, in order to track \"how nutrients were digested.\" The children are not told that they are being fed radioactive chemicals and are instead told that they are joining a \"science club.\" ( CBS News )"
+      ],
+      "sources": [
+        {
+          "label": "CBS News",
+          "url": "http://www.cbsnews.com/stories/2004/04/29/60minutes/main614728.shtml"
+        }
+      ]
+    },
+    {
+      "id": "1946-to-1962-as-many-as-400-000-american-soldiers-observed-nuclear-explosions-just-a-few-miles-from-ground-zero-in-more-than-200-atmo",
+      "dateLabel": "1946 to 1962",
+      "sortYear": 1946.0009,
+      "title": "As many as 400,000 American soldiers observed nuclear explosions just a few miles from ground zero in more than 200 atmospheric tests.",
+      "paragraphs": [
+        "As many as 400,000 American soldiers observed nuclear explosions just a few miles from ground zero in more than 200 atmospheric tests. Most information was classified – including reports on the illnesses the veterans suffered and the radioactive pollution that was released into the environment. The soldiers were sworn to absolute secrecy with threat of 10 years in jail or $10,000 fine ( $100,000 in today's dollars ). ( New York Times , The Atlantic )"
+      ],
+      "sources": [
+        {
+          "label": "$100,000 in today's dollars",
+          "url": "https://www.usinflationcalculator.com/inflation/consumer-price-index-and-annual-percent-changes-from-1913-to-2008/"
+        },
+        {
+          "label": "New York Times",
+          "url": "https://www.nytimes.com/2019/02/12/opinion/atomic-soldiers.html"
+        },
+        {
+          "label": "The Atlantic",
+          "url": "https://www.theatlantic.com/video/index/590299/atomic-soldiers/"
+        }
+      ]
+    },
+    {
+      "id": "1950-in-an-experiment-to-determine-how-susceptible-an-american-city-would-be-to-biological-attack-the-u-s-navy-sprays-a-clo",
+      "dateLabel": "1950",
+      "sortYear": 1950.001,
+      "title": "In an experiment to determine how susceptible an American city would be to biological attack, the U.S.",
+      "paragraphs": [
+        "In an experiment to determine how susceptible an American city would be to biological attack, the U.S. Navy sprays a cloud of bacteria from ships over San Francisco. Monitoring devices are situated throughout the city in order to test the extent of infection. Many residents become ill with pneumonia-like San Francisco Chronicle , Wall Street Journal – full text )"
+      ],
+      "sources": [
+        {
+          "label": "San Francisco Chronicle",
+          "url": "http://www.sfgate.com/health/article/Serratia-has-dark-history-in-region-Army-test-2677623.php"
+        },
+        {
+          "label": "Wall Street Journal",
+          "url": "http://online.wsj.com/article/SB1003703226697496080.html"
+        },
+        {
+          "label": "full text",
+          "url": "https://news.google.com/newspapers?nid=1755&dat=20011025&id=rR4eAAAAIBAJ&sjid=s38EAAAAIBAJ&pg=6715,5464551&hl=en"
+        }
+      ]
+    },
+    {
+      "id": "1950-the-cia-conducts-aerosol-tests-using-lsd-in-the-subway-system-of-new-york-city-that-this-indeed-happened-is-not-questio",
+      "dateLabel": "1950",
+      "sortYear": 1950.0011,
+      "title": "The CIA conducts aerosol tests using LSD in the subway system of New York City.",
+      "paragraphs": [
+        "The CIA conducts aerosol tests using LSD in the subway system of New York City. That this indeed happened is not questioned, yet all related documents about the test and its effects on subway riders appear to have been destroyed. ( New York Post )"
+      ],
+      "sources": [
+        {
+          "label": "New York Post",
+          "url": "http://nypost.com/2010/03/14/did-the-cia-test-lsd-in-the-new-york-city-subway-system"
+        }
+      ]
+    },
+    {
+      "id": "1950s-in-project-gabriel-and-project-sunshine-researchers-in-the-u-s-and-the-u-k-attempt-to-determine-how-much-nuclear-fall",
+      "dateLabel": "1950s",
+      "sortYear": 1950.0012,
+      "title": "In Project GABRIEL and Project SUNSHINE, researchers in the U.S.",
+      "paragraphs": [
+        "In Project GABRIEL and Project SUNSHINE, researchers in the U.S. and the U.K. attempt to determine how much nuclear fallout would be required to make the Earth uninhabitable. Examination of human bodies could reveal how readily fallout from already exploded bombs was taken up and hence how much damage it caused. Researchers secretly collect human bodies and bones from all over the world without permission, with a particular focus on infants. ( Guardian , Deseret News , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "Guardian",
+          "url": "http://www.guardian.co.uk/Archive/Article/0,4273,4197264,00.html"
+        },
+        {
+          "label": "Deseret News",
+          "url": "http://www.deseretnews.com/article/404785/SKULDUGGERY-USED-TO-COLLECT-HUMAN-TISSUE-FOR-FALLOUT-TESTS.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Project_SUNSHINE"
+        }
+      ]
+    },
+    {
+      "id": "1950s-to-1960s-the-cia-and-british-military-study-lsd-as-a-potential-weapon-for-use-by-intelligence-services-human-subjects-both-civi",
+      "dateLabel": "1950s to 1960s",
+      "sortYear": 1950.0013,
+      "title": "The CIA and British military study LSD as a potential weapon for use by intelligence services.",
+      "paragraphs": [
+        "The CIA and British military study LSD as a potential weapon for use by intelligence services. Human subjects (both civilian and military) are used with and without their knowledge. At least one subject dies as a result. ( New York Times , Time Magazine , Guardian , US Dept. of Energy )"
+      ],
+      "sources": [
+        {
+          "label": "New York Times",
+          "url": "http://www.nytimes.com/1999/03/10/us/sidney-gottlieb-80-dies-took-lsd-to-cia.html"
+        },
+        {
+          "label": "Time Magazine",
+          "url": "https://web.archive.org/web/20080212093522/http://www.time.com/time/covers/1101020422/story2.html"
+        },
+        {
+          "label": "Guardian",
+          "url": "http://www.guardian.co.uk/science/2005/jan/22/uknews1"
+        },
+        {
+          "label": "US Dept. of Energy",
+          "url": "https://web.archive.org/web/20070430101158/http://hss.energy.gov/healthsafety/ohre/roadmap/achre/chap3_4.html"
+        }
+      ]
+    },
+    {
+      "id": "1951-the-french-town-of-pont-saint-esprit-likely-has-bread-spiked-with-lsd-by-the-cia-as-part-of-a-mind-control-experiment-wh",
+      "dateLabel": "1951",
+      "sortYear": 1951.0014,
+      "title": "The French town of Pont-Saint-Esprit likely has bread spiked with LSD by the CIA as part of a mind control experiment which leaves five people dead, many seriously ill.",
+      "paragraphs": [
+        "The French town of Pont-Saint-Esprit likely has bread spiked with LSD by the CIA as part of a mind control experiment which leaves five people dead, many seriously ill. ( BBC News , Telegraph )"
+      ],
+      "sources": [
+        {
+          "label": "BBC News",
+          "url": "http://www.bbc.co.uk/news/world-10996838"
+        },
+        {
+          "label": "Telegraph",
+          "url": "http://www.telegraph.co.uk/news/worldnews/europe/france/7415082/French-bread-spiked-with-LSD-in-CIA-experiment.html"
+        }
+      ]
+    },
+    {
+      "id": "1953-cia-initiates-project-mkultra-this-is-an-eleven-year-research-program-designed-to-produce-and-test-drugs-and-biological",
+      "dateLabel": "1953",
+      "sortYear": 1953.0015,
+      "title": "CIA initiates Project MKULTRA.",
+      "paragraphs": [
+        "CIA initiates Project MKULTRA. This is an eleven year research program designed to produce and test drugs and biological agents that will be used for mind control and behavior modification. Six of the subprojects involve testing the agents on unwitting human beings. ( Washington Post , New York Times , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "Washington Post",
+          "url": "http://www.washingtonpost.com/wp-dyn/content/article/2005/06/15/AR2005061502685.html"
+        },
+        {
+          "label": "New York Times",
+          "url": "https://www.WantToKnow.info/770802nytimesmkultramindcontrol"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Project_MKULTRA"
+        }
+      ]
+    },
+    {
+      "id": "1953-to-1970s-the-cia-and-department-of-defense-implement-project-mknaomi-designed-to-maintain-stockpile-and-test-biological-and-che",
+      "dateLabel": "1953 to 1970s",
+      "sortYear": 1953.0016,
+      "title": "The CIA and Department of Defense implement Project MKNAOMI, designed to maintain, stockpile and test biological and chemical weapons.",
+      "paragraphs": [
+        "The CIA and Department of Defense implement Project MKNAOMI, designed to maintain, stockpile and test biological and chemical weapons. It establishes a robust arsenal within the CIA's Technical Services Division (TSD) consisting of various lethal and incapacitating materials. ( Time Magazine , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "Time Magazine",
+          "url": "http://www.time.com/time/magazine/article/0,9171,913459,00.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Project_MKNAOMI"
+        }
+      ]
+    },
+    {
+      "id": "1960-to-1971-dr-eugene-saenger-funded-by-the-defense-atomic-support-agency-performs-whole-body-radiation-experiments-on-more-than",
+      "dateLabel": "1960 to 1971",
+      "sortYear": 1960.0017,
+      "title": "Dr. Eugene Saenger, funded by the Defense Atomic Support Agency, performs whole body radiation experiments",
+      "paragraphs": [
+        "Dr. Eugene Saenger, funded by the Defense Atomic Support Agency, performs whole body radiation experiments on more than 90 poor, black Americans. He forges consent forms, and does not tell them what he is doing (they think they are receiving medical care). He exposes their chests to the equivalent of about 7,500 x-rays, which cause intense pain, vomiting, and bleeding from their nose and ears. At least eight, and as many as 20 of the subjects die as a result. ( Los Angeles Times , New York Times )"
+      ],
+      "sources": [
+        {
+          "label": "Los Angeles Times",
+          "url": "http://articles.latimes.com/2007/oct/06/local/me-saenger6"
+        },
+        {
+          "label": "New York Times",
+          "url": "http://www.nytimes.com/2007/10/11/us/11saenger.html"
+        }
+      ]
+    },
+    {
+      "id": "1963-the-cia-inspector-general-completes-a-report-on-the-mkultra-program-stating-a-final-phase-of-testing-of-mkultra-produc",
+      "dateLabel": "1963",
+      "sortYear": 1963.0018,
+      "title": "The CIA Inspector General completes a report on the MKULTRA program stating, \"A final phase of testing of MKULTRA products places the rights and interests of U.S.",
+      "paragraphs": [
+        "The CIA Inspector General completes a report on the MKULTRA program stating, \"A final phase of testing of MKULTRA products places the rights and interests of U.S. citizens in jeopardy. Public disclosure of some aspects of MKULTRA activity could induce serious adverse reaction in U.S. public opinion.\" Only one copy of the report is made due to its \"unusual sensitivity.\" ( Declassified CIA document #17748 )"
+      ],
+      "sources": [
+        {
+          "label": "Declassified CIA document #17748",
+          "url": "https://www.WantToKnow.info/mind_control/cia_mind_control_experiments_sex_abuse#17748"
+        }
+      ]
+    },
+    {
+      "id": "1963-researchers-inject-prisoners-and-terminally-ill-patients-with-live-cancer-cells-to-test-their-immune-responses-they-are",
+      "dateLabel": "1963",
+      "sortYear": 1963.0019,
+      "title": "Researchers inject prisoners and terminally ill patients with live cancer cells to test their immune responses.",
+      "paragraphs": [
+        "Researchers inject prisoners and terminally ill patients with live cancer cells to test their immune responses. They are told only that it is a \"skin test.\" ( Time Magazine )"
+      ],
+      "sources": [
+        {
+          "label": "Time Magazine",
+          "url": "https://web.archive.org/web/20080314054424/http://www.time.com/time/covers/1101020422/story2.html"
+        }
+      ]
+    },
+    {
+      "id": "1965-the-cia-and-department-of-defense-begin-project-mksearch-a-program-to-develop-a-capability-to-manipulate-human-behavior",
+      "dateLabel": "1965",
+      "sortYear": 1965.002,
+      "title": "The CIA and Department of Defense begin Project MKSEARCH, a program to develop a capability to manipulate human behavior through the use of mind-altering drugs.",
+      "paragraphs": [
+        "The CIA and Department of Defense begin Project MKSEARCH, a program to develop a capability to manipulate human behavior through the use of mind-altering drugs. ( US Dept. of Defense , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "US Dept. of Defense",
+          "url": "https://web.archive.org/web/20100527230213/http://www.dod.gov/pubs/foi/other/02-A-0846RELEASE.pdf"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Project_MKULTRA#Title_and_origins"
+        }
+      ]
+    },
+    {
+      "id": "1966-the-u-s-army-dispenses-bacillus-subtilis-variant-niger-throughout-the-new-york-city-subway-system-many-thousands-of-ci",
+      "dateLabel": "1966",
+      "sortYear": 1966.0021,
+      "title": "The U.S. Army dispenses Bacillus subtilis variant Niger throughout the New York City subway system",
+      "paragraphs": [
+        "The U.S. Army dispenses Bacillus subtilis variant Niger throughout the New York City subway system. Many thousands of civilians are exposed when army scientists drop lightbulbs filled with the bacteria onto ventilation grates. ( Wall Street Journal – full text , New York Post )"
+      ],
+      "sources": [
+        {
+          "label": "Wall Street Journal",
+          "url": "http://online.wsj.com/article/SB1003703226697496080.html"
+        },
+        {
+          "label": "full text",
+          "url": "https://news.google.com/newspapers?nid=1755&dat=20011025&id=rR4eAAAAIBAJ&sjid=s38EAAAAIBAJ&pg=6715,5464551&hl=en"
+        },
+        {
+          "label": "New York Post",
+          "url": "http://nypost.com/2010/03/14/did-the-cia-test-lsd-in-the-new-york-city-subway-system/"
+        }
+      ]
+    },
+    {
+      "id": "1970-the-united-states-intensifies-its-development-of-ethnic-weapons-military-review-nov-1970-designed-to-selectively",
+      "dateLabel": "1970",
+      "sortYear": 1970.0022,
+      "title": "The United States intensifies its development of \"ethnic weapons\" (Military Review, Nov., 1970), designed to selectively target and eliminate specific ethnic groups who are susceptible due to genetic differences and variations in DNA.",
+      "paragraphs": [
+        "The United States intensifies its development of \"ethnic weapons\" (Military Review, Nov., 1970), designed to selectively target and eliminate specific ethnic groups who are susceptible due to genetic differences and variations in DNA. ( Project Censored , Telegraph )"
+      ],
+      "sources": [
+        {
+          "label": "Project Censored",
+          "url": "http://www.projectcensored.org/16-human-genome-project-opens-the-door-to-ethnically-specific-bioweapons/"
+        },
+        {
+          "label": "Telegraph",
+          "url": "http://www.telegraph.co.uk/news/uknews/1347210/Scientists-warn-of-germ-terror-threat.html"
+        }
+      ]
+    },
+    {
+      "id": "1973-the-last-of-more-than-2-000-volunteers-nicknamed-the-white-coats-pass-through-fort-detrick-where-they-have-offered",
+      "dateLabel": "1973",
+      "sortYear": 1973.0023,
+      "title": "The last of more than 2,000 volunteers, nicknamed the \"white coats,\" pass through Fort Detrick, where they have offered up their bodies for science since 1954.",
+      "paragraphs": [
+        "The last of more than 2,000 volunteers, nicknamed the \"white coats,\" pass through Fort Detrick, where they have offered up their bodies for science since 1954. The volunteers are conscientious objectors who agree to be infected with debilitating pathogens. Many are Seventh Day Adventists who choose to become human guinea pigs rather than serve on active duty. ( BBC News , PBS , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "BBC News",
+          "url": "http://news.bbc.co.uk/2/hi/programmes/file_on_4/4701196.stm"
+        },
+        {
+          "label": "PBS",
+          "url": "http://www.pbs.org/wnet/religionandethics/week708/cover.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Operation_Whitecoat"
+        }
+      ]
+    },
+    {
+      "id": "1977-senate-hearings-on-health-and-scientific-research-confirm-that-239-populated-areas-had-been-contaminated-with-biological",
+      "dateLabel": "1977",
+      "sortYear": 1977.0024,
+      "title": "Senate hearings on Health and Scientific Research confirm that 239 populated areas had been contaminated with biological agents between 1949 and 1969.",
+      "paragraphs": [
+        "Senate hearings on Health and Scientific Research confirm that 239 populated areas had been contaminated with biological agents between 1949 and 1969. Some of the areas included San Francisco, Washington, D.C., Key West, Panama City, Minneapolis, and St. Louis. ( Wall Street Journal – full text )"
+      ],
+      "sources": [
+        {
+          "label": "Wall Street Journal",
+          "url": "http://online.wsj.com/article/SB1003703226697496080.html"
+        },
+        {
+          "label": "full text",
+          "url": "https://news.google.com/newspapers?nid=1755&dat=20011025&id=rR4eAAAAIBAJ&sjid=s38EAAAAIBAJ&pg=6715,5464551&hl=en"
+        }
+      ]
+    },
+    {
+      "id": "1978-experimental-hepatitis-b-vaccine-trials-conducted-by-the-cdc-begin-in-new-york-los-angeles-and-san-francisco-adverti",
+      "dateLabel": "1978",
+      "sortYear": 1978.0025,
+      "title": "Experimental Hepatitis B vaccine trials, conducted by the CDC, begin in New York, Los Angeles and San Francisco.",
+      "paragraphs": [
+        "Experimental Hepatitis B vaccine trials, conducted by the CDC, begin in New York, Los Angeles and San Francisco. Advertisements for research subjects specifically ask for promiscuous homosexual men. ( Medical Knowledge Base )"
+      ],
+      "sources": [
+        {
+          "label": "Medical Knowledge Base",
+          "url": "https://web.archive.org/web/20111117022631/http://www.medkb.com/Uwe/Forum.aspx/hepatitis/1002/The-Gay-Experiment-That-Started-AIDS-In-America"
+        }
+      ]
+    },
+    {
+      "id": "1980-the-u-s-department-of-defense-completes-35-years-of-detonating-nuclear-weapons-at-various-sites-around-the-world-somet",
+      "dateLabel": "1980",
+      "sortYear": 1980.0026,
+      "title": "The U.S. Department of Defense completes 35 years of detonating nuclear weapons at various sites",
+      "paragraphs": [
+        "The U.S. Department of Defense completes 35 years of detonating nuclear weapons at various sites around the world, sometimes monitoring downwind residents for medical problems and mortality rates. A Centers for Disease Control and Prevention/National Cancer Institute study claims that nuclear fallout from these radiation tests may have caused approximately 11,000 deaths. ( CDC Study , Wikipedia )"
+      ],
+      "sources": [
+        {
+          "label": "CDC Study",
+          "url": "http://books.nap.edu/catalog.php?record_id=10621"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "http://en.wikipedia.org/wiki/Nuclear_weapons_testing#Compensation_for_victims"
+        }
+      ]
+    },
+    {
+      "id": "1981-the-first-cases-of-aids-are-confirmed-in-homosexual-men-in-new-york-los-angeles-and-san-francisco-triggering-speculati",
+      "dateLabel": "1981",
+      "sortYear": 1981.0027,
+      "title": "The first cases of AIDS are confirmed in homosexual men in New York, Los Angeles and San Francisco, triggering speculation that AIDS may have been introduced via the Hepatitis B vaccine trials started in 1978 in these same cities.",
+      "paragraphs": [
+        "The first cases of AIDS are confirmed in homosexual men in New York, Los Angeles and San Francisco, triggering speculation that AIDS may have been introduced via the Hepatitis B vaccine trials started in 1978 in these same cities. ( Medical Knowledge Base , Journal of Medical Hypotheses – full text )"
+      ],
+      "sources": [
+        {
+          "label": "Medical Knowledge Base",
+          "url": "https://web.archive.org/web/20111117022631/http://www.medkb.com/Uwe/Forum.aspx/hepatitis/1002/The-Gay-Experiment-That-Started-AIDS-In-America"
+        },
+        {
+          "label": "Journal of Medical Hypotheses",
+          "url": "http://www.medical-hypotheses.com/article/S0306-9877%2800%2991171-X/abstract"
+        },
+        {
+          "label": "full text",
+          "url": "https://web.archive.org/web/20070409014247/http://notaids.com/en/morehepb"
+        }
+      ]
+    },
+    {
+      "id": "1985-to-1986-according-to-the-journal-science-htlv-and-visna-a-fatal-sheep-virus-are-very-similar-indicating-a-close-taxonomic-r",
+      "dateLabel": "1985 to 1986",
+      "sortYear": 1985.0028,
+      "title": "According to the journal Science , HTLV and VISNA, a fatal sheep virus, are very similar, indicating a close taxonomic relationship.",
+      "paragraphs": [
+        "According to the journal Science , HTLV and VISNA, a fatal sheep virus, are very similar, indicating a close taxonomic relationship. The Proceedings of the National Academy of Sciences states HIV and VISNA are highly similar and share all structural elements, except for a small segment which is nearly identical to HTLV. This leads to speculation that HTLV and VISNA may have been linked to produce a new retrovirus to which no natural immunity exists. ( Science , National Academy of Sciences )"
+      ],
+      "sources": [
+        {
+          "label": "Science",
+          "url": "http://www.sciencemag.org/content/227/4683/173.abstract"
+        },
+        {
+          "label": "National Academy of Sciences",
+          "url": "http://www.pnas.org/content/83/11/4007.abstract"
+        }
+      ]
+    },
+    {
+      "id": "1987-the-u-s-department-of-defense-admits-that-despite-a-treaty-banning-research-and-development-of-biological-agents-it-c",
+      "dateLabel": "1987",
+      "sortYear": 1987.0029,
+      "title": "The U.S. Department of Defense admits ongoing tests",
+      "paragraphs": [
+        "The U.S. Department of Defense admits that, despite a treaty banning research and development of biological agents, it continues to conduct such research at 127 facilities and universities around the nation. ( Science Magazine , New Internationalist )"
+      ],
+      "sources": [
+        {
+          "label": "a treaty",
+          "url": "http://en.wikipedia.org/wiki/Biological_Weapons_Convention"
+        },
+        {
+          "label": "Science Magazine",
+          "url": "https://www.WantToKnow.info/articles/1987-science-biological-weapons.pdf"
+        },
+        {
+          "label": "New Internationalist",
+          "url": "http://www.newint.org/features/1988/04/05/molecular/"
+        }
+      ]
+    },
+    {
+      "id": "1990-more-than-1-500-six-month-old-african-american-and-hispanic-babies-in-los-angeles-are-given-an-experimental-measles-vacc",
+      "dateLabel": "1990",
+      "sortYear": 1990.003,
+      "title": "More than 1,500 six-month old African-American and Hispanic babies in Los Angeles are given an experimental measles vaccine that has never been licensed for use in the United States.",
+      "paragraphs": [
+        "More than 1,500 six-month old African-American and Hispanic babies in Los Angeles are given an experimental measles vaccine that has never been licensed for use in the United States. The CDC later admits that parents were never informed that the vaccine being injected to their children was experimental. ( Los Angeles Times , New Scientist )"
+      ],
+      "sources": [
+        {
+          "label": "Los Angeles Times",
+          "url": "http://articles.latimes.com/1996-06-17/news/mn-15871_1_measles-vaccine"
+        },
+        {
+          "label": "New Scientist",
+          "url": "http://www.newscientist.com/article/mg15020361.000-measles-trial-broke-consent-rules.html"
+        }
+      ]
+    },
+    {
+      "id": "1994-u-s-senator-john-d-rockefeller-issues-a-report-revealing-that-for-at-least-50-years-the-department-of-defense-has-used",
+      "dateLabel": "1994",
+      "sortYear": 1994.0031,
+      "title": "U.S. Senator John D. Rockefeller issues a report revealing that for at least 50 years the Department of Defense has used hundreds of thousands of military personnel in human experiments",
+      "paragraphs": [
+        "U.S. Senator John D. Rockefeller issues a report revealing that for at least 50 years the Department of Defense has used hundreds of thousands of military personnel in human experiments and for intentional exposure to dangerous substances. Materials included mustard and nerve gas, ionizing radiation, psychochemicals, hallucinogens, and drugs used during the Gulf War. ( Rockefeller Report )"
+      ],
+      "sources": [
+        {
+          "label": "Rockefeller Report",
+          "url": "https://web.archive.org/web/20070310212216/http://www.gulfweb.org/bigdoc/rockrep.cfm"
+        }
+      ]
+    },
+    {
+      "id": "1994-to-1995-dr-garth-nicolson-at-the-md-anderson-cancer-center-in-houston-tx-discovers-that-many-returning-desert-storm-veterans-a",
+      "dateLabel": "1994 to 1995",
+      "sortYear": 1994.0032,
+      "title": "Evidence that biological agents used during the Gulf War were manufactured in Houston, TX and Boca Raton, Fl and tested on prisoners in the Texas Department of Corrections.",
+      "paragraphs": [
+        "Dr. Garth Nicolson at the MD Anderson Cancer Center in Houston, TX discovers that many returning Desert Storm veterans are infected with an altered strain of Mycoplasma incognitus, a microbe commonly used in the production of biological weapons. He then uncovers evidence that biological agents used during the Gulf War were manufactured in Houston, TX and Boca Raton, Fl and tested on prisoners in the Texas Department of Corrections. ( Journal of the American Medical Association JAMA changed link - original here , Capt. Joyce Riley, USAF )"
+      ],
+      "sources": [
+        {
+          "label": "Journal of the American Medical Association",
+          "url": "http://jama.ama-assn.org/content/273/8/618.2.short"
+        },
+        {
+          "label": "original here",
+          "url": "https://web.archive.org/web/20111117023637/http://jama.ama-assn.org/content/273/8/618.2.short"
+        },
+        {
+          "label": "Capt. Joyce Riley, USAF",
+          "url": "http://www.bio.net/mm/immuno/1995-August/005140.html"
+        }
+      ]
+    },
+    {
+      "id": "1995-the-u-s-government-admits-that-it-had-offered-japanese-war-criminals-and-scientists-who-had-performed-human-medical-exp",
+      "dateLabel": "1995",
+      "sortYear": 1995.0033,
+      "title": "U.S. Government uses Japanese war criminals",
+      "paragraphs": [
+        "The U.S. Government admits that it had offered Japanese war criminals and scientists who had performed human medical experiments salaries and immunity from prosecution in exchange for data on biological warfare research. Some of these scientists had tortured to death the humans on which they experimented. ( Los Angeles Times , USA Today/Associated Press )"
+      ],
+      "sources": [
+        {
+          "label": "Los Angeles Times",
+          "url": "http://articles.latimes.com/1996-12-13/news/mn-8706_1_wwii-war-crimes"
+        },
+        {
+          "label": "USA Today/Associated Press",
+          "url": "http://www.usatoday.com/news/world/2007-02-24-japan-postwar_x.htm"
+        }
+      ]
+    },
+    {
+      "id": "1996-the-u-s-department-of-defense-admits-that-desert-storm-soldiers-were-exposed-to-chemical-agents-a-scientific-review-fi",
+      "dateLabel": "1996",
+      "sortYear": 1996.0034,
+      "title": "The U.S. Department of Defense admits that Desert Storm soldiers were exposed to chemical agents",
+      "paragraphs": [
+        "The U.S. Department of Defense admits that Desert Storm soldiers were exposed to chemical agents. A scientific review finds a strong association between exposure to certain chemicals and the Gulf War illness suffered by many veterans. ( CNN News , Washington Post , New York Times )"
+      ],
+      "sources": [
+        {
+          "label": "CNN News",
+          "url": "https://web.archive.org/web/20120209154449/http://articles.cnn.com/1997-07-24/us/9707_24_gulf.war_1_khamisiyah-nerve-gas-chemical-exposures?_s=PM:US"
+        },
+        {
+          "label": "Washington Post",
+          "url": "http://www.washingtonpost.com/wp-dyn/content/article/2008/03/10/AR2008031001990.html"
+        },
+        {
+          "label": "New York Times",
+          "url": "http://query.nytimes.com/gst/fullpage.html?res=9A03E5DD1031F934A25756C0A9619C8B63&pagewanted=all"
+        }
+      ]
+    },
+    {
+      "id": "1999-jesse-gelsinger-dies-as-a-result-of-a-university-of-pennsylvania-s-gene-therapy-trial-the-principal-investigator-in-the",
+      "dateLabel": "1999",
+      "sortYear": 1999.0035,
+      "title": "Jesse Gelsinger dies as a result of a University of Pennsylvania's gene-therapy trial.",
+      "paragraphs": [
+        "Jesse Gelsinger dies as a result of a University of Pennsylvania's gene-therapy trial. The principal investigator in the study, James Wilson holds a 30% equity stake in Genovo, which owned the rights to license the drug being studied; the university owned 3.2% of the company. When Targeted Genetics Corp. later acquires Genovo, Wilson reportedly earns $13.5 million and Penn $1.4 million. ( Time Magazine )"
+      ],
+      "sources": [
+        {
+          "label": "Time Magazine",
+          "url": "https://web.archive.org/web/20070815090756/http://www.time.com/time/covers/1101020422/story2.html"
+        }
+      ]
+    },
+    {
+      "id": "2000-experimental-artificial-blood-is-transfused-into-research-subjects-across-the-united-states-without-their-consent-later",
+      "dateLabel": "2000",
+      "sortYear": 2000.0036,
+      "title": "Experimental artificial blood is transfused into research subjects across the United States without their consent.",
+      "paragraphs": [
+        "Experimental artificial blood is transfused into research subjects across the United States without their consent. Later studies show that the artificial blood causes a significant increase in the risk of heart attacks and death. ( ABC News , 2nd ABC News article )"
+      ],
+      "sources": [
+        {
+          "label": "ABC News",
+          "url": "https://web.archive.org/web/20070529030638/http://blogs.abcnews.com/theblotter/2007/05/test_of_controv.html"
+        },
+        {
+          "label": "2nd ABC News article",
+          "url": "http://abcnews.go.com/Health/Healthday/Story?id=4741269&page=1"
+        }
+      ]
+    },
+    {
+      "id": "2002-north-carolina-s-shearon-harris-nuclear-plant-contains-the-largest-radioactive-waste-storage-pools-in-the-us-if-the-coo",
+      "dateLabel": "2002",
+      "sortYear": 2002.0037,
+      "title": "North Carolina's Shearon Harris nuclear plant contains the largest radioactive waste storage pools in the US.",
+      "paragraphs": [
+        "North Carolina's Shearon Harris nuclear plant contains the largest radioactive waste storage pools in the US. If the cooling system malfunctions, the resulting fire could trigger a nuclear meltdown. In 2002, plant managers are forced to manually shut down the reactors four times. Between 1999 and 2003, there are twelve major problems requiring the shutdown of the plant. Yet the U.S. Nuclear Regulatory Commission ignores the potential risks. ( Counterpunch , ABC affiliate , Associated Press )"
+      ],
+      "sources": [
+        {
+          "label": "Counterpunch",
+          "url": "https://web.archive.org/web/20080825060026/https://www.counterpunch.org/stclair08092008.html"
+        },
+        {
+          "label": "ABC affiliate",
+          "url": "https://web.archive.org/web/20111231051632/http://abclocal.go.com/wtvd/story?section=triangle&id=4580804"
+        },
+        {
+          "label": "Associated Press",
+          "url": "https://web.archive.org/web/20111231050455/http://abclocal.go.com/wtvd/story?section=news/local&id=6339663"
+        }
+      ]
+    },
+    {
+      "id": "2007-texas-governor-rick-perry-makes-the-vaccine-gardasil-mandatory-for-all-texan-schoolgirls-the-vaccine-is-designed-to-pre",
+      "dateLabel": "2007",
+      "sortYear": 2007.0038,
+      "title": "Texas governor Rick Perry makes the vaccine Gardasil mandatory for all Texan schoolgirls.",
+      "paragraphs": [
+        "Texas governor Rick Perry makes the vaccine Gardasil mandatory for all Texan schoolgirls. The vaccine is designed to prevent the sexually transmitted cervical-cancer virus, yet even girls not sexually active are forced to take the new vaccine. Perry defends his relationship with Merck & Co., makers of the vaccine. The safety of the vaccine is also increasingly questioned. ( MSNBC/AP , Los Angeles Times )"
+      ],
+      "sources": [
+        {
+          "label": "MSNBC/AP",
+          "url": "https://www.WantToKnow.info/a-texas-governor-defends-vaccine-order"
+        },
+        {
+          "label": "Los Angeles Times",
+          "url": "https://www.WantToKnow.info/a-gardasil-vaccine-doubts-grow"
+        }
+      ]
+    },
+    {
+      "id": "2008-nanotechnology-with-risks-to-health-still-unknown-is-being-widely-used-in-consumer-products-some-experts-say-the-micr",
+      "dateLabel": "2008",
+      "sortYear": 2008.0039,
+      "title": "Nanotechnology, with risks to health still unknown, is being widely used in consumer products.",
+      "paragraphs": [
+        "Nanotechnology, with risks to health still unknown, is being widely used in consumer products. Some experts say the microtubules which can easily enter our bodies may pose health and environmental risks. Researchers in Scotland say we may be facing the same health risks as asbestos. Yet industry is rapidly embracing this risky technology with little oversight. ( New York Times , Project Censored , Science News )"
+      ],
+      "sources": [
+        {
+          "label": "New York Times",
+          "url": "https://www.WantToKnow.info/a-panel-criticizes-us-effort-nanomaterial-risks"
+        },
+        {
+          "label": "Project Censored",
+          "url": "http://www.projectcensored.org/17-nanotech-particles-pose-serious-dna-risks-to-humans-and-the-environment/"
+        },
+        {
+          "label": "Science News",
+          "url": "https://web.archive.org/web/20110823124241/http://www.sciencenews.org/view/generic/id/49191/title/Science_+_the%20_Public__Nanoparticles_indirect_threat_to_DNA"
+        }
+      ]
+    },
+    {
+      "id": "2009-the-american-academy-of-environmental-medicine-calls-for-a-moratorium-on-genetically-modified-foods-their-report-states",
+      "dateLabel": "2009",
+      "sortYear": 2009.004,
+      "title": "The American Academy of Environmental Medicine calls for a moratorium on genetically modified foods.",
+      "paragraphs": [
+        "The American Academy of Environmental Medicine calls for a moratorium on genetically modified foods. Their report states, \"GM foods pose a serious health risk in the areas of toxicology, allergy and immune function, reproductive health, and metabolic, physiologic and genetic health.\" Yet the US threatens a trade war against any country which opposes these frankenfoods. The US media fail miserably to even present a debate on this crucial health topic. ( American Academy of Environmental Medicine , Guardian , Scientific Summary )"
+      ],
+      "sources": [
+        {
+          "label": "American Academy of Environmental Medicine",
+          "url": "https://web.archive.org/web/20120107032949/http://www.aaemonline.org/gmopost.html"
+        },
+        {
+          "label": "Guardian",
+          "url": "http://www.guardian.co.uk/world/2011/jan/03/wikileaks-us-eu-gm-crops"
+        },
+        {
+          "label": "Scientific Summary",
+          "url": "https://www.WantToKnow.info/deception10pg"
+        }
+      ]
+    },
+    {
+      "id": "2011-researchers-suspect-the-military-s-high-frequency-active-auroral-research-program-haarp-which-frequently-disturbs-the",
+      "dateLabel": "2011",
+      "sortYear": 2011.0041,
+      "title": "Researchers suspect the military's High Frequency Active Auroral Research Program (HAARP), which frequently disturbs the ionosphere using powerful directed energy beams, is placing humanity at high risk due to unintended consequences.",
+      "paragraphs": [
+        "Researchers suspect the military's High Frequency Active Auroral Research Program (HAARP), which frequently disturbs the ionosphere using powerful directed energy beams, is placing humanity at high risk due to unintended consequences. Some believe HAARP may even be influencing some natural disasters like earthquakes and hurricanes. ( CBC documentary [Canada's PBS], Prof. Michel Chossudovsky )"
+      ],
+      "sources": [
+        {
+          "label": "CBC documentary",
+          "url": "https://www.WantToKnow.info/war/haarp_weather_modification_electromagnetic_warfare_weapons.shtml"
+        },
+        {
+          "label": "Prof. Michel Chossudovsky",
+          "url": "https://www.WantToKnow.info/resources#haarp"
+        }
+      ]
+    },
+    {
+      "id": "2011-three-nuclear-design-specialists-employed-by-general-electric-come-forward-stating-that-they-resigned-in-1976-after-beco",
+      "dateLabel": "2011",
+      "sortYear": 2011.0042,
+      "title": "Three nuclear design specialists employed by General Electric come forward stating that they resigned in 1976 after becoming convinced that the nuclear reactor design they were reviewing – the Mark 1 – was so flawed that it could lead to a devastating accident.",
+      "paragraphs": [
+        "Three nuclear design specialists employed by General Electric come forward stating that they resigned in 1976 after becoming convinced that the nuclear reactor design they were reviewing – the Mark 1 – was so flawed that it could lead to a devastating accident. Five of the six reactors at the Japan's nuclear facility which experiences a melt down in March 2011 are Mark 1s. ( ABC News )"
+      ],
+      "sources": [
+        {
+          "label": "ABC News",
+          "url": "http://abcnews.go.com/Blotter/fukushima-mark-nuclear-reactor-design-caused-ge-scientist/story?id=13141287"
+        }
+      ]
+    },
+    {
+      "id": "1988-to-2008-the-number-of-overseas-clinical-trials-for-drugs-increases-by-2-000-to-approximately-6-500-trials-these-trials-are-of",
+      "dateLabel": "1988 to 2008",
+      "sortYear": 1988.0043,
+      "title": "the number of overseas clinical trials for drugs increases by 2,000%, to approximately 6,500 trials.",
+      "paragraphs": [
+        "the number of overseas clinical trials for drugs increases by 2,000%, to approximately 6,500 trials. These trials are often conducted in areas with large numbers of poor and illiterate people who grant their consent by signing an \"X\" or making a thumb print on a form. The tests are rarely monitored by the FDA, and have in some cases proved deadly. 49 babies die in New Delhi, India during a 30-month trial. The cost of testing in countries without safety regulations is much lower; and, due to lax or nonexistent oversight, pharmaceutical corporations (or research companies they've contracted out to) are able to more easily suppress research that demonstrates harmful effects and only report positive results. ( Vanity Fair )"
+      ],
+      "sources": [
+        {
+          "label": "Vanity Fair",
+          "url": "http://www.vanityfair.com/politics/features/2011/01/deadly-medicine-201101?printable=true&currentPage=3#ixzz18NY8yGh9"
+        }
+      ]
+    }
+  ]
+}

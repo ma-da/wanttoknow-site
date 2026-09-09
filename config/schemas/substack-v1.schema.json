@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wanttoknow.info/schemas/substack-v1.schema.json",
+  "title": "WantToKnow.info SubstackRecord v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "post_id",
+    "slug",
+    "title",
+    "title_source",
+    "subtitle",
+    "url",
+    "published_at",
+    "updated_at",
+    "authors",
+    "topics",
+    "tags",
+    "content_markdown",
+    "content_text",
+    "word_count",
+    "images",
+    "youtube_embeds",
+    "links",
+    "source",
+    "content_sha256",
+    "priority",
+    "qc_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_type": {
+      "const": "substack"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^substack:[0-9]+$"
+    },
+    "post_id": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title_source": {
+      "type": "string",
+      "enum": [
+        "metadata_csv",
+        "html_title",
+        "html_h1",
+        "filename_slug"
+      ]
+    },
+    "subtitle": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "published_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "content_markdown": {
+      "type": "string"
+    },
+    "content_text": {
+      "type": "string"
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "alt",
+          "title",
+          "width",
+          "height"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "alt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "width": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "height": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "youtube_embeds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "video_id",
+          "start_seconds",
+          "url"
+        ],
+        "properties": {
+          "video_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "start_seconds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "label"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "platform",
+        "publication",
+        "source_file"
+      ],
+      "properties": {
+        "platform": {
+          "const": "substack"
+        },
+        "publication": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metadata_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "priority": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "qc_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

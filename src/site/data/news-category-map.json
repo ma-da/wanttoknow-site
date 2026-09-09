@@ -1,0 +1,525 @@
+{
+  "911": {
+    "label": "9/11",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "911polls": {
+    "label": "9/11",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "AI": {
+    "label": "Artificial Intelligence",
+    "secondary_topics": [],
+    "topic": "tech"
+  },
+  "abledanger": {
+    "label": "Able Danger",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "amazing-seniors": {
+    "label": "Amazing Seniors",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "animal-wonders": {
+    "label": "Animal Wonders",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "archeologyhistory": {
+    "label": "History Mysteries",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "assassinations": {
+    "label": "Assassinations",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "avianflubird": {
+    "label": "Bird Flu",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "bankbailout": {
+    "label": "Bank Bailout",
+    "secondary_topics": [
+      "government"
+    ],
+    "topic": "money"
+  },
+  "big-tech": {
+    "label": "Big Tech",
+    "secondary_topics": ["media"],
+    "topic": "tech"
+  },
+  "bigbrother": {
+    "label": "Big Brother",
+    "secondary_topics": [],
+    "topic": "tech"
+  },
+  "biotech-dangers": {
+    "label": "Biotech Dangers",
+    "secondary_topics": [
+      "health",
+      "science-and-environment"
+    ],
+    "topic": "tech"
+  },
+  "cancercures": {
+    "label": "Cancer Breakthroughs",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "cell-phones-wireless-dangers": {
+    "label": "Wireless Dangers",
+    "secondary_topics": [
+      "tech",
+      "science-and-environment"
+    ],
+    "topic": "health"
+  },
+  "censorship": {
+    "label": "Censorship",
+    "secondary_topics": [],
+    "topic": "media"
+  },
+  "chemtrails": {
+    "label": "Geoengineering",
+    "secondary_topics": [],
+    "topic": "science-and-environment"
+  },
+  "civilliberties": {
+    "label": "Civil Liberties",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "coronavirus": {
+    "label": "COVID-19",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "coronavirus-vaccine-problems": {
+    "label": "COVID-19 Vaccines",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "corporatecorruption": {
+    "label": "Corporate Corruption",
+    "secondary_topics": [],
+    "topic": "money"
+  },
+  "corruptioninscience": {
+    "label": "Science Corruption",
+    "secondary_topics": [],
+    "topic": "science-and-environment"
+  },
+  "court-judicial-corruption": {
+    "label": "Judicial Corruption",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "davidraygriffin": {
+    "label": "David Ray Griffin",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "dolphinswhales": {
+    "label": "Marine Mammals",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "elections": {
+    "label": "Elections",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "ending-human-trafficking": {
+    "label": "Ending Human Trafficking",
+    "secondary_topics": [
+      "abuse-and-trafficking"
+    ],
+    "topic": "inspiring"
+  },
+  "environmental-destruction": {
+    "label": "Destroying the Environment",
+    "secondary_topics": [],
+    "topic": "science-and-environment"
+  },
+  "factory-farming": {
+    "label": "Factory Farming",
+    "secondary_topics": [
+      "science-and-environment"
+    ],
+    "topic": "health"
+  },
+  "financial": {
+    "label": "Financial Corruption",
+    "secondary_topics": [],
+    "topic": "money"
+  },
+  "food-corruption": {
+    "label": "Food System Corruption",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "geneticallymodifiedorganisms": {
+    "label": "GMOs",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "science-and-environment"
+  },
+  "globalwarming": {
+    "label": "Climate Change",
+    "secondary_topics": [],
+    "topic": "science-and-environment"
+  },
+  "government-waste": {
+    "label": "Government Waste",
+    "secondary_topics": [
+      "money"
+    ],
+    "topic": "government"
+  },
+  "governmentcorruption": {
+    "label": "Government Corruption",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "grassroots-alternative-systems": {
+    "label": "Grassroots Alt Systems",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "healing-our-bodies": {
+    "label": "Healing our Bodies",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "inspiring"
+  },
+  "healing-our-earth": {
+    "label": "Healing our Earth",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "healing-our-relationships": {
+    "label": "Healing our Relationships",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "inspiring"
+  },
+  "healing-the-war-machine": {
+    "label": "Healing the War Machine",
+    "secondary_topics": [
+      "war"
+    ],
+    "topic": "inspiring"
+  },
+  "health": {
+    "label": "Health",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "hurricanekatrina": {
+    "label": "Katrina",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "immigration-enforcement-corruption": {
+    "label": "Immigration Enforcement Corruption",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "incomeinequality": {
+    "label": "Financial Inequality",
+    "secondary_topics": [],
+    "topic": "money"
+  },
+  "inspirational": {
+    "label": "Inspiring",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "inspiring-disabled-persons": {
+    "label": "Inspiring Disabled Persons",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "intelligenceagency": {
+    "label": "Intelligence",
+    "secondary_topics": ["mind-control"],
+    "topic": "government"
+  },
+  "jeffrey-epstein": {
+    "label": "Epstein",
+    "secondary_topics": [],
+    "topic": "abuse-and-trafficking"
+  },
+  "kennedy-assassination": {
+    "label": "Kennedy Assassination",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "londonbombings": {
+    "label": "London Bombings",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "massanimaldeaths": {
+    "label": "Animal Dieoffs",
+    "secondary_topics": [],
+    "topic": "science-and-environment"
+  },
+  "massmedia": {
+    "label": "Media",
+    "secondary_topics": [],
+    "topic": "media"
+  },
+  "mental-health": {
+    "label": "Mental Health",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "microchipsimplants": {
+    "label": "Microchip Implants",
+    "secondary_topics": [
+      "science-and-environment",
+      "mind-control"
+    ],
+    "topic": "health"
+  },
+  "microcreditmicroloans": {
+    "label": "Microcredit",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "microplastics-solutions": {
+    "label": "Microplastics Solutions",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "militarycorruption": {
+    "label": "Military Corruption",
+    "secondary_topics": [
+      "government"
+    ],
+    "topic": "war"
+  },
+  "mindalteringdrugs": {
+    "label": "Psychedelic Medicine",
+    "secondary_topics": [
+      "health",
+						"consciousness"
+    ],
+    "topic": "inspiring"
+  },
+  "mindcontrol": {
+    "label": "Mind Control",
+    "secondary_topics": [],
+    "topic": "mind-control"
+  },
+  "natureofreality": {
+    "label": "Nature of Reality",
+    "secondary_topics": [
+      "consciousness"
+    ],
+    "topic": "inspiring"
+  },
+  "neardeathexperiences": {
+    "label": "Near-Death Experiences",
+    "secondary_topics": [
+      "consciousness"
+    ],
+    "topic": "inspiring"
+  },
+  "newenergy": {
+    "label": "New Energy",
+    "secondary_topics": [],
+    "topic": "tech"
+  },
+  "newenergyinventions": {
+    "label": "New Energy",
+    "secondary_topics": [],
+    "topic": "tech"
+  },
+  "nonlethalweapons": {
+    "label": "Nonlethal Weapons",
+    "secondary_topics": [
+      "war"
+    ],
+    "topic": "tech"
+  },
+  "nuclear_power": {
+    "label": "Nuclear Power",
+    "secondary_topics": [
+      "science-and-environment"
+    ],
+    "topic": "tech"
+  },
+  "pharmaceuticalcorruption": {
+    "label": "Big Pharma",
+    "secondary_topics": [
+      "science-and-environment"
+    ],
+    "topic": "health"
+  },
+  "police-corruption": {
+    "label": "Law Enforcement",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "power-of-art": {
+    "label": "Power of Art",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "prisonscorruption": {
+    "label": "Incarceration Industry",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "privacy": {
+    "label": "Privacy",
+    "secondary_topics": [
+      "government"
+    ],
+    "topic": "tech"
+  },
+  "reimagining-education": {
+    "label": "Reimagining Education",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "reimagining-the-economy": {
+    "label": "Reimagining the Economy",
+    "secondary_topics": [
+      "money"
+    ],
+    "topic": "inspiring"
+  },
+  "repairing-our-criminal-justice-system": {
+    "label": "Repairing Criminal Justice",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "rothschilds-family": {
+    "label": "Rothschilds",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "secrecy": {
+    "label": "Secrecy",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "secretsocieties": {
+    "label": "Secret Societies",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "sex-abuse-doctors": {
+    "label": "Medical Sexual Abuse",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "abuse-and-trafficking"
+  },
+  "sexabusescandals": {
+    "label": "Sexual Abuse",
+    "secondary_topics": [],
+    "topic": "abuse-and-trafficking"
+  },
+  "sibeledmonds": {
+    "label": "Sibel Edmonds",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "stevenjones": {
+    "label": "Steven Jones",
+    "secondary_topics": [],
+    "topic": "deep-history"
+  },
+  "tech-for-good": {
+    "label": "Technology for Good",
+    "secondary_topics": [
+      "tech"
+    ],
+    "topic": "inspiring"
+  },
+  "terrorism": {
+    "label": "Terrorism",
+    "secondary_topics": [
+      "government"
+    ],
+    "topic": "war"
+  },
+  "top-human-interest-stories": {
+    "label": "Human Interest",
+    "secondary_topics": [],
+    "topic": "inspiring"
+  },
+  "toxic-chemicals": {
+    "label": "Toxic Chemicals",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "science-and-environment"
+  },
+  "transgender-medicine": {
+    "label": "Transgender Medicine",
+    "secondary_topics": [],
+    "topic": "health"
+  },
+  "ufos": {
+    "label": "UFO/UAP Disclosure",
+    "secondary_topics": [],
+    "topic": "ufo"
+  },
+  "vaccines": {
+    "label": "Vaccines",
+    "secondary_topics": [
+      "science-and-environment"
+    ],
+    "topic": "health"
+  },
+  "war": {
+    "label": "War",
+    "secondary_topics": [],
+    "topic": "war"
+  },
+  "war-on-drugs": {
+    "label": "War on Drugs",
+    "secondary_topics": [],
+    "topic": "government"
+  },
+  "warfare-tech": {
+    "label": "Warfare Technology",
+    "secondary_topics": [
+      "tech"
+    ],
+    "topic": "war"
+  },
+  "weapons-mass-destruction": {
+    "label": "WMD",
+    "secondary_topics": [],
+    "topic": "war"
+  },
+  "zika-virus": {
+    "label": "Zika",
+    "secondary_topics": [
+      "health"
+    ],
+    "topic": "deep-history"
+  },
+  "general": {
+    "label": "General",
+    "secondary_topics": [],
+    "topic": null
+  }
+}

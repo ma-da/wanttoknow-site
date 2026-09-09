@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light">
+  <title>Article Admin | WantToKnow.info</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell" id="main-content">
+    <header class="admin-header">
+      <div>
+        <p class="admin-eyebrow">WantToKnow Archive Editor</p>
+
+      </div>
+      <div class="admin-header__right">
+        <div class="admin-header__status" aria-live="polite">
+          <strong id="result-count">Loading…</strong>
+          <span>articles</span>
+        </div>
+        <form method="post" action="/admin/logout">
+          <button class="admin-logout-button" type="submit">Logout</button>
+        </form>
+      </div>
+    </header>
+
+				<section
+						class="admin-toolbar admin-toolbar--articles"
+						aria-label="Article controls"
+				>
+						<div class="admin-toolbar__actions">
+								<button
+										id="add-article"
+										class="admin-primary-button"
+										type="button"
+								>
+										+ Add Article
+								</button>
+
+								<button
+										id="draft-filter"
+										class="admin-secondary-button admin-draft-filter"
+										type="button"
+										aria-pressed="false"
+								>
+										View Drafts
+								</button>
+
+								<button
+										id="preview-toggle"
+										class="admin-secondary-button admin-preview-toggle"
+										type="button"
+										aria-controls="article-preview"
+										aria-expanded="true"
+								>
+										Hide Preview
+								</button>
+						</div>
+
+						<label class="admin-field admin-field--search admin-toolbar__search">
+								<span class="visually-hidden">Search titles or article ID</span>
+								<input
+										id="article-search"
+										type="search"
+										autocomplete="off"
+										spellcheck="false"
+										placeholder="Search titles or ID…"
+										aria-label="Search titles or article ID"
+								>
+						</label>
+
+						<div
+								id="batch-summary"
+								class="admin-batch-summary"
+								hidden
+								aria-label="Current draft batch"
+						>
+								<div class="admin-batch-summary__info">
+										<span class="admin-batch-summary__label">Batch</span>
+										<strong id="batch-summary-text"></strong>
+								</div>
+
+								<button
+										id="publish-batch"
+										class="admin-publish-button"
+										type="button"
+										disabled
+								>
+										Publish Batch
+								</button>
+						</div>
+						<p
+								id="batch-publish-status"
+								class="admin-batch-status"
+								role="status"
+								aria-live="polite"
+						></p>
+				</section>
+
+    <section id="batch-summary" class="admin-batch-bar" hidden aria-label="Current draft batch">
+      <div>
+        <p class="admin-eyebrow">Current batch</p>
+        <strong id="batch-summary-text"></strong>
+      </div>
+      <button id="publish-batch" class="admin-publish-button" type="button" disabled>Publish Draft Batch</button>
+    </section>
+
+    <section class="article-browser" id="article-browser" aria-label="Article database">
+      <div class="article-list-pane">
+        <div class="article-list-head" aria-label="Sort article results">
+          <button class="article-sort-head" type="button" data-sort-field="posted" data-default-direction="desc">
+            <span>Posted</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
+          </button>
+          <span class="article-list-head__live" aria-hidden="true"></span>
+          <button class="article-sort-head article-sort-head--numeric" type="button" data-sort-field="priority" data-default-direction="desc">
+            <span>Pri</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="article-sort-head" type="button" data-sort-field="publication" data-default-direction="asc">
+            <span>Publication</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="article-sort-head" type="button" data-sort-field="title" data-default-direction="asc">
+            <span>Title</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="article-sort-head article-sort-head--numeric" type="button" data-sort-field="id" data-default-direction="desc">
+            <span>ID</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="article-list" class="article-list" role="list"></div>
+
+        <div id="load-state" class="admin-load-state" aria-live="polite"></div>
+        <div id="load-sentinel" class="admin-load-sentinel" aria-hidden="true"></div>
+      </div>
+
+      <aside id="article-preview" class="article-preview" aria-label="Article summary preview">
+        <div id="preview-empty" class="article-preview__empty">
+          <p class="admin-eyebrow">Summary preview</p>
+          <p>Hover over an article row, or focus it with the keyboard, to see its complete summary.</p>
+        </div>
+
+        <article id="preview-content" class="article-preview__content" hidden>
+          <p class="admin-eyebrow">Summary preview</p>
+          <h2 id="preview-title"></h2>
+          <div id="preview-meta" class="article-preview__meta"></div>
+          <div id="preview-tags" class="article-preview__tags"></div>
+          <div id="preview-summary" class="article-preview__summary"></div>
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="create-article-dialog" class="admin-create-dialog">
+    <form id="create-article-form" class="admin-create-form">
+      <div class="admin-create-dialog__heading">
+        <div>
+          <p class="admin-eyebrow">New article</p>
+          <h2>Add article for summary</h2>
+        </div>
+        <button id="create-article-cancel" class="admin-create-dialog__close" type="button" aria-label="Close">×</button>
+      </div>
+      <p class="admin-help">Only title and source URL are required to create the entry. Complete the remaining fields in the editor before publishing.</p>
+      <label class="admin-field">
+        <span>Title</span>
+        <input id="create-title" type="text" maxlength="500" required>
+      </label>
+      <label class="admin-field">
+        <span>Source URL</span>
+        <input id="create-source-url" type="url" maxlength="4000" placeholder="https://…" required>
+      </label>
+      <p id="create-article-status" class="admin-create-status" aria-live="polite"></p>
+      <div class="admin-create-actions admin-create-actions--three">
+        <button
+          class="admin-secondary-button admin-create-submit"
+          type="submit"
+          data-after-create="another"
+        >Create + Add Another</button>
+        <button
+          class="admin-secondary-button admin-create-submit"
+          type="submit"
+          data-after-create="archive"
+        >Create + Return to Articles</button>
+        <button
+          id="create-article-submit"
+          class="admin-primary-button admin-create-submit"
+          type="submit"
+          data-after-create="editor"
+        >Create + Open Editor</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/admin/assets/articles.js" defer></script>
+</body>
+</html>

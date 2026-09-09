@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "id": "911-facts",
+  "eyebrow": "9/11 history and investigation",
+  "title": "9/11 Facts Timeline",
+  "description": "A condensed chronology adapted from WantToKnow.info’s long-form media timeline, covering pre-attack warnings, the events of September 11, intelligence and air-defense failures, official investigations, disputed evidence, public-health consequences, and later calls for renewed inquiry.",
+  "sourcePage": "https://www.wanttoknow.info/911timeline10pg",
+  "endingNote": "This file summarizes a much longer archival page. Contested interpretations are attributed and paired with the official explanation where practical.",
+  "titleParts": {
+    "lead": "9/11",
+    "outline": "Facts",
+    "tail": "Timeline"
+  },
+  "entries": [
+    {
+      "id": "1993-world-trade-center-bombing-exposes-security-vulnerabilities",
+      "dateLabel": "1993",
+      "sortYear": 1993,
+      "title": "World Trade Center bombing exposes security vulnerabilities",
+      "paragraphs": [
+        "A truck bomb beneath the World Trade Center kills six people and injures more than one thousand, establishing the complex as a known terrorist target years before 2001."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "1996-warnings-emerge-about-aircraft-used-as-weapons",
+      "dateLabel": "1996",
+      "sortYear": 1996,
+      "title": "Warnings emerge about aircraft used as weapons",
+      "paragraphs": [
+        "The source chronology gathers reports and intelligence analyses discussing the possibility of terrorists hijacking aircraft and using them in attacks on prominent buildings."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "1998-phoenix-area-flight-school-concerns-are-reported",
+      "dateLabel": "1998",
+      "sortYear": 1998.01,
+      "title": "Phoenix-area flight-school concerns are reported",
+      "paragraphs": [
+        "An Oklahoma City FBI agent warns that unusually large numbers of Middle Eastern men are receiving flight training and may be connected with extremist activity."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "late-1998-early-2000-opportunities-to-strike-bin-laden-are-not-used",
+      "dateLabel": "Late 1998–early 2000",
+      "sortYear": 1998.02,
+      "title": "Opportunities to strike bin Laden are not used",
+      "paragraphs": [
+        "The timeline reports that intelligence assets repeatedly identify Osama bin Laden’s location but proposed attacks are canceled or not carried out."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "january-2000-known-extremists-attend-a-meeting-in-malaysia",
+      "dateLabel": "January 2000",
+      "sortYear": 2000.01,
+      "title": "Known extremists attend a meeting in Malaysia",
+      "paragraphs": [
+        "U.S. intelligence monitors a meeting involving future hijackers but information is not effectively shared with the agencies responsible for domestic watchlists and investigations."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2000-foreign-agents-report-on-an-alleged-al-qaeda-support-network",
+      "dateLabel": "2000",
+      "sortYear": 2000.02,
+      "title": "Foreign agents report on an alleged al-Qaeda support network",
+      "paragraphs": [
+        "The source chronology describes multiple warnings and surveillance leads involving people later linked to the attacks, while emphasizing failures of information sharing and follow-up."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "october-2000-uss-cole-is-attacked",
+      "dateLabel": "October 2000",
+      "sortYear": 2000.03,
+      "title": "USS Cole is attacked",
+      "paragraphs": [
+        "The bombing of the USS Cole kills 17 sailors and intensifies warnings about al-Qaeda’s ability and intent to strike U.S. targets."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "early-2001-intelligence-reporting-warns-of-a-major-attack",
+      "dateLabel": "Early 2001",
+      "sortYear": 2001.01,
+      "title": "Intelligence reporting warns of a major attack",
+      "paragraphs": [
+        "Multiple foreign governments and U.S. intelligence channels issue warnings that al-Qaeda is preparing a large operation, possibly inside the United States."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "may-june-2001-threat-reporting-reaches-a-high-level",
+      "dateLabel": "May–June 2001",
+      "sortYear": 2001.02,
+      "title": "Threat reporting reaches a high level",
+      "paragraphs": [
+        "Senior officials receive repeated briefings about an imminent al-Qaeda operation. The source timeline highlights the volume and urgency of the warnings."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "july-2001-officials-warn-that-the-system-is-blinking-red",
+      "dateLabel": "July 2001",
+      "sortYear": 2001.03,
+      "title": "Officials warn that the system is “blinking red”",
+      "paragraphs": [
+        "Counterterrorism officials describe unusually intense threat reporting. Security agencies increase concern about attacks, while no coordinated domestic response prevents the plot."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "late-july-2001-taliban-official-warns-of-an-imminent-attack",
+      "dateLabel": "Late July 2001",
+      "sortYear": 2001.04,
+      "title": "Taliban official warns of an imminent attack",
+      "paragraphs": [
+        "The Taliban foreign minister reportedly warns U.S. and United Nations officials that bin Laden is preparing a major attack on American soil."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "august-5-11-2001-israel-reportedly-warns-the-united-states",
+      "dateLabel": "August 5–11, 2001",
+      "sortYear": 2001.05,
+      "title": "Israel reportedly warns the United States",
+      "paragraphs": [
+        "Israeli intelligence reportedly warns U.S. officials that al-Qaeda is preparing an imminent large-scale attack."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "august-6-2001-presidential-daily-brief-bin-ladin-determined-to-strike-in-us",
+      "dateLabel": "August 6, 2001",
+      "sortYear": 2001.06,
+      "title": "Presidential Daily Brief: “Bin Ladin Determined to Strike in US”",
+      "paragraphs": [
+        "President George W. Bush receives a briefing describing al-Qaeda’s intention to attack inside the United States, including references to hijacking and surveillance of federal buildings."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "august-2001-moussaoui-arrest-raises-flight-training-concerns",
+      "dateLabel": "August 2001",
+      "sortYear": 2001.07,
+      "title": "Moussaoui arrest raises flight-training concerns",
+      "paragraphs": [
+        "Zacarias Moussaoui is arrested after instructors report suspicious interest in flying a large jet without learning takeoff and landing. Requests for a broader search are not approved in time."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-6-10-2001-unusual-financial-activity-attracts-later-scrutiny",
+      "dateLabel": "September 6–10, 2001",
+      "sortYear": 2001.08,
+      "title": "Unusual financial activity attracts later scrutiny",
+      "paragraphs": [
+        "Large put-option trades involving airline and financial stocks occur shortly before the attacks. Investigations later state that the trades were not linked to advance knowledge, while the source timeline treats the activity as a significant unresolved question."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-10-2001-rumsfeld-announces-untracked-pentagon-transactions",
+      "dateLabel": "September 10, 2001",
+      "sortYear": 2001.09,
+      "title": "Rumsfeld announces untracked Pentagon transactions",
+      "paragraphs": [
+        "Defense Secretary Donald Rumsfeld publicly discusses accounting systems unable to track roughly $2.3 trillion in transactions. The statement is often cited in later 9/11 debates, though it referred to longstanding accounting problems rather than missing cash on that day."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-11-2001-morning-four-commercial-aircraft-are-hijacked",
+      "dateLabel": "September 11, 2001 — morning",
+      "sortYear": 2001.1,
+      "title": "Four commercial aircraft are hijacked",
+      "paragraphs": [
+        "American Airlines Flights 11 and 77 and United Airlines Flights 175 and 93 are hijacked. Two aircraft strike the World Trade Center, one strikes the Pentagon, and Flight 93 crashes in Pennsylvania."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-11-2001-air-defense-military-exercises-and-command-confusion-complicate-the-response",
+      "dateLabel": "September 11, 2001 — air defense",
+      "sortYear": 2001.11,
+      "title": "Military exercises and command confusion complicate the response",
+      "paragraphs": [
+        "The source chronology focuses on concurrent exercises, delayed notification, changing accounts of the response, and the failure to intercept any of the four aircraft."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-11-2001-9-59-and-10-28-a-m-the-twin-towers-collapse",
+      "dateLabel": "September 11, 2001 — 9:59 and 10:28 a.m.",
+      "sortYear": 2001.12,
+      "title": "The Twin Towers collapse",
+      "paragraphs": [
+        "The South and North Towers collapse after being struck and burning. Subsequent investigations, engineering studies, survivor testimony, and independent researchers disagree about aspects of the failure sequence."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-11-2001-5-20-p-m-world-trade-center-building-7-collapses",
+      "dateLabel": "September 11, 2001 — 5:20 p.m.",
+      "sortYear": 2001.13,
+      "title": "World Trade Center Building 7 collapses",
+      "paragraphs": [
+        "The 47-story building collapses after fires burn for hours. NIST later attributes the failure to fire-driven structural damage; critics cited by the source timeline call for further investigation."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-11-12-2001-evidence-is-rapidly-gathered-and-suspects-are-identified",
+      "dateLabel": "September 11–12, 2001",
+      "sortYear": 2001.14,
+      "title": "Evidence is rapidly gathered and suspects are identified",
+      "paragraphs": [
+        "Authorities begin identifying the hijackers and reconstructing the plot. The source timeline raises questions about the speed, handling, and later public presentation of some evidence."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "september-october-2001-the-united-states-launches-the-war-on-terror",
+      "dateLabel": "September–October 2001",
+      "sortYear": 2001.15,
+      "title": "The United States launches the “War on Terror”",
+      "paragraphs": [
+        "Congress authorizes military force, the United States invades Afghanistan, and the USA PATRIOT Act greatly expands surveillance and investigative powers."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "february-21-2002-afghan-opium-production-rebounds",
+      "dateLabel": "February 21, 2002",
+      "sortYear": 2002.01,
+      "title": "Afghan opium production rebounds",
+      "paragraphs": [
+        "After a Taliban cultivation ban had sharply reduced the 2001 opium crop, international agencies predict renewed production after the U.S.-led invasion."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2002-a-formal-independent-investigation-is-delayed",
+      "dateLabel": "2002",
+      "sortYear": 2002.02,
+      "title": "A formal independent investigation is delayed",
+      "paragraphs": [
+        "Victims’ families and members of Congress press for a national commission. The administration initially resists or limits proposals before the 9/11 Commission is established."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2003-2004-the-9-11-commission-conducts-its-investigation",
+      "dateLabel": "2003–2004",
+      "sortYear": 2003,
+      "title": "The 9/11 Commission conducts its investigation",
+      "paragraphs": [
+        "The commission holds hearings, interviews witnesses, and publishes its final report. Commissioners later state that agencies withheld information and that the investigation faced obstruction and time constraints."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2005-2008-destroyed-records-and-withheld-evidence-draw-scrutiny",
+      "dateLabel": "2005–2008",
+      "sortYear": 2005,
+      "title": "Destroyed records and withheld evidence draw scrutiny",
+      "paragraphs": [
+        "Reports emerge about destroyed interrogation tapes, discarded intelligence files, and evidence not provided to investigators, prompting former commission leaders to say they had been obstructed or misled."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2006-present-officials-academics-architects-and-engineers-call-for-renewed-inquiry",
+      "dateLabel": "2006–present",
+      "sortYear": 2006,
+      "title": "Officials, academics, architects, and engineers call for renewed inquiry",
+      "paragraphs": [
+        "The source page compiles statements from former government officials, military and intelligence personnel, professors, pilots, architects, and engineers who dispute parts of the official account or support a new investigation."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    },
+    {
+      "id": "2008-2014-health-effects-and-compensation-remain-unresolved",
+      "dateLabel": "2008–2014",
+      "sortYear": 2008,
+      "title": "Health effects and compensation remain unresolved",
+      "paragraphs": [
+        "First responders, residents, and cleanup workers continue to experience respiratory illness, cancer, and other conditions. Federal health and compensation programs expand after sustained advocacy."
+      ],
+      "sources": [
+        {
+          "label": "WantToKnow.info: 9/11 Facts Timeline",
+          "url": "https://www.wanttoknow.info/911/9-11-facts"
+        },
+        {
+          "label": "Original timeline URL",
+          "url": "https://www.wanttoknow.info/911timeline10pg"
+        }
+      ]
+    }
+  ]
+}

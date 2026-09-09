@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7658f6">
+  <meta name="color-scheme" content="light">
+
+  <title>Timelines | WantToKnow.info</title>
+
+  <meta
+    name="description"
+    content="Explore specialized WantToKnow.info timelines covering disclosure, 9/11 facts, human experimentation, the war on drugs, and remote viewing."
+  >
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  >
+  <link
+    rel="canonical"
+    href="https://www.wanttoknow.info/timelines/"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WantToKnow.info">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.wanttoknow.info/timelines/">
+  <meta property="og:title" content="Timelines | WantToKnow.info">
+  <meta
+    property="og:description"
+    content="Explore specialized WantToKnow.info timelines covering disclosure, 9/11 facts, human experimentation, the war on drugs, and remote viewing."
+  >
+  <meta
+    property="og:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timelines | WantToKnow.info">
+  <meta
+    name="twitter:description"
+    content="Explore specialized WantToKnow.info timelines covering disclosure, 9/11 facts, human experimentation, the war on drugs, and remote viewing."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+
+  <meta name="application-name" content="WantToKnow.info">
+  <meta name="apple-mobile-web-app-title" content="WantToKnow.info">
+
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="WTK Conscious Media"
+    href="https://wtkconsciousmedia.substack.com/feed"
+  >
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.wanttoknow.info/#organization",
+        "name": "WantToKnow.info",
+        "url": "https://www.wanttoknow.info/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.wanttoknow.info/#website",
+        "url": "https://www.wanttoknow.info/",
+        "name": "WantToKnow.info",
+        "publisher": {
+          "@id": "https://www.wanttoknow.info/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.wanttoknow.info/timelines/#webpage",
+        "url": "https://www.wanttoknow.info/timelines/",
+        "name": "Timelines",
+        "description": "Specialized WantToKnow.info timelines covering disclosure, 9/11 facts, human experimentation, the war on drugs, and remote viewing.",
+        "isPartOf": {
+          "@id": "https://www.wanttoknow.info/#website"
+        },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+
+  <style>
+    /* ==========================================================================
+       Timelines index
+       ========================================================================== */
+
+    .timelines-index {
+      padding-block:
+        clamp(1.75rem, 3vw, 2.75rem)
+        0;
+    }
+
+    .timelines-index__inner {
+      max-width: 96rem;
+    }
+
+    .timelines-index__title {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(2.75rem, 7vw, 6rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .timelines-panel {
+      padding-block: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .timelines-panel__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--layout-grid-gap, clamp(0.9rem, 2vw, 1.5rem));
+    }
+
+				.timelines-panel__link {
+						position: relative;
+						isolation: isolate;
+
+						display: flex;
+						align-items: flex-end;
+						justify-content: space-between;
+						gap: 1rem;
+
+						min-height:
+								clamp(10rem, 18vw, 14rem);
+
+						padding:
+								clamp(1.25rem, 2.5vw, 2rem);
+
+						overflow: hidden;
+
+						border:
+								1px solid
+								var(--color-border, #d8d2e3);
+
+						background:
+								var(--timeline-image)
+								center / cover
+								no-repeat;
+
+						color: #fff;
+						text-decoration: none;
+
+						transition:
+								transform 160ms ease,
+								border-color 160ms ease;
+				}
+				
+				.timelines-panel__link::before {
+						content: "";
+
+						position: absolute;
+						inset: 0;
+
+						z-index: -1;
+
+						background:
+								linear-gradient(
+										to top,
+										rgba(15, 12, 22, 0.82),
+										rgba(15, 12, 22, 0.22)
+								);
+
+						transition:
+								background 160ms ease;
+				}				
+
+				.timelines-panel__link-title,
+				.timelines-panel__arrow {
+						position: relative;
+						z-index: 1;
+				}
+
+				.timelines-panel__link:hover {
+						transform: translateY(-2px);
+
+						border-color:
+								var(--color-accent, #7658f6);
+				}
+
+				.timelines-panel__link:hover::before {
+						background:
+								linear-gradient(
+										to top,
+										rgba(15, 12, 22, 0.72),
+										rgba(15, 12, 22, 0.12)
+								);
+				}
+
+    .timelines-panel__link:focus-visible {
+      outline: 2px solid var(--color-accent, #7658f6);
+      outline-offset: 3px;
+    }
+
+    .timelines-panel__link-title {
+      max-width: 16ch;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+
+    .timelines-panel__arrow {
+      flex: 0 0 auto;
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .timelines-panel__link--featured {
+      grid-column: 1 / -1;
+      min-height: clamp(11rem, 20vw, 16rem);
+    }
+
+    .timelines-copy {
+      padding-block:
+        clamp(1.5rem, 3vw, 2.5rem)
+        clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .timelines-copy__inner {
+      width: min(100%, 60rem);
+      margin-inline: auto;
+    }
+
+    .timelines-copy__title {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .timelines-copy__text {
+      margin: 0;
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.75;
+      text-wrap: pretty;
+    }
+
+    @media (max-width: 760px) {
+      .timelines-panel__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timelines-panel__link--featured {
+        grid-column: auto;
+      }
+
+      .timelines-panel__link {
+        min-height: 8.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timelines-panel__link {
+        transition: none;
+      }
+
+      .timelines-panel__link:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <div
+    id="global-header"
+    data-global-header
+  ></div>
+
+  <main id="main-content">
+
+    <section
+      class="timelines-index"
+      aria-labelledby="timelines-index-title"
+    >
+      <div class="container timelines-index__inner">
+
+        <p class="eyebrow">
+          Explore WantToKnow.info
+        </p>
+
+        <h1
+          class="timelines-index__title"
+          id="timelines-index-title"
+        >
+          Timelines you won't find anywhere else
+        </h1>
+
+      </div>
+    </section>
+
+
+    <section
+      class="timelines-panel"
+      aria-label="Specialized timelines"
+    >
+      <div class="container">
+
+        <div class="timelines-panel__grid">
+
+										<a
+												class="timelines-panel__link timelines-panel__link--featured"
+												href="/timelines/disclosure.html"
+												style="--timeline-image: url('/assets/images/timelines/disclosure.jpg');"
+										>
+            <span class="timelines-panel__link-title">
+              Disclosure Timeline
+            </span>
+            <span class="timelines-panel__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="timelines-panel__link"
+            href="/timelines/911-facts.html"
+												style="--timeline-image: url('/assets/images/timelines/911.jpg');"
+          >
+            <span class="timelines-panel__link-title">
+              9/11 Facts Timeline
+            </span>
+            <span class="timelines-panel__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="timelines-panel__link"
+            href="/timelines/human-guinea-pigs.html"
+												style="--timeline-image: url('/assets/images/timelines/human-guinea-pigs.jpg');"
+          >
+            <span class="timelines-panel__link-title">
+              Human Guinea Pigs Timeline
+            </span>
+            <span class="timelines-panel__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="timelines-panel__link"
+            href="/timelines/war-on-drugs.html"
+												style="--timeline-image: url('/assets/images/timelines/war-on-drugs.jpg');"
+          >
+            <span class="timelines-panel__link-title">
+              War on Drugs Timeline
+            </span>
+            <span class="timelines-panel__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="timelines-panel__link"
+            href="/timelines/remote-viewing.html"
+												style="--timeline-image: url('/assets/images/timelines/remote-viewing.jpg');"
+          >
+            <span class="timelines-panel__link-title">
+              Remote Viewing Timeline
+            </span>
+            <span class="timelines-panel__arrow" aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      class="timelines-copy"
+      aria-labelledby="timelines-copy-title"
+    >
+      <div class="container">
+        <div class="timelines-copy__inner">
+
+          <h2
+            class="timelines-copy__title"
+            id="timelines-copy-title"
+          >
+            The sequence of events is important
+          </h2>
+
+          <p class="timelines-copy__text">
+            These unique timelines were compiled by WantToKnow over the years
+            to make it easy to see at a glance the order of events related to
+            certain controversial situations. We intend to expand these
+            timelines and add new ones as time permits. Please contact us if you would like to contribute to expanding these timelines or propose the creation of a new timeline.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div
+    id="global-footer"
+    data-global-footer
+  ></div>
+
+  <script
+    src="/assets/js/global.js"
+    defer
+  ></script>
+</body>
+</html>
