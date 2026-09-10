@@ -3,7 +3,7 @@
 Audit WantToKnow.info article data before generating static article pages.
 
 Run:
-    python /mnt/c/datasources/wanttoknow-site/scripts/audit-article-data.py
+    python scripts/audit-article-data.py
 
 This script does not modify any files.
 """

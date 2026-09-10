@@ -1,39 +1,35 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
 from pathlib import Path
+
 import markdown
 
-SITE_ROOT = Path(
-    "/mnt/c/datasources/wanttoknow-site/src/site"
-)
 
-PAGES = [
-    {
-        "source": Path(
-            "/mnt/c/Users/fixin/OneDrive/Desktop/PEERSwork/Business/terms_of_use.md"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Build policy/about HTML pages from Markdown source files."
+    )
+    parser.add_argument(
+        "--site-root",
+        type=Path,
+        default=REPO_ROOT / "src" / "site",
+        help="Public site root. Defaults to <repo>/src/site.",
+    )
+    parser.add_argument(
+        "--source-dir",
+        type=Path,
+        required=True,
+        help=(
+            "Directory containing terms_of_use.md, privacy_policy.md, "
+            "and AI_policy.md."
         ),
-        "output": SITE_ROOT / "terms/index.html",
-        "title": "Terms of Use",
-        "description": "Terms of use for WantToKnow.info.",
-        "canonical": "https://www.wanttoknow.info/terms/",
-    },
-    {
-        "source": Path(
-            "/mnt/c/Users/fixin/OneDrive/Desktop/PEERSwork/Business/privacy_policy.md"
-        ),
-        "output": SITE_ROOT / "about/privacy/index.html",
-        "title": "Privacy Policy",
-        "description": "Privacy policy for WantToKnow.info.",
-        "canonical": "https://www.wanttoknow.info/about/privacy/",
-    },
-    {
-        "source": Path(
-            "/mnt/c/Users/fixin/OneDrive/Desktop/PEERSwork/Business/AI_policy.md"
-        ),
-        "output": SITE_ROOT / "about/ai/index.html",
-        "title": "How We Use AI",
-        "description": "WantToKnow.info policy and principles for the use of artificial intelligence.",
-        "canonical": "https://www.wanttoknow.info/about/ai/",
-    },
-]
+    )
+    return parser.parse_args()
 
 
 def markdown_to_html(source: Path) -> str:
@@ -235,42 +231,64 @@ def make_page(
 """
 
 
-for page in PAGES:
 
-    source = page["source"]
-    output = page["output"]
+def main():
+    args = parse_args()
+    site_root = args.site_root.expanduser().resolve()
+    source_dir = args.source_dir.expanduser().resolve()
 
-    print(
-        f"Converting: {source.name}"
-    )
+    pages = [
+        {
+            "source": source_dir / "terms_of_use.md",
+            "output": site_root / "terms/index.html",
+            "title": "Terms of Use",
+            "description": "Terms of use for WantToKnow.info.",
+            "canonical": "https://www.wanttoknow.info/terms/",
+        },
+        {
+            "source": source_dir / "privacy_policy.md",
+            "output": site_root / "about/privacy/index.html",
+            "title": "Privacy Policy",
+            "description": "Privacy policy for WantToKnow.info.",
+            "canonical": "https://www.wanttoknow.info/about/privacy/",
+        },
+        {
+            "source": source_dir / "AI_policy.md",
+            "output": site_root / "about/ai/index.html",
+            "title": "How We Use AI",
+            "description": (
+                "WantToKnow.info policy and principles for the use of "
+                "artificial intelligence."
+            ),
+            "canonical": "https://www.wanttoknow.info/about/ai/",
+        },
+    ]
 
-    if not source.exists():
-        print(
-            f"  ERROR: source not found: {source}"
+    missing = [str(page["source"]) for page in pages if not page["source"].is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "Required Markdown source file(s) missing:\n  "
+            + "\n  ".join(missing)
         )
-        continue
 
-    content = markdown_to_html(
-        source
-    )
+    for page in pages:
+        source = page["source"]
+        output = page["output"]
 
-    html = make_page(
-        page["title"],
-        page["description"],
-        page["canonical"],
-        content,
-    )
+        print(f"Converting: {source.name}")
 
-    output.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+        content = markdown_to_html(source)
+        html = make_page(
+            page["title"],
+            page["description"],
+            page["canonical"],
+            content,
+        )
 
-    output.write_text(
-        html,
-        encoding="utf-8",
-    )
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(html, encoding="utf-8")
+        print(f"  → {output}")
 
-    print(
-        f"  → {output}"
-    )
+
+if __name__ == "__main__":
+    main()

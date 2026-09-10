@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-import csv, json, shutil
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import shutil
 from datetime import datetime
 from pathlib import Path
-
-ROOT = Path("/mnt/c/datasources/wanttoknow-site")
-DATA = ROOT / "src" / "site" / "data"
-
-POSTED = Path("/mnt/c/datasources/Article-Posted.csv")
-MASTER_CSV = DATA / "wtk_articles_master.csv"
-MASTER_JSONL = DATA / "wtk_articles_master.jsonl"
-INDEX_JSONL = DATA / "article-index.jsonl"
 
 def norm_id(v):
     return str(v).strip().removesuffix(".0")
@@ -21,9 +18,9 @@ def iso_date(v):
         raise ValueError(f"Bad date: {v}")
     return v
 
-def load_posted():
+def load_posted(posted_path):
     out = {}
-    with POSTED.open("r", encoding="utf-8-sig", newline="") as f:
+    with posted_path.open("r", encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f, delimiter="|")
         if not {"ArticleId", "posted"} <= set(r.fieldnames or []):
             raise ValueError("Article-Posted.csv must contain ArticleId|posted")
@@ -60,10 +57,44 @@ def add_after(d, key, value, after):
         out[key] = value
     return out
 
-def main():
-    posted = load_posted()
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Apply legacy posted dates to WantToKnow.info article datasets."
+    )
+    parser.add_argument(
+        "--site-root",
+        type=Path,
+        default=Path(__file__).resolve().parents[1],
+        help="WantToKnow.info repository root.",
+    )
+    parser.add_argument(
+        "--posted-csv",
+        type=Path,
+        required=True,
+        help="Source Article-Posted.csv containing ArticleId|posted.",
+    )
+    return parser.parse_args()
 
-    with MASTER_CSV.open("r", encoding="utf-8-sig", newline="") as f:
+
+def main():
+    args = parse_args()
+    data = args.site_root / "src" / "site" / "data"
+    posted_path = args.posted_csv.expanduser().resolve()
+
+    master_csv = data / "wtk_articles_master.csv"
+    master_jsonl = data / "wtk_articles_master.jsonl"
+    index_jsonl = data / "article-index.jsonl"
+
+    required = [posted_path, master_csv, master_jsonl, index_jsonl]
+    missing = [str(path) for path in required if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "Required input file(s) missing:\n  " + "\n  ".join(missing)
+        )
+
+    posted = load_posted(posted_path)
+
+    with master_csv.open("r", encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f, delimiter="|")
         fields = list(r.fieldnames or [])
         csv_rows = list(r)
@@ -80,7 +111,7 @@ def main():
             raise ValueError(f"Missing posted date for master CSV article {aid}")
         row["posted_date"] = posted[aid]
 
-    master_rows = read_jsonl(MASTER_JSONL)
+    master_rows = read_jsonl(master_jsonl)
     master_ids = set()
     new_master = []
     for row in master_rows:
@@ -90,7 +121,7 @@ def main():
             raise ValueError(f"Missing posted date for master JSONL article {aid}")
         new_master.append(add_after(row, "posted_date", posted[aid], "publication_date"))
 
-    index_rows = read_jsonl(INDEX_JSONL)
+    index_rows = read_jsonl(index_jsonl)
     index_ids = set()
     new_index = []
     for row in index_rows:
@@ -124,12 +155,12 @@ def main():
         )
 
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    for p in (MASTER_CSV, MASTER_JSONL, INDEX_JSONL):
+    for p in (master_csv, master_jsonl, index_jsonl):
         backup = p.with_name(p.name + f".bak-{stamp}")
         shutil.copy2(p, backup)
         print("Backup:", backup)
 
-    tmp_csv = MASTER_CSV.with_name(MASTER_CSV.name + ".tmp")
+    tmp_csv = master_csv.with_name(master_csv.name + ".tmp")
     with tmp_csv.open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, delimiter="|", lineterminator="\n")
         w.writeheader()
@@ -140,14 +171,14 @@ def main():
             for row in rows:
                 f.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
 
-    tmp_master = MASTER_JSONL.with_name(MASTER_JSONL.name + ".tmp")
-    tmp_index = INDEX_JSONL.with_name(INDEX_JSONL.name + ".tmp")
+    tmp_master = master_jsonl.with_name(master_jsonl.name + ".tmp")
+    tmp_index = index_jsonl.with_name(index_jsonl.name + ".tmp")
     write_jsonl(tmp_master, new_master)
     write_jsonl(tmp_index, new_index)
 
-    tmp_csv.replace(MASTER_CSV)
-    tmp_master.replace(MASTER_JSONL)
-    tmp_index.replace(INDEX_JSONL)
+    tmp_csv.replace(master_csv)
+    tmp_master.replace(master_jsonl)
+    tmp_index.replace(index_jsonl)
 
     print()
     print(f"SUCCESS: added posted_date to {len(posted):,} articles.")

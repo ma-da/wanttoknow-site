@@ -21,10 +21,8 @@ import sqlite3
 import sys
 
 
-DEFAULT_DB = Path(
-    "/mnt/c/datasources/wanttoknow-site/"
-    "src/site/data/search/wanttoknow-search.sqlite"
-)
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_DB = ROOT / "src/site/data/search/wanttoknow-search.sqlite"
 
 TOKEN_RE = re.compile(r"[^\s]+")
 

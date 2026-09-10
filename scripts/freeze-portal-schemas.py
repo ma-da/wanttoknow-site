@@ -42,7 +42,7 @@ except ImportError as exc:
     ) from exc
 
 
-SITE_ROOT_DEFAULT = Path("/mnt/c/datasources/wanttoknow-site")
+SITE_ROOT_DEFAULT = Path(__file__).resolve().parents[1]
 
 CHUNK_MIN = 260
 CHUNK_TARGET = 290
