@@ -428,6 +428,28 @@ curl -fsS --max-time 10 \
 SWITCHED=0
 trap - EXIT INT TERM
 
+say "Testing live search API"
+
+if ! curl -fsS \
+    -X POST \
+    'http://127.0.0.1:8000/api/search' \
+    -H 'Content-Type: application/json' \
+    --data '{"q":"remote viewing","limit":1}' \
+    | python3 -c '
+import json
+import sys
+
+payload = json.load(sys.stdin)
+results = payload.get("results")
+
+if not isinstance(results, list) or not results:
+    raise SystemExit("search returned no results")
+
+print(f"PASS search_results={len(results)}")
+'; then
+    die "Live search API smoke test failed"
+fi
+
 say "DEPLOYED ${MAIN_SHORT}: ${MAIN_SUBJECT}"
 say "Current release: $(readlink -f "${CURRENT_LINK}")"
 say "Previous release retained: ${PREVIOUS_TARGET}"
