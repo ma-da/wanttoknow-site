@@ -19,6 +19,14 @@ from .article_query import admin_db_path, default_repo_root
 from .article_store import article_hash, compact_json, file_sha256, row_to_article, utc_now, validate_article
 from .article_withdrawal import ensure_withdrawal_schema
 from .image_staging import ensure_image_schema, image_staging_root
+from .git_publish import (
+    GitPublishError,
+    append_publish_event,
+    commit_and_push_dev,
+    ensure_dev_checkpoint,
+    reset_to_checkpoint,
+    revert_pushed_commit,
+)
 
 PUBLISH_SCRIPTS = (
     "build-news-derived.py",
@@ -734,6 +742,15 @@ def publish_articles(
 
     try:
         with _publication_lock(root):
+            # Publication is allowed only from a clean production-admin dev
+            # worktree that is already synchronized with GitHub. The no-op push
+            # performed here proves the known-good pre-publish state is remote
+            # before any source/media mutation begins.
+            try:
+                git_base_sha = ensure_dev_checkpoint(root)
+            except GitPublishError as exc:
+                raise PublishError(f"Git pre-publish checkpoint failed: {exc}") from exc
+
             rows = _selected_rows(conn, ids)
             selected_ids = {int(row["article_id"]) for row in rows}
             withdrawals = _pending_withdrawals(conn, selected_ids)
@@ -761,11 +778,83 @@ def publish_articles(
                 raise PublishError("Canonical master changed while publication was building; retry publication")
             _assert_selection_unchanged(conn, rows, withdrawals, staged)
             rollback = _promote(root, run_dir, workspace, staged, withdrawals, canonical_by_id)
+
+            # Every admin publication creates a small tracked event. This makes
+            # image-only publications visible to Git without storing JPEGs in
+            # Git: main later authorizes the exact media SHA-256 values that may
+            # be deployed. Internal withdrawal reasons remain SQLite-only.
+            try:
+                media_events: list[dict[str, Any]] = []
+                full_dir = root / "src/site/assets/images/article-images"
+                thumb_dir = root / "src/site/assets/images/article-thumbs"
+                for aid in sorted(selected_ids):
+                    if aid in withdrawals:
+                        media_events.append({"article_id": str(aid), "action": "remove"})
+                        continue
+                    if aid not in staged:
+                        continue
+                    full = full_dir / f"{aid}i.jpg"
+                    thumb = thumb_dir / f"{aid}-thumb.jpg"
+                    if not full.is_file() or not thumb.is_file():
+                        raise PublishError(f"Published media is missing after promotion for article {aid}")
+                    media_events.append({
+                        "article_id": str(aid),
+                        "action": "replace",
+                        "full_sha256": file_sha256(full),
+                        "thumb_sha256": file_sha256(thumb),
+                    })
+
+                append_publish_event(
+                    root,
+                    {
+                        "run_id": run_id,
+                        "recorded_at": utc_now(),
+                        "scope": scope,
+                        "article_ids": [str(x) for x in ids],
+                        "withdrawal_ids": [str(x) for x in sorted(withdrawals)],
+                        "media": media_events,
+                    },
+                )
+
+                commit_message = (
+                    f"admin publish: article {ids[0]}"
+                    if scope == "article" and len(ids) == 1
+                    else f"admin publish: batch {batch_id or '-'} ({len(ids)} articles)"
+                )
+                git_commit_sha = commit_and_push_dev(
+                    root,
+                    base_sha=git_base_sha,
+                    message=commit_message,
+                )
+            except Exception as exc:
+                # Git push failure leaves origin/dev unchanged. Restore tracked
+                # files to the checkpoint and use the existing rollback journal
+                # for ignored generated/media files. SQLite is still draft.
+                try:
+                    reset_to_checkpoint(root, git_base_sha)
+                except Exception:
+                    pass
+                _rollback(rollback)
+                if isinstance(exc, PublishError):
+                    raise
+                raise PublishError(f"Git dev publication failed; site working copy rolled back: {exc}") from exc
+
             try:
                 published_count, withdrawal_count = _finalize_db(
                     conn, rows, withdrawals, staged, actor=actor, batch_id=batch_id
                 )
-            except Exception:
+            except Exception as finalize_exc:
+                # GitHub dev was already advanced, so undo it with a normal
+                # revert commit rather than rewriting remote history. Then
+                # restore generated/media files from the rollback journal.
+                try:
+                    revert_pushed_commit(root, git_commit_sha)
+                except Exception as revert_exc:
+                    raise PublishError(
+                        "CRITICAL: Git dev was updated but SQLite finalization failed, "
+                        f"and the automatic Git revert also failed: {revert_exc}. "
+                        f"Published commit: {git_commit_sha}"
+                    ) from finalize_exc
                 _rollback(rollback)
                 raise
 
@@ -816,6 +905,8 @@ def publish_articles(
                 "warnings": warnings,
                 "completed_at": completed,
                 "build_log": str(log_path),
+                "pre_publish_commit": git_base_sha,
+                "dev_commit": git_commit_sha,
             }
             try:
                 (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
