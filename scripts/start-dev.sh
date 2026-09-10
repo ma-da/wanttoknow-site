@@ -2,7 +2,7 @@
 
 set -e
 
-PROJECT_ROOT="/mnt/c/datasources/wanttoknow-site"
+PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 BACKEND_ROOT="$PROJECT_ROOT/backend"
 VENV="$HOME/.venvs/wanttoknow-site"
 

@@ -127,7 +127,6 @@
 }
 
 .article-list-head {
-  position: sticky;
   top: 4.9rem;
   z-index: 10;
   min-height: 1.9rem;

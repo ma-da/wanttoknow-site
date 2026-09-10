@@ -24,9 +24,7 @@ try:
 except ImportError as exc:
     raise SystemExit("Install dependency: python -m pip install beautifulsoup4 markdownify") from exc
 
-SITE_ROOT = Path(
-    "/mnt/c/datasources/wanttoknow-site"
-)
+SITE_ROOT = Path(__file__).resolve().parents[1]
 
 DATA_ROOT = (
     SITE_ROOT

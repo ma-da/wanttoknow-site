@@ -44,7 +44,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 
-ROOT = Path("/mnt/c/datasources/wanttoknow-site")
+ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB = ROOT / "src/site/data/search/wanttoknow-search.sqlite"
 DEFAULT_OUTPUT = ROOT / "src/site/data/search/related-content.json"
 

@@ -99,3 +99,4 @@ src/site/data/wtk_articles_master.csv
 # Package/download caches
 # ----------------------------------------------------------------------
 .cache/
+.lesshst

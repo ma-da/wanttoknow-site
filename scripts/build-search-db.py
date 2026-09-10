@@ -47,7 +47,7 @@ related_content
 
 Typical use
 -----------
-cd /mnt/c/datasources/wanttoknow-site
+cd /path/to/wanttoknow-site
 python scripts/build-search-db.py
 """
 
@@ -67,7 +67,7 @@ import sqlite3
 import sys
 
 
-DEFAULT_SITE_ROOT = Path("/mnt/c/datasources/wanttoknow-site")
+DEFAULT_SITE_ROOT = Path(__file__).resolve().parents[1]
 SITE_ORIGIN = "https://www.wanttoknow.info"
 
 NEWS_REF_MIN = 1

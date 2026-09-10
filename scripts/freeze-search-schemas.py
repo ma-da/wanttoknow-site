@@ -95,7 +95,7 @@ except ImportError as exc:
 # Configuration
 # ============================================================================
 
-DEFAULT_SITE_ROOT = Path("/mnt/c/datasources/wanttoknow-site")
+DEFAULT_SITE_ROOT = Path(__file__).resolve().parents[1]
 
 DOC_MIN = 260
 DOC_MAX = 320

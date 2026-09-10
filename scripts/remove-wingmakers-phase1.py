@@ -42,7 +42,7 @@ import shutil
 import sys
 
 
-DEFAULT_SITE_ROOT = Path("/mnt/c/datasources/wanttoknow-site")
+DEFAULT_SITE_ROOT = Path(__file__).resolve().parents[1]
 WINGMAKERS_PREFIX = "/speculation/wingmakers"
 
 
