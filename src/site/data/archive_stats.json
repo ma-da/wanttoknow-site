@@ -1,15 +1,15 @@
 {
-  "article_count": 14383,
+  "article_count": 14382,
   "date_range": {
     "first": "1904-03-27",
-    "last": "2026-09-10"
+    "last": "2026-08-20"
   },
-  "dated_article_count": 14383,
+  "dated_article_count": 14382,
   "undated_article_count": 0,
   "category_count": 93,
   "publisher_group_count": 688,
-  "articles_with_images": 1634,
-  "articles_with_related": 14383,
+  "articles_with_images": 1633,
+  "articles_with_related": 14382,
   "categories": {
     "governmentcorruption": 6672,
     "corporatecorruption": 2886,
@@ -45,8 +45,8 @@
     "coronavirus-vaccine-problems": 259,
     "court-judicial-corruption": 221,
     "newenergyinventions": 213,
-    "big-tech": 201,
     "healing-our-relationships": 201,
+    "big-tech": 200,
     "healing-our-earth": 183,
     "jeffrey-epstein": 176,
     "nuclear_power": 161,
@@ -128,7 +128,7 @@
     },
     "abc": {
       "name": "ABC",
-      "count": 488
+      "count": 487
     },
     "bbc": {
       "name": "BBC",
@@ -2936,6 +2936,6 @@
     "2023": 616,
     "2024": 662,
     "2025": 579,
-    "2026": 230
+    "2026": 229
   }
 }
