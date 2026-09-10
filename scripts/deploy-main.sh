@@ -377,6 +377,17 @@ chmod -R a+rX "${RELEASE_DIR}"
 # Atomic switch
 # ---------------------------------------------------------------------------
 
+say "Testing candidate backend with durable production runtime"
+
+if ! (
+    cd "${RELEASE_DIR}/backend"
+    sudo -u wtkapp \
+        "${RUNTIME_PYTHON}" \
+        -c 'import app.main'
+); then
+    die "Candidate backend cannot import with durable production runtime"
+fi
+
 say "Switching current -> ${RELEASE_DIR}"
 
 NEXT_LINK="${CURRENT_LINK}.next.$$"
