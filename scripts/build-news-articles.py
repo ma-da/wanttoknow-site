@@ -198,9 +198,9 @@ def image_html(article):
         caption_body = ""
 
     caption_html = (
-        f\'\'\'<figcaption class="article-hero__caption">
+        f'''<figcaption class="article-hero__caption">
           {caption_body}
-        </figcaption>\'\'\'
+        </figcaption>'''
         if caption_body
         else ""
     )
