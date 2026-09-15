@@ -27,3 +27,5 @@ thread==2.0.6
 urllib3_secure_extra==0.1.0
 xmlrpclib==1.0.1
 Jinja2==3.1.6
+Pillow==12.3.0
+MarkupSafe==3.0.3
