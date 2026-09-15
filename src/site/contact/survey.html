@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Survey | WantToKnow.info</title>
+  <meta
+    name="description"
+    content="Share anonymous feedback about the new WantToKnow.info website."
+  >
+
+  <!-- Keep this if survey.html uses the same global stylesheet as the rest of the site. -->
+  <link rel="stylesheet" href="/assets/css/global.css">
+
+  <style>
+    /*
+      Survey-specific styles.
+      These are deliberately scoped to .wtk-survey so they can live here
+      without interfering with the rest of the site.
+    */
+
+    .wtk-survey {
+      --survey-purple: var(--brand-purple, #6b4d8a);
+      --survey-purple-dark: var(--brand-purple-dark, #4e3668);
+      --survey-tan: var(--brand-light-tan, #efe6d6);
+      --survey-ink: var(--text-color, #26222b);
+      --survey-muted: var(--muted-text, #6c6670);
+      --survey-surface: var(--surface-color, #ffffff);
+      --survey-border: color-mix(in srgb, var(--survey-purple) 22%, #d9d4dd);
+      --survey-focus: color-mix(in srgb, var(--survey-purple) 32%, transparent);
+
+      width: min(100% - 2rem, 940px);
+      margin-inline: auto;
+      padding: clamp(2rem, 4vw, 4.5rem) 0 5rem;
+      color: var(--survey-ink);
+    }
+
+    .wtk-survey__intro {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .wtk-survey__eyebrow {
+      margin: 0 0 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--survey-purple);
+    }
+
+    .wtk-survey h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+
+    .wtk-survey__lede {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.65;
+      color: var(--survey-muted);
+    }
+
+    .wtk-survey__privacy {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: var(--survey-tan);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .wtk-survey__form {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .wtk-survey__section {
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--survey-border);
+      border-radius: 1.1rem;
+      background: var(--survey-surface);
+    }
+
+    .wtk-survey__section-heading {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+    }
+
+    .wtk-survey__section-note {
+      margin: 0 0 1.4rem;
+      color: var(--survey-muted);
+      line-height: 1.55;
+    }
+
+    .wtk-rating-list {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .wtk-rating {
+      min-width: 0;
+      margin: 0;
+      padding: 0 0 1.1rem;
+      border: 0;
+      border-bottom: 1px solid var(--survey-border);
+    }
+
+    .wtk-rating:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .wtk-rating legend {
+      width: 100%;
+      margin-bottom: 0.7rem;
+      padding: 0;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .wtk-rating__scale {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .wtk-rating__choice {
+      position: relative;
+    }
+
+    .wtk-rating__choice input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .wtk-rating__choice span {
+      display: grid;
+      place-items: center;
+      min-height: 3rem;
+      border: 1px solid var(--survey-border);
+      border-radius: 0.8rem;
+      background: var(--survey-surface);
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition:
+        transform 120ms ease,
+        border-color 120ms ease,
+        background 120ms ease;
+    }
+
+    .wtk-rating__choice span:hover {
+      transform: translateY(-1px);
+      border-color: var(--survey-purple);
+    }
+
+    .wtk-rating__choice input:checked + span {
+      border-color: var(--survey-purple);
+      background: var(--survey-tan);
+      color: var(--survey-purple-dark);
+    }
+
+    .wtk-rating__choice input:focus-visible + span {
+      outline: 3px solid var(--survey-focus);
+      outline-offset: 2px;
+    }
+
+    .wtk-rating__anchors {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.45rem;
+      font-size: 0.76rem;
+      color: var(--survey-muted);
+    }
+
+    .wtk-open-question + .wtk-open-question {
+      margin-top: 1.35rem;
+    }
+
+    .wtk-open-question label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .wtk-open-question__optional {
+      font-weight: 500;
+      color: var(--survey-muted);
+    }
+
+    .wtk-open-question textarea {
+      display: block;
+      width: 100%;
+      min-height: 8.5rem;
+      box-sizing: border-box;
+      resize: vertical;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--survey-border);
+      border-radius: 0.8rem;
+      background: var(--survey-surface);
+      color: var(--survey-ink);
+      font: inherit;
+      line-height: 1.55;
+    }
+
+    .wtk-open-question textarea:focus-visible {
+      border-color: var(--survey-purple);
+      outline: 3px solid var(--survey-focus);
+      outline-offset: 1px;
+    }
+
+    .wtk-open-question__count {
+      display: block;
+      margin-top: 0.35rem;
+      text-align: right;
+      font-size: 0.76rem;
+      color: var(--survey-muted);
+    }
+
+    .wtk-survey__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .wtk-survey__submit {
+      min-height: 3rem;
+      padding: 0.75rem 1.25rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--survey-purple);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    .wtk-survey__submit:hover {
+      transform: translateY(-1px);
+    }
+
+    .wtk-survey__submit:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none;
+    }
+
+    .wtk-survey__status {
+      min-height: 1.5rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .wtk-survey__status[data-kind="success"] {
+      color: #28623a;
+    }
+
+    .wtk-survey__status[data-kind="error"] {
+      color: #9b2f2f;
+    }
+
+    /*
+      Honeypot. Humans never interact with this field.
+      It is visually off-screen rather than display:none so very simple bots
+      are still likely to fill it.
+    */
+    .wtk-survey__trap {
+      position: absolute !important;
+      left: -10000px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    @media (max-width: 520px) {
+      .wtk-survey {
+        width: min(100% - 1.25rem, 940px);
+      }
+
+      .wtk-rating__scale {
+        gap: 0.35rem;
+      }
+
+      .wtk-rating__choice span {
+        min-height: 2.8rem;
+        border-radius: 0.65rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wtk-survey *,
+      .wtk-survey *::before,
+      .wtk-survey *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    If /contact/index.html already has your standard site header/footer,
+    copy that same header/footer shell around this <main>.
+  -->
+
+  <main class="wtk-survey" id="main-content">
+    <div class="wtk-survey__intro">
+      <p class="wtk-survey__eyebrow">WantToKnow.info</p>
+      <h1>Share Your Feedback</h1>
+      <p class="wtk-survey__lede">
+        We’ve rebuilt WantToKnow.info and would love to know what’s working,
+        what isn’t, and what you’d like to see next. The survey is short and
+        your answers are anonymous.
+      </p>
+      <p class="wtk-survey__privacy">
+        No name or email required
+      </p>
+    </div>
+
+    <form class="wtk-survey__form" id="site-survey">
+      <section class="wtk-survey__section" aria-labelledby="ratings-heading">
+        <h2 class="wtk-survey__section-heading" id="ratings-heading">
+          Rate the new site
+        </h2>
+        <p class="wtk-survey__section-note">
+          Choose a score from 1 to 5 for each statement.
+        </p>
+
+        <div class="wtk-rating-list">
+
+          <fieldset class="wtk-rating">
+            <legend>The information feels reliable.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="reliable" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="reliable" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="reliable" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="reliable" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="reliable" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The site feels authoritative and well researched.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="authoritative" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="authoritative" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="authoritative" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="authoritative" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="authoritative" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The site is easy to navigate.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="easy_to_navigate" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_navigate" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_navigate" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_navigate" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_navigate" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The site feels nonpartisan.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="nonpartisan" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="nonpartisan" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="nonpartisan" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="nonpartisan" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="nonpartisan" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The information is easy to understand.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="easy_to_understand" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_understand" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_understand" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_understand" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="easy_to_understand" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The new design is visually appealing.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="visually_appealing" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="visually_appealing" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="visually_appealing" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="visually_appealing" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="visually_appealing" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>The site makes me want to explore further.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="interesting" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="interesting" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="interesting" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="interesting" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="interesting" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Strongly disagree</span><span>Strongly agree</span></div>
+          </fieldset>
+
+          <fieldset class="wtk-rating">
+            <legend>Overall, I would rate the new WantToKnow.info highly.</legend>
+            <div class="wtk-rating__scale">
+              <label class="wtk-rating__choice"><input required type="radio" name="overall" value="1"><span>1</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="overall" value="2"><span>2</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="overall" value="3"><span>3</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="overall" value="4"><span>4</span></label>
+              <label class="wtk-rating__choice"><input type="radio" name="overall" value="5"><span>5</span></label>
+            </div>
+            <div class="wtk-rating__anchors" aria-hidden="true"><span>Very low</span><span>Very high</span></div>
+          </fieldset>
+
+        </div>
+      </section>
+
+      <section class="wtk-survey__section" aria-labelledby="comments-heading">
+        <h2 class="wtk-survey__section-heading" id="comments-heading">
+          Tell us more
+        </h2>
+        <p class="wtk-survey__section-note">
+          These questions are optional. Write as much or as little as you like.
+        </p>
+
+        <div class="wtk-open-question">
+          <label for="love">
+            What do you love about the new website design?
+            <span class="wtk-open-question__optional">(optional)</span>
+          </label>
+          <textarea id="love" name="love" maxlength="3000"></textarea>
+          <span class="wtk-open-question__count" data-count-for="love">0 / 3000</span>
+        </div>
+
+        <div class="wtk-open-question">
+          <label for="hate">
+            What do you hate about the new website design?
+            <span class="wtk-open-question__optional">(optional)</span>
+          </label>
+          <textarea id="hate" name="hate" maxlength="3000"></textarea>
+          <span class="wtk-open-question__count" data-count-for="hate">0 / 3000</span>
+        </div>
+
+        <div class="wtk-open-question">
+          <label for="missing">
+            What do you wish was here that you haven't seen yet?
+            <span class="wtk-open-question__optional">(optional)</span>
+          </label>
+          <textarea id="missing" name="missing" maxlength="3000"></textarea>
+          <span class="wtk-open-question__count" data-count-for="missing">0 / 3000</span>
+        </div>
+      </section>
+
+      <!-- Honeypot: leave empty. -->
+      <div class="wtk-survey__trap" aria-hidden="true">
+        <label for="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="wtk-survey__actions">
+        <button class="wtk-survey__submit" id="survey-submit" type="submit">
+          Send Feedback
+        </button>
+        <p
+          class="wtk-survey__status"
+          id="survey-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    (() => {
+      const form = document.getElementById("site-survey");
+      const submitButton = document.getElementById("survey-submit");
+      const status = document.getElementById("survey-status");
+      const endpoint = "/api/feedback";
+
+      const ratingFields = [
+        "reliable",
+        "authoritative",
+        "easy_to_navigate",
+        "nonpartisan",
+        "easy_to_understand",
+        "visually_appealing",
+        "interesting",
+        "overall"
+      ];
+
+      for (const textarea of form.querySelectorAll("textarea[maxlength]")) {
+        const counter = form.querySelector(`[data-count-for="${textarea.id}"]`);
+        const updateCount = () => {
+          counter.textContent = `${textarea.value.length} / ${textarea.maxLength}`;
+        };
+        textarea.addEventListener("input", updateCount);
+        updateCount();
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        status.textContent = "";
+        status.removeAttribute("data-kind");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending…";
+
+        const formData = new FormData(form);
+        const ratings = {};
+
+        for (const field of ratingFields) {
+          ratings[field] = Number(formData.get(field));
+        }
+
+        const payload = {
+          ratings,
+          love: String(formData.get("love") || "").trim(),
+          hate: String(formData.get("hate") || "").trim(),
+          missing: String(formData.get("missing") || "").trim(),
+          website: String(formData.get("website") || "")
+        };
+
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            credentials: "same-origin",
+            body: JSON.stringify(payload)
+          });
+
+          let result = {};
+          try {
+            result = await response.json();
+          } catch (_) {
+            // A non-JSON server error will be handled below.
+          }
+
+          if (response.status === 429) {
+            const retryAfter = Number(response.headers.get("Retry-After")) || 30;
+            throw new Error(
+              `Please wait about ${retryAfter} seconds before submitting again.`
+            );
+          }
+
+          if (!response.ok) {
+            throw new Error(
+              result.detail || "We couldn't save your feedback. Please try again."
+            );
+          }
+
+          form.reset();
+
+          for (const textarea of form.querySelectorAll("textarea[maxlength]")) {
+            const counter = form.querySelector(`[data-count-for="${textarea.id}"]`);
+            counter.textContent = `0 / ${textarea.maxLength}`;
+          }
+
+          status.textContent = "Thank you. Your feedback has been saved.";
+          status.dataset.kind = "success";
+        } catch (error) {
+          status.textContent =
+            error instanceof Error
+              ? error.message
+              : "We couldn't save your feedback. Please try again.";
+          status.dataset.kind = "error";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send Feedback";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

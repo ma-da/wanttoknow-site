@@ -39,6 +39,7 @@ router = APIRouter(
 class ArticleDraftCreateRequest(BaseModel):
     title: str = Field(min_length=1, max_length=500)
     source_url: str = Field(min_length=1, max_length=4000)
+    note_markdown: str = Field(default="", max_length=50000)
 
 
 
@@ -115,6 +116,7 @@ def article_draft_create(
                 title=payload.title,
                 source_url=payload.source_url,
                 created_by=identity.key_name,
+                note_markdown=payload.note_markdown,
             )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

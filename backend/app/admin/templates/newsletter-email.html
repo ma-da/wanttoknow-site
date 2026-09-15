@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ meta_title }}</title>
+  <meta name="description" content="{{ meta_description }}">
+  <meta name="keywords" content="{{ meta_keywords }}">
+
+  <style type="text/css">
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    img {
+      border: 0;
+      display: block;
+      height: auto;
+      line-height: 100%;
+      max-width: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    .email-shell {
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .email-container {
+      width: 650px;
+      max-width: 650px;
+    }
+
+    .email-content {
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      color: #000000;
+    }
+
+    h1 {
+      margin: 0;
+      padding-top: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20pt;
+      line-height: 24pt;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 0 11pt 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+    }
+
+    ul {
+      margin: 0 0 8pt 0;
+      padding-left: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 15pt;
+    }
+
+    hr {
+      height: 0;
+      margin: 20pt 0 18pt 0;
+      border: 0;
+      border-top: 1px solid #bfbfbf;
+    }
+
+    .dear-friends {
+      margin: 16pt 0 11pt 0;
+      text-align: left;
+    }
+
+    .inspiring-stories {
+      margin: 0 0 11pt 0;
+      font-size: 11pt;
+      line-height: 13pt;
+    }
+
+    .article-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14pt;
+    }
+
+    .date-pub {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12pt;
+    }
+
+    .summary-text {
+      border-left: 8px solid #E4531C;
+      padding-left: 12px;
+    }
+
+    .summary-text p {
+      margin: 0 0 11pt 0;
+      font-size: 11pt;
+    }
+
+    .article-note {
+      margin: 0 0 11pt 0;
+      font-size: 11pt;
+    }
+
+    .inspiring-title {
+      margin: 20pt 0 0 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16pt;
+    }
+
+    .nonprofit-text {
+      margin: 0 0 11pt 0;
+      font-size: 14pt;
+      text-align: center;
+    }
+
+    .learn-more-box {
+      margin: 5px auto 7px auto;
+      padding: 15px;
+      background: #f9f5f0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      text-align: left;
+    }
+
+    .learn-more-box p {
+      margin: 16pt 0 6pt 0;
+      font-size: 11pt;
+      text-align: left;
+    }
+
+    .learn-more-box ul {
+      margin: 0 0 6pt 0;
+      font-size: 11pt;
+    }
+
+    .inspiration-center-title {
+      margin: 16pt 0 6pt 0;
+      font-size: 12pt;
+      text-align: center;
+    }
+
+    .inspiration-center-copy {
+      margin: 6pt 0 18pt 0;
+      font-size: 11pt;
+      text-align: left;
+    }
+
+    .network-heading {
+      margin: 20pt 0 0 0;
+      font-size: 11pt;
+    }
+
+    .network-links {
+      margin: 5pt 0 0 0;
+      font-size: 11pt;
+    }
+
+    .subscribe-text {
+      margin: 18pt 0 10pt 0;
+      font-size: 10pt;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 670px) {
+      .email-container {
+        width: 94% !important;
+        max-width: 94% !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<table class="email-shell" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">
+
+      <table class="email-container" role="presentation" width="650" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="email-content">
+
+            {% if headline_items %}
+            <h1 class="newsletter-headline">{{ headline_items | join(", ") }}</h1>
+            {% endif %}
+
+            <p class="dear-friends">Dear friends,</p>
+
+            <p>
+              Every week we bring you concise summaries of key news stories on major cover-ups
+              and corruption, exposing the hidden forces shaping history and driving today's
+              global challenges. We also highlight the visionary and inspiring ideas, movements,
+              and individuals who are transforming the darkest corners of society.
+            </p>
+
+            {% if regular_preview_items %}
+            <p><strong>This week we've summarized key news articles on:</strong></p>
+
+            <ul>
+              {% for item in regular_preview_items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if inspiring_preview_items %}
+            <p class="inspiring-stories">
+              <strong>Our inspiring stories</strong>
+              (<a href="#inspiring">skip to this section</a> now):
+            </p>
+
+            <ul>
+              {% for item in inspiring_preview_items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            <p>
+              Each excerpt is taken verbatim from the news source listed.<br>
+              <a href="https://www.WantToKnow.info/findmissinglinks" target="_blank">See this page</a>
+              if any link fails.<br>
+              <a href="https://www.wanttoknow.info/medianewsarticles#summaries" target="_blank">
+                Click here
+              </a>
+              to explore our newsletter archive.
+            </p>
+
+            <p>
+              With faith in a transforming world,<br>
+              <a href="https://freemindgazette.substack.com/" target="_blank">Mark Bailey</a>
+              and
+              <a href="https://www.amberyang.love/" target="_blank">Amber Yang</a>
+              for
+              <a href="https://www.peerservice.org" target="_blank">PEERS</a>
+              and
+              <a href="https://www.wanttoknow.info" target="_blank">WantToKnow.info</a>
+            </p>
+
+            {% if special_note_html %}
+            <p><strong>Special note:</strong> {{ special_note_html }}</p>
+            {% endif %}
+
+
+            {% for article in regular_articles %}
+            <div><hr></div>
+
+            <p>
+              <span class="article-title">
+                <strong>{{ article.title }}</strong>
+              </span>
+              <br>
+
+              <span class="date-pub">
+                <strong>
+                  {{ article.publication_date }}{% if article.publication_name %},
+                  <em>{{ article.publication_name }}</em>{% endif %}
+                </strong>
+              </span>
+              <br>
+
+              <a href="{{ article.source_url }}" target="_blank">
+                {{ article.source_url_display }}
+              </a>
+            </p>
+
+            <div class="summary-text">
+              {{ article.summary_html }}
+            </div>
+
+            {% if article.note_html %}
+            <p class="article-note">
+              <strong>Note:</strong> {{ article.note_html }}
+            </p>
+            {% endif %}
+            {% endfor %}
+
+
+            {% if inspiring_articles %}
+            <a id="inspiring"></a>
+            <div><hr></div>
+
+            <p class="inspiring-title">
+              <strong>Inspiring Articles</strong>
+            </p>
+
+            {% for article in inspiring_articles %}
+            <div><hr></div>
+
+            <p>
+              <span class="article-title">
+                <strong>{{ article.title }}</strong>
+              </span>
+              <br>
+
+              <span class="date-pub">
+                <strong>
+                  {{ article.publication_date }}{% if article.publication_name %},
+                  <em>{{ article.publication_name }}</em>{% endif %}
+                </strong>
+              </span>
+              <br>
+
+              <a href="{{ article.source_url }}" target="_blank">
+                {{ article.source_url_display }}
+              </a>
+            </p>
+
+            <div class="summary-text">
+              {{ article.summary_html }}
+            </div>
+
+            {% if article.note_html %}
+            <p class="article-note">
+              <strong>Note:</strong> {{ article.note_html }}
+            </p>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+
+            <div><hr></div>
+
+            <p class="nonprofit-text">
+              <strong>
+                As a 501(c)(3) nonprofit, we depend almost entirely on donations from people like you.
+                <br><br>
+                Your financial support makes a difference.
+                <a href="https://www.WantToKnow.info/donationswtk.php" target="_blank">Donate here</a>.
+              </strong>
+            </p>
+
+            <div class="learn-more-box">
+              <div>
+                <strong>Learn more about our work at WantToKnow.info</strong>
+
+                <p>
+                  Our site serves as a research tool and comprehensive archive for educating the
+                  public on deep government and corporate corruption. We offer whistleblower reports,
+                  declassified government documents, online books and videos, and educational courses
+                  on important topics avoided by the mainstream.
+                </p>
+
+                <ul>
+                  <li>
+                    Explore our
+                    <a href="https://www.youtube.com/@PEERSconsciousmedia" target="_blank">YouTube</a>
+                    and
+                    <a href="https://peerservice.substack.com/" target="_blank">Substack</a>.
+                  </li>
+                  <li>
+                    Explore our
+                    <a href="https://www.wanttoknow.info/indexnewsarticles" target="_blank">
+                      comprehensive news index
+                    </a>.
+                  </li>
+                  <li>
+                    Share
+                    <a href="https://www.WantToKnow.info" target="_blank">WantToKnow.info</a>
+                    with your friends and colleagues.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="inspiration-center-title">
+              <strong>
+                Finding Balance:
+                <a href="https://www.WantToKnow.info" target="_blank">
+                  WantToKnow.info Inspiration Center
+                </a>
+              </strong>
+            </p>
+
+            <p class="inspiration-center-copy">
+              Our
+              <a href="https://www.WantToKnow.info/inspirational" target="_blank">
+                Inspiration Center
+              </a>
+              seeks to catalyze new connections and meaningful community action for systemic change.
+            </p>
+
+            <div class="network-heading">
+              <u>Explore the mind and heart expanding websites managed by the nonprofit PEERS network:</u>
+            </div>
+
+            <div class="network-links">
+              <a href="https://www.peerservice.org" target="_blank">www.peerservice.org</a>
+              - PEERS websites: Spreading inspiration, education, &amp; empowerment<br>
+
+              <a href="https://www.momentoflove.org" target="_blank">www.momentoflove.org</a>
+              - Every person in the world has a heart<br>
+
+              <a href="https://www.personalgrowthcourses.net" target="_blank">www.personalgrowthcourses.net</a>
+              - Dynamic online courses powerfully expand your horizons<br>
+
+              <a href="https://www.WantToKnow.info" target="_blank">www.WantToKnow.info</a>
+              - Reliable, verifiable information on major cover-ups<br>
+
+              <a href="https://www.weboflove.org" target="_blank">www.weboflove.org</a>
+              - Strengthening the Web of Love that interconnects us all
+            </div>
+
+            <p class="subscribe-text">
+              <a href="https://www.WantToKnow.info/subscribe.php" target="_blank">
+                Subscribe here
+              </a>
+              to the WantToKnow.info email list
+            </p>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

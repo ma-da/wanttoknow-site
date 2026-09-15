@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <meta
+    name="robots"
+    content="noindex,nofollow,noarchive"
+  >
+
+  <title>Feedback | WantToKnow.info Admin</title>
+
+  <link
+    rel="stylesheet"
+    href="/admin-static/global.css"
+  >
+  <link
+    rel="stylesheet"
+    href="/admin-static/admin.css"
+  >
+
+  <script
+    src="/admin-static/feedback.js"
+    defer
+  ></script>
+</head>
+
+<body>
+  <header class="admin-header">
+    <div class="container admin-header-inner">
+      <a
+        class="admin-brand"
+        href="/admin"
+        aria-label="WantToKnow.info admin home"
+      >
+        <span
+          class="admin-brand-mark"
+          aria-hidden="true"
+        >W</span>
+
+        <span class="admin-brand-text">
+          WantToKnow.info Admin
+        </span>
+      </a>
+
+      <div class="admin-header-actions">
+        <a
+          class="button button-secondary button-small"
+          href="/admin"
+        >
+          Articles
+        </a>
+
+        <a
+          class="button button-secondary button-small"
+          href="https://www.wanttoknow.info/"
+          target="_blank"
+          rel="noopener"
+        >
+          View site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-shell">
+    <div class="admin-title-row">
+      <div>
+        <p class="eyebrow">
+          Community response
+        </p>
+
+        <h1 class="admin-title">
+          Feedback
+        </h1>
+
+        <p class="admin-subtitle">
+          Review contact messages and site survey responses.
+          Source records remain unchanged.
+        </p>
+      </div>
+
+      <div
+        class="admin-stats feedback-stats"
+        aria-label="Feedback totals"
+      >
+        <div class="admin-stat">
+          <strong id="contact-total">—</strong>
+          <span>Contact messages</span>
+        </div>
+
+        <div class="admin-stat">
+          <strong id="survey-total">—</strong>
+          <span>Survey responses</span>
+        </div>
+
+        <div class="admin-stat">
+          <strong id="visible-total">—</strong>
+          <span>Currently shown</span>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      class="admin-tabs"
+      aria-label="Feedback type"
+    >
+      <button
+        class="admin-tab is-active"
+        type="button"
+        data-feedback-tab="contact"
+      >
+        Contact Messages
+      </button>
+
+      <button
+        class="admin-tab"
+        type="button"
+        data-feedback-tab="survey"
+      >
+        Site Survey
+      </button>
+    </nav>
+
+    <div class="admin-toolbar">
+      <div class="admin-toolbar-main">
+        <div
+          class="admin-search-wrap admin-search"
+        >
+          <input
+            id="feedback-search"
+            class="admin-field"
+            type="search"
+            placeholder="Search responses…"
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <div
+        id="feedback-status"
+        class="feedback-status"
+        aria-live="polite"
+      ></div>
+    </div>
+
+    <section
+      id="contact-panel"
+      class="admin-panel"
+      aria-label="Contact messages"
+    >
+      <div
+        id="contact-list"
+        class="feedback-list"
+      ></div>
+    </section>
+
+    <section
+      id="survey-panel"
+      class="admin-panel"
+      aria-label="Survey responses"
+      hidden
+    >
+      <div
+        id="survey-list"
+        class="feedback-list"
+      ></div>
+    </section>
+  </main>
+</body>
+</html>

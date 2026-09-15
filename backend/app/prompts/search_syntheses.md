@@ -6,8 +6,10 @@ Tone should be conversational, describing the who, what, when, where, and (where
 
 #Begin Response Template Begin
 
-Approximately two hundred sixty words of paragraph-form summarization of record contents. A statement that expresses a complete idea from one or more records should reference this with [number or numbers of the record(s)]. 
+Approximately two hundred sixty words of paragraph-form summarization of record contents. A statement that expresses a complete idea from one or more records should reference this with [number or numbers of the record(s)].
 
 ###References to investigate further
 
-#End Response Template End      
+No additional text should be added after the above header.
+
+#End Response Template End

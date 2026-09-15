@@ -1084,5 +1084,241 @@
     }
   }
 
+			/**
+			* Development hostname link rewrite.
+			*
+			* While the new site is hosted at new.wanttoknow.info, rewrite links that
+			* point to new-site paths on wanttoknow.info so they stay on the dev site.
+			*
+			* Remove this block after final domain cutover.
+			*/
+		(function rewriteDevelopmentLinks() {
+				if (window.location.hostname !== "new.wanttoknow.info") {
+						return;
+				}
+
+				const productionHosts = new Set([
+						"wanttoknow.info",
+						"www.wanttoknow.info"
+				]);
+
+				const newSitePrefixes = [
+						"/news",
+						"/topics",
+						"/articles",
+						"/search",
+						"/inspiring",
+						"/timelines",
+						"/books",
+						"/poetry",
+						"/essays",
+						"/videos",
+						"/speculation",
+						"/courses",
+						"/about",
+						"/donate",
+						"/newsletter"
+				];
+
+				function isNewSitePath(pathname) {
+						return newSitePrefixes.some(prefix =>
+								pathname === prefix ||
+								pathname === `${prefix}/` ||
+								pathname.startsWith(`${prefix}/`)
+						);
+				}
+
+				function rewriteLink(link) {
+						const href = link.getAttribute("href");
+
+						if (!href) return;
+
+						let url;
+
+						try {
+								url = new URL(href, window.location.href);
+						} catch {
+								return;
+						}
+
+						if (!productionHosts.has(url.hostname)) {
+								return;
+						}
+
+						if (!isNewSitePath(url.pathname)) {
+								return;
+						}
+
+						link.href =
+								window.location.origin +
+								url.pathname +
+								url.search +
+								url.hash;
+				}
+
+				function rewriteAll(root = document) {
+						root.querySelectorAll?.("a[href]").forEach(rewriteLink);
+				}
+
+				// Existing page content.
+				rewriteAll();
+
+				// Also catch links added later by JS-generated components.
+				const observer = new MutationObserver(mutations => {
+						for (const mutation of mutations) {
+								for (const node of mutation.addedNodes) {
+										if (!(node instanceof Element)) continue;
+
+										if (node.matches?.("a[href]")) {
+												rewriteLink(node);
+										}
+
+										rewriteAll(node);
+								}
+						}
+				});
+
+				observer.observe(document.body, {
+						childList: true,
+						subtree: true
+				});
+		})();
+
+		/* ==========================================================================
+					Meaningful pageview tracking
+					Counts one anonymous view after 30 seconds of visible page time.
+					========================================================================== */
+
+		(() => {
+				const QUALIFY_MS = 30_000;
+
+				// Never track administrative/API areas.
+				if (
+						location.pathname.startsWith("/admin") ||
+						location.pathname.startsWith("/api/")
+				) {
+						return;
+				}
+
+				let remainingMs = QUALIFY_MS;
+				let visibleStartedAt = null;
+				let timerId = null;
+				let sent = false;
+				let sending = false;
+
+				function pagePath() {
+						let path = location.pathname || "/";
+
+						// Normalize trailing slash except for root.
+						if (path.length > 1) {
+								path = path.replace(/\/+$/, "");
+						}
+
+						return path || "/";
+				}
+
+				function stopTimer() {
+						if (timerId !== null) {
+								clearTimeout(timerId);
+								timerId = null;
+						}
+
+						if (visibleStartedAt !== null) {
+								remainingMs -= (
+										performance.now() - visibleStartedAt
+								);
+
+								remainingMs = Math.max(
+										0,
+										remainingMs
+								);
+
+								visibleStartedAt = null;
+						}
+				}
+
+				async function recordView() {
+						if (sent || sending) {
+								return;
+						}
+
+						sending = true;
+
+						try {
+								const response = await fetch(
+										"/api/pageview",
+										{
+												method: "POST",
+												headers: {
+														"Content-Type": "application/json"
+												},
+												body: JSON.stringify({
+														path: pagePath()
+												}),
+												keepalive: true
+										}
+								);
+
+								if (response.ok) {
+										sent = true;
+								}
+						} catch (error) {
+								// Analytics failure should never affect the page.
+						} finally {
+								sending = false;
+
+								// Retry later if the request failed.
+								if (
+										!sent &&
+										document.visibilityState === "visible"
+								) {
+										remainingMs = 5_000;
+										startTimer();
+								}
+						}
+				}
+
+				function startTimer() {
+						if (
+								sent ||
+								timerId !== null ||
+								document.visibilityState !== "visible"
+						) {
+								return;
+						}
+
+						visibleStartedAt = performance.now();
+
+						timerId = setTimeout(
+								() => {
+										timerId = null;
+										visibleStartedAt = null;
+										remainingMs = 0;
+
+										recordView();
+								},
+								remainingMs
+						);
+				}
+
+				document.addEventListener(
+						"visibilitychange",
+						() => {
+								if (document.visibilityState === "visible") {
+										startTimer();
+								} else {
+										stopTimer();
+								}
+						}
+				);
+
+				window.addEventListener(
+						"pagehide",
+						stopTimer
+				);
+
+				startTimer();
+		})();
+
   init();
 })();

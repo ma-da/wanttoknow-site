@@ -23,6 +23,7 @@
   const createForm = document.getElementById("create-article-form");
   const createTitle = document.getElementById("create-title");
   const createSourceUrl = document.getElementById("create-source-url");
+  const createNote = document.getElementById("create-note");
   const createStatus = document.getElementById("create-article-status");
   const createCancel = document.getElementById("create-article-cancel");
   const createSubmitButtons = Array.from(document.querySelectorAll(".admin-create-submit"));
@@ -117,14 +118,25 @@
 
   function markdownLinkAt(source, index) {
     if (source[index] !== "[") return null;
-    const labelEnd = source.indexOf("](", index + 1);
-    if (labelEnd < 0) return null;
+
+    /*
+     * A Markdown link must have the form:
+     *   [label](url)
+     *
+     * Find the FIRST closing bracket. If it is not immediately
+     * followed by "(", this is ordinary bracketed prose rather
+     * than a Markdown link.
+     */
+    const labelEnd = source.indexOf("]", index + 1);
+    if (labelEnd < 0 || source[labelEnd + 1] !== "(") return null;
 
     const urlStart = labelEnd + 2;
     let depth = 0;
+
     for (let i = urlStart; i < source.length; i += 1) {
       const char = source[i];
-      if (char === "(" ) {
+
+      if (char === "(") {
         depth += 1;
       } else if (char === ")") {
         if (depth === 0) {
@@ -134,9 +146,11 @@
             end: i + 1,
           };
         }
+
         depth -= 1;
       }
     }
+
     return null;
   }
 
@@ -483,7 +497,11 @@
           "Content-Type": "application/json",
           "X-CSRF-Token": csrfToken,
         },
-        body: JSON.stringify({ title, source_url: sourceUrl }),
+        body: JSON.stringify({
+          title,
+          source_url: sourceUrl,
+          note_markdown: createNote.value,
+        }),
       });
 
       const createdId = payload.article?.article_id || "";

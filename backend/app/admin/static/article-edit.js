@@ -95,13 +95,24 @@
 
   function markdownLinkAt(source, index) {
     if (source[index] !== "[") return null;
-    const labelEnd = source.indexOf("](", index + 1);
-    if (labelEnd < 0) return null;
+
+    /*
+     * A Markdown link must have the form:
+     *   [label](url)
+     *
+     * Find the FIRST closing bracket. If it is not immediately
+     * followed by "(", this is ordinary bracketed prose rather
+     * than a Markdown link.
+     */
+    const labelEnd = source.indexOf("]", index + 1);
+    if (labelEnd < 0 || source[labelEnd + 1] !== "(") return null;
 
     const urlStart = labelEnd + 2;
     let depth = 0;
+
     for (let i = urlStart; i < source.length; i += 1) {
       const char = source[i];
+
       if (char === "(") {
         depth += 1;
       } else if (char === ")") {
@@ -112,9 +123,11 @@
             end: i + 1,
           };
         }
+
         depth -= 1;
       }
     }
+
     return null;
   }
 

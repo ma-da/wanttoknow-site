@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7658f6">
+  <meta name="color-scheme" content="light">
+
+  <title>News Summaries Archive | WantToKnow.info</title>
+
+  <meta
+    name="description"
+    content="Explore the WantToKnow.info News Summaries Archive by publisher, category, era, and topic, and learn the editorial standards used to create our summaries."
+  >
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  >
+  <link
+    rel="canonical"
+    href="https://www.wanttoknow.info/news/"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WantToKnow.info">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.wanttoknow.info/news/">
+  <meta property="og:title" content="News Summaries Archive | WantToKnow.info">
+  <meta
+    property="og:description"
+    content="Explore the WantToKnow.info News Summaries Archive by publisher, category, era, and topic."
+  >
+  <meta
+    property="og:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:alt"
+    content="WantToKnow.info — verifiable information and inspiring solutions"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="News Summaries Archive | WantToKnow.info">
+  <meta
+    name="twitter:description"
+    content="Explore the WantToKnow.info News Summaries Archive by publisher, category, era, and topic."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+  <meta
+    name="twitter:image:alt"
+    content="WantToKnow.info — verifiable information and inspiring solutions"
+  >
+
+  <meta name="application-name" content="WantToKnow.info">
+  <meta name="apple-mobile-web-app-title" content="WantToKnow.info">
+
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="WTK Conscious Media"
+    href="https://wtkconsciousmedia.substack.com/feed"
+  >
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="/assets/images/favicon.ico"
+  >
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/assets/images/favicon-32x32.png"
+  >
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/assets/images/favicon-16x16.png"
+  >
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/assets/images/apple-touch-icon.png"
+  >
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.wanttoknow.info/#organization",
+        "name": "WantToKnow.info",
+        "url": "https://www.wanttoknow.info/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.wanttoknow.info/assets/brand/wtk-logo.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.wanttoknow.info/#website",
+        "url": "https://www.wanttoknow.info/",
+        "name": "WantToKnow.info",
+        "publisher": {
+          "@id": "https://www.wanttoknow.info/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.wanttoknow.info/news/#webpage",
+        "url": "https://www.wanttoknow.info/news/",
+        "name": "News Summaries Archive",
+        "description": "Explore the WantToKnow.info News Summaries Archive by publisher, category, era, and topic.",
+        "isPartOf": {
+          "@id": "https://www.wanttoknow.info/#website"
+        },
+        "about": {
+          "@id": "https://www.wanttoknow.info/#organization"
+        },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/viz.css">
+
+  <style>
+    /* ==========================================================================
+       News archive page
+       ========================================================================== */
+
+				.news-archive-intro {
+						padding-block:
+								clamp(1.75rem, 3vw, 2.75rem)
+								0;
+				}
+
+    .news-archive-intro__inner {
+      max-width: 96rem;
+    }
+
+    .news-archive-title {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(2.75rem, 7vw, 6rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .news-archive-subhead {
+      max-width: 62rem;
+      margin: clamp(1.5rem, 3vw, 2.25rem)
+        0
+        0;
+      font-size: clamp(1.125rem, 2.1vw, 1.5rem);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .news-standards {
+      padding-block:
+        clamp(1.2rem, 2vw, 1.8rem);
+    }
+
+    .news-standards__inner {
+      width: min(100%, 50.625rem);
+      margin-inline: auto;
+    }
+
+    .news-standards__title {
+      margin: 0 0 1.5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .news-standards__copy {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      text-wrap: pretty;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <div
+    id="global-header"
+    data-global-header
+  ></div>
+
+  <main id="main-content">
+
+    <section
+      class="news-archive-intro"
+      aria-labelledby="news-archive-title"
+    >
+      <div class="container news-archive-intro__inner">
+
+        <p class="eyebrow">
+          WantToKnow.info News
+        </p>
+
+        <h1
+          class="news-archive-title"
+          id="news-archive-title"
+        >
+          WTK News Archive
+        </h1>
+
+        <p class="news-archive-subhead">
+          Our sources aren't Instagram. All information on WantToKnow.info is taken from the most reliable sources available. Our archive includes stories from respected media outlets, both corporate and independent, often grounded in primary sources such as government reports, declassified documents, congressional and whistleblower testimonies, court records, academic research, and investigative reports from watchdog, legal, and civil society organizations. The authenticity of any source can be verified using the links provided. <a href="/search">Search the archive here</a>.
+        </p>
+
+      </div>
+    </section>
+
+    <section
+      class="archive-viz section"
+      data-archive-viz
+      data-viz-view="publishers"
+      data-stats-url="/data/archive_stats.json"
+      data-category-map-url="/data/news-category-map.json"
+      data-topic-url-template="/topics/{slug}/"
+      data-category-url-template="/news/category/{slug}/"
+      aria-label="News archive makeup"
+    >
+      <div class="container">
+
+        <header class="archive-viz__header">
+          <p class="eyebrow">Explore the archive</p>
+
+          <div class="archive-viz__heading-row">
+            <div>
+              <h2 class="section-title">
+                News Archive Makeup
+              </h2>
+
+              <p class="section-intro">
+                Explore the shape of the WantToKnow.info news archive by
+                source publication, subject, and era.
+              </p>
+            </div>
+
+            <dl
+              class="archive-viz__summary"
+              aria-label="Archive summary"
+            >
+              <div>
+                <dt>Articles</dt>
+                <dd data-viz-stat="articles">—</dd>
+              </div>
+
+              <div>
+                <dt>Categories</dt>
+                <dd data-viz-stat="categories">—</dd>
+              </div>
+
+              <div>
+                <dt>Publishers</dt>
+                <dd data-viz-stat="publishers">—</dd>
+              </div>
+
+              <div>
+                <dt>Years</dt>
+                <dd data-viz-stat="years">—</dd>
+              </div>
+            </dl>
+          </div>
+        </header>
+
+        <div class="archive-viz__panel">
+
+          <div
+            class="archive-viz__controls"
+            role="group"
+            aria-label="Choose archive visualization"
+          >
+            <button
+              class="archive-viz__control"
+              type="button"
+              data-viz-view="publishers"
+              aria-pressed="false"
+            >
+              <span
+                class="archive-viz__control-index"
+                aria-hidden="true"
+              >
+                01
+              </span>
+
+              <span>Publishers</span>
+            </button>
+
+            <button
+              class="archive-viz__control"
+              type="button"
+              data-viz-view="categories"
+              aria-pressed="false"
+            >
+              <span
+                class="archive-viz__control-index"
+                aria-hidden="true"
+              >
+                02
+              </span>
+
+              <span>Categories</span>
+            </button>
+
+            <button
+              class="archive-viz__control"
+              type="button"
+              data-viz-view="eras"
+              aria-pressed="false"
+            >
+              <span
+                class="archive-viz__control-index"
+                aria-hidden="true"
+              >
+                03
+              </span>
+
+              <span>Eras</span>
+            </button>
+          </div>
+
+          <div class="archive-viz__view-header">
+            <div>
+              <p
+                class="archive-viz__view-kicker"
+                data-viz-kicker
+              >
+                Sources
+              </p>
+
+              <h3
+                class="archive-viz__view-title"
+                data-viz-title
+              >
+                Articles by publisher
+              </h3>
+
+              <p
+                class="archive-viz__view-description"
+                data-viz-description
+              >
+                The publishers most frequently represented in the archive.
+              </p>
+            </div>
+
+            <p
+              class="archive-viz__view-note"
+              data-viz-note
+            ></p>
+          </div>
+
+          <div
+            class="archive-viz__stage"
+            data-viz-stage
+            role="region"
+            aria-live="polite"
+            aria-busy="true"
+            aria-label="Archive visualization"
+          >
+            <div
+              class="archive-viz__loading"
+              data-viz-loading
+            >
+              <span
+                class="archive-viz__loading-mark"
+                aria-hidden="true"
+              ></span>
+
+              <span>Loading archive data…</span>
+            </div>
+          </div>
+
+        </div>
+
+        <noscript>
+          <p class="archive-viz__noscript">
+            This interactive archive visualization requires JavaScript.
+          </p>
+        </noscript>
+
+      </div>
+    </section>
+
+    <section
+      class="news-standards section"
+      aria-labelledby="news-standards-title"
+    >
+      <div class="container">
+        <div class="news-standards__inner">
+
+          <h2
+            class="news-standards__title"
+            id="news-standards-title"
+          >
+            Each news summary is created according to strict standards. Here's how we do it.
+          </h2>
+
+          <p class="news-standards__copy">
+            Each summary is created using a consistent editorial procedure. The target length is approximately 16 lines of 11-point Arial text in a 650-pixel-wide column. Up to 25% of a summary may be set in bold to emphasize the most important ideas. Summaries are composed of verbatim excerpts presented in the same sequence as they appear in the original news source, with very minor editorial additions. Where material has been omitted between excerpts, the omission is indicated with ellipses (...). Any words added by an editor for clarity or context appear in [brackets]. Our original news editor was Fred Burks. Tod Fletcher edited most summaries from 2007 through 2014, and Mark Bailey has served as news editor since 2014.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div
+    id="global-footer"
+    data-global-footer
+  ></div>
+
+  <script
+    src="/assets/js/global.js"
+    defer
+  ></script>
+
+  <script
+    src="/assets/vendor/d3/d3-7.9.0.min.js"
+    defer
+  ></script>
+
+  <script
+    src="/assets/js/viz.js"
+    defer
+  ></script>
+</body>
+</html>

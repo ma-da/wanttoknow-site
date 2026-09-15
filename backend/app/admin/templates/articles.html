@@ -56,7 +56,7 @@
 										aria-controls="article-preview"
 										aria-expanded="true"
 								>
-										Hide Preview
+										Hide
 								</button>
 						</div>
 
@@ -92,6 +92,14 @@
 										Publish Batch
 								</button>
 						</div>
+
+						<a
+								class="admin-secondary-button admin-news-factory"
+								href="/admin/newsletters"
+						>
+								News Factory
+						</a>
+
 						<p
 								id="batch-publish-status"
 								class="admin-batch-status"
@@ -170,6 +178,16 @@
         <span>Source URL</span>
         <input id="create-source-url" type="url" maxlength="4000" placeholder="https://…" required>
       </label>
+      <label class="admin-field">
+        <span>Note (optional)</span>
+        <textarea
+          id="create-note"
+          name="note_markdown"
+          rows="4"
+          maxlength="50000"
+        ></textarea>
+      </label>
+
       <p id="create-article-status" class="admin-create-status" aria-live="polite"></p>
       <div class="admin-create-actions admin-create-actions--three">
         <button
