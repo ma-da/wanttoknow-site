@@ -6,18 +6,43 @@ WantToKnow.info is a public-interest information archive and educational website
 
 ## Architecture
 
-The site is intentionally built around a small, auditable stack:
+The production site intentionally uses a small, direct architecture:
 
 - **nginx** serves the public static site and reverse-proxies application routes.
-- **FastAPI / Python** provides backend services.
-- **SQLite** is used for local/admin application data where appropriate.
+- **FastAPI / Python** provides the public API and administrative application.
+- **SQLite** is used for persistent application data where appropriate.
 - **HTML, CSS, and JavaScript** provide the public interface without a large frontend framework.
-- **Git / GitHub** provides source history and the promotion path from development to production.
-- Large media collections and runtime state are kept outside normal Git history.
+- **Git / GitHub** records known-good live changes on the `dev` branch.
+- Mutable application state is kept outside the Git working tree.
 
-The public site is served from an atomic `current` release symlink. A deployment creates and validates a new release first, then switches `current` in one operation. If post-switch smoke tests fail, the deployer restores the previous release.
+### Production filesystem
 
-The public Python environment is durable at `/srv/wanttoknow/runtime/.venv` and is intentionally independent of individual releases. Releases contain site/application source and release-specific derived data rather than a duplicate virtual environment.
+The canonical production layout is:
+
+```text
+/srv/wanttoknow/
+├── site/       canonical Git working tree
+├── venv/       shared Python virtual environment
+├── data/       persistent application data
+└── backups/    rollback and configuration backups
+```
+
+Production configuration lives outside the repository:
+
+```text
+/etc/wanttoknow/wanttoknow.env
+/etc/nginx/sites-available/wanttoknow
+/etc/systemd/system/wanttoknow.service
+/etc/systemd/system/wtk-admin.service
+```
+
+nginx serves the public site from `/srv/wanttoknow/site/src/site`.
+
+Both FastAPI services run from `/srv/wanttoknow/site/backend` and share `/srv/wanttoknow/venv`. The public application listens locally on port `8000`; the administrative application listens locally on port `8002`.
+
+Persistent application state belongs under `/srv/wanttoknow/data`.
+
+There is no production `current` symlink, duplicated release tree, separate admin checkout, or release-specific Python environment.
 
 ## Repository layout
 
@@ -92,54 +117,63 @@ They are deliberately excluded from normal Git history and from repeated release
 
 While editing, a new upload may exist temporarily in private staging. When **Publish** succeeds, the processed image is atomically added, replaced, or removed in the live canonical media directory. The public URL remains stable.
 
-This media behavior is intentionally different from code/content promotion: article image changes become live when the editor presses Publish, while page/data/code changes continue through `dev → main → deployment`.
+This media behavior is intentionally different from code/content promotion: article image changes become live when the editor presses Publish, while page, data, and code changes are tested live and then committed and pushed to `dev` once verified.
 
-## Branch and release workflow
+## Live workflow
 
-The normal source promotion path is:
+The production server uses a single canonical Git working tree:
 
 ```text
-admin/editorial work
-        ↓
-dev
-        ↓
-review and testing
-        ↓
-Pull Request
-        ↓
-main
-        ↓
-production deployment
+/srv/wanttoknow/site
 ```
 
-### `dev`
+The working tree normally tracks the `dev` branch.
 
-`dev` is the integration branch.
+The operational workflow is:
 
-Production-admin article publications create narrow, auditable commits on `dev`. Other tested site development can also be integrated here before release.
+```text
+make or publish a change on the live site
+        ↓
+test the live result
+        ↓
+review git diff / git status
+        ↓
+commit the known-good change
+        ↓
+push to GitHub dev
+```
 
-### `main`
+The live site is where changes are first validated. GitHub `dev` records the verified working state afterward.
 
-`main` is the only Git branch from which a live site release may be built.
+`main` is not currently part of the routine live-update workflow. Any future change to the branch or deployment strategy should be deliberate and documented before new deployment machinery is introduced.
 
-Changes should reach `main` through a deliberate merge or Pull Request from `dev`. Direct force-pushes to `main` should be disabled.
+Because `/srv/wanttoknow/site` is the live working tree:
 
-### Deployment
+- keep it clean between tasks;
+- review `git diff` before committing;
+- avoid broad resets or cleans when unrelated work may exist;
+- test affected public and admin functionality before pushing;
+- keep mutable databases, logs, secrets, and runtime state outside Git.
 
-The production deployment script:
+### Basic production checks
 
-1. fetches `origin/main`;
-2. identifies the exact main commit to deploy;
-3. creates a fresh candidate release from that commit;
-4. attaches durable media resources without duplicating their bytes;
-5. rebuilds article-derived and search-derived outputs from the exact `main` source;
-6. validates the candidate;
-7. atomically switches the public `current` symlink;
-8. restarts the public FastAPI service;
-9. performs local and HTTPS smoke tests; and
-10. automatically restores the previous release if post-switch validation fails.
+```bash
+git status --short --branch
 
-A deployment record inside each release identifies the exact Git commit used.
+systemctl is-active nginx
+systemctl is-active wanttoknow.service
+systemctl is-active wtk-admin.service
+
+curl -fsS http://127.0.0.1:8000/api/health
+```
+
+Before changing nginx configuration:
+
+```bash
+sudo nginx -t
+```
+
+After verified changes are committed and pushed, the production tree should be synchronized with `origin/dev`.
 
 ## Generated and durable files
 
