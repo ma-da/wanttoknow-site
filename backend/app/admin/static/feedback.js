@@ -3,11 +3,22 @@
 
   const state = {
     active: "contact",
+    filter: "all",
+    csrfToken: "",
+
     contact: [],
     survey: [],
+
     contactTotal: 0,
     surveyTotal: 0,
+
+    openCards: new Set(),
   };
+
+
+  // ==========================================================================
+  // DOM
+  // ==========================================================================
 
   const tabs = Array.from(
     document.querySelectorAll(
@@ -18,6 +29,11 @@
   const searchInput =
     document.getElementById(
       "feedback-search"
+    );
+
+  const filterSelect =
+    document.getElementById(
+      "feedback-filter"
     );
 
   const contactPanel =
@@ -60,6 +76,22 @@
       "visible-total"
     );
 
+
+  const pageviewsList =
+    document.getElementById(
+      "feedback-pageviews"
+    );
+
+
+  const pageviewsTitle =
+    document.getElementById(
+      "feedback-pageviews-title"
+    );
+
+
+  // ==========================================================================
+  // General helpers
+  // ==========================================================================
 
   function make(
     tag,
@@ -138,23 +170,79 @@
   }
 
 
+  function adminState(record) {
+    return record._admin || {
+      is_read: false,
+      is_archived: false,
+      internal_note: "",
+      updated_at: null,
+      updated_by: null,
+    };
+  }
+
+
+  function cardKey(
+    source,
+    record,
+  ) {
+    return (
+      `${source}:${record._record_key}`
+    );
+  }
+
+
+  // ==========================================================================
+  // Filtering
+  // ==========================================================================
+
   function filtered(records) {
     const query =
       searchInput.value
         .trim()
         .toLowerCase();
 
-    if (!query) {
-      return records;
-    }
-
     return records.filter(
-      record =>
-        searchable(record)
-          .includes(query)
+      record => {
+        const admin =
+          adminState(record);
+
+        if (
+          query &&
+          !searchable(record)
+            .includes(query)
+        ) {
+          return false;
+        }
+
+        if (
+          state.filter === "unread"
+        ) {
+          return (
+            !admin.is_read &&
+            !admin.is_archived
+          );
+        }
+
+        if (
+          state.filter === "archived"
+        ) {
+          return admin.is_archived;
+        }
+
+        /*
+         * Normal view excludes archived items.
+         * Archived responses remain available
+         * through the Archived filter.
+         */
+        return !admin.is_archived;
+      }
     );
   }
 
+
+  // ==========================================================================
+  // Metadata
+  // ==========================================================================
 
   function addMeta(
     parent,
@@ -193,7 +281,418 @@
   }
 
 
-  function renderContactCard(
+  function addBadges(
+    parent,
+    record,
+  ) {
+    const admin =
+      adminState(record);
+
+    const badges =
+      make(
+        "span",
+        "feedback-badges",
+      );
+
+    if (!admin.is_read) {
+      badges.append(
+        make(
+          "span",
+          "feedback-badge feedback-badge--unread",
+          "Unread"
+        )
+      );
+    }
+
+    if (admin.is_archived) {
+      badges.append(
+        make(
+          "span",
+          "feedback-badge feedback-badge--archived",
+          "Archived"
+        )
+      );
+    }
+
+    parent.append(badges);
+  }
+
+
+  // ==========================================================================
+  // API
+  // ==========================================================================
+
+  async function fetchJson(
+    url,
+    options = {},
+  ) {
+    const headers = {
+      "Accept": "application/json",
+      ...(options.headers || {}),
+    };
+
+    const response =
+      await fetch(
+        url,
+        {
+          ...options,
+
+          credentials:
+            "same-origin",
+
+          headers,
+        }
+      );
+
+    if (
+      response.status === 401
+    ) {
+      location.href =
+        "/admin/login";
+
+      throw new Error(
+        "Authentication required"
+      );
+    }
+
+    if (!response.ok) {
+      const payload =
+        await response
+          .json()
+          .catch(
+            () => ({})
+          );
+
+      throw new Error(
+        payload.detail ||
+          `Request failed: ${response.status}`
+      );
+    }
+
+    return response.json();
+  }
+
+
+  async function patchRecord(
+    source,
+    record,
+    payload,
+  ) {
+    const key =
+      record._record_key;
+
+    if (!key) {
+      throw new Error(
+        "Feedback record has no key."
+      );
+    }
+
+    const response =
+      await fetchJson(
+        `/api/admin/feedback/${encodeURIComponent(source)}/${encodeURIComponent(key)}`,
+        {
+          method: "PATCH",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            "X-CSRF-Token":
+              state.csrfToken,
+          },
+
+          body: JSON.stringify(
+            payload
+          ),
+        }
+      );
+
+    record._admin =
+      response.admin;
+
+    return response.admin;
+  }
+
+
+  // ==========================================================================
+  // Triage controls
+  // ==========================================================================
+
+  function makeActionButton(
+    text,
+  ) {
+    return make(
+      "button",
+      "button button-secondary button-small",
+      text
+    );
+  }
+
+
+  function makeTriageControls(
+    source,
+    record,
+  ) {
+    const admin =
+      adminState(record);
+
+    const wrapper =
+      make(
+        "section",
+        "feedback-triage",
+      );
+
+    const heading =
+      make(
+        "h3",
+        "feedback-triage-title",
+        "Admin"
+      );
+
+    const actions =
+      make(
+        "div",
+        "feedback-triage-actions",
+      );
+
+    const readButton =
+      makeActionButton(
+        admin.is_read
+          ? "Mark unread"
+          : "Mark read"
+      );
+
+    const archiveButton =
+      makeActionButton(
+        admin.is_archived
+          ? "Unarchive"
+          : "Archive"
+      );
+
+    actions.append(
+      readButton,
+      archiveButton
+    );
+
+
+    // ------------------------------------------------------------------------
+    // Internal note
+    // ------------------------------------------------------------------------
+
+    const noteLabel =
+      make(
+        "label",
+        "feedback-note-label",
+      );
+
+    noteLabel.append(
+      make(
+        "span",
+        "",
+        "Internal note"
+      )
+    );
+
+    const textarea =
+      make(
+        "textarea",
+        "admin-field admin-textarea feedback-note",
+      );
+
+    textarea.rows = 3;
+
+    textarea.value =
+      admin.internal_note || "";
+
+    textarea.placeholder =
+      "Private note for administrators…";
+
+    noteLabel.append(
+      textarea
+    );
+
+    const noteActions =
+      make(
+        "div",
+        "feedback-note-actions",
+      );
+
+    const saveButton =
+      make(
+        "button",
+        "button button-primary button-small",
+        "Save note"
+      );
+
+    const saveStatus =
+      make(
+        "span",
+        "feedback-save-status",
+      );
+
+    noteActions.append(
+      saveButton,
+      saveStatus
+    );
+
+
+    // ------------------------------------------------------------------------
+    // Read / unread
+    // ------------------------------------------------------------------------
+
+    readButton.addEventListener(
+      "click",
+      async () => {
+        readButton.disabled = true;
+
+        try {
+          await patchRecord(
+            source,
+            record,
+            {
+              is_read:
+                !adminState(record)
+                  .is_read,
+            }
+          );
+
+          status.textContent =
+            "Feedback status updated.";
+
+          render();
+
+        } catch (error) {
+          status.textContent =
+            error.message ||
+            "Could not update feedback.";
+
+        } finally {
+          readButton.disabled =
+            false;
+        }
+      }
+    );
+
+
+    // ------------------------------------------------------------------------
+    // Archive
+    // ------------------------------------------------------------------------
+
+    archiveButton.addEventListener(
+      "click",
+      async () => {
+        archiveButton.disabled = true;
+
+        try {
+          await patchRecord(
+            source,
+            record,
+            {
+              is_archived:
+                !adminState(record)
+                  .is_archived,
+            }
+          );
+
+          status.textContent =
+            adminState(record)
+              .is_archived
+              ? "Feedback archived."
+              : "Feedback restored.";
+
+          render();
+
+        } catch (error) {
+          status.textContent =
+            error.message ||
+            "Could not update feedback.";
+
+        } finally {
+          archiveButton.disabled =
+            false;
+        }
+      }
+    );
+
+
+    // ------------------------------------------------------------------------
+    // Internal note
+    // ------------------------------------------------------------------------
+
+    saveButton.addEventListener(
+      "click",
+      async () => {
+        saveButton.disabled = true;
+
+        saveStatus.textContent =
+          "Saving…";
+
+        try {
+          await patchRecord(
+            source,
+            record,
+            {
+              internal_note:
+                textarea.value,
+            }
+          );
+
+          textarea.value =
+            adminState(record)
+              .internal_note || "";
+
+          saveStatus.textContent =
+            "Saved";
+
+        } catch (error) {
+          saveStatus.textContent =
+            error.message ||
+            "Save failed";
+
+        } finally {
+          saveButton.disabled =
+            false;
+        }
+      }
+    );
+
+
+    wrapper.append(
+      heading,
+      actions,
+      noteLabel,
+      noteActions
+    );
+
+    if (admin.updated_at) {
+      const updated =
+        make(
+          "p",
+          "feedback-triage-updated",
+          `Last updated ${formatDate(admin.updated_at)}`
+        );
+
+      if (admin.updated_by) {
+        updated.append(
+          document.createTextNode(
+            ` by ${admin.updated_by}`
+          )
+        );
+      }
+
+      wrapper.append(updated);
+    }
+
+    return wrapper;
+  }
+
+
+  // ==========================================================================
+  // Card foundation
+  // ==========================================================================
+
+  function makeCard(
+    source,
     record,
   ) {
     const details =
@@ -202,35 +701,123 @@
         "feedback-item",
       );
 
+    const admin =
+      adminState(record);
+
+    details.classList.toggle(
+      "is-unread",
+      !admin.is_read
+    );
+
+    details.classList.toggle(
+      "is-archived",
+      admin.is_archived
+    );
+
+    const key =
+      cardKey(
+        source,
+        record
+      );
+
+    details.dataset.feedbackKey =
+      key;
+
+    details.open =
+      state.openCards.has(
+        key
+      );
+
+    details.addEventListener(
+      "toggle",
+      () => {
+        if (details.open) {
+          state.openCards.add(
+            key
+          );
+
+        } else {
+          state.openCards.delete(
+            key
+          );
+        }
+      }
+    );
+
+    return details;
+  }
+
+
+  function makeSummary(
+    record,
+    title,
+    dateValue,
+  ) {
     const summary =
       make(
         "summary",
         "feedback-summary",
       );
 
-    const heading =
+    const titleArea =
+      make(
+        "span",
+        "feedback-summary-main",
+      );
+
+    titleArea.append(
       make(
         "span",
         "feedback-summary-title",
-        record.name ||
-          record.email ||
-          "Anonymous"
-      );
+        title
+      )
+    );
 
-    const date =
+    addBadges(
+      titleArea,
+      record
+    );
+
+    summary.append(
+      titleArea,
+
       make(
         "time",
         "feedback-summary-date",
         formatDate(
-          record.received_at ||
-          record.submitted_at
+          dateValue
         )
+      )
+    );
+
+    return summary;
+  }
+
+
+  // ==========================================================================
+  // Contact cards
+  // ==========================================================================
+
+  function renderContactCard(
+    record,
+  ) {
+    const details =
+      makeCard(
+        "contact",
+        record
       );
 
-    summary.append(
-      heading,
-      date
-    );
+    const summary =
+      makeSummary(
+        record,
+
+        record.name ||
+          record.email ||
+          "Anonymous",
+
+        record.received_at ||
+          record.submitted_at
+      );
 
     const content =
       make(
@@ -280,6 +867,7 @@
 
     content.append(meta);
 
+
     if (record.url) {
       const row =
         make(
@@ -323,15 +911,22 @@
       content.append(row);
     }
 
-    const message =
+
+    content.append(
       make(
         "div",
         "feedback-message",
         record.message ||
           "(No message)"
-      );
+      )
+    );
 
-    content.append(message);
+    content.append(
+      makeTriageControls(
+        "contact",
+        record
+      )
+    );
 
     details.append(
       summary,
@@ -342,9 +937,16 @@
   }
 
 
+  // ==========================================================================
+  // Survey cards
+  // ==========================================================================
+
   function ratingLabel(key) {
     return String(key)
-      .replaceAll("_", " ")
+      .replaceAll(
+        "_",
+        " "
+      )
       .replace(
         /\b\w/g,
         char =>
@@ -357,9 +959,9 @@
     record,
   ) {
     const details =
-      make(
-        "details",
-        "feedback-item",
+      makeCard(
+        "survey",
+        record
       );
 
     const ratings =
@@ -373,25 +975,11 @@
       ratings.overall ?? "—";
 
     const summary =
-      make(
-        "summary",
-        "feedback-summary",
+      makeSummary(
+        record,
+        `Overall: ${overall}/5`,
+        record.submitted_at
       );
-
-    summary.append(
-      make(
-        "span",
-        "feedback-summary-title",
-        `Overall: ${overall}/5`
-      ),
-      make(
-        "time",
-        "feedback-summary-date",
-        formatDate(
-          record.submitted_at
-        )
-      )
-    );
 
     const content =
       make(
@@ -421,6 +1009,7 @@
           "",
           ratingLabel(key)
         ),
+
         make(
           "strong",
           "",
@@ -432,6 +1021,7 @@
     }
 
     content.append(grid);
+
 
     const comments = [
       [
@@ -468,6 +1058,7 @@
           "",
           label
         ),
+
         make(
           "div",
           "feedback-message",
@@ -478,6 +1069,14 @@
       content.append(block);
     }
 
+
+    content.append(
+      makeTriageControls(
+        "survey",
+        record
+      )
+    );
+
     details.append(
       summary,
       content
@@ -486,6 +1085,10 @@
     return details;
   }
 
+
+  // ==========================================================================
+  // Rendering
+  // ==========================================================================
 
   function render() {
     const contact =
@@ -501,6 +1104,7 @@
     contactList.replaceChildren();
     surveyList.replaceChildren();
 
+
     for (
       const record of contact
     ) {
@@ -510,6 +1114,7 @@
         )
       );
     }
+
 
     for (
       const record of survey
@@ -521,6 +1126,7 @@
       );
     }
 
+
     if (!contact.length) {
       contactList.append(
         make(
@@ -531,6 +1137,7 @@
       );
     }
 
+
     if (!survey.length) {
       surveyList.append(
         make(
@@ -540,6 +1147,7 @@
         )
       );
     }
+
 
     contactTotal.textContent =
       String(
@@ -581,48 +1189,128 @@
   }
 
 
-  async function fetchJson(url) {
-    const response =
-      await fetch(
-        url,
-        {
-          credentials:
-            "same-origin",
-          headers: {
-            "Accept":
-              "application/json",
-          },
-        }
-      );
 
-    if (
-      response.status === 401
-    ) {
-      location.href =
-        "/admin/login";
+  // ==========================================================================
+  // Recent pageviews
+  // ==========================================================================
 
-      throw new Error(
-        "Authentication required"
-      );
+  async function loadPageviews() {
+    if (!pageviewsList) {
+      return;
     }
 
-    if (!response.ok) {
+    try {
       const payload =
-        await response
-          .json()
-          .catch(
-            () => ({})
+        await fetchJson(
+          "/api/admin/analytics/pages?limit=100"
+        );
+
+      const records =
+        payload.records || [];
+
+      if (pageviewsTitle) {
+        const daily =
+          Number(
+            payload.daily_total || 0
+          ).toLocaleString();
+
+        const grand =
+          Number(
+            payload.grand_total || 0
+          ).toLocaleString();
+
+        pageviewsTitle.textContent =
+          `Recent Visits ${daily}  Total Visits ${grand}`;
+      }
+
+      pageviewsList.replaceChildren();
+
+      if (!records.length) {
+        pageviewsList.append(
+          make(
+            "div",
+            "admin-empty",
+            "No page visits yet."
+          )
+        );
+
+        return;
+      }
+
+      for (const record of records) {
+        const row =
+          make(
+            "div",
+            "feedback-pageview-row",
           );
 
-      throw new Error(
-        payload.detail ||
-          `Request failed: ${response.status}`
-      );
-    }
+        const daily =
+          make(
+            "span",
+            "feedback-pageview-number",
+            record.daily_visits ?? 0
+          );
 
-    return response.json();
+        const link =
+          make(
+            "a",
+            "feedback-pageview-path",
+            record.path || "/"
+          );
+
+        link.href =
+          record.path || "/";
+
+        link.target = "_blank";
+        link.rel = "noopener";
+
+        const total =
+          make(
+            "span",
+            "feedback-pageview-number",
+            record.total_visits ?? 0
+          );
+
+        row.append(
+          daily,
+          link,
+          total
+        );
+
+        pageviewsList.append(row);
+      }
+
+    } catch (error) {
+      pageviewsList.textContent =
+        error.message ||
+        "Page visits unavailable.";
+    }
   }
 
+
+
+  async function loadSession() {
+    const payload =
+      await fetchJson(
+        "/api/admin/session"
+      );
+
+    state.csrfToken =
+      payload.csrf_token ||
+      payload.csrfToken ||
+      "";
+
+    if (!state.csrfToken) {
+      throw new Error(
+        "Admin CSRF token unavailable."
+      );
+    }
+  }
+
+
+  // ==========================================================================
+  // Loading
+  // ==========================================================================
 
   async function load() {
     status.textContent =
@@ -636,6 +1324,7 @@
         fetchJson(
           "/api/admin/feedback/contact?limit=250"
         ),
+
         fetchJson(
           "/api/admin/feedback/survey?limit=250"
         ),
@@ -652,6 +1341,7 @@
 
       state.surveyTotal =
         surveyPayload.total || 0;
+
 
       const warnings = [];
 
@@ -686,6 +1376,10 @@
   }
 
 
+  // ==========================================================================
+  // Events
+  // ==========================================================================
+
   for (const tab of tabs) {
     tab.addEventListener(
       "click",
@@ -704,5 +1398,35 @@
   );
 
 
-  load();
+  filterSelect.addEventListener(
+    "change",
+    () => {
+      state.filter =
+        filterSelect.value;
+
+      render();
+    }
+  );
+
+
+  async function start() {
+    try {
+      await loadSession();
+
+    } catch (error) {
+      status.textContent =
+        error.message ||
+        "Admin session could not be loaded.";
+
+      return;
+    }
+
+    await Promise.all([
+      load(),
+      loadPageviews(),
+    ]);
+  }
+
+
+  start();
 })();

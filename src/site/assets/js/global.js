@@ -1190,7 +1190,7 @@
 					========================================================================== */
 
 		(() => {
-				const QUALIFY_MS = 30_000;
+				const QUALIFY_MS = 16_000;
 
 				// Never track administrative/API areas.
 				if (

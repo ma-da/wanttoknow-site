@@ -13,6 +13,7 @@ from .admin.ui_router import router as admin_ui_router
 from .admin.auth_router import router as admin_auth_router
 from .admin.newsletter_router import router as admin_newsletter_router
 from .admin.feedback_router import router as admin_feedback_router
+from .admin.analytics_router import router as admin_analytics_router
 from app.routers.feedback import router as feedback_router
 
 from app.routers.pageviews import router as pageviews_router
@@ -66,6 +67,10 @@ app.include_router(
 
 app.include_router(
     admin_feedback_router
+)
+
+app.include_router(
+    admin_analytics_router
 )
 
 app.include_router(
@@ -168,6 +173,23 @@ async def clean_html_urls(
 #
 # Keep this LAST.
 # ============================================================================
+
+# ============================================================================
+# Admin static assets
+# ============================================================================
+
+app.mount(
+    "/admin/assets",
+    StaticFiles(
+        directory=(
+            Path(__file__).resolve().parent
+            / "admin"
+            / "static"
+        ),
+    ),
+    name="admin-assets",
+)
+
 
 app.mount(
     "/",

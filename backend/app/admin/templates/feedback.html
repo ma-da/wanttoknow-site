@@ -15,15 +15,15 @@
 
   <link
     rel="stylesheet"
-    href="/admin-static/global.css"
+    href="/assets/css/global.css"
   >
   <link
     rel="stylesheet"
-    href="/admin-static/admin.css"
+    href="/admin/assets/admin.css"
   >
 
   <script
-    src="/admin-static/feedback.js"
+    src="/admin/assets/feedback.js"
     defer
   ></script>
 </head>
@@ -36,10 +36,6 @@
         href="/admin"
         aria-label="WantToKnow.info admin home"
       >
-        <span
-          class="admin-brand-mark"
-          aria-hidden="true"
-        >W</span>
 
         <span class="admin-brand-text">
           WantToKnow.info Admin
@@ -49,14 +45,21 @@
       <div class="admin-header-actions">
         <a
           class="button button-secondary button-small"
-          href="/admin"
+          href="/admin/articles"
         >
           Articles
         </a>
 
         <a
           class="button button-secondary button-small"
-          href="https://www.wanttoknow.info/"
+          href="/admin/newsletters"
+        >
+          Newsletter
+        </a>
+
+        <a
+          class="button button-secondary button-small"
+          href="https://new.wanttoknow.info/"
           target="_blank"
           rel="noopener"
         >
@@ -67,85 +70,84 @@
   </header>
 
   <main class="container admin-shell">
-    <div class="admin-title-row">
-      <div>
-        <p class="eyebrow">
-          Community response
-        </p>
+<div class="feedback-control-bar">
 
-        <h1 class="admin-title">
-          Feedback
-        </h1>
-
-        <p class="admin-subtitle">
-          Review contact messages and site survey responses.
-          Source records remain unchanged.
-        </p>
-      </div>
-
-      <div
-        class="admin-stats feedback-stats"
-        aria-label="Feedback totals"
-      >
-        <div class="admin-stat">
-          <strong id="contact-total">—</strong>
-          <span>Contact messages</span>
-        </div>
-
-        <div class="admin-stat">
-          <strong id="survey-total">—</strong>
-          <span>Survey responses</span>
-        </div>
-
-        <div class="admin-stat">
-          <strong id="visible-total">—</strong>
-          <span>Currently shown</span>
-        </div>
-      </div>
-    </div>
-
-    <nav
-      class="admin-tabs"
-      aria-label="Feedback type"
+  <nav
+    class="admin-tabs feedback-control-tabs"
+    aria-label="Feedback type"
+  >
+    <button
+      class="admin-tab is-active"
+      type="button"
+      data-feedback-tab="contact"
     >
-      <button
-        class="admin-tab is-active"
-        type="button"
-        data-feedback-tab="contact"
-      >
-        Contact Messages
-      </button>
+      Contact Messages
+    </button>
 
-      <button
-        class="admin-tab"
-        type="button"
-        data-feedback-tab="survey"
-      >
-        Site Survey
-      </button>
-    </nav>
+    <button
+      class="admin-tab"
+      type="button"
+      data-feedback-tab="survey"
+    >
+      Site Survey
+    </button>
+  </nav>
 
-    <div class="admin-toolbar">
-      <div class="admin-toolbar-main">
-        <div
-          class="admin-search-wrap admin-search"
-        >
-          <input
-            id="feedback-search"
-            class="admin-field"
-            type="search"
-            placeholder="Search responses…"
-            autocomplete="off"
-          >
-        </div>
-      </div>
-
-      <div
-        id="feedback-status"
-        class="feedback-status"
-        aria-live="polite"
-      ></div>
+  <div
+    class="admin-stats feedback-stats"
+    aria-label="Feedback totals"
+  >
+    <div class="admin-stat">
+      <strong id="contact-total">—</strong>
+      <span>Contact</span>
     </div>
+
+    <div class="admin-stat">
+      <strong id="survey-total">—</strong>
+      <span>Survey</span>
+    </div>
+
+    <div class="admin-stat">
+      <strong id="visible-total">—</strong>
+      <span>Shown</span>
+    </div>
+  </div>
+
+  <div class="feedback-control-search">
+    <input
+      id="feedback-search"
+      class="admin-field"
+      type="search"
+      placeholder="Search responses…"
+      autocomplete="off"
+    >
+  </div>
+
+  <label class="feedback-filter">
+    <span class="visually-hidden">
+      Filter feedback
+    </span>
+
+    <select
+      id="feedback-filter"
+      class="admin-field admin-select"
+    >
+      <option value="all">All</option>
+      <option value="unread">Unread</option>
+      <option value="archived">Archived</option>
+    </select>
+  </label>
+
+</div>
+
+<div
+  id="feedback-status"
+  class="feedback-status"
+  aria-live="polite"
+></div>
+
+    <div class="feedback-dashboard">
+      <div class="feedback-dashboard-main">
 
     <section
       id="contact-panel"
@@ -169,6 +171,31 @@
         class="feedback-list"
       ></div>
     </section>
+
+      </div>
+
+      <aside
+        class="feedback-pageviews"
+        aria-label="Recent page visits"
+      >
+        <h2 id="feedback-pageviews-title">
+          Recent Visits — Total Visits —
+        </h2>
+
+        <div class="feedback-pageviews-head">
+          <span>Daily</span>
+          <span>Page</span>
+          <span>Total</span>
+        </div>
+
+        <div
+          id="feedback-pageviews"
+          class="feedback-pageviews-list"
+        >
+          Loading…
+        </div>
+      </aside>
+    </div>
   </main>
 </body>
 </html>
