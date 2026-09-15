@@ -17,7 +17,7 @@ BACKEND_ROOT = PROJECT_ROOT / "backend"
 RUNTIME_DIR = Path(
     os.environ.get(
         "WTK_AI_RUNTIME_DIR",
-        "/srv/wanttoknow/runtime/ai-synthesis",
+        "/srv/wanttoknow/data/ai",
     )
 )
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "search_syntheses.md"
