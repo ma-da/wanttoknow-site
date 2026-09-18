@@ -34,10 +34,38 @@
           <div id="editor-state" class="article-edit-state"></div>
         </div>
 
-        <label class="admin-field article-source-field">
-          <span>Source URL</span>
-          <input id="field-source-url" name="source_url" type="url" maxlength="4000" required>
-        </label>
+        <div class="admin-field article-source-field">
+          <label class="article-inline-field-label" for="field-source-url">
+            Source URL
+          </label>
+
+          <div class="article-source-control">
+            <input
+              id="field-source-url"
+              name="source_url"
+              type="url"
+              maxlength="4000"
+              required
+            >
+
+            <a
+              id="open-source-url"
+              class="article-source-open"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open source URL in a new tab"
+              aria-label="Open source URL in a new tab"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M14 4h6v6h-2V7.4l-7.3 7.3-1.4-1.4L16.6 6H14V4ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
 
         <div class="article-meta-compact">
           <label class="admin-field article-meta-compact__id">
@@ -48,11 +76,41 @@
             <span>Priority</span>
             <input id="field-priority" name="priority" type="number" min="0" max="1000" step="1" required>
           </label>
-          <label class="admin-field article-meta-compact__publication">
-            <span>Canonical publication</span>
-            <input id="field-publication" type="text" list="publication-options" autocomplete="off">
+          <div class="admin-field article-meta-compact__publication">
+            <label
+              class="article-inline-field-label"
+              for="field-publication"
+            >
+              Canonical publication
+            </label>
+
+            <div class="article-publication-control">
+              <input
+                id="field-publication"
+                type="text"
+                list="publication-options"
+                autocomplete="off"
+              >
+
+              <button
+                id="add-publication"
+                class="article-inline-action"
+                type="button"
+                title="Add the entered name as a canonical publication"
+              >
+                + New
+              </button>
+            </div>
+
+            <small
+              id="publication-add-status"
+              class="article-inline-status"
+              role="status"
+              aria-live="polite"
+            ></small>
+
             <datalist id="publication-options"></datalist>
-          </label>
+          </div>
           <label class="admin-field article-meta-compact__date">
             <span>Publication date</span>
             <input id="field-publication-date" name="publication_date" type="date">

@@ -13,6 +13,9 @@
   const categoryFilter = document.getElementById("category-filter");
   const publicationOptions = document.getElementById("publication-options");
   const publicationInput = document.getElementById("field-publication");
+  const addPublicationButton = document.getElementById("add-publication");
+  const publicationAddStatus = document.getElementById("publication-add-status");
+  const sourceOpenLink = document.getElementById("open-source-url");
   const slugInput = document.getElementById("field-slug");
   const saveButton = document.getElementById("save-article");
   const previewButton = document.getElementById("preview-newsletter");
@@ -647,15 +650,139 @@
 						: "Save these edits and publish this article to the site";
 		}		
 
+  function setPublicationAddStatus(text = "", type = "") {
+    publicationAddStatus.textContent = text;
+
+    if (type) {
+      publicationAddStatus.dataset.type = type;
+    } else {
+      delete publicationAddStatus.dataset.type;
+    }
+  }
+
+
+  function registerPublication(publication) {
+    if (
+      !publication?.display_name
+      || !publication?.slug
+    ) {
+      return;
+    }
+
+    publicationByName.set(
+      publication.display_name,
+      publication.slug,
+    );
+
+    const exists = Array.from(
+      publicationOptions.options,
+    ).some(
+      (option) =>
+        option.value === publication.display_name,
+    );
+
+    if (!exists) {
+      const option = document.createElement("option");
+      option.value = publication.display_name;
+      publicationOptions.append(option);
+    }
+  }
+
+
+  async function addCanonicalPublication() {
+    const displayName =
+      publicationInput.value.trim();
+
+    setPublicationAddStatus();
+
+    if (!displayName) {
+      setPublicationAddStatus(
+        "Enter a publication name first.",
+        "error",
+      );
+
+      publicationInput.focus();
+      return;
+    }
+
+    addPublicationButton.disabled = true;
+
+    setPublicationAddStatus("Adding…");
+
+    try {
+      const result = await apiJson(
+        "/api/admin/articles/publications",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({
+            display_name: displayName,
+          }),
+        },
+      );
+
+      const publication = result.publication;
+
+      registerPublication(publication);
+
+      publicationInput.value =
+        publication.display_name;
+
+      publicationInput.dataset.slug =
+        publication.slug;
+
+      dirty = true;
+
+      setPublicationAddStatus(
+        result.created
+          ? `${publication.display_name} Added`
+          : `${publication.display_name} already canonical`,
+        result.created ? "ok" : "",
+      );
+
+    } catch (error) {
+      setPublicationAddStatus(
+        error instanceof Error
+          ? error.message
+          : "Unable to add publication.",
+        "error",
+      );
+
+    } finally {
+      addPublicationButton.disabled = false;
+    }
+  }
+
+
+  function refreshSourceOpenLink() {
+    const href = safePreviewUrl(
+      fields.sourceUrl.value,
+    );
+
+    if (href) {
+      sourceOpenLink.href = href;
+      sourceOpenLink.removeAttribute(
+        "aria-disabled"
+      );
+    } else {
+      sourceOpenLink.removeAttribute("href");
+      sourceOpenLink.setAttribute(
+        "aria-disabled",
+        "true",
+      );
+    }
+  }
+
+
   function renderReferences(data) {
     referenceData = data;
     publicationByName = new Map();
     publicationOptions.replaceChildren();
     for (const pub of data.publications || []) {
-      publicationByName.set(pub.display_name, pub.slug);
-      const option = document.createElement("option");
-      option.value = pub.display_name;
-      publicationOptions.append(option);
+      registerPublication(pub);
     }
   }
 
@@ -697,6 +824,7 @@
     fields.publicationDetail.value = article.publication_detail || "";
     fields.publicationRaw.value = article.publication_raw || "";
     fields.sourceUrl.value = article.source_url || "";
+    refreshSourceOpenLink();
     fields.summary.value = article.summary_markdown || "";
     fields.note.value = article.note_markdown || "";
     fields.priority.value = String(article.priority ?? "");
@@ -877,8 +1005,23 @@
   });
 
   publicationInput.addEventListener("input", () => {
-    publicationInput.dataset.slug = publicationByName.get(publicationInput.value.trim()) || "";
+    publicationInput.dataset.slug =
+      publicationByName.get(
+        publicationInput.value.trim()
+      ) || "";
+
+    setPublicationAddStatus();
   });
+
+  addPublicationButton.addEventListener(
+    "click",
+    addCanonicalPublication,
+  );
+
+  fields.sourceUrl.addEventListener(
+    "input",
+    refreshSourceOpenLink,
+  );
 
   slugInput.addEventListener("input", updateGeneratedUrl);
 

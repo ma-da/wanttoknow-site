@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 
 from .auth import AdminIdentity, require_admin_api, require_admin_write
 from .article_edit import connect_writable, create_draft_article, delete_new_draft_article, reference_data, update_article
+from .publication_catalog import add_canonical_publication
 from .article_workflow import current_batch_info
 from .article_publish import PublishError, publish_article, publish_current_batch
 from .article_withdrawal import cancel_withdrawal, request_withdrawal
@@ -42,6 +43,13 @@ class ArticleDraftCreateRequest(BaseModel):
     note_markdown: str = Field(default="", max_length=50000)
 
 
+
+
+class CanonicalPublicationRequest(BaseModel):
+    display_name: str = Field(
+        min_length=2,
+        max_length=200,
+    )
 
 
 class ArticleWithdrawalRequest(BaseModel):
@@ -183,6 +191,27 @@ def article_reference_data():
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@router.post("/publications")
+def article_publication_create(
+    payload: CanonicalPublicationRequest,
+    identity: AdminIdentity = Depends(require_admin_write),
+):
+    try:
+        return add_canonical_publication(
+            payload.display_name
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+    except OSError as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="Unable to update canonical publication list",
+        ) from exc
 
 
 @router.delete("/{article_id}")

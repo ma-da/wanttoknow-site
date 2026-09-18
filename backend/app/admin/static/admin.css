@@ -2465,6 +2465,13 @@
     );
 }
 
+.feedback-control-bar button {
+	 border: none;
+	 border-radius: 0;
+		color: #808080;
+		padding: 0.3rem;
+}
+
 .feedback-control-tabs {
   flex: 0 0 auto;
   margin: 0;
@@ -2508,6 +2515,13 @@
   width: 100%;
 }
 
+#feedback-filter {
+	 border: none;
+	 border-radius: 0;
+		color: #808080;
+		padding: 0.3rem;
+}
+
 .feedback-status {
   margin-bottom: 0.75rem;
 }
@@ -2538,4 +2552,217 @@
   .feedback-control-bar .feedback-filter {
     flex-basis: 100%;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Articles toolbar — compact single-row desktop layout
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 70rem) {
+  .admin-toolbar--articles {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+
+  /* + Add Article / View Drafts / Hide */
+  .admin-toolbar--articles .admin-toolbar__actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+
+  /* Let search absorb remaining space, but don't let it dominate */
+  .admin-toolbar--articles .admin-toolbar__search {
+    flex: 1 1 14rem;
+    min-width: 9rem;
+    max-width: 22rem;
+    margin: 0;
+  }
+
+  .admin-toolbar--articles .admin-toolbar__search input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Compact Batch block */
+  .admin-toolbar--articles .admin-batch-summary:not([hidden]) {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .admin-toolbar--articles .admin-batch-summary__info {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .admin-toolbar--articles .admin-batch-summary__label {
+    margin: 0;
+    font-size: 0.62rem;
+    line-height: 1;
+  }
+
+  .admin-toolbar--articles #batch-summary-text {
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Keep all toolbar controls compact */
+  .admin-toolbar--articles .admin-primary-button,
+  .admin-toolbar--articles .admin-secondary-button,
+  .admin-toolbar--articles .admin-publish-button {
+    flex: 0 0 auto;
+    min-height: 2.2rem;
+    padding: 0.38rem 0.58rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  /* Navigation buttons */
+  .admin-toolbar--articles .admin-news-factory,
+  .admin-toolbar--articles a[href="/admin/feedback"] {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  /* Don't let an empty status paragraph consume toolbar space */
+  .admin-toolbar--articles .admin-batch-status:empty {
+    display: none;
+  }
+
+  /* If status text appears, don't let it blow out the row */
+  .admin-toolbar--articles .admin-batch-status:not(:empty) {
+    flex: 0 1 10rem;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+/* --------------------------------------------------------------------------
+   Article editor: inline publication + source URL controls
+   -------------------------------------------------------------------------- */
+
+.article-inline-field-label {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.article-publication-control {
+  position: relative;
+}
+
+.article-publication-control input {
+  width: 100%;
+  min-width: 0;
+  padding-right: 4.4rem;
+}
+
+.article-inline-action {
+  position: absolute;
+  top: 50%;
+  right: 0.28rem;
+  min-height: 1.75rem;
+  padding: 0.2rem 0.45rem;
+  border: 0;
+  border-left: var(--border-width) solid var(--border-color);
+  background: transparent;
+  color: var(--color-brand-purple-dark);
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.article-inline-action:hover:not(:disabled),
+.article-inline-action:focus-visible {
+  background: var(--color-surface-muted);
+  color: var(--color-brand-purple-dark);
+}
+
+.article-inline-action:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.article-inline-status {
+  min-height: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  line-height: 1.2;
+}
+
+.article-inline-status:empty {
+  display: none;
+}
+
+.article-inline-status[data-type="ok"] {
+  color: #477248;
+}
+
+.article-inline-status[data-type="error"] {
+  color: #9a3024;
+}
+
+
+/* Source URL external-link icon */
+
+.article-source-control {
+  position: relative;
+}
+
+.article-source-control input {
+  padding-right: 2.35rem;
+}
+
+.article-source-open {
+  position: absolute;
+  top: 50%;
+  right: 0.32rem;
+  display: grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--color-brand-purple-dark);
+  text-decoration: none;
+  place-items: center;
+  transform: translateY(-50%);
+}
+
+.article-source-open:not([href]) {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.article-source-open[href]:hover,
+.article-source-open[href]:focus-visible {
+  background: var(--color-surface-muted);
+}
+
+.article-source-open svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
 }
