@@ -88,38 +88,63 @@ def append_publish_event(root: Path, event: dict[str, Any]) -> Path:
 def commit_and_push_dev(
     root: Path,
     *,
-    base_sha: str,
     message: str,
     branch: str = "dev",
 ) -> str:
-    """Commit only publisher-managed tracked paths and push them to dev."""
-    if _rev(root, "HEAD") != base_sha:
-        raise GitPublishError("Git HEAD changed while publication was building; publication aborted")
+    """Best-effort Git sync after publication; never reset site files."""
+    current_branch = _git(
+        root, "branch", "--show-current"
+    ).stdout.strip()
 
-    # Deliberately narrow staging scope. Generated news and large media are
-    # ignored; code or unrelated files can never be swept into an article publish.
-    _git(root, "add", "-A", "--", "src/site/data", "src/site/topics")
-
-    staged = _git(root, "diff", "--cached", "--name-only").stdout.splitlines()
-    if not staged:
+    if current_branch != branch:
         raise GitPublishError(
-            "Publication produced no tracked Git change. "
-            "The publication audit file should make every publication traceable."
+            f"Git sync pending: expected branch {branch!r}, "
+            f"found {current_branch!r}"
         )
-    for name in staged:
-        if not (name.startswith("src/site/data/") or name.startswith("src/site/topics/")):
-            raise GitPublishError(f"Unexpected path staged by article publication: {name}")
 
-    _git(root, "commit", "--no-gpg-sign", "-m", message)
+    # Sync site source and admin code, including new source files.
+    # Generated news pages, large article images and private admin
+    # state are excluded. Git's normal ignore rules also apply.
+    _git(
+        root, "add", "-A", "--",
+        "src/site",
+        "backend/app/admin",
+        ":(exclude)src/site/news",
+        ":(exclude)src/site/assets/images/article-images",
+        ":(exclude)src/site/assets/images/article-thumbs",
+        ":(exclude)backend/app/admin/var",
+    )
+
+    staged = _git(
+        root, "diff", "--cached", "--name-only"
+    ).stdout.splitlines()
+
+    allowed = ("src/site/", "backend/app/admin/")
+    unexpected = [
+        path for path in staged
+        if not path.startswith(allowed)
+    ]
+    if unexpected:
+        raise GitPublishError(
+            "Git sync pending: unexpected staged files: "
+            + ", ".join(unexpected[:10])
+        )
+
+    if staged:
+        _git(
+            root, "commit", "--no-gpg-sign",
+            "-m", message,
+        )
+
     commit_sha = _rev(root, "HEAD")
-    try:
-        _git(root, "push", "--porcelain", "origin", f"HEAD:refs/heads/{branch}")
-    except Exception:
-        # Remote was not changed if normal Git push failed. Restore tracked
-        # source to the known-good pre-publish commit; caller restores ignored
-        # generated/media files using its existing rollback journal.
-        _git(root, "reset", "--hard", base_sha, check=False)
-        raise
+
+    # A failed push leaves the local commit and published site intact.
+    # A later successful push can synchronize pending local commits.
+    _git(
+        root, "push", "--porcelain",
+        "origin", f"HEAD:refs/heads/{branch}",
+    )
+
     return commit_sha
 
 

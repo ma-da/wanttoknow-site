@@ -10,7 +10,11 @@ from .auth import AdminIdentity, require_admin_api, require_admin_write
 from .article_edit import connect_writable, create_draft_article, delete_new_draft_article, reference_data, update_article
 from .publication_catalog import add_canonical_publication
 from .article_workflow import current_batch_info
-from .article_publish import PublishError, publish_article, publish_current_batch
+from .article_publish import (
+    PublishError,
+    publish_article,
+    publish_selected_batch,
+)
 from .article_withdrawal import cancel_withdrawal, request_withdrawal
 from .image_processing import MAX_UPLOAD_BYTES, ImageProcessingError, process_image_upload
 from .image_staging import (
@@ -75,6 +79,11 @@ class ArticleUpdateRequest(BaseModel):
     image_caption_markdown: str = Field(default="", max_length=10000)
     image_caption_text: str = Field(default="", max_length=10000)
 
+class SelectedBatchPublishRequest(BaseModel):
+    article_ids: list[int] = Field(
+        min_length=1,
+        max_length=500,
+    )
 
 @router.get("")
 def articles_list(
@@ -154,17 +163,30 @@ def article_current_batch():
         raise HTTPException(status_code=500, detail="Unable to read current article batch") from exc
 
 
-@router.post("/batch/current/publish")
+@router.post("/batch/current/publish-selected")
 def article_batch_publish(
+    payload: SelectedBatchPublishRequest,
     identity: AdminIdentity = Depends(require_admin_write),
 ):
     try:
         with connect_writable() as conn:
-            return publish_current_batch(conn, actor=identity.key_name)
+            return publish_selected_batch(
+                conn,
+                payload.article_ids,
+                actor=identity.key_name,
+            )
+
     except PublishError as exc:
-        raise HTTPException(status_code=409, detail=str(exc)) from exc
+        raise HTTPException(
+            status_code=409,
+            detail=str(exc),
+        ) from exc
+
     except (OSError, sqlite3.DatabaseError) as exc:
-        raise HTTPException(status_code=500, detail=f"Batch publication failed: {exc}") from exc
+        raise HTTPException(
+            status_code=500,
+            detail=f"Batch publication failed: {exc}",
+        ) from exc
 
 
 @router.post("/{article_id}/publish")

@@ -130,7 +130,62 @@
       </section>
 
       <section class="article-edit-card article-edit-card--fullwidth article-note-card article-edit-card--plain">
-        <h2 class="article-note-label">Note</h2>
+        <div class="article-note-toolbar">
+          <h2 class="article-note-label">Note</h2>
+
+          <label class="article-note-helper-select">
+            <span class="visually-hidden">Note category 1</span>
+            <select
+              id="note-category-1"
+              aria-label="Note category 1"
+            >
+              <option value="">Category 1</option>
+            </select>
+          </label>
+
+          <label class="article-note-helper-select">
+            <span class="visually-hidden">Note category 2</span>
+            <select
+              id="note-category-2"
+              aria-label="Note category 2"
+            >
+              <option value="">Category 2</option>
+            </select>
+          </label>
+
+          <button
+            id="copy-regular-note"
+            class="article-note-helper-button"
+            type="button"
+            title="Copy regular related-reading note"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M16 4h-1.2A3 3 0 0 0 12 2a3 3 0 0 0-2.8 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm4 14H8V6h1v2h6V6h1v12Z"/>
+            </svg>
+            <span class="article-note-helper-button__label">Regular</span>
+          </button>
+
+          <button
+            id="copy-inspiring-note"
+            class="article-note-helper-button"
+            type="button"
+            title="Copy inspiring related-reading note"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m12 2 1.5 5.2L18 9l-4.5 1.8L12 16l-1.5-5.2L6 9l4.5-1.8L12 2Zm6 11 .9 3.1L22 17l-3.1.9L18 21l-.9-3.1L14 17l3.1-.9L18 13Z"/>
+            </svg>
+            <span class="article-note-helper-button__label">Inspiring</span>
+          </button>
+        </div>
+
         <label class="admin-field admin-field--textarea">
           <span class="visually-hidden">WTK Note Markdown</span>
           <textarea id="field-note" name="note_markdown" rows="4"></textarea>

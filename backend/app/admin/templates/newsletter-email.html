@@ -203,6 +203,8 @@
         <tr>
           <td class="email-content">
 
+            {% include "newsletter-header.html" %}
+
             {% if headline_items %}
             <h1 class="newsletter-headline">{{ headline_items | join(", ") }}</h1>
             {% endif %}

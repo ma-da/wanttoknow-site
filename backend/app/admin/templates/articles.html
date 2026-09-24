@@ -89,7 +89,7 @@
 										type="button"
 										disabled
 								>
-										Publish Batch
+										Publish selected (0)
 								</button>
 						</div>
 
@@ -115,21 +115,22 @@
 						></p>
 				</section>
 
-    <section id="batch-summary" class="admin-batch-bar" hidden aria-label="Current draft batch">
-      <div>
-        <p class="admin-eyebrow">Current batch</p>
-        <strong id="batch-summary-text"></strong>
-      </div>
-      <button id="publish-batch" class="admin-publish-button" type="button" disabled>Publish Draft Batch</button>
-    </section>
-
     <section class="article-browser" id="article-browser" aria-label="Article database">
       <div class="article-list-pane">
         <div class="article-list-head" aria-label="Sort article results">
           <button class="article-sort-head" type="button" data-sort-field="posted" data-default-direction="desc">
             <span>Posted</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
           </button>
-          <span class="article-list-head__live" aria-hidden="true"></span>
+										<span class="article-list-head__live">
+												<input
+														id="select-all-loaded-drafts"
+														class="article-row__select"
+														type="checkbox"
+														aria-label="Select all loaded drafts"
+														title="Select all currently loaded drafts"
+														hidden
+												>
+										</span>
           <button class="article-sort-head article-sort-head--numeric" type="button" data-sort-field="priority" data-default-direction="desc">
             <span>Pri</span><span class="article-sort-head__arrow" aria-hidden="true"></span>
           </button>
@@ -162,6 +163,12 @@
           <div id="preview-meta" class="article-preview__meta"></div>
           <div id="preview-tags" class="article-preview__tags"></div>
           <div id="preview-summary" class="article-preview__summary"></div>
+
+										<section id="preview-note" class="article-preview__note" hidden>
+												<h3>WTK Note</h3>
+												<div id="preview-note-body" class="article-preview__summary"></div>
+										</section>
+
         </article>
       </aside>
     </section>

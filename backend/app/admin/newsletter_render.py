@@ -171,6 +171,7 @@ def render_newsletter(newsletter: dict[str, Any]) -> str:
 
     context = {
         **newsletter,
+        "browser_url": str(newsletter.get("browser_url") or "").strip(),
         "formatted_issue_date": formatted_issue_date,
         "headline_items": headlines,
         "meta_title": meta_title,

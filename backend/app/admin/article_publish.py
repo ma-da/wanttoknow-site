@@ -28,6 +28,8 @@ from .git_publish import (
     revert_pushed_commit,
 )
 
+from zoneinfo import ZoneInfo
+
 PUBLISH_SCRIPTS = (
     "build-news-derived.py",
     "build-news-articles.py",
@@ -742,17 +744,49 @@ def publish_articles(
 
     try:
         with _publication_lock(root):
-            # Publication is allowed only from a clean production-admin dev
-            # worktree that is already synchronized with GitHub. The no-op push
-            # performed here proves the known-good pre-publish state is remote
-            # before any source/media mutation begins.
-            try:
-                git_base_sha = ensure_dev_checkpoint(root)
-            except GitPublishError as exc:
-                raise PublishError(f"Git pre-publish checkpoint failed: {exc}") from exc
-
             rows = _selected_rows(conn, ids)
-            selected_ids = {int(row["article_id"]) for row in rows}
+
+            # Assign today's date only to selected drafts that have
+            # no WTK posted date. Preserve manually entered dates.
+            missing_date_ids = [
+                int(row["article_id"])
+                for row in rows
+                if not str(row["posted_date"] or "").strip()
+            ]
+
+            if missing_date_ids:
+                today = datetime.now(
+                    ZoneInfo("America/Chicago")
+                ).date().isoformat()
+
+                with conn:
+                    conn.executemany(
+                        """
+                        UPDATE articles
+                        SET posted_date = ?
+                        WHERE article_id = ?
+                          AND workflow_state IN ('draft', 'ready')
+                          AND (
+                              posted_date IS NULL
+                              OR TRIM(posted_date) = ''
+                          )
+                        """,
+                        [
+                            (today, article_id)
+                            for article_id in missing_date_ids
+                        ],
+                    )
+
+                # Refresh the selected rows so the publication
+                # builder, validation, and SQLite finalization all
+                # use the assigned date.
+                rows = _selected_rows(conn, ids)
+
+            selected_ids = {
+                int(row["article_id"])
+                for row in rows
+            }
+
             withdrawals = _pending_withdrawals(conn, selected_ids)
             staged = _staged_images(conn, selected_ids)
             master_before_sha256 = file_sha256(master)
@@ -779,10 +813,19 @@ def publish_articles(
             _assert_selection_unchanged(conn, rows, withdrawals, staged)
             rollback = _promote(root, run_dir, workspace, staged, withdrawals, canonical_by_id)
 
-            # Every admin publication creates a small tracked event. This makes
-            # image-only publications visible to Git without storing JPEGs in
-            # Git: main later authorizes the exact media SHA-256 values that may
-            # be deployed. Internal withdrawal reasons remain SQLite-only.
+            # Site publication and SQLite must succeed before Git sync.
+            try:
+                published_count, withdrawal_count = _finalize_db(
+                    conn, rows, withdrawals, staged,
+                    actor=actor, batch_id=batch_id
+                )
+            except Exception:
+                _rollback(rollback)
+                raise
+
+            post_warnings: list[str] = []
+            git_commit_sha: str | None = None
+
             try:
                 media_events: list[dict[str, Any]] = []
                 full_dir = root / "src/site/assets/images/article-images"
@@ -815,50 +858,26 @@ def publish_articles(
                         "media": media_events,
                     },
                 )
-
-                commit_message = (
-                    f"admin publish: article {ids[0]}"
-                    if scope == "article" and len(ids) == 1
-                    else f"admin publish: batch {batch_id or '-'} ({len(ids)} articles)"
-                )
-                git_commit_sha = commit_and_push_dev(
-                    root,
-                    base_sha=git_base_sha,
-                    message=commit_message,
-                )
             except Exception as exc:
-                # Git push failure leaves origin/dev unchanged. Restore tracked
-                # files to the checkpoint and use the existing rollback journal
-                # for ignored generated/media files. SQLite is still draft.
-                try:
-                    reset_to_checkpoint(root, git_base_sha)
-                except Exception:
-                    pass
-                _rollback(rollback)
-                if isinstance(exc, PublishError):
-                    raise
-                raise PublishError(f"Git dev publication failed; site working copy rolled back: {exc}") from exc
-
-            try:
-                published_count, withdrawal_count = _finalize_db(
-                    conn, rows, withdrawals, staged, actor=actor, batch_id=batch_id
+                post_warnings.append(
+                    f'Published successfully; publication event recording failed: {exc}'
                 )
-            except Exception as finalize_exc:
-                # GitHub dev was already advanced, so undo it with a normal
-                # revert commit rather than rewriting remote history. Then
-                # restore generated/media files from the rollback journal.
+            else:
                 try:
-                    revert_pushed_commit(root, git_commit_sha)
-                except Exception as revert_exc:
-                    raise PublishError(
-                        "CRITICAL: Git dev was updated but SQLite finalization failed, "
-                        f"and the automatic Git revert also failed: {revert_exc}. "
-                        f"Published commit: {git_commit_sha}"
-                    ) from finalize_exc
-                _rollback(rollback)
-                raise
+                    commit_message = (
+                        f'admin publish: article {ids[0]}'
+                        if scope == 'article' and len(ids) == 1
+                        else f'admin publish: batch {batch_id or "-"} ({len(ids)} articles)'
+                    )
+                    git_commit_sha = commit_and_push_dev(
+                        root, message=commit_message
+                    )
+                except Exception as exc:
+                    post_warnings.append(
+                        f'Published successfully; Git dev sync pending: {exc}'
+                    )
 
-            post_warnings: list[str] = []
+
             try:
                 _cleanup_staging(selected_ids)
             except Exception as exc:
@@ -881,7 +900,7 @@ def publish_articles(
             completed = utc_now()
             message = f"Published {published_count} article(s); removed {withdrawal_count} article(s)."
             if post_warnings:
-                message += " Publication completed with cleanup warning(s)."
+                message += " Publication completed with warning(s)."
             try:
                 conn.execute(
                     """
@@ -905,7 +924,7 @@ def publish_articles(
                 "warnings": warnings,
                 "completed_at": completed,
                 "build_log": str(log_path),
-                "pre_publish_commit": git_base_sha,
+                "git_sync": "synced" if git_commit_sha else "pending",
                 "dev_commit": git_commit_sha,
             }
             try:
@@ -935,18 +954,80 @@ def publish_article(conn: sqlite3.Connection, article_id: int, *, actor: str) ->
     return publish_articles(conn, [article_id], actor=actor, scope="article", batch_id=batch_id)
 
 
-def publish_current_batch(conn: sqlite3.Connection, *, actor: str) -> dict[str, Any]:
-    batch = conn.execute(
-        "SELECT batch_id FROM article_batches WHERE status='open' ORDER BY batch_id DESC LIMIT 1"
-    ).fetchone()
-    if batch is None:
-        raise PublishError("There is no open draft batch to publish")
-    batch_id = int(batch["batch_id"])
-    rows = conn.execute(
-        "SELECT article_id FROM articles WHERE active_batch_id=? AND workflow_state IN ('draft','ready') ORDER BY source_order",
-        (batch_id,),
-    ).fetchall()
-    ids = [int(row["article_id"]) for row in rows]
+def publish_selected_batch(
+    conn: sqlite3.Connection,
+    article_ids: Iterable[int],
+    *,
+    actor: str,
+) -> dict[str, Any]:
+    """
+    Publish only explicitly selected articles from the current open batch.
+
+    Unselected drafts remain assigned to the open batch.
+    """
+
+    ids = [int(article_id) for article_id in article_ids]
+
     if not ids:
-        raise PublishError("The current batch has no draft articles")
-    return publish_articles(conn, ids, actor=actor, scope="batch", batch_id=batch_id)
+        raise PublishError(
+            "Select at least one draft article to publish"
+        )
+
+    if len(ids) != len(set(ids)):
+        raise PublishError(
+            "The publication selection contains duplicate article IDs"
+        )
+
+    batch = conn.execute(
+        """
+        SELECT batch_id
+        FROM article_batches
+        WHERE status = 'open'
+        ORDER BY batch_id DESC
+        LIMIT 1
+        """
+    ).fetchone()
+
+    if batch is None:
+        raise PublishError(
+            "There is no open draft batch to publish"
+        )
+
+    batch_id = int(batch["batch_id"])
+
+    placeholders = ",".join("?" for _ in ids)
+
+    rows = conn.execute(
+        f"""
+        SELECT article_id, active_batch_id, workflow_state
+        FROM articles
+        WHERE article_id IN ({placeholders})
+        """,
+        ids,
+    ).fetchall()
+
+    if len(rows) != len(ids):
+        raise PublishError(
+            "One or more selected articles no longer exist"
+        )
+
+    for row in rows:
+        article_id = int(row["article_id"])
+
+        if row["active_batch_id"] != batch_id:
+            raise PublishError(
+                f"Article {article_id} is not in the current open batch"
+            )
+
+        if row["workflow_state"] not in {"draft", "ready"}:
+            raise PublishError(
+                f"Article {article_id} is no longer an unpublished draft"
+            )
+
+    return publish_articles(
+        conn,
+        ids,
+        actor=actor,
+        scope="batch",
+        batch_id=batch_id,
+    )

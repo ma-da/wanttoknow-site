@@ -234,12 +234,87 @@
       grid-template-columns: 1fr;
     }
   }
+
+		/* ============================================================
+					NEWSLETTER BUILDER — BUTTON HOVER AND CLICK FEEDBACK
+					============================================================ */
+
+		/* Smooth transitions for every button, including buttons created by JS */
+		.newsletter-builder button,
+		.newsletter-builder a.nav-button {
+				transition:
+						background-color 160ms ease,
+						border-color 160ms ease,
+						color 160ms ease,
+						box-shadow 160ms ease,
+						transform 120ms ease;
+		}
+
+		/* Standard buttons and Back to Articles link */
+		.newsletter-builder button:not(:disabled):hover,
+		.newsletter-builder a.nav-button:hover {
+				background-color: var(--purple-soft);
+				border-color: var(--purple);
+				color: var(--purple);
+				box-shadow: 0 2px 7px rgba(50, 30, 70, .12);
+				transform: translateY(-1px);
+		}
+
+		/* Purple buttons, such as Save Draft */
+		.newsletter-builder button.primary:not(:disabled):hover {
+				background-color: #4e386f;
+				border-color: #4e386f;
+				color: #fff;
+		}
+
+		/* Red buttons, such as Delete Draft */
+		.newsletter-builder button.danger:not(:disabled):hover {
+				background-color: var(--danger);
+				border-color: var(--danger);
+				color: #fff;
+		}
+
+		/* Subtle pressed effect while clicking any enabled button */
+		.newsletter-builder button:not(:disabled):active,
+		.newsletter-builder a.nav-button:active {
+				transform: translateY(1px) scale(.985);
+				box-shadow: inset 0 2px 4px rgba(0, 0, 0, .12);
+		}
+
+		/* Maintain the correct colors while a button is pressed */
+		.newsletter-builder button.primary:not(:disabled):active {
+				background-color: #3f2d5b;
+				border-color: #3f2d5b;
+				color: #fff;
+		}
+
+		.newsletter-builder button.danger:not(:disabled):active {
+				background-color: #7b1d1d;
+				border-color: #7b1d1d;
+				color: #fff;
+		}
+
+		/* Clear keyboard focus */
+		.newsletter-builder button:focus-visible,
+		.newsletter-builder a.nav-button:focus-visible {
+				outline: 2px solid var(--purple);
+				outline-offset: 3px;
+		}
+
+		/* Respect reduced-motion preferences */
+		@media (prefers-reduced-motion: reduce) {
+				.newsletter-builder button,
+				.newsletter-builder a.nav-button {
+						transition: none;
+						transform: none !important;
+				}
+		}
 </style>
 </head>
 
 <body>
 <main class="page">
-
+<div class="newsletter-builder">
   <div class="toolbar">
     <h1>Newsletter Factory</h1>
     <a class="nav-button" href="/admin/articles">
@@ -378,6 +453,7 @@
     </aside>
 
   </div>
+</div>
 </main>
 
 <script>
