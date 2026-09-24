@@ -14336,9 +14336,9 @@ old_path,new_path,type,status
 /911mediaarticles,/news/category/911,category,301
 /911newsarticles,/news/category/911,category,301
 /911newsstories,/news/category/911,category,301
-/911pollsmediaarticles,/news/category/911polls,category,301
-/911pollsnewsarticles,/news/category/911polls,category,301
-/911pollsnewsstories,/news/category/911polls,category,301
+/911pollsmediaarticles,/news/category/911,category,301
+/911pollsnewsarticles,/news/category/911,category,301
+/911pollsnewsstories,/news/category/911,category,301
 /AImediaarticles,/news/category/AI,category,301
 /AInewsarticles,/news/category/AI,category,301
 /AInewsstories,/news/category/AI,category,301

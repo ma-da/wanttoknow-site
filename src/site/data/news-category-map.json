@@ -4,11 +4,6 @@
     "secondary_topics": [],
     "topic": "deep-history"
   },
-  "911polls": {
-    "label": "9/11",
-    "secondary_topics": [],
-    "topic": "deep-history"
-  },
   "AI": {
     "label": "Artificial Intelligence",
     "secondary_topics": [],
@@ -53,7 +48,9 @@
   },
   "big-tech": {
     "label": "Big Tech",
-    "secondary_topics": ["media"],
+    "secondary_topics": [
+      "media"
+    ],
     "topic": "tech"
   },
   "bigbrother": {
@@ -253,7 +250,9 @@
   },
   "intelligenceagency": {
     "label": "Intelligence",
-    "secondary_topics": ["mind-control"],
+    "secondary_topics": [
+      "mind-control"
+    ],
     "topic": "government"
   },
   "jeffrey-epstein": {
@@ -315,7 +314,7 @@
     "label": "Psychedelic Medicine",
     "secondary_topics": [
       "health",
-						"consciousness"
+      "consciousness"
     ],
     "topic": "inspiring"
   },

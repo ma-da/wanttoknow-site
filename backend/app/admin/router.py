@@ -8,8 +8,13 @@ from pydantic import BaseModel, Field
 
 from .auth import AdminIdentity, require_admin_api, require_admin_write
 from .article_edit import connect_writable, create_draft_article, delete_new_draft_article, reference_data, update_article
+from .publication_catalog import add_canonical_publication
 from .article_workflow import current_batch_info
-from .article_publish import PublishError, publish_article, publish_current_batch
+from .article_publish import (
+    PublishError,
+    publish_article,
+    publish_selected_batch,
+)
 from .article_withdrawal import cancel_withdrawal, request_withdrawal
 from .image_processing import MAX_UPLOAD_BYTES, ImageProcessingError, process_image_upload
 from .image_staging import (
@@ -39,8 +44,16 @@ router = APIRouter(
 class ArticleDraftCreateRequest(BaseModel):
     title: str = Field(min_length=1, max_length=500)
     source_url: str = Field(min_length=1, max_length=4000)
+    note_markdown: str = Field(default="", max_length=50000)
 
 
+
+
+class CanonicalPublicationRequest(BaseModel):
+    display_name: str = Field(
+        min_length=2,
+        max_length=200,
+    )
 
 
 class ArticleWithdrawalRequest(BaseModel):
@@ -66,6 +79,11 @@ class ArticleUpdateRequest(BaseModel):
     image_caption_markdown: str = Field(default="", max_length=10000)
     image_caption_text: str = Field(default="", max_length=10000)
 
+class SelectedBatchPublishRequest(BaseModel):
+    article_ids: list[int] = Field(
+        min_length=1,
+        max_length=500,
+    )
 
 @router.get("")
 def articles_list(
@@ -115,6 +133,7 @@ def article_draft_create(
                 title=payload.title,
                 source_url=payload.source_url,
                 created_by=identity.key_name,
+                note_markdown=payload.note_markdown,
             )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -144,17 +163,30 @@ def article_current_batch():
         raise HTTPException(status_code=500, detail="Unable to read current article batch") from exc
 
 
-@router.post("/batch/current/publish")
+@router.post("/batch/current/publish-selected")
 def article_batch_publish(
+    payload: SelectedBatchPublishRequest,
     identity: AdminIdentity = Depends(require_admin_write),
 ):
     try:
         with connect_writable() as conn:
-            return publish_current_batch(conn, actor=identity.key_name)
+            return publish_selected_batch(
+                conn,
+                payload.article_ids,
+                actor=identity.key_name,
+            )
+
     except PublishError as exc:
-        raise HTTPException(status_code=409, detail=str(exc)) from exc
+        raise HTTPException(
+            status_code=409,
+            detail=str(exc),
+        ) from exc
+
     except (OSError, sqlite3.DatabaseError) as exc:
-        raise HTTPException(status_code=500, detail=f"Batch publication failed: {exc}") from exc
+        raise HTTPException(
+            status_code=500,
+            detail=f"Batch publication failed: {exc}",
+        ) from exc
 
 
 @router.post("/{article_id}/publish")
@@ -181,6 +213,27 @@ def article_reference_data():
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@router.post("/publications")
+def article_publication_create(
+    payload: CanonicalPublicationRequest,
+    identity: AdminIdentity = Depends(require_admin_write),
+):
+    try:
+        return add_canonical_publication(
+            payload.display_name
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+    except OSError as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="Unable to update canonical publication list",
+        ) from exc
 
 
 @router.delete("/{article_id}")

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter Factory · WantToKnow.info</title>
+
+<style>
+  :root {
+    --purple: #67508f;
+    --purple-soft: #eee9f5;
+    --tan: #f5efe6;
+    --border: #d7d2cb;
+    --text: #26242a;
+    --muted: #6e6872;
+    --danger: #9d2929;
+    --surface: #fff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #f6f5f3;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button,
+  .nav-button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  .page {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 24px 0 60px;
+  }
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.96);
+  }
+
+  .toolbar h1 {
+    margin: 0 auto 0 0;
+    font-size: 1.25rem;
+  }
+
+  button,
+  .nav-button {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--purple);
+    background: white;
+    color: var(--purple);
+    cursor: pointer;
+  }
+
+  .nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  button.primary {
+    background: var(--purple);
+    color: white;
+  }
+
+  button.danger {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  button.icon {
+    min-width: 42px;
+    padding: 8px;
+    font-size: 1.15rem;
+  }
+
+  button:disabled {
+    opacity: .45;
+    cursor: default;
+  }
+
+  .status {
+    min-height: 22px;
+    margin: 0 0 14px;
+    color: var(--muted);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, .8fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .card h2 {
+    margin: 0 0 14px;
+    font-size: 1rem;
+  }
+
+  .field {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+
+  .field span {
+    color: var(--muted);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #aaa4ad;
+    background: white;
+    color: var(--text);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .headline-grid {
+    display: grid;
+    gap: 9px;
+  }
+
+  .selected-list,
+  .search-results {
+    display: grid;
+    gap: 7px;
+  }
+
+  .selected-item,
+  .search-result {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 9px;
+    align-items: center;
+    padding: 9px;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+
+  .selected-item {
+    background: var(--tan);
+  }
+
+  .drag {
+    color: var(--muted);
+    cursor: grab;
+    user-select: none;
+    font-size: 1.15rem;
+  }
+
+  .article-title {
+    font-size: .9rem;
+    font-weight: 700;
+  }
+
+  .article-meta {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: .75rem;
+  }
+
+  .item-actions {
+    display: flex;
+    gap: 4px;
+  }
+
+  .item-actions button {
+    min-height: 30px;
+    min-width: 30px;
+    padding: 3px 7px;
+  }
+
+  .search-actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  .search-actions button {
+    min-height: 32px;
+    padding: 4px 8px;
+    font-size: .75rem;
+  }
+
+  .empty {
+    padding: 14px;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: .85rem;
+  }
+
+  .section-count {
+    color: var(--muted);
+    font-weight: normal;
+  }
+
+  @media (max-width: 850px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+		/* ============================================================
+					NEWSLETTER BUILDER — BUTTON HOVER AND CLICK FEEDBACK
+					============================================================ */
+
+		/* Smooth transitions for every button, including buttons created by JS */
+		.newsletter-builder button,
+		.newsletter-builder a.nav-button {
+				transition:
+						background-color 160ms ease,
+						border-color 160ms ease,
+						color 160ms ease,
+						box-shadow 160ms ease,
+						transform 120ms ease;
+		}
+
+		/* Standard buttons and Back to Articles link */
+		.newsletter-builder button:not(:disabled):hover,
+		.newsletter-builder a.nav-button:hover {
+				background-color: var(--purple-soft);
+				border-color: var(--purple);
+				color: var(--purple);
+				box-shadow: 0 2px 7px rgba(50, 30, 70, .12);
+				transform: translateY(-1px);
+		}
+
+		/* Purple buttons, such as Save Draft */
+		.newsletter-builder button.primary:not(:disabled):hover {
+				background-color: #4e386f;
+				border-color: #4e386f;
+				color: #fff;
+		}
+
+		/* Red buttons, such as Delete Draft */
+		.newsletter-builder button.danger:not(:disabled):hover {
+				background-color: var(--danger);
+				border-color: var(--danger);
+				color: #fff;
+		}
+
+		/* Subtle pressed effect while clicking any enabled button */
+		.newsletter-builder button:not(:disabled):active,
+		.newsletter-builder a.nav-button:active {
+				transform: translateY(1px) scale(.985);
+				box-shadow: inset 0 2px 4px rgba(0, 0, 0, .12);
+		}
+
+		/* Maintain the correct colors while a button is pressed */
+		.newsletter-builder button.primary:not(:disabled):active {
+				background-color: #3f2d5b;
+				border-color: #3f2d5b;
+				color: #fff;
+		}
+
+		.newsletter-builder button.danger:not(:disabled):active {
+				background-color: #7b1d1d;
+				border-color: #7b1d1d;
+				color: #fff;
+		}
+
+		/* Clear keyboard focus */
+		.newsletter-builder button:focus-visible,
+		.newsletter-builder a.nav-button:focus-visible {
+				outline: 2px solid var(--purple);
+				outline-offset: 3px;
+		}
+
+		/* Respect reduced-motion preferences */
+		@media (prefers-reduced-motion: reduce) {
+				.newsletter-builder button,
+				.newsletter-builder a.nav-button {
+						transition: none;
+						transform: none !important;
+				}
+		}
+</style>
+</head>
+
+<body>
+<main class="page">
+<div class="newsletter-builder">
+  <div class="toolbar">
+    <h1>Newsletter Factory</h1>
+    <a class="nav-button" href="/admin/articles">
+      Back to Articles
+    </a>
+    <button id="save" class="primary" type="button">
+      Save Draft
+    </button>
+
+    <button id="preview" type="button">
+      Full Page Preview
+    </button>
+
+    <button id="download" type="button">
+      Download HTML
+    </button>
+
+    <button
+      id="delete"
+      class="danger icon"
+      type="button"
+      title="Delete newsletter draft"
+      aria-label="Delete newsletter draft"
+    >🗑</button>
+
+  </div>
+
+  <p id="status" class="status" aria-live="polite"></p>
+
+  <div class="grid">
+
+    <div>
+      <section class="card">
+        <h2>Newsletter</h2>
+
+        <label class="field">
+          <span>Issue date</span>
+          <input id="issue-date" type="date">
+        </label>
+
+        <label class="field">
+          <span>Page title</span>
+          <input id="title" type="text" maxlength="500">
+        </label>
+
+        <div class="field">
+          <span>Three headlines</span>
+
+          <div class="headline-grid">
+            <input class="headline" type="text" placeholder="Headline 1">
+            <input class="headline" type="text" placeholder="Headline 2">
+            <input class="headline" type="text" placeholder="Headline 3">
+          </div>
+        </div>
+      </section>
+
+
+      <section class="card">
+        <h2>
+          Regular articles
+          <span id="regular-count" class="section-count"></span>
+        </h2>
+
+        <label class="field">
+          <span>Preview list items — one per line</span>
+          <textarea
+            id="regular-preview"
+            rows="7"
+            placeholder="First introductory bullet&#10;Second introductory bullet&#10;Third introductory bullet"
+          ></textarea>
+        </label>
+
+        <div id="regular-list" class="selected-list"></div>
+      </section>
+
+
+      <section class="card">
+        <h2>
+          Inspiring articles
+          <span id="inspiring-count" class="section-count"></span>
+        </h2>
+
+        <label class="field">
+          <span>Inspiring preview list items — one per line</span>
+          <textarea
+            id="inspiring-preview"
+            rows="6"
+          ></textarea>
+        </label>
+
+        <div id="inspiring-list" class="selected-list"></div>
+      </section>
+
+
+      <section class="card">
+        <h2>Special Note</h2>
+
+        <label class="field">
+          <span>Markdown</span>
+          <textarea id="special-note" rows="7"></textarea>
+        </label>
+      </section>
+    </div>
+
+
+    <aside>
+      <section class="card">
+        <h2>Article Picker</h2>
+
+        <label class="field">
+          <span>Search by title, publisher, tag, or article ID</span>
+          <input
+            id="article-search"
+            type="search"
+            autocomplete="off"
+            placeholder="Search articles…"
+          >
+        </label>
+
+        <div id="search-results" class="search-results">
+          <div class="empty">Loading recent articles…</div>
+        </div>
+      </section>
+
+
+      <section class="card">
+        <h2>Existing drafts</h2>
+
+        <label class="field">
+          <span>Open newsletter</span>
+          <select id="draft-select">
+            <option value="">New / current date</option>
+          </select>
+        </label>
+      </section>
+    </aside>
+
+  </div>
+</div>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+
+  const issueDate = $("issue-date");
+  const title = $("title");
+  const headlines = Array.from(document.querySelectorAll(".headline"));
+  const regularPreview = $("regular-preview");
+  const inspiringPreview = $("inspiring-preview");
+  const specialNote = $("special-note");
+
+  const regularList = $("regular-list");
+  const inspiringList = $("inspiring-list");
+
+  const regularCount = $("regular-count");
+  const inspiringCount = $("inspiring-count");
+
+  const articleSearch = $("article-search");
+  const searchResults = $("search-results");
+  const draftSelect = $("draft-select");
+
+  const saveButton = $("save");
+  const previewButton = $("preview");
+  const downloadButton = $("download");
+  const deleteButton = $("delete");
+  const status = $("status");
+
+  let csrfToken = "";
+  let regularIds = [];
+  let inspiringIds = [];
+  let articleCache = new Map();
+  let searchTimer = null;
+
+
+  function todayLocal() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+
+  function setStatus(message, kind = "") {
+    status.textContent = message;
+    status.style.color =
+      kind === "error" ? "#9d2929" :
+      kind === "ok" ? "#3c6c42" :
+      "#6e6872";
+  }
+
+
+  async function apiJson(url, options = {}) {
+    const response = await fetch(url, {
+      cache: "no-store",
+      ...options,
+    });
+
+    if (response.status === 401) {
+      const next = encodeURIComponent(
+        window.location.pathname + window.location.search
+      );
+      window.location.assign(`/admin/login?next=${next}`);
+      throw new Error("Authentication required");
+    }
+
+    const body = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      throw new Error(
+        body?.detail || `Request failed (${response.status})`
+      );
+    }
+
+    return body;
+  }
+
+
+  function lines(text) {
+    return text
+      .split(/\r?\n/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+
+  function collectPayload() {
+    return {
+      title: title.value.trim(),
+
+      headlines: headlines.map(
+        (input) => input.value.trim()
+      ),
+
+      regular_preview_items: lines(
+        regularPreview.value
+      ),
+
+      inspiring_preview_items: lines(
+        inspiringPreview.value
+      ),
+
+      special_note_markdown:
+        specialNote.value.trim(),
+
+      regular_article_ids: [...regularIds],
+      inspiring_article_ids: [...inspiringIds],
+    };
+  }
+
+
+  function articleLabel(article) {
+    if (!article) return "";
+
+    return [
+      article.date || "",
+      article.publication_name || "",
+      `ID ${article.article_id}`,
+    ].filter(Boolean).join(" · ");
+  }
+
+
+  function selectedCard(articleId, section, index) {
+    const article = articleCache.get(articleId) || {
+      article_id: articleId,
+      title: `Article ${articleId}`,
+    };
+
+    const row = document.createElement("div");
+    row.className = "selected-item";
+    row.draggable = true;
+    row.dataset.articleId = articleId;
+    row.dataset.section = section;
+
+    const handle = document.createElement("span");
+    handle.className = "drag";
+    handle.textContent = "☰";
+    handle.title = "Drag to reorder";
+
+    const body = document.createElement("div");
+
+    const name = document.createElement("div");
+    name.className = "article-title";
+    name.textContent = article.title || `Article ${articleId}`;
+
+    const meta = document.createElement("div");
+    meta.className = "article-meta";
+    meta.textContent = articleLabel(article);
+
+    body.append(name, meta);
+
+    const actions = document.createElement("div");
+    actions.className = "item-actions";
+
+    const up = document.createElement("button");
+    up.type = "button";
+    up.textContent = "↑";
+    up.title = "Move up";
+
+    const down = document.createElement("button");
+    down.type = "button";
+    down.textContent = "↓";
+    down.title = "Move down";
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.textContent = "×";
+    remove.title = "Remove";
+
+    up.addEventListener("click", () =>
+      move(section, index, -1)
+    );
+
+    down.addEventListener("click", () =>
+      move(section, index, 1)
+    );
+
+    remove.addEventListener("click", () =>
+      removeArticle(section, articleId)
+    );
+
+    actions.append(up, down, remove);
+
+    row.append(handle, body, actions);
+
+    row.addEventListener("dragstart", (event) => {
+      event.dataTransfer.setData(
+        "text/plain",
+        JSON.stringify({ section, articleId })
+      );
+      event.dataTransfer.effectAllowed = "move";
+    });
+
+    row.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = "move";
+    });
+
+    row.addEventListener("drop", (event) => {
+      event.preventDefault();
+
+      try {
+        const data = JSON.parse(
+          event.dataTransfer.getData("text/plain")
+        );
+
+        if (data.section !== section) return;
+
+        reorderBefore(
+          section,
+          data.articleId,
+          articleId
+        );
+      } catch (_) {}
+    });
+
+    return row;
+  }
+
+
+  function renderSelected() {
+    regularList.replaceChildren();
+    inspiringList.replaceChildren();
+
+    regularCount.textContent =
+      `(${regularIds.length})`;
+
+    inspiringCount.textContent =
+      `(${inspiringIds.length})`;
+
+    if (!regularIds.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent =
+        "No regular articles selected.";
+      regularList.append(empty);
+    }
+
+    if (!inspiringIds.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent =
+        "No inspiring articles selected.";
+      inspiringList.append(empty);
+    }
+
+    regularIds.forEach((id, index) => {
+      regularList.append(
+        selectedCard(id, "regular", index)
+      );
+    });
+
+    inspiringIds.forEach((id, index) => {
+      inspiringList.append(
+        selectedCard(id, "inspiring", index)
+      );
+    });
+  }
+
+
+  function sectionArray(section) {
+    return section === "regular"
+      ? regularIds
+      : inspiringIds;
+  }
+
+
+  function move(section, index, direction) {
+    const list = sectionArray(section);
+    const target = index + direction;
+
+    if (target < 0 || target >= list.length) return;
+
+    [list[index], list[target]] =
+      [list[target], list[index]];
+
+    renderSelected();
+  }
+
+
+  function reorderBefore(section, movingId, targetId) {
+    const list = sectionArray(section);
+
+    const from = list.indexOf(movingId);
+    const target = list.indexOf(targetId);
+
+    if (from < 0 || target < 0 || from === target) {
+      return;
+    }
+
+    list.splice(from, 1);
+
+    const newTarget = list.indexOf(targetId);
+    list.splice(newTarget, 0, movingId);
+
+    renderSelected();
+  }
+
+
+  function removeArticle(section, id) {
+    if (section === "regular") {
+      regularIds = regularIds.filter(
+        (value) => value !== id
+      );
+    } else {
+      inspiringIds = inspiringIds.filter(
+        (value) => value !== id
+      );
+    }
+
+    renderSelected();
+  }
+
+
+  function addArticle(section, article) {
+    const id = String(article.article_id);
+
+    articleCache.set(id, article);
+
+    regularIds = regularIds.filter(
+      (value) => value !== id
+    );
+
+    inspiringIds = inspiringIds.filter(
+      (value) => value !== id
+    );
+
+    if (section === "regular") {
+      regularIds.push(id);
+    } else {
+      inspiringIds.push(id);
+    }
+
+    renderSelected();
+  }
+
+
+  function renderSearchResults(articles) {
+    searchResults.replaceChildren();
+
+    if (!articles.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No matching articles.";
+      searchResults.append(empty);
+      return;
+    }
+
+    for (const article of articles) {
+      const id = String(article.article_id);
+      articleCache.set(id, article);
+
+      const row = document.createElement("div");
+      row.className = "search-result";
+
+      const marker = document.createElement("span");
+      marker.textContent =
+        article.inspiring ? "✦" : "•";
+      marker.title =
+        article.inspiring
+          ? "Tagged as inspiring"
+          : "Article";
+
+      const body = document.createElement("div");
+
+      const name = document.createElement("div");
+      name.className = "article-title";
+      name.textContent = article.title;
+
+      const meta = document.createElement("div");
+      meta.className = "article-meta";
+      meta.textContent = articleLabel(article);
+
+      body.append(name, meta);
+
+      const actions = document.createElement("div");
+      actions.className = "search-actions";
+
+      const regular = document.createElement("button");
+      regular.type = "button";
+      regular.textContent = "+ Regular";
+      regular.addEventListener(
+        "click",
+        () => addArticle("regular", article)
+      );
+
+      const inspiring = document.createElement("button");
+      inspiring.type = "button";
+      inspiring.textContent = "+ Inspiring";
+      inspiring.addEventListener(
+        "click",
+        () => addArticle("inspiring", article)
+      );
+
+      actions.append(regular, inspiring);
+      row.append(marker, body, actions);
+      searchResults.append(row);
+    }
+  }
+
+
+  async function searchArticles() {
+    try {
+      const q = articleSearch.value.trim();
+
+      const result = await apiJson(
+        `/api/admin/newsletters/article-picker?q=${
+          encodeURIComponent(q)
+        }&limit=30`
+      );
+
+      renderSearchResults(
+        result.articles || []
+      );
+    } catch (error) {
+      searchResults.innerHTML =
+        `<div class="empty">${
+          error.message || "Search failed"
+        }</div>`;
+    }
+  }
+
+
+  async function loadArticleDetails(ids) {
+    const missing = ids.filter(
+      (id) => !articleCache.has(id)
+    );
+
+    for (const id of missing) {
+      try {
+        const result = await apiJson(
+          `/api/admin/newsletters/article-picker?q=${
+            encodeURIComponent(id)
+          }&limit=5`
+        );
+
+        const article = (result.articles || []).find(
+          (item) =>
+            String(item.article_id) === String(id)
+        );
+
+        if (article) {
+          articleCache.set(String(id), article);
+        }
+      } catch (_) {}
+    }
+  }
+
+
+  async function loadNewsletter(date) {
+    if (!date) return;
+
+    setStatus("Loading newsletter…");
+
+    try {
+      const result = await apiJson(
+        `/api/admin/newsletters/${encodeURIComponent(date)}`
+      );
+
+      const newsletter = result.newsletter;
+
+      issueDate.value =
+        newsletter.issue_date || date;
+
+      title.value =
+        newsletter.title || "";
+
+      const values =
+        newsletter.headlines || [];
+
+      headlines.forEach((input, index) => {
+        input.value = values[index] || "";
+      });
+
+      regularPreview.value =
+        (newsletter.regular_preview_items || [])
+          .join("\n");
+
+      inspiringPreview.value =
+        (newsletter.inspiring_preview_items || [])
+          .join("\n");
+
+      specialNote.value =
+        newsletter.special_note_markdown || "";
+
+      regularIds =
+        (newsletter.regular_article_ids || [])
+          .map(String);
+
+      inspiringIds =
+        (newsletter.inspiring_article_ids || [])
+          .map(String);
+
+      await loadArticleDetails([
+        ...regularIds,
+        ...inspiringIds,
+      ]);
+
+      renderSelected();
+
+      setStatus(
+        `Loaded newsletter ${date}.`,
+        "ok"
+      );
+    } catch (error) {
+      setStatus(error.message, "error");
+    }
+  }
+
+
+  async function saveDraft() {
+    const date = issueDate.value;
+
+    if (!date) {
+      setStatus(
+        "Choose an issue date first.",
+        "error"
+      );
+      issueDate.focus();
+      return false;
+    }
+
+    saveButton.disabled = true;
+    setStatus("Saving draft…");
+
+    try {
+      const result = await apiJson(
+        `/api/admin/newsletters/${encodeURIComponent(date)}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify(
+            collectPayload()
+          ),
+        }
+      );
+
+      setStatus(
+        `Draft ${result.newsletter.issue_date} saved.`,
+        "ok"
+      );
+
+      await loadDraftList(date);
+      return true;
+
+    } catch (error) {
+      setStatus(error.message, "error");
+      return false;
+
+    } finally {
+      saveButton.disabled = false;
+    }
+  }
+
+
+  async function loadDraftList(selected = "") {
+    const result = await apiJson(
+      "/api/admin/newsletters"
+    );
+
+    draftSelect.replaceChildren();
+
+    const blank = document.createElement("option");
+    blank.value = "";
+    blank.textContent = "New / current date";
+    draftSelect.append(blank);
+
+    for (const draft of result.newsletters || []) {
+      const option = document.createElement("option");
+      option.value = draft.issue_date;
+      option.textContent =
+        `${draft.issue_date}${
+          draft.title ? " — " + draft.title : ""
+        }`;
+
+      draftSelect.append(option);
+    }
+
+    draftSelect.value = selected;
+  }
+
+
+  async function previewNewsletter() {
+    if (!(await saveDraft())) return;
+
+    window.open(
+      `/admin/newsletters/${
+        encodeURIComponent(issueDate.value)
+      }/preview`,
+      "_blank",
+      "noopener"
+    );
+  }
+
+
+  async function downloadNewsletter() {
+    if (!(await saveDraft())) return;
+
+    window.location.assign(
+      `/api/admin/newsletters/${
+        encodeURIComponent(issueDate.value)
+      }/download`
+    );
+  }
+
+
+  async function deleteDraft() {
+    const date = issueDate.value;
+
+    if (!date) return;
+
+    if (!window.confirm(
+      `Delete newsletter draft ${date}?\n\n` +
+      "This cannot be undone."
+    )) {
+      return;
+    }
+
+    deleteButton.disabled = true;
+
+    try {
+      await apiJson(
+        `/api/admin/newsletters/${encodeURIComponent(date)}`,
+        {
+          method: "DELETE",
+          headers: {
+            "X-CSRF-Token": csrfToken,
+          },
+        }
+      );
+
+      title.value = "";
+      headlines.forEach(
+        (input) => input.value = ""
+      );
+
+      regularPreview.value = "";
+      inspiringPreview.value = "";
+      specialNote.value = "";
+
+      regularIds = [];
+      inspiringIds = [];
+
+      renderSelected();
+
+      issueDate.value = todayLocal();
+
+      await loadDraftList();
+
+      setStatus(
+        `Draft ${date} deleted.`,
+        "ok"
+      );
+
+    } catch (error) {
+      setStatus(error.message, "error");
+
+    } finally {
+      deleteButton.disabled = false;
+    }
+  }
+
+
+  async function initialize() {
+    issueDate.value = todayLocal();
+
+    try {
+      const session = await apiJson(
+        "/api/admin/session"
+      );
+
+      csrfToken = session.csrf_token || "";
+
+      await Promise.all([
+        loadDraftList(),
+        searchArticles(),
+      ]);
+
+      renderSelected();
+      setStatus("Newsletter builder ready.");
+
+    } catch (error) {
+      setStatus(error.message, "error");
+    }
+  }
+
+
+  saveButton.addEventListener(
+    "click",
+    saveDraft
+  );
+
+  previewButton.addEventListener(
+    "click",
+    previewNewsletter
+  );
+
+  downloadButton.addEventListener(
+    "click",
+    downloadNewsletter
+  );
+
+  deleteButton.addEventListener(
+    "click",
+    deleteDraft
+  );
+
+  articleSearch.addEventListener(
+    "input",
+    () => {
+      clearTimeout(searchTimer);
+
+      searchTimer = setTimeout(
+        searchArticles,
+        250
+      );
+    }
+  );
+
+  draftSelect.addEventListener(
+    "change",
+    () => {
+      if (draftSelect.value) {
+        loadNewsletter(draftSelect.value);
+      }
+    }
+  );
+
+  initialize();
+})();
+</script>
+
+</body>
+</html>

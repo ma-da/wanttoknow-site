@@ -86023,19 +86023,19 @@
   },
   {
     "old_path": "/911pollsmediaarticles",
-    "new_path": "/news/category/911polls",
+    "new_path": "/news/category/911",
     "type": "category",
     "status": 301
   },
   {
     "old_path": "/911pollsnewsarticles",
-    "new_path": "/news/category/911polls",
+    "new_path": "/news/category/911",
     "type": "category",
     "status": 301
   },
   {
     "old_path": "/911pollsnewsstories",
-    "new_path": "/news/category/911polls",
+    "new_path": "/news/category/911",
     "type": "category",
     "status": 301
   },

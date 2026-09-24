@@ -14,7 +14,12 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BACKEND_ROOT = PROJECT_ROOT / "backend"
-RUNTIME_DIR = BACKEND_ROOT / "runtime"
+RUNTIME_DIR = Path(
+    os.environ.get(
+        "WTK_AI_RUNTIME_DIR",
+        "/srv/wanttoknow/data/ai",
+    )
+)
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "search_syntheses.md"
 
 # ---------------------------------------------------------------------------

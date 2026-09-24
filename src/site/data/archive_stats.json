@@ -1,20 +1,20 @@
 {
-  "article_count": 14382,
+  "article_count": 14393,
   "date_range": {
     "first": "1904-03-27",
-    "last": "2026-08-20"
+    "last": "2026-09-10"
   },
-  "dated_article_count": 14382,
+  "dated_article_count": 14393,
   "undated_article_count": 0,
-  "category_count": 93,
-  "publisher_group_count": 688,
+  "category_count": 92,
+  "publisher_group_count": 689,
   "articles_with_images": 1633,
-  "articles_with_related": 14382,
+  "articles_with_related": 14393,
   "categories": {
-    "governmentcorruption": 6672,
-    "corporatecorruption": 2886,
-    "inspirational": 2802,
-    "health": 2299,
+    "governmentcorruption": 6676,
+    "corporatecorruption": 2890,
+    "inspirational": 2807,
+    "health": 2303,
     "intelligenceagency": 1573,
     "war": 1411,
     "militarycorruption": 1168,
@@ -26,44 +26,44 @@
     "privacy": 757,
     "coronavirus": 730,
     "massmedia": 677,
-    "pharmaceuticalcorruption": 560,
+    "pharmaceuticalcorruption": 561,
     "911": 510,
     "bigbrother": 484,
     "newenergy": 473,
-    "food-corruption": 460,
+    "food-corruption": 462,
     "bankbailout": 442,
     "incomeinequality": 418,
-    "corruptioninscience": 411,
+    "corruptioninscience": 414,
     "ufos": 391,
     "elections": 343,
     "police-corruption": 331,
-    "vaccines": 276,
-    "natureofreality": 275,
+    "vaccines": 277,
+    "natureofreality": 276,
     "mindcontrol": 274,
     "geneticallymodifiedorganisms": 269,
     "prisonscorruption": 269,
     "coronavirus-vaccine-problems": 259,
     "court-judicial-corruption": 221,
     "newenergyinventions": 213,
-    "healing-our-relationships": 201,
+    "healing-our-relationships": 202,
     "big-tech": 200,
-    "healing-our-earth": 183,
+    "healing-our-earth": 184,
     "jeffrey-epstein": 176,
     "nuclear_power": 161,
     "mindalteringdrugs": 158,
-    "toxic-chemicals": 150,
+    "toxic-chemicals": 153,
     "globalwarming": 148,
     "assassinations": 138,
     "healing-our-bodies": 138,
     "mental-health": 134,
     "AI": 133,
     "secretsocieties": 114,
-    "censorship": 107,
-    "tech-for-good": 100,
+    "censorship": 108,
+    "tech-for-good": 101,
     "biotech-dangers": 97,
     "repairing-our-criminal-justice-system": 95,
+    "reimagining-the-economy": 92,
     "avianflubird": 91,
-    "reimagining-the-economy": 90,
     "top-human-interest-stories": 89,
     "warfare-tech": 87,
     "cell-phones-wireless-dangers": 85,
@@ -82,11 +82,11 @@
     "hurricanekatrina": 58,
     "immigration-enforcement-corruption": 53,
     "reimagining-education": 50,
-    "animal-wonders": 48,
+    "animal-wonders": 49,
     "kennedy-assassination": 46,
     "archeologyhistory": 43,
+    "amazing-seniors": 39,
     "factory-farming": 39,
-    "amazing-seniors": 38,
     "power-of-art": 38,
     "sex-abuse-doctors": 30,
     "abledanger": 28,
@@ -98,7 +98,6 @@
     "chemtrails": 20,
     "microplastics-solutions": 17,
     "davidraygriffin": 16,
-    "911polls": 12,
     "stevenjones": 12,
     "zika-virus": 11,
     "transgender-medicine": 10,
@@ -108,11 +107,11 @@
   "publishing_groups": {
     "new-york-times": {
       "name": "New York Times",
-      "count": 1671
+      "count": 1673
     },
     "the-guardian": {
       "name": "The Guardian",
-      "count": 1365
+      "count": 1366
     },
     "washington-post": {
       "name": "Washington Post",
@@ -252,7 +251,7 @@
     },
     "reasons-to-be-cheerful": {
       "name": "Reasons to be Cheerful",
-      "count": 74
+      "count": 75
     },
     "international-business-times": {
       "name": "International Business Times",
@@ -304,7 +303,7 @@
     },
     "good-news-network": {
       "name": "Good News Network",
-      "count": 38
+      "count": 39
     },
     "national-geographic": {
       "name": "National Geographic",
@@ -378,6 +377,10 @@
       "name": "Financial Times",
       "count": 23
     },
+    "reason": {
+      "name": "Reason",
+      "count": 22
+    },
     "salon": {
       "name": "Salon",
       "count": 22
@@ -390,20 +393,16 @@
       "name": "Washington Times",
       "count": 22
     },
+    "mother-jones": {
+      "name": "Mother Jones",
+      "count": 21
+    },
     "quincy-center-for-responsible-statecraft": {
       "name": "Quincy Center for Responsible Statecraft",
       "count": 21
     },
-    "reason": {
-      "name": "Reason",
-      "count": 21
-    },
     "jacobin": {
       "name": "Jacobin",
-      "count": 20
-    },
-    "mother-jones": {
-      "name": "Mother Jones",
       "count": 20
     },
     "new-yorker": {
@@ -538,6 +537,10 @@
       "name": "The Defender",
       "count": 10
     },
+    "the-lever": {
+      "name": "The Lever",
+      "count": 10
+    },
     "foreign-policy": {
       "name": "Foreign Policy",
       "count": 9
@@ -568,10 +571,6 @@
     },
     "the-free-press": {
       "name": "The Free Press",
-      "count": 9
-    },
-    "the-lever": {
-      "name": "The Lever",
       "count": 9
     },
     "the-observer": {
@@ -646,6 +645,10 @@
       "name": "The Australian",
       "count": 7
     },
+    "the-new-lede": {
+      "name": "The New Lede",
+      "count": 7
+    },
     "brownstone-institute": {
       "name": "Brownstone Institute",
       "count": 6
@@ -684,10 +687,6 @@
     },
     "civil-eats": {
       "name": "Civil Eats",
-      "count": 5
-    },
-    "the-new-lede": {
-      "name": "The New Lede",
       "count": 5
     },
     "alternet": {
@@ -2630,6 +2629,10 @@
       "name": "U.S. Department of Homeland Security",
       "count": 1
     },
+    "u-s-department-of-justice": {
+      "name": "U.S. Department of Justice",
+      "count": 1
+    },
     "u-s-department-of-state": {
       "name": "U.S. Department of State",
       "count": 1
@@ -2935,7 +2938,7 @@
     "2022": 503,
     "2023": 616,
     "2024": 662,
-    "2025": 579,
-    "2026": 229
+    "2025": 581,
+    "2026": 238
   }
 }

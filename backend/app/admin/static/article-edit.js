@@ -13,7 +13,22 @@
   const categoryFilter = document.getElementById("category-filter");
   const publicationOptions = document.getElementById("publication-options");
   const publicationInput = document.getElementById("field-publication");
+  const addPublicationButton = document.getElementById("add-publication");
+  const publicationAddStatus = document.getElementById("publication-add-status");
+  const sourceOpenLink = document.getElementById("open-source-url");
   const slugInput = document.getElementById("field-slug");
+
+  const noteCategory1 =
+    document.getElementById("note-category-1");
+
+  const noteCategory2 =
+    document.getElementById("note-category-2");
+
+  const copyRegularNoteButton =
+    document.getElementById("copy-regular-note");
+
+  const copyInspiringNoteButton =
+    document.getElementById("copy-inspiring-note");
   const saveButton = document.getElementById("save-article");
   const previewButton = document.getElementById("preview-newsletter");
   const publishButton = document.getElementById("publish-article");
@@ -70,6 +85,7 @@
   let csrfToken = "";
   let referenceData = null;
   let publicationByName = new Map();
+  let noteCategoryBySlug = new Map();
   let dirty = false;
   let loading = true;
   let currentAdminState = null;
@@ -95,13 +111,24 @@
 
   function markdownLinkAt(source, index) {
     if (source[index] !== "[") return null;
-    const labelEnd = source.indexOf("](", index + 1);
-    if (labelEnd < 0) return null;
+
+    /*
+     * A Markdown link must have the form:
+     *   [label](url)
+     *
+     * Find the FIRST closing bracket. If it is not immediately
+     * followed by "(", this is ordinary bracketed prose rather
+     * than a Markdown link.
+     */
+    const labelEnd = source.indexOf("]", index + 1);
+    if (labelEnd < 0 || source[labelEnd + 1] !== "(") return null;
 
     const urlStart = labelEnd + 2;
     let depth = 0;
+
     for (let i = urlStart; i < source.length; i += 1) {
       const char = source[i];
+
       if (char === "(") {
         depth += 1;
       } else if (char === ")") {
@@ -112,9 +139,11 @@
             end: i + 1,
           };
         }
+
         depth -= 1;
       }
     }
+
     return null;
   }
 
@@ -634,15 +663,385 @@
 						: "Save these edits and publish this article to the site";
 		}		
 
+  function setPublicationAddStatus(text = "", type = "") {
+    publicationAddStatus.textContent = text;
+
+    if (type) {
+      publicationAddStatus.dataset.type = type;
+    } else {
+      delete publicationAddStatus.dataset.type;
+    }
+  }
+
+
+  function registerPublication(publication) {
+    if (
+      !publication?.display_name
+      || !publication?.slug
+    ) {
+      return;
+    }
+
+    publicationByName.set(
+      publication.display_name,
+      publication.slug,
+    );
+
+    const exists = Array.from(
+      publicationOptions.options,
+    ).some(
+      (option) =>
+        option.value === publication.display_name,
+    );
+
+    if (!exists) {
+      const option = document.createElement("option");
+      option.value = publication.display_name;
+      publicationOptions.append(option);
+    }
+  }
+
+
+  async function addCanonicalPublication() {
+    const displayName =
+      publicationInput.value.trim();
+
+    setPublicationAddStatus();
+
+    if (!displayName) {
+      setPublicationAddStatus(
+        "Enter a publication name first.",
+        "error",
+      );
+
+      publicationInput.focus();
+      return;
+    }
+
+    addPublicationButton.disabled = true;
+
+    setPublicationAddStatus("Adding…");
+
+    try {
+      const result = await apiJson(
+        "/api/admin/articles/publications",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({
+            display_name: displayName,
+          }),
+        },
+      );
+
+      const publication = result.publication;
+
+      registerPublication(publication);
+
+      publicationInput.value =
+        publication.display_name;
+
+      publicationInput.dataset.slug =
+        publication.slug;
+
+      dirty = true;
+
+      setPublicationAddStatus(
+        result.created
+          ? `${publication.display_name} Added`
+          : `${publication.display_name} already canonical`,
+        result.created ? "ok" : "",
+      );
+
+    } catch (error) {
+      setPublicationAddStatus(
+        error instanceof Error
+          ? error.message
+          : "Unable to add publication.",
+        "error",
+      );
+
+    } finally {
+      addPublicationButton.disabled = false;
+    }
+  }
+
+
+  function refreshSourceOpenLink() {
+    const href = safePreviewUrl(
+      fields.sourceUrl.value,
+    );
+
+    if (href) {
+      sourceOpenLink.href = href;
+      sourceOpenLink.removeAttribute(
+        "aria-disabled"
+      );
+    } else {
+      sourceOpenLink.removeAttribute("href");
+      sourceOpenLink.setAttribute(
+        "aria-disabled",
+        "true",
+      );
+    }
+  }
+
+
+  function noteCategoryUrl(slug) {
+    const cleanSlug = String(slug || "").trim();
+
+    if (!cleanSlug) {
+      return "";
+    }
+
+    return (
+      "https://new.wanttoknow.info/news/category/"
+      + encodeURIComponent(cleanSlug)
+    );
+  }
+
+
+  function renderNoteHelperCategories(categories) {
+    noteCategoryBySlug = new Map();
+
+    const sortedCategories = [
+      ...(categories || []),
+    ].sort(
+      (a, b) =>
+        String(a.label || a.slug).localeCompare(
+          String(b.label || b.slug),
+          undefined,
+          { sensitivity: "base" },
+        ),
+    );
+
+    for (const category of sortedCategories) {
+      noteCategoryBySlug.set(
+        category.slug,
+        category,
+      );
+    }
+
+    const configs = [
+      [noteCategory1, "Category 1"],
+      [noteCategory2, "Category 2"],
+    ];
+
+    for (const [select, placeholderText] of configs) {
+      select.replaceChildren();
+
+      const placeholder =
+        document.createElement("option");
+
+      placeholder.value = "";
+      placeholder.textContent =
+        placeholderText;
+
+      select.append(placeholder);
+
+      for (const category of sortedCategories) {
+        const option =
+          document.createElement("option");
+
+        option.value = category.slug;
+        option.textContent =
+          category.label || category.slug;
+
+        select.append(option);
+      }
+    }
+  }
+
+
+  function noteHelperCategory(select) {
+    return noteCategoryBySlug.get(
+      select.value
+    ) || null;
+  }
+
+
+  function buildNoteHelperText(kind) {
+    const selected = [
+      noteHelperCategory(noteCategory1),
+      noteHelperCategory(noteCategory2),
+    ].filter(Boolean);
+
+    const categories = selected.filter(
+      (category, index, array) =>
+        array.findIndex(
+          (item) => item.slug === category.slug
+        ) === index
+    );
+
+    if (!categories.length) {
+      throw new Error(
+        "Choose at least one category first."
+      );
+    }
+
+    const markdownLinks = categories.map(
+      (category) => {
+        const label =
+          category.label || category.slug;
+
+        return {
+          label,
+          url: noteCategoryUrl(category.slug),
+        };
+      }
+    );
+
+    if (kind === "inspiring") {
+      if (markdownLinks.length === 1) {
+        const category = markdownLinks[0];
+
+        return (
+          "Explore more positive stories like this on "
+          + `[${category.label}](${category.url}).`
+        );
+      }
+
+      const [first, second] = markdownLinks;
+
+      return (
+        "Explore more positive stories like this on "
+        + `[${first.label}](${first.url})`
+        + " and "
+        + `[${second.label}](${second.url}).`
+      );
+    }
+
+    if (markdownLinks.length === 1) {
+      const category = markdownLinks[0];
+
+      return (
+        "For more along these lines, read our concise summaries of "
+        + `[news articles on ${category.label}](${category.url}).`
+      );
+    }
+
+    const [first, second] = markdownLinks;
+
+    return (
+      "For more along these lines, read our concise summaries of "
+      + `[news articles on ${first.label}](${first.url})`
+      + " and "
+      + `[${second.label}](${second.url}).`
+    );
+  }
+
+
+  async function writeNoteHelperClipboard(text) {
+    if (
+      navigator.clipboard
+      && navigator.clipboard.writeText
+    ) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const textarea =
+      document.createElement("textarea");
+
+    textarea.value = text;
+    textarea.setAttribute(
+      "readonly",
+      "",
+    );
+
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+
+    document.body.append(textarea);
+
+    textarea.select();
+
+    const copied =
+      document.execCommand("copy");
+
+    textarea.remove();
+
+    if (!copied) {
+      throw new Error(
+        "Unable to copy note to clipboard."
+      );
+    }
+  }
+
+
+  function flashNoteHelperButton(
+    button,
+    text,
+  ) {
+    const label = button.querySelector(
+      ".article-note-helper-button__label"
+    );
+
+    if (!label) return;
+
+    const original =
+      label.dataset.original
+      || label.textContent;
+
+    label.dataset.original = original;
+    label.textContent = text;
+
+    window.setTimeout(
+      () => {
+        label.textContent = original;
+      },
+      1200,
+    );
+  }
+
+
+  async function copyNoteHelper(
+    kind,
+    button,
+  ) {
+    try {
+      const text =
+        buildNoteHelperText(kind);
+
+      await writeNoteHelperClipboard(text);
+
+      flashNoteHelperButton(
+        button,
+        "Copied!",
+      );
+
+    } catch (error) {
+      flashNoteHelperButton(
+        button,
+        "Select 1+",
+      );
+
+      if (
+        error instanceof Error
+        && error.message
+        && !error.message.startsWith("Choose")
+      ) {
+        setMessage(
+          error.message,
+          "error",
+        );
+      }
+    }
+  }
+
+
   function renderReferences(data) {
     referenceData = data;
+    renderNoteHelperCategories(
+      data.categories || []
+    );
     publicationByName = new Map();
     publicationOptions.replaceChildren();
     for (const pub of data.publications || []) {
-      publicationByName.set(pub.display_name, pub.slug);
-      const option = document.createElement("option");
-      option.value = pub.display_name;
-      publicationOptions.append(option);
+      registerPublication(pub);
     }
   }
 
@@ -684,6 +1083,7 @@
     fields.publicationDetail.value = article.publication_detail || "";
     fields.publicationRaw.value = article.publication_raw || "";
     fields.sourceUrl.value = article.source_url || "";
+    refreshSourceOpenLink();
     fields.summary.value = article.summary_markdown || "";
     fields.note.value = article.note_markdown || "";
     fields.priority.value = String(article.priority ?? "");
@@ -864,8 +1264,39 @@
   });
 
   publicationInput.addEventListener("input", () => {
-    publicationInput.dataset.slug = publicationByName.get(publicationInput.value.trim()) || "";
+    publicationInput.dataset.slug =
+      publicationByName.get(
+        publicationInput.value.trim()
+      ) || "";
+
+    setPublicationAddStatus();
   });
+
+  addPublicationButton.addEventListener(
+    "click",
+    addCanonicalPublication,
+  );
+
+  fields.sourceUrl.addEventListener(
+    "input",
+    refreshSourceOpenLink,
+  );
+
+  copyRegularNoteButton.addEventListener(
+    "click",
+    () => copyNoteHelper(
+      "regular",
+      copyRegularNoteButton,
+    ),
+  );
+
+  copyInspiringNoteButton.addEventListener(
+    "click",
+    () => copyNoteHelper(
+      "inspiring",
+      copyInspiringNoteButton,
+    ),
+  );
 
   slugInput.addEventListener("input", updateGeneratedUrl);
 

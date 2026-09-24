@@ -160,6 +160,7 @@ def create_draft_article(
     title: str,
     source_url: str,
     created_by: str,
+    note_markdown: str = "",
 ) -> dict[str, Any]:
     ensure_edit_schema(conn)
     title = title.strip()
@@ -192,7 +193,7 @@ def create_draft_article(
             "publication_raw": "",
             "source_url": source_url,
             "summary_markdown": "",
-            "note_markdown": "",
+            "note_markdown": note_markdown,
             "description_markdown": "",
             "tags": [],
             "related_articles": [],
@@ -215,11 +216,11 @@ def create_draft_article(
                 image_caption_text, qc_flags_json, canonical_hash,
                 edit_state, workflow_state, active_batch_id, admin_updated_at, admin_updated_by
             ) VALUES (
-                ?, ?, ?, ?, ?, '', ?, '', '', '', '', '', '', ?, '', '', '', '[]', '[]',
+                ?, ?, ?, ?, ?, '', ?, '', '', '', '', '', '', ?, '', ?, '', '[]', '[]',
                 0, '', '', '', '', '[]', '', 'new', 'draft', ?, ?, ?
             )
             """,
-            (next_id, source_order, slug, article["path"], article["url"], title, source_url, batch_id, now, created_by),
+            (next_id, source_order, slug, article["path"], article["url"], title, source_url, note_markdown, batch_id, now, created_by),
         )
         conn.execute("UPDATE article_batches SET updated_at = ? WHERE batch_id = ?", (now, batch_id))
         conn.commit()

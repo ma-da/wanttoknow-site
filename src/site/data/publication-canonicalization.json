@@ -4544,6 +4544,12 @@
       "display_name": "ZMEscience",
       "retain_legacy_as_detail": true,
       "aliases": []
+    },
+    "u-s-department-of-justice": {
+      "slug": "u-s-department-of-justice",
+      "display_name": "U.S. Department of Justice",
+      "retain_legacy_as_detail": true,
+      "aliases": []
     }
   },
   "legacy_lookup": {
@@ -5513,7 +5519,8 @@
     "Yes! Magazine": "yes-magazine",
     "Ynet News": "ynet-news",
     "Zerohedge": "zerohedge",
-    "ZMEscience": "zmescience"
+    "ZMEscience": "zmescience",
+    "U.S. Department of Justice": "u-s-department-of-justice"
   },
   "schema": {
     "publication_group_slug": "Stable machine-facing identifier used for filtering, indexing, URLs, APIs, and admin values.",

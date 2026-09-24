@@ -9,7 +9,7 @@
   <title>9/11 Facts Timeline | WantToKnow.info</title>
 
   <!-- Keep global.css beside this file, or change this path to your deployed asset URL. -->
-  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="/assets/css/global.css">
 
   <style>
 /* ======================================================================
@@ -479,11 +479,6 @@
         grid-template-columns: minmax(0, 1.5fr) minmax(19rem, 0.5fr);
       }
 
-      .timeline-toolbar-section {
-        position: sticky;
-        top: var(--layout-header-height);
-      }
-
       .timeline-stage {
         width: min(100%, 68rem);
       }
@@ -821,8 +816,7 @@
 
       const elements = {
         body: document.body,
-        menuToggle: document.querySelector("#menu-toggle"),
-        primaryNav: document.querySelector("#primary-nav"),
+
         eyebrow: document.querySelector("#timeline-eyebrow"),
         title: document.querySelector("#timeline-title"),
         description: document.querySelector("#timeline-description"),
@@ -1328,10 +1322,14 @@
 								updateTimelineProgress();
 						});
 
-      elements.currentYear.textContent = String(new Date().getFullYear());
-      setupNavigation();
+      if (elements.currentYear) {
+        elements.currentYear.textContent = String(new Date().getFullYear());
+      }
+
       loadTimeline();
     })();
   </script>
+  <!-- Global WantToKnow.info behavior -->
+  <script src="/assets/js/global.js"></script>
 </body>
 </html>
