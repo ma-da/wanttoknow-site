@@ -11,6 +11,11 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 DRAFT_DIR = BACKEND_DIR / "var" / "newsletter-drafts"
 
 ISSUE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+TEMPLATE_KEY_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,79}$")
+
+
+class NewsletterConflictError(RuntimeError):
+    """Raised when a newsletter changed after an editor session loaded it."""
 
 
 def utc_now() -> str:
@@ -36,15 +41,53 @@ def draft_path(issue_date: str) -> Path:
     return DRAFT_DIR / f"{issue_date}.json"
 
 
+def _template_key(value: Any) -> str:
+    key = str(value or "standard").strip() or "standard"
+    if not TEMPLATE_KEY_RE.fullmatch(key):
+        raise ValueError("Invalid newsletter template key")
+    return key
+
+
+def _editor_article_changes(value: Any) -> dict[str, dict[str, Any]]:
+    """Normalize safe publication receipts created by the newsletter editor."""
+    if not isinstance(value, dict):
+        return {}
+
+    result: dict[str, dict[str, Any]] = {}
+
+    for raw_id, raw_receipt in value.items():
+        article_id = str(raw_id).strip()
+        if not article_id.isdigit() or not isinstance(raw_receipt, dict):
+            continue
+
+        base_hash = str(raw_receipt.get("base_hash", "")).strip()
+        after_hash = str(raw_receipt.get("after_hash", "")).strip()
+        saved_at = str(raw_receipt.get("saved_at", "")).strip()
+        safe_to_publish = bool(raw_receipt.get("safe_to_publish"))
+
+        if not after_hash:
+            continue
+
+        result[article_id] = {
+            "base_hash": base_hash,
+            "after_hash": after_hash,
+            "saved_at": saved_at,
+            "safe_to_publish": safe_to_publish,
+        }
+
+    return result
+
+
 def empty_newsletter(issue_date: str) -> dict[str, Any]:
     issue_date = validate_issue_date(issue_date)
     now = utc_now()
 
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "newsletter_id": issue_date,
         "issue_date": issue_date,
         "status": "draft",
+        "template_key": "standard",
         "title": "",
         "headlines": ["", "", ""],
         "regular_preview_items": [],
@@ -52,6 +95,7 @@ def empty_newsletter(issue_date: str) -> dict[str, Any]:
         "special_note_markdown": "",
         "regular_article_ids": [],
         "inspiring_article_ids": [],
+        "editor_article_changes": {},
         "created_at": now,
         "updated_at": now,
     }
@@ -94,6 +138,7 @@ def normalize_newsletter(
     payload: dict[str, Any],
     *,
     existing: dict[str, Any] | None = None,
+    touch_updated_at: bool = True,
 ) -> dict[str, Any]:
     issue_date = validate_issue_date(issue_date)
     existing = existing or empty_newsletter(issue_date)
@@ -116,11 +161,30 @@ def normalize_newsletter(
             + ", ".join(sorted(overlap))
         )
 
+    selected_ids = set(regular_ids) | set(inspiring_ids)
+    receipts = _editor_article_changes(
+        payload.get(
+            "editor_article_changes",
+            existing.get("editor_article_changes", {}),
+        )
+    )
+    receipts = {
+        article_id: receipt
+        for article_id, receipt in receipts.items()
+        if article_id in selected_ids
+    }
+
+    previous_updated_at = str(existing.get("updated_at", "")).strip()
+    updated_at = utc_now() if touch_updated_at else (previous_updated_at or utc_now())
+
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "newsletter_id": issue_date,
         "issue_date": issue_date,
         "status": str(payload.get("status", existing.get("status", "draft"))).strip() or "draft",
+        "template_key": _template_key(
+            payload.get("template_key", existing.get("template_key", "standard"))
+        ),
         "title": str(payload.get("title", existing.get("title", ""))).strip(),
         "headlines": headlines,
         "regular_preview_items": _text_list(
@@ -143,8 +207,9 @@ def normalize_newsletter(
         ).strip(),
         "regular_article_ids": regular_ids,
         "inspiring_article_ids": inspiring_ids,
+        "editor_article_changes": receipts,
         "created_at": existing.get("created_at") or utc_now(),
-        "updated_at": utc_now(),
+        "updated_at": updated_at,
     }
 
 
@@ -159,18 +224,42 @@ def load_newsletter(issue_date: str) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError("Newsletter draft JSON must contain an object")
 
-    return normalize_newsletter(issue_date, data, existing=data)
+    # Reading must not change the revision token. The editor uses updated_at
+    # for optimistic concurrency protection.
+    return normalize_newsletter(
+        issue_date,
+        data,
+        existing=data,
+        touch_updated_at=False,
+    )
 
 
 def save_newsletter(
     issue_date: str,
     payload: dict[str, Any],
+    *,
+    expected_updated_at: str | None = None,
 ) -> dict[str, Any]:
     DRAFT_DIR.mkdir(parents=True, exist_ok=True)
 
     path = draft_path(issue_date)
     existing = load_newsletter(issue_date) if path.exists() else None
-    data = normalize_newsletter(issue_date, payload, existing=existing)
+
+    if expected_updated_at is not None:
+        actual = str((existing or {}).get("updated_at", "")).strip()
+        expected = str(expected_updated_at).strip()
+        if actual != expected:
+            raise NewsletterConflictError(
+                "This newsletter changed after the editor was opened. "
+                "Reload before saving so newer changes are not overwritten."
+            )
+
+    data = normalize_newsletter(
+        issue_date,
+        payload,
+        existing=existing,
+        touch_updated_at=True,
+    )
 
     temp_path = path.with_suffix(".json.tmp")
     temp_path.write_text(
@@ -206,6 +295,7 @@ def list_newsletters() -> list[dict[str, Any]]:
                     "issue_date": data.get("issue_date", path.stem),
                     "title": data.get("title", ""),
                     "status": data.get("status", "draft"),
+                    "template_key": data.get("template_key", "standard"),
                     "updated_at": data.get("updated_at", ""),
                 }
             )

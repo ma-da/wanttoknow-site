@@ -16,6 +16,13 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 TEMPLATE_DIR = ADMIN_DIR / "templates"
 ARTICLE_MASTER = REPO_ROOT / "src" / "site" / "data" / "wtk_articles_master.jsonl"
 
+NEWSLETTER_TEMPLATES: dict[str, dict[str, str]] = {
+    "standard": {
+        "label": "Standard Newsletter",
+        "template": "newsletter-email.html",
+    },
+}
+
 _env = Environment(
     loader=FileSystemLoader(str(TEMPLATE_DIR)),
     autoescape=select_autoescape(["html", "xml"]),
@@ -25,6 +32,24 @@ _env = Environment(
 
 _article_cache_mtime: int | None = None
 _article_cache: dict[str, dict[str, Any]] = {}
+
+
+def newsletter_template_choices() -> list[dict[str, str]]:
+    return [
+        {
+            "key": key,
+            "label": config["label"],
+        }
+        for key, config in NEWSLETTER_TEMPLATES.items()
+    ]
+
+
+def _template_config(template_key: str) -> dict[str, str]:
+    key = str(template_key or "standard").strip() or "standard"
+    try:
+        return NEWSLETTER_TEMPLATES[key]
+    except KeyError as exc:
+        raise ValueError(f"Unknown newsletter template: {key}") from exc
 
 
 def _article_map() -> dict[str, dict[str, Any]]:
@@ -60,6 +85,32 @@ def _article_map() -> dict[str, dict[str, Any]]:
     _article_cache_mtime = stat.st_mtime_ns
 
     return records
+
+
+def newsletter_article_content(
+    article_ids: list[str],
+) -> dict[str, dict[str, str]]:
+    """Return canonical title/summary/note content for newsletter editor use."""
+    records = _article_map()
+    result: dict[str, dict[str, str]] = {}
+
+    for raw_id in article_ids:
+        article_id = str(raw_id).strip()
+        try:
+            source = records[article_id]
+        except KeyError as exc:
+            raise ValueError(
+                f"Newsletter references missing article ID {article_id}"
+            ) from exc
+
+        result[article_id] = {
+            "article_id": article_id,
+            "title": str(source.get("title", "")),
+            "summary_markdown": str(source.get("summary_markdown", "")),
+            "note_markdown": str(source.get("note_markdown", "")),
+        }
+
+    return result
 
 
 def _markdown_block(value: str) -> Markup:
@@ -107,7 +158,12 @@ def _display_url(value: str, limit: int = 88) -> str:
     return value[: limit - 3] + "..."
 
 
-def _resolve_article(article_id: str) -> dict[str, Any]:
+def _resolve_article(
+    article_id: str,
+    *,
+    summary_override: str | None = None,
+    note_override: str | None = None,
+) -> dict[str, Any]:
     records = _article_map()
 
     try:
@@ -136,18 +192,41 @@ def _resolve_article(article_id: str) -> dict[str, Any]:
         ),
         "summary_html": _markdown_block(
             source.get("summary_markdown", "")
+            if summary_override is None
+            else summary_override
         ),
         "note_html": _markdown_inline(
             source.get("note_markdown", "")
+            if note_override is None
+            else note_override
         ),
     }
 
 
-def _resolve_articles(article_ids: list[str]) -> list[dict[str, Any]]:
-    return [_resolve_article(article_id) for article_id in article_ids]
+def _resolve_articles(
+    article_ids: list[str],
+    *,
+    summary_overrides: dict[str, str] | None = None,
+    note_overrides: dict[str, str] | None = None,
+) -> list[dict[str, Any]]:
+    summaries = summary_overrides or {}
+    notes = note_overrides or {}
+    return [
+        _resolve_article(
+            article_id,
+            summary_override=summaries.get(str(article_id)),
+            note_override=notes.get(str(article_id)),
+        )
+        for article_id in article_ids
+    ]
 
 
-def render_newsletter(newsletter: dict[str, Any]) -> str:
+def render_newsletter(
+    newsletter: dict[str, Any],
+    *,
+    summary_overrides: dict[str, str] | None = None,
+    note_overrides: dict[str, str] | None = None,
+) -> str:
     issue_date = str(newsletter.get("issue_date", "")).strip()
     formatted_issue_date = _format_date(issue_date)
 
@@ -181,14 +260,20 @@ def render_newsletter(newsletter: dict[str, Any]) -> str:
             newsletter.get("special_note_markdown", "")
         ),
         "regular_articles": _resolve_articles(
-            newsletter.get("regular_article_ids", [])
+            newsletter.get("regular_article_ids", []),
+            summary_overrides=summary_overrides,
+            note_overrides=note_overrides,
         ),
         "inspiring_articles": _resolve_articles(
-            newsletter.get("inspiring_article_ids", [])
+            newsletter.get("inspiring_article_ids", []),
+            summary_overrides=summary_overrides,
+            note_overrides=note_overrides,
         ),
     }
 
-    template = _env.get_template("newsletter-email.html")
+    template_key = str(newsletter.get("template_key") or "standard").strip()
+    template_config = _template_config(template_key)
+    template = _env.get_template(template_config["template"])
     return template.render(**context)
 
 

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter Editor · WantToKnow.info</title>
+<style>
+  :root {
+    --purple: #67508f;
+    --purple-dark: #4e386f;
+    --purple-soft: #eee9f5;
+    --tan: #f5efe6;
+    --border: #d7d2cb;
+    --text: #26242a;
+    --muted: #6e6872;
+    --danger: #9d2929;
+    --ok: #3c6c42;
+    --surface: #fff;
+    --page: #f6f5f3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button,
+  .nav-button {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--purple);
+    background: #fff;
+    color: var(--purple);
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease,
+      transform 120ms ease;
+  }
+
+  .nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button:hover:not(:disabled),
+  .nav-button:hover {
+    background: var(--purple-soft);
+    box-shadow: 0 2px 7px rgba(50, 30, 70, .12);
+    transform: translateY(-1px);
+  }
+
+  button:active:not(:disabled),
+  .nav-button:active {
+    transform: translateY(1px) scale(.985);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .12);
+  }
+
+  button.primary {
+    background: var(--purple);
+    color: #fff;
+  }
+
+  button.primary:hover:not(:disabled) {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+  }
+
+  button:disabled {
+    opacity: .45;
+    cursor: default;
+  }
+
+  button:focus-visible,
+  .nav-button:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
+  }
+
+  .editor-shell {
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, .98);
+  }
+
+  .toolbar__left,
+  .toolbar__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar__right {
+    margin-left: auto;
+  }
+
+  .template-select {
+    min-height: 40px;
+    padding: 7px 30px 7px 10px;
+    border: 1px solid #aaa4ad;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+  }
+
+  .status {
+    margin: 0 0 0 2px;
+    color: var(--muted);
+    font-size: .82rem;
+    white-space: nowrap;
+  }
+
+  .status[data-kind="ok"] { color: var(--ok); }
+  .status[data-kind="error"] { color: var(--danger); }
+
+  .workspace {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+  }
+
+  .pane {
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    background: var(--surface);
+  }
+
+  .pane + .pane {
+    border-left: 1px solid var(--border);
+  }
+
+  #document {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    resize: none;
+    padding: 18px;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    color: #25222a;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    tab-size: 2;
+  }
+
+  #preview {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border: 0;
+    background: #fff;
+  }
+
+  .preview-loading {
+    color: var(--muted);
+  }
+
+  @media (max-width: 920px) {
+    .editor-shell {
+      height: auto;
+      min-height: 100dvh;
+    }
+
+    .workspace {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(70vh, auto) minmax(70vh, auto);
+    }
+
+    .pane {
+      min-height: 70vh;
+    }
+
+    .pane + .pane {
+      border-left: 0;
+      border-top: 1px solid var(--border);
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    button,
+    .nav-button {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="editor-shell">
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <a id="back" class="nav-button" href="/admin/newsletters">
+        Back to Builder
+      </a>
+
+      <select
+        id="template"
+        class="template-select"
+        aria-label="Newsletter template"
+      ></select>
+
+      <p id="status" class="status" aria-live="polite">
+        Loading newsletter editor…
+      </p>
+    </div>
+
+    <div class="toolbar__right">
+      <button id="save" class="primary" type="button">
+        Save Draft
+      </button>
+
+      <button id="publish" type="button">
+        Save + Publish Article Changes
+      </button>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <section class="pane">
+      <textarea
+        id="document"
+        spellcheck="true"
+        aria-label="Newsletter Markdown document"
+      ></textarea>
+    </section>
+
+    <section class="pane">
+      <iframe
+        id="preview"
+        title="Newsletter live preview"
+        sandbox="allow-popups allow-popups-to-escape-sandbox"
+      ></iframe>
+    </section>
+  </div>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+
+  const documentEditor = $("document");
+  const templateSelect = $("template");
+  const saveButton = $("save");
+  const publishButton = $("publish");
+  const status = $("status");
+  const previewFrame = $("preview");
+
+  let csrfToken = "";
+  let newsletterUpdatedAt = "";
+  let articleTokens = {};
+  let previewTimer = null;
+  let previewSequence = 0;
+  let dirty = false;
+
+  function issueDateFromPath() {
+    const match = window.location.pathname.match(
+      /\/admin\/newsletters\/(\d{4}-\d{2}-\d{2})\/editor\/?$/
+    );
+    if (!match) {
+      throw new Error("Unable to determine newsletter issue date.");
+    }
+    return match[1];
+  }
+
+  const issueDate = issueDateFromPath();
+
+  function setStatus(message, kind = "") {
+    status.textContent = message;
+    status.dataset.kind = kind;
+  }
+
+  async function apiJson(url, options = {}) {
+    const response = await fetch(url, {
+      cache: "no-store",
+      ...options,
+    });
+
+    if (response.status === 401) {
+      const next = encodeURIComponent(
+        window.location.pathname + window.location.search
+      );
+      window.location.assign(`/admin/login?next=${next}`);
+      throw new Error("Authentication required");
+    }
+
+    const body = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      throw new Error(
+        body?.detail || `Request failed (${response.status})`
+      );
+    }
+
+    return body;
+  }
+
+  function renderTemplateOptions(templates, selected) {
+    templateSelect.replaceChildren();
+
+    for (const item of templates || []) {
+      const option = document.createElement("option");
+      option.value = item.key;
+      option.textContent =
+        item.key === "standard" ? "Standard News Template" : item.label;
+      templateSelect.append(option);
+    }
+
+    templateSelect.value = selected || "standard";
+  }
+
+  function applyEditorState(data, {replaceDocument = true} = {}) {
+    const newsletter = data.newsletter || {};
+
+    newsletterUpdatedAt = newsletter.updated_at || "";
+    articleTokens = {...(data.article_tokens || {})};
+
+    renderTemplateOptions(
+      data.templates || [],
+      newsletter.template_key || "standard"
+    );
+
+    if (replaceDocument) {
+      documentEditor.value = data.document || "";
+    }
+
+    dirty = false;
+  }
+
+  function previewErrorHtml(message) {
+    const escaped = String(message || "Preview failed")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    return `<!doctype html>
+      <html><body style="
+        margin:0;
+        padding:2rem;
+        font-family:Arial,Helvetica,sans-serif;
+        color:#9d2929;
+        background:#fff;
+      ">
+        <strong>Preview unavailable</strong>
+        <p>${escaped}</p>
+      </body></html>`;
+  }
+
+  async function refreshPreview() {
+    const sequence = ++previewSequence;
+
+    try {
+      const response = await fetch(
+        `/api/admin/newsletters/${encodeURIComponent(issueDate)}/editor/preview`,
+        {
+          method: "POST",
+          cache: "no-store",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({
+            document: documentEditor.value,
+            template_key: templateSelect.value || "standard",
+          }),
+        }
+      );
+
+      if (sequence !== previewSequence) return;
+
+      if (response.status === 401) {
+        const next = encodeURIComponent(window.location.pathname);
+        window.location.assign(`/admin/login?next=${next}`);
+        return;
+      }
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => null);
+        const message =
+          body?.detail || `Preview failed (${response.status})`;
+        previewFrame.srcdoc = previewErrorHtml(message);
+        return;
+      }
+
+      previewFrame.srcdoc = await response.text();
+    } catch (error) {
+      if (sequence !== previewSequence) return;
+      previewFrame.srcdoc = previewErrorHtml(error.message);
+    }
+  }
+
+  function schedulePreview() {
+    clearTimeout(previewTimer);
+    previewTimer = setTimeout(refreshPreview, 450);
+  }
+
+  async function save({publish = false} = {}) {
+    saveButton.disabled = true;
+    publishButton.disabled = true;
+
+    setStatus(
+      publish
+        ? "Saving newsletter and checking article publication…"
+        : "Saving newsletter and article-content drafts…"
+    );
+
+    try {
+      const data = await apiJson(
+        `/api/admin/newsletters/${encodeURIComponent(issueDate)}/editor`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({
+            document: documentEditor.value,
+            template_key: templateSelect.value || "standard",
+            newsletter_updated_at: newsletterUpdatedAt,
+            article_tokens: articleTokens,
+            publish_articles: publish,
+          }),
+        }
+      );
+
+      applyEditorState(data);
+
+      const changed = data.changed_article_ids || [];
+      const published = data.published_article_ids || [];
+
+      if (data.publication_error) {
+        setStatus(
+          `Saved. Article publication needs attention: ${data.publication_error}`,
+          "error"
+        );
+      } else if (published.length) {
+        setStatus(
+          `Saved newsletter and published article ${published.join(", ")}.`,
+          "ok"
+        );
+      } else if (changed.length) {
+        setStatus(
+          `Saved newsletter and article-content draft${changed.length === 1 ? "" : "s"}: ${changed.join(", ")}.`,
+          "ok"
+        );
+      } else {
+        setStatus("Newsletter saved.", "ok");
+      }
+
+      await refreshPreview();
+      return true;
+
+    } catch (error) {
+      setStatus(error.message, "error");
+      return false;
+
+    } finally {
+      saveButton.disabled = false;
+      publishButton.disabled = false;
+    }
+  }
+
+  async function initialize() {
+    try {
+      const session = await apiJson("/api/admin/session");
+      csrfToken = session.csrf_token || "";
+
+      const data = await apiJson(
+        `/api/admin/newsletters/${encodeURIComponent(issueDate)}/editor`
+      );
+
+      applyEditorState(data);
+      setStatus(`Editing newsletter ${issueDate}.`, "ok");
+      await refreshPreview();
+
+    } catch (error) {
+      setStatus(error.message, "error");
+      documentEditor.disabled = true;
+      saveButton.disabled = true;
+      publishButton.disabled = true;
+    }
+  }
+
+  documentEditor.addEventListener("input", () => {
+    dirty = true;
+    schedulePreview();
+  });
+
+  templateSelect.addEventListener("change", () => {
+    dirty = true;
+    schedulePreview();
+  });
+
+  saveButton.addEventListener("click", () => {
+    save({publish: false});
+  });
+
+  publishButton.addEventListener("click", () => {
+    save({publish: true});
+  });
+
+  window.addEventListener("beforeunload", (event) => {
+    if (!dirty) return;
+    event.preventDefault();
+    event.returnValue = "";
+  });
+
+  initialize();
+})();
+</script>
+</body>
+</html>
