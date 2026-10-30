@@ -15,6 +15,13 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 
 TEMPLATE_DIR = ADMIN_DIR / "templates"
 ARTICLE_MASTER = REPO_ROOT / "src" / "site" / "data" / "wtk_articles_master.jsonl"
+PUBLICATION_MAP = (
+    REPO_ROOT
+    / "src"
+    / "site"
+    / "data"
+    / "publication-canonicalization.json"
+)
 
 NEWSLETTER_TEMPLATES: dict[str, dict[str, str]] = {
     "standard": {
@@ -32,6 +39,9 @@ _env = Environment(
 
 _article_cache_mtime: int | None = None
 _article_cache: dict[str, dict[str, Any]] = {}
+
+_publication_cache_mtime: int | None = None
+_publication_display_names: dict[str, str] = {}
 
 
 def newsletter_template_choices() -> list[dict[str, str]]:
@@ -85,6 +95,79 @@ def _article_map() -> dict[str, dict[str, Any]]:
     _article_cache_mtime = stat.st_mtime_ns
 
     return records
+
+
+def _publication_names() -> dict[str, str]:
+    """Return publication_group slug -> human-readable display name."""
+    global _publication_cache_mtime, _publication_display_names
+
+    stat = PUBLICATION_MAP.stat()
+
+    if (
+        _publication_cache_mtime == stat.st_mtime_ns
+        and _publication_display_names
+    ):
+        return _publication_display_names
+
+    data = json.loads(
+        PUBLICATION_MAP.read_text(encoding="utf-8")
+    )
+    publications = data.get("publications", {})
+
+    names: dict[str, str] = {}
+
+    if isinstance(publications, dict):
+        for slug, config in publications.items():
+            if not isinstance(config, dict):
+                continue
+
+            display_name = str(
+                config.get("display_name", "") or ""
+            ).strip()
+
+            if display_name:
+                names[str(slug).strip()] = display_name
+
+    _publication_display_names = names
+    _publication_cache_mtime = stat.st_mtime_ns
+
+    return names
+
+
+def _publication_display(source: dict[str, Any]) -> str:
+    """Return the canonical human-readable publication name."""
+
+    publication_name = str(
+        source.get("publication_name", "") or ""
+    ).strip()
+
+    publication_group = str(
+        source.get("publication_group", "") or ""
+    ).strip()
+
+    # Prefer an explicit human-readable publication name when present.
+    # If it is merely the same slug as publication_group, resolve the slug
+    # through publication-canonicalization.json instead.
+    if (
+        publication_name
+        and publication_name != publication_group
+    ):
+        return publication_name
+
+    if publication_group:
+        display_name = _publication_names().get(
+            publication_group,
+            "",
+        )
+        if display_name:
+            return display_name
+
+    # Final fallback keeps existing data usable if a group is not yet present
+    # in publication-canonicalization.json.
+    if publication_name:
+        return publication_name
+
+    return publication_group
 
 
 def newsletter_article_content(
@@ -163,33 +246,35 @@ def _resolve_article(
     *,
     summary_override: str | None = None,
     note_override: str | None = None,
+    article_records: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    records = _article_map()
+    article_id = str(article_id)
+
+    if article_records is None:
+        records = _article_map()
+    else:
+        records = article_records
 
     try:
-        source = records[str(article_id)]
+        source = records[article_id]
     except KeyError as exc:
         raise ValueError(
             f"Newsletter references missing article ID {article_id}"
         ) from exc
 
-    publication = (
-        source.get("publication_name")
-        or source.get("publication_group")
-        or ""
-    )
+    publication = _publication_display(source)
+
+    source_url = str(source.get("source_url", "") or "").strip()
 
     return {
-        "article_id": str(article_id),
+        "article_id": article_id,
         "title": source.get("title", ""),
         "publication_date": _format_date(
             source.get("publication_date", "")
         ),
         "publication_name": publication,
-        "source_url": source.get("source_url", ""),
-        "source_url_display": _display_url(
-            source.get("source_url", "")
-        ),
+        "source_url": source_url,
+        "source_url_display": _display_url(source_url),
         "summary_html": _markdown_block(
             source.get("summary_markdown", "")
             if summary_override is None
@@ -208,6 +293,7 @@ def _resolve_articles(
     *,
     summary_overrides: dict[str, str] | None = None,
     note_overrides: dict[str, str] | None = None,
+    article_records: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     summaries = summary_overrides or {}
     notes = note_overrides or {}
@@ -216,6 +302,7 @@ def _resolve_articles(
             article_id,
             summary_override=summaries.get(str(article_id)),
             note_override=notes.get(str(article_id)),
+            article_records=article_records,
         )
         for article_id in article_ids
     ]
@@ -226,6 +313,7 @@ def render_newsletter(
     *,
     summary_overrides: dict[str, str] | None = None,
     note_overrides: dict[str, str] | None = None,
+    article_records: dict[str, dict[str, Any]] | None = None,
 ) -> str:
     issue_date = str(newsletter.get("issue_date", "")).strip()
     formatted_issue_date = _format_date(issue_date)
@@ -263,11 +351,13 @@ def render_newsletter(
             newsletter.get("regular_article_ids", []),
             summary_overrides=summary_overrides,
             note_overrides=note_overrides,
+            article_records=article_records,
         ),
         "inspiring_articles": _resolve_articles(
             newsletter.get("inspiring_article_ids", []),
             summary_overrides=summary_overrides,
             note_overrides=note_overrides,
+            article_records=article_records,
         ),
     }
 
@@ -275,7 +365,6 @@ def render_newsletter(
     template_config = _template_config(template_key)
     template = _env.get_template(template_config["template"])
     return template.render(**context)
-
 
 def newsletter_article_choices(
     query: str = "",
@@ -292,11 +381,7 @@ def newsletter_article_choices(
     for article in _article_map().values():
         article_id = str(article.get("article_id", "")).strip()
         title = str(article.get("title", "")).strip()
-        publication = str(
-            article.get("publication_name")
-            or article.get("publication_group")
-            or ""
-        ).strip()
+        publication = _publication_display(article)
 
         raw_tags = article.get("tags", [])
         if isinstance(raw_tags, list):

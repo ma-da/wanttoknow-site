@@ -113,7 +113,7 @@
           {
             "label": "Timelines",
             "href": "/timelines/"
-          },										
+          },
           {
             "label": "Books",
             "href": "/books/"
@@ -125,7 +125,7 @@
           {
             "label": "Poetry",
             "href": "/poetry/"
-          }										
+          }
         ]
       },
       {
@@ -140,17 +140,21 @@
             "href": "/search/mkultra/"
           },
           {
+            "label": "COINTELPRO Search Engine",
+            "href": "/search/cointelpro/"
+          },
+          {
             "label": "Speculation",
             "href": "/speculation/"
-          }										
+          }
         ]
       },
       {
         "heading": "About",
         "items": [
           {
-            "label": "About WantToKnow.info",
-            "href": "/about/"
+            "label": "About Us",
+            "href": "https://www.wanttoknow.info/#about"
           },
           {
             "label": "Contributors",
@@ -211,6 +215,10 @@
           {
             "label": "MK ULTRA Search Engine",
             "href": "/search/mkultra"
+          },
+          {
+            "label": "COINTELPRO Search Engine",
+            "href": "/search/cointelpro"
           }
         ]
       },
@@ -228,7 +236,7 @@
 										{
 												"label": "Contact",
 												"href": "/contact"
-										},										
+										},
           {
             "label": "Donate",
             "href": "/donate"
@@ -251,7 +259,7 @@
       {
         "label": "AI Policy",
         "href": "/about/ai/"
-      }						
+      }
     ]
   }
 }

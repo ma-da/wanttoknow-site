@@ -11,18 +11,24 @@
 </head>
 <body class="admin-body">
   <main class="admin-shell admin-shell--editor" id="main-content">
-    <header class="admin-header admin-editor-header">
-      <div class="admin-editor-header__title">
-        <p class="admin-eyebrow">WantToKnow.info internal · SQLite working copy</p>
-        <h1 id="editor-heading">Edit article</h1>
-      </div>
-      <div class="admin-header__right">
-        <a class="admin-secondary-button" href="/admin/articles">← Articles</a>
-        <form method="post" action="/admin/logout">
-          <button class="admin-logout-button" type="submit">Logout</button>
-        </form>
-      </div>
-    </header>
+				<header class="admin-header admin-editor-header">
+						<a class="admin-secondary-button" href="/admin/articles">
+								← Articles
+						</a>
+
+						<div class="admin-editor-header__title">
+
+								<h1 id="editor-heading">Edit article</h1>
+						</div>
+
+						<div class="admin-header__right">
+								<form method="post" action="/admin/logout">
+										<button class="admin-logout-button" type="submit">
+												Logout
+										</button>
+								</form>
+						</div>
+				</header>
 
     <form id="article-edit-form" class="article-edit-form article-edit-form--wide" hidden>
       <section class="article-edit-card article-meta-card">

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse published WantToKnow.info newsletters.">
+  <link rel="canonical" href="https://www.wanttoknow.info/newsletter-archive.html">
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WantToKnow.info">
+  <meta property="og:locale" content="en_US">
+  <meta
+    property="og:url"
+    content="https://www.wanttoknow.info/newsletter-archive.html"
+  >
+  <meta
+    property="og:title"
+    content="Newsletter Archive | WantToKnow.info"
+  >
+  <meta
+    property="og:description"
+    content="Browse published WantToKnow.info newsletters."
+  >
+  <meta
+    property="og:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:alt"
+    content="WantToKnow.info — verifiable information and inspiring solutions"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Newsletter Archive | WantToKnow.info"
+  >
+  <meta
+    name="twitter:description"
+    content="Browse published WantToKnow.info newsletters."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.wanttoknow.info/assets/social/wtk-home-share-1200x630.jpg"
+  >
+  <meta
+    name="twitter:image:alt"
+    content="WantToKnow.info — verifiable information and inspiring solutions"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.wanttoknow.info/newsletter-archive.html#webpage",
+    "url": "https://www.wanttoknow.info/newsletter-archive.html",
+    "name": "Newsletter Archive | WantToKnow.info",
+    "description": "Browse published WantToKnow.info newsletters.",
+    "isPartOf": {
+      "@id": "https://www.wanttoknow.info/#website"
+    },
+    "publisher": {
+      "@id": "https://www.wanttoknow.info/#organization"
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <title>Newsletter Archive | WantToKnow.info</title>
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/newsletter-archive.css">
+
+  <script src="/assets/js/global.js" defer></script>
+  <script src="/assets/js/newsletter-archive.js" defer></script>
+</head>
+<body>
+  <div id="global-header" data-global-header></div>
+
+  <main id="main-content" class="newsletter-archive-page">
+    <div class="newsletter-archive-controls">
+      <label class="visually-hidden" for="newsletter-archive-select">
+        Choose newsletter
+      </label>
+
+      <select
+        id="newsletter-archive-select"
+        class="newsletter-archive-select"
+        aria-label="Choose newsletter"
+      >
+        <option>Loading newsletters…</option>
+      </select>
+
+      <p
+        id="newsletter-archive-status"
+        class="newsletter-archive-status"
+        aria-live="polite"
+      ></p>
+    </div>
+
+    <iframe
+      id="newsletter-archive-frame"
+      class="newsletter-archive-frame"
+      title="WantToKnow.info newsletter"
+      sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+    ></iframe>
+  </main>
+
+  <div id="global-footer" data-global-footer></div>
+</body>
+</html>

@@ -37,7 +37,7 @@
 										class="admin-primary-button"
 										type="button"
 								>
-										+ Add Article
+										+ Add
 								</button>
 
 								<button
@@ -46,7 +46,7 @@
 										type="button"
 										aria-pressed="false"
 								>
-										View Drafts
+										Drafts
 								</button>
 
 								<button
@@ -61,7 +61,7 @@
 						</div>
 
 						<label class="admin-field admin-field--search admin-toolbar__search">
-								<span class="visually-hidden">Search titles or article ID</span>
+								<span class="visually-hidden">Search...</span>
 								<input
 										id="article-search"
 										type="search"
@@ -71,7 +71,15 @@
 										aria-label="Search titles or article ID"
 								>
 						</label>
-
+						<label class="admin-field admin-toolbar__category">
+										<span class="visually-hidden">Filter by category</span>
+										<select
+														id="article-category"
+														aria-label="Filter articles by category"
+										>
+														<option value="">All categories</option>
+										</select>
+						</label>
 						<div
 								id="batch-summary"
 								class="admin-batch-summary"
@@ -79,7 +87,6 @@
 								aria-label="Current draft batch"
 						>
 								<div class="admin-batch-summary__info">
-										<span class="admin-batch-summary__label">Batch</span>
 										<strong id="batch-summary-text"></strong>
 								</div>
 

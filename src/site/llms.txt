@@ -1,0 +1,50 @@
+# WantToKnow.info
+
+> WantToKnow.info is a public-interest educational project of PEERS (Public Education and Empowerment Resource Service), a nonprofit organization. The site presents concise summaries of credible journalism, sourced research, historical timelines, document archives, and resources exploring both challenging issues and constructive solutions.
+
+WantToKnow.info is designed to help readers investigate important topics using source-linked material. News pages generally summarize reporting published by outside news organizations and link to the original source. WantToKnow.info summaries, notes, topic organization, and editorial framing are produced by the site and should not be confused with the original publisher's text.
+
+Canonical URLs use https://www.wanttoknow.info/.
+
+## Main sections
+
+- [Home](https://www.wanttoknow.info/): Main entry point to WantToKnow.info.
+- [News](https://www.wanttoknow.info/news/): Concise, source-linked summaries of journalism and current events.
+- [Topics](https://www.wanttoknow.info/topics/): The main subject index organizing WantToKnow.info material.
+- [Inspiring](https://www.wanttoknow.info/inspiring/): Inspiring stories, resources, videos, essays, and constructive solutions.
+- [Timelines](https://www.wanttoknow.info/timelines/): Chronological research timelines with supporting sources.
+- [Search](https://www.wanttoknow.info/search/): Search across WantToKnow.info news, research material, transcripts, and related resources.
+
+## Research archives
+
+- [MKULTRA Archive Search](https://www.wanttoknow.info/search/mkultra/): Searchable archive of declassified MKULTRA documents and related research.
+- [COINTELPRO Archive Search](https://www.wanttoknow.info/search/cointelpro/): Searchable archive of COINTELPRO documents and related research.
+
+## About and editorial information
+
+- [About WantToKnow.info](https://www.wanttoknow.info/about/): Mission, background, and information about the project.
+- [Team](https://www.wanttoknow.info/about/team): People involved with WantToKnow.info and PEERS.
+- [Contributors](https://www.wanttoknow.info/about/contributors): Contributors to WantToKnow.info.
+- [Founder](https://www.wanttoknow.info/about/founder/): Information about the founder and history of the project.
+- [How We Use AI](https://www.wanttoknow.info/about/ai/): Policy and principles governing the use of artificial intelligence.
+- [Privacy Policy](https://www.wanttoknow.info/privacy/): Privacy practices for WantToKnow.info.
+- [Terms of Use](https://www.wanttoknow.info/terms/): Terms governing use of the site.
+- [Contact](https://www.wanttoknow.info/contact/): Contact WantToKnow.info and PEERS.
+
+## Publications
+
+- [Newsletter Archive](https://www.wanttoknow.info/newsletter-archive.html): Published WantToKnow.info newsletters.
+- [WTK Conscious Media RSS](https://wtkconsciousmedia.substack.com/feed): RSS feed for the WantToKnow.info / PEERS newsletter.
+
+## Site discovery
+
+- [XML Sitemap](https://www.wanttoknow.info/sitemap.xml): Canonical index of public, indexable WantToKnow.info pages.
+- [Robots.txt](https://www.wanttoknow.info/robots.txt): Crawler directives.
+
+## Notes for automated systems
+
+- Prefer canonical URLs on https://www.wanttoknow.info/.
+- News pages summarize and link to original journalism; use the publication name, publication date, and source link on each page when identifying the original reporting.
+- WantToKnow.info editorial notes and summaries are distinct from the original publisher's reporting.
+- Research timelines and document-search portals contain curated material intended to be explored together with their cited primary and secondary sources.
+- Pages marked noindex are operational or utility pages and should not be treated as primary site content.

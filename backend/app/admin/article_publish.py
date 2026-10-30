@@ -32,6 +32,8 @@ from zoneinfo import ZoneInfo
 
 PUBLISH_SCRIPTS = (
     "build-news-derived.py",
+    "build-search-corpus.py",
+    "build-search-db.py",
     "build-news-articles.py",
     "build-category-pages.py",
     "build-topic-pages.py",
@@ -42,6 +44,12 @@ DERIVED_FILES = (
     "article-index.jsonl",
     "archive_stats.json",
 )
+SEARCH_CORPUS_FILES = (
+    "ref-registry-v1.jsonl",
+    "document-chunks-v1.jsonl",
+    "youtube-search-chunks-v1.jsonl",
+)
+SEARCH_DB_RELATIVE = Path("search/wanttoknow-search.sqlite")
 ROUTING_FILE = "news-withdrawals.json"
 
 
@@ -442,6 +450,7 @@ def _prepare_workspace_images(
             if dst.exists():
                 dst.unlink()
             shutil.copy2(src, dst)
+            os.chmod(dst, 0o664)
 
 
 def _prepare_workspace(
@@ -472,6 +481,16 @@ def _prepare_workspace(
         raise PublishError(f"Category map not found: {category_map}")
     shutil.copy2(category_map, data_dst / category_map.name)
 
+    # Search publication is derived from the article index plus the existing
+    # frozen page/Substack/YouTube corpora and persistent ref registry.
+    # Copy those inputs into the private workspace so search can be rebuilt
+    # and validated before any live file is promoted.
+    corpus_src = root / "src/site/data/corpus"
+    corpus_dst = data_dst / "corpus"
+    if not corpus_src.is_dir():
+        raise PublishError(f"Search corpus directory not found: {corpus_src}")
+    shutil.copytree(corpus_src, corpus_dst)
+
     current_news = root / "src/site/news"
     if current_news.exists():
         shutil.copytree(current_news, news_dst)
@@ -492,6 +511,18 @@ def _prepare_workspace(
     log_path = run_dir / "build.log"
     commands = (
         [sys.executable, str(scripts_dst / "build-news-derived.py")],
+        [
+            sys.executable,
+            str(scripts_dst / "build-search-corpus.py"),
+            "--site-root",
+            str(workspace),
+        ],
+        [
+            sys.executable,
+            str(scripts_dst / "build-search-db.py"),
+            "--site-root",
+            str(workspace),
+        ],
         [sys.executable, str(scripts_dst / "build-news-articles.py"), "--all"],
         [sys.executable, str(scripts_dst / "build-category-pages.py")],
         [sys.executable, str(scripts_dst / "build-topic-pages.py")],
@@ -519,6 +550,22 @@ def _prepare_workspace(
     for name in DERIVED_FILES:
         if not (data_dst / name).is_file():
             raise PublishError(f"Publication builder did not produce {name}")
+
+    for name in SEARCH_CORPUS_FILES:
+        if not (data_dst / "corpus" / name).is_file():
+            raise PublishError(
+                f"Search corpus builder did not produce {name}"
+            )
+
+    search_db = data_dst / SEARCH_DB_RELATIVE
+    if not search_db.is_file():
+        raise PublishError(
+            "Search database builder did not produce "
+            f"{SEARCH_DB_RELATIVE}"
+        )
+
+    _validate_workspace_search(workspace, candidate)
+
     expected_pages = {a["slug"] for a in candidate}
     missing = [slug for slug in expected_pages if not (news_dst / f"{slug}.html").is_file()]
     if missing:
@@ -540,6 +587,90 @@ def _prepare_workspace(
             )
 
     return workspace, log_path
+
+
+def _validate_workspace_search(
+    workspace: Path,
+    candidate: list[dict[str, Any]],
+) -> None:
+    "Require the candidate article set to exist in every public search layer."
+    data = workspace / "src/site/data"
+    expected_ids = {
+        int(article["article_id"])
+        for article in candidate
+    }
+
+    index_ids: set[int] = set()
+    index_path = data / "article-index.jsonl"
+    with index_path.open(encoding="utf-8") as fh:
+        for lineno, line in enumerate(fh, 1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+                index_ids.add(int(row["id"]))
+            except (json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+                raise PublishError(
+                    f"Invalid article index row at line {lineno}: {exc}"
+                ) from exc
+
+    registry_ids: set[int] = set()
+    registry_path = data / "corpus/ref-registry-v1.jsonl"
+    with registry_path.open(encoding="utf-8") as fh:
+        for lineno, line in enumerate(fh, 1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+                ref_id = int(row["ref_id"])
+            except (json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+                raise PublishError(
+                    f"Invalid search registry row at line {lineno}: {exc}"
+                ) from exc
+
+            active = row.get("active", True)
+            if active not in (False, 0, "0"):
+                registry_ids.add(ref_id)
+
+    db_path = data / SEARCH_DB_RELATIVE
+    uri = f"file:{db_path}?mode=ro"
+    try:
+        with sqlite3.connect(uri, uri=True) as search_conn:
+            query = "SELECT ref_id FROM content WHERE record_type='news'"
+            search_ids = {
+                int(row[0])
+                for row in search_conn.execute(query)
+            }
+    except sqlite3.DatabaseError as exc:
+        raise PublishError(
+            f"Unable to validate candidate search database: {exc}"
+        ) from exc
+
+    missing_index = sorted(expected_ids - index_ids)
+    missing_registry = sorted(expected_ids - registry_ids)
+    missing_search = sorted(expected_ids - search_ids)
+
+    if missing_index or missing_registry or missing_search:
+        problems: list[str] = []
+        if missing_index:
+            problems.append(
+                "article-index missing "
+                + ", ".join(str(x) for x in missing_index[:12])
+            )
+        if missing_registry:
+            problems.append(
+                "ref registry missing "
+                + ", ".join(str(x) for x in missing_registry[:12])
+            )
+        if missing_search:
+            problems.append(
+                "search DB missing "
+                + ", ".join(str(x) for x in missing_search[:12])
+            )
+        raise PublishError(
+            "Candidate search publication is incomplete: "
+            + "; ".join(problems)
+        )
 
 
 def _atomic_replace_file(src: Path, dst: Path, backup_dir: Path, rollback: list[tuple[str, Path, Path | None]]) -> None:
@@ -588,7 +719,27 @@ def _promote(
         data_src = workspace / "src/site/data"
         data_live = root / "src/site/data"
         for name in ("wtk_articles_master.jsonl", *DERIVED_FILES, ROUTING_FILE):
-            _atomic_replace_file(data_src / name, data_live / name, backup / "data", rollback)
+            _atomic_replace_file(
+                data_src / name,
+                data_live / name,
+                backup / "data",
+                rollback,
+            )
+
+        for name in SEARCH_CORPUS_FILES:
+            _atomic_replace_file(
+                data_src / "corpus" / name,
+                data_live / "corpus" / name,
+                backup / "data/corpus",
+                rollback,
+            )
+
+        _atomic_replace_file(
+            data_src / SEARCH_DB_RELATIVE,
+            data_live / SEARCH_DB_RELATIVE,
+            backup / "data/search",
+            rollback,
+        )
 
         staged_topics = workspace / "src/site/topics"
         if staged_topics.exists():
@@ -598,13 +749,29 @@ def _promote(
 
         full_dir = root / "src/site/assets/images/article-images"
         thumb_dir = root / "src/site/assets/images/article-thumbs"
-        for aid, stage in staged.items():
+
+        work_images = (
+            workspace
+            / "src/site/assets/images"
+        )
+
+        for aid in staged:
             if aid in withdrawals:
                 continue
-            generation = str(stage["generation"])
-            stage_root = image_staging_root() / str(aid) / generation
-            _atomic_replace_file(stage_root / f"{aid}i.jpg", full_dir / f"{aid}i.jpg", backup / "images/full", rollback)
-            _atomic_replace_file(stage_root / f"{aid}-thumb.jpg", thumb_dir / f"{aid}-thumb.jpg", backup / "images/thumb", rollback)
+
+            _atomic_replace_file(
+                work_images / "article-images" / f"{aid}i.jpg",
+                full_dir / f"{aid}i.jpg",
+                backup / "images/full",
+                rollback,
+            )
+
+            _atomic_replace_file(
+                work_images / "article-thumbs" / f"{aid}-thumb.jpg",
+                thumb_dir / f"{aid}-thumb.jpg",
+                backup / "images/thumb",
+                rollback,
+            )
 
         for aid in withdrawals:
             canonical = canonical_by_id.get(aid) or {}

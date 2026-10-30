@@ -21,6 +21,11 @@ from .newsletter_editor import (
     publishable_editor_articles,
     render_editor_document,
 )
+from .newsletter_public import (
+    get_public_newsletter,
+    publish_newsletter as publish_public_newsletter,
+    resolve_public_article_records,
+)
 from .newsletter_render import (
     newsletter_article_choices,
     newsletter_template_choices,
@@ -208,7 +213,10 @@ def newsletter_save(
     try:
         newsletter = save_newsletter(
             issue_date,
-            _payload_dict(payload),
+            {
+                **_payload_dict(payload),
+                "status": "draft",
+            },
         )
 
         return {
@@ -395,6 +403,7 @@ def newsletter_editor_save(
 
             save_payload = {
                 **newsletter,
+                "status": "draft",
                 "template_key": template_key,
                 "title": parsed["title"],
                 "headlines": parsed["headlines"],
@@ -446,10 +455,11 @@ def newsletter_editor_save(
                         )
                         published_ids = publish_ids
 
+                        published_set = set(published_ids)
                         receipts = {
                             article_id: receipt
                             for article_id, receipt in receipts.items()
-                            if int(article_id) not in set(published_ids)
+                            if int(article_id) not in published_set
                         }
 
                         saved = save_newsletter(
@@ -463,14 +473,72 @@ def newsletter_editor_save(
 
                 except (NewsletterEditorError, PublishError) as exc:
                     # Article/newsletter edits are already safely saved as
-                    # drafts. Return the new revision tokens rather than
-                    # turning this into a stale-client 409.
+                    # drafts. The newsletter archive is not published when
+                    # article publication needs attention.
                     publication_error = str(exc)
 
             states = load_article_states(
                 conn,
                 _selected_article_ids(saved),
             )
+
+        public_record: dict[str, Any] | None = None
+        public_warnings: list[str] = []
+        newsletter_publication_error = ""
+        archive_url = ""
+
+        if payload.publish_articles and not publication_error:
+            try:
+                pending_article_changes = dict(
+                    saved.get("editor_article_changes", {})
+                )
+                if pending_article_changes:
+                    pending_ids = ", ".join(
+                        sorted(pending_article_changes)
+                    )
+                    raise NewsletterEditorError(
+                        "Newsletter article changes remain unpublished: "
+                        f"{pending_ids}"
+                    )
+
+                # Resolve only this newsletter's IDs through the same public,
+                # read-only SQLite search database used by site search. This
+                # validates that the public archive can render before the
+                # newsletter is added to newsletters.json.
+                public_articles = resolve_public_article_records(saved)
+                render_newsletter(
+                    saved,
+                    article_records=public_articles,
+                )
+
+                public_result = publish_public_newsletter(saved)
+                public_record = public_result["record"]
+                public_warnings = list(
+                    public_result.get("warnings", [])
+                )
+
+                saved = save_newsletter(
+                    issue_date,
+                    {
+                        **saved,
+                        "status": "published",
+                        "published_at": public_record["published_at"],
+                    },
+                    expected_updated_at=saved["updated_at"],
+                )
+
+                archive_url = (
+                    "/newsletter-archive.html"
+                    f"?issue={public_record['newsletter_id']}"
+                )
+
+            except (
+                NewsletterEditorError,
+                ValueError,
+                OSError,
+                sqlite3.DatabaseError,
+            ) as exc:
+                newsletter_publication_error = str(exc)
 
         response = _editor_payload(saved, states)
         response.update(
@@ -482,6 +550,12 @@ def newsletter_editor_save(
                 ],
                 "publication_result": publication_result,
                 "publication_error": publication_error,
+                "newsletter_publication_error": (
+                    newsletter_publication_error
+                ),
+                "public_record": public_record,
+                "warnings": public_warnings,
+                "archive_url": archive_url,
             }
         )
         return response
@@ -503,6 +577,55 @@ def newsletter_editor_save(
         raise HTTPException(
             status_code=500,
             detail="Unable to save newsletter editor changes",
+        ) from exc
+
+
+# ---------------------------------------------------------------------
+# Public newsletter archive rendering
+# ---------------------------------------------------------------------
+
+@router.get("/api/newsletters/{newsletter_id}/html")
+def public_newsletter_html(newsletter_id: str):
+    newsletter_id = str(newsletter_id).strip()
+    if not newsletter_id or len(newsletter_id) > 180:
+        raise HTTPException(status_code=400, detail="Invalid newsletter ID")
+
+    try:
+        newsletter = get_public_newsletter(newsletter_id)
+        if newsletter is None or newsletter.get("legacy_url"):
+            raise HTTPException(
+                status_code=404,
+                detail="Published newsletter not found",
+            )
+
+        article_records = resolve_public_article_records(newsletter)
+        html = render_newsletter(
+            newsletter,
+            article_records=article_records,
+        )
+        return HTMLResponse(
+            content=html,
+            headers={"Cache-Control": "no-cache"},
+        )
+
+    except HTTPException:
+        raise
+    except FileNotFoundError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Public article search database is unavailable",
+        ) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except sqlite3.DatabaseError as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="Unable to load newsletter articles from public search",
+        ) from exc
+    except OSError as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="Unable to render published newsletter",
         ) from exc
 
 

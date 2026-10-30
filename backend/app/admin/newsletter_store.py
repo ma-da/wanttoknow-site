@@ -87,6 +87,7 @@ def empty_newsletter(issue_date: str) -> dict[str, Any]:
         "newsletter_id": issue_date,
         "issue_date": issue_date,
         "status": "draft",
+        "published_at": "",
         "template_key": "standard",
         "title": "",
         "headlines": ["", "", ""],
@@ -182,6 +183,9 @@ def normalize_newsletter(
         "newsletter_id": issue_date,
         "issue_date": issue_date,
         "status": str(payload.get("status", existing.get("status", "draft"))).strip() or "draft",
+        "published_at": str(
+            payload.get("published_at", existing.get("published_at", ""))
+        ).strip(),
         "template_key": _template_key(
             payload.get("template_key", existing.get("template_key", "standard"))
         ),
@@ -295,6 +299,7 @@ def list_newsletters() -> list[dict[str, Any]]:
                     "issue_date": data.get("issue_date", path.stem),
                     "title": data.get("title", ""),
                     "status": data.get("status", "draft"),
+                    "published_at": data.get("published_at", ""),
                     "template_key": data.get("template_key", "standard"),
                     "updated_at": data.get("updated_at", ""),
                 }
@@ -302,4 +307,11 @@ def list_newsletters() -> list[dict[str, Any]]:
         except Exception:
             continue
 
+    results.sort(
+        key=lambda item: (
+            str(item.get("issue_date", "")),
+            str(item.get("newsletter_id", "")),
+        ),
+        reverse=True,
+    )
     return results

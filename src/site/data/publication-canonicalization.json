@@ -4550,6 +4550,36 @@
       "display_name": "U.S. Department of Justice",
       "retain_legacy_as_detail": true,
       "aliases": []
+    },
+    "ieee-spectrum": {
+      "slug": "ieee-spectrum",
+      "display_name": "IEEE Spectrum",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "powermag": {
+      "slug": "powermag",
+      "display_name": "Powermag",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "the-banner": {
+      "slug": "the-banner",
+      "display_name": "The Banner",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "aeon": {
+      "slug": "aeon",
+      "display_name": "Aeon",
+      "retain_legacy_as_detail": true,
+      "aliases": []
+    },
+    "kunm": {
+      "slug": "kunm",
+      "display_name": "KUNM",
+      "retain_legacy_as_detail": true,
+      "aliases": []
     }
   },
   "legacy_lookup": {
@@ -5520,7 +5550,12 @@
     "Ynet News": "ynet-news",
     "Zerohedge": "zerohedge",
     "ZMEscience": "zmescience",
-    "U.S. Department of Justice": "u-s-department-of-justice"
+    "U.S. Department of Justice": "u-s-department-of-justice",
+    "IEEE Spectrum": "ieee-spectrum",
+    "Powermag": "powermag",
+    "The Banner": "the-banner",
+    "Aeon": "aeon",
+    "KUNM": "kunm"
   },
   "schema": {
     "publication_group_slug": "Stable machine-facing identifier used for filtering, indexing, URLs, APIs, and admin values.",

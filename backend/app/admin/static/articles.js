@@ -11,6 +11,7 @@
   const list = document.getElementById("article-list");
   const count = document.getElementById("result-count");
   const search = document.getElementById("article-search");
+		const categoryFilter = document.getElementById("article-category");
   const browser = document.getElementById("article-browser");
   const previewToggle = document.getElementById("preview-toggle");
   const sortHeaders = Array.from(
@@ -79,6 +80,7 @@
 
   const state = {
     q: "",
+				category: "",
     workflowState: "",
     sort: "posted_desc",
     previewVisible: true,
@@ -179,12 +181,20 @@
     if (visible) {
       browser.removeAttribute("data-preview-hidden");
 
-      previewToggle.textContent = "Hide preview";
+						previewToggle.textContent = "Hide";
+						previewToggle.setAttribute(
+								"aria-label",
+								"Hide summary preview"
+						);
       previewToggle.setAttribute("aria-expanded", "true");
     } else {
       browser.dataset.previewHidden = "true";
 
-      previewToggle.textContent = "Show preview";
+						previewToggle.textContent = "Show";
+						previewToggle.setAttribute(
+								"aria-label",
+								"Show summary preview"
+						);
       previewToggle.setAttribute("aria-expanded", "false");
 
       setActiveRow(null);
@@ -766,6 +776,7 @@
 
     search.disabled = publishing;
     draftFilterButton.disabled = publishing;
+				categoryFilter.disabled = publishing;
     addArticleButton.disabled = publishing;
 
     for (const button of sortHeaders) {
@@ -997,6 +1008,13 @@
       params.set("q", state.q);
     }
 
+				if (state.category) {
+						params.set(
+								"category",
+								state.category
+						);
+				}
+
     if (state.workflowState) {
       params.set(
         "workflow_state",
@@ -1075,82 +1093,178 @@
     csrfToken = session.csrf_token || "";
   }
 
+		async function loadCategoryOptions() {
+				try {
+						const response = await fetch(
+								"/data/news-category-map.json",
+								{
+										headers: {
+												Accept: "application/json",
+										},
+										cache: "no-store",
+								}
+						);
+
+						if (!response.ok) {
+								throw new Error(
+										`Category map failed (${response.status})`
+								);
+						}
+
+						const categoryMap = await response.json();
+
+						const categories = Object.entries(
+								categoryMap || {}
+						)
+								.map(([slug, meta]) => {
+										let label = slug;
+
+										if (
+												meta &&
+												typeof meta === "object"
+										) {
+												label =
+														meta.label ||
+														meta.name ||
+														meta.pretty ||
+														slug;
+										} else if (
+												typeof meta === "string"
+										) {
+												label = meta;
+										}
+
+										return {
+												slug,
+												label: String(label),
+										};
+								})
+								.sort((a, b) =>
+										a.label.localeCompare(
+												b.label,
+												undefined,
+												{ sensitivity: "base" }
+										)
+								);
+
+						const fragment =
+								document.createDocumentFragment();
+
+						for (const category of categories) {
+								const option =
+										document.createElement("option");
+
+								option.value = category.slug;
+								option.textContent = category.label;
+
+								fragment.append(option);
+						}
+
+						categoryFilter.append(fragment);
+				} catch (error) {
+						console.error(
+								"Unable to load article categories",
+								error
+						);
+
+						categoryFilter.disabled = true;
+						categoryFilter.title =
+								"Category filtering is unavailable";
+				}
+		}
+
   // ------------------------------------------------------------
   // Current draft-batch summary
   // ------------------------------------------------------------
 
-  async function loadBatchSummary() {
-    try {
-      const payload = await apiJson(
-        "/api/admin/articles/batch/current"
-      );
+		async function loadBatchSummary() {
+				try {
+						const payload = await apiJson(
+								"/api/admin/articles/batch/current"
+						);
 
-      const batch = payload.batch;
+						const batch = payload.batch;
 
-      if (!batch || !batch.total) {
-        batchSummary.hidden = true;
+						if (!batch || !batch.total) {
+								batchSummary.hidden = true;
 
-        draftFilterButton.textContent = "Drafts";
+								draftFilterButton.textContent = "Drafts";
 
-        batchPublishingEnabled = false;
-        selectedDraftIds.clear();
+								batchPublishingEnabled = false;
+								selectedDraftIds.clear();
 
-        updateDraftSelectionControls();
+								updateDraftSelectionControls();
 
-        return;
-      }
+								return;
+						}
 
-      batchSummary.hidden = false;
+						batchSummary.hidden = false;
 
-      const parts = [
-        `${batch.name}`,
-        `${batch.total} draft${
-          batch.total === 1 ? "" : "s"
-        }`,
-        `${batch.new} new`,
-        `${batch.modified} modified`,
-      ];
+						const parts = [
+								`${batch.total} draft${
+										batch.total === 1 ? "" : "s"
+								}`,
+								`${batch.new} new`,
+								`${batch.modified} mod`,
+						];
 
-      if (batch.image_only) {
-        parts.push(
-          `${batch.image_only} image-only`
-        );
-      }
+						if (batch.image_only) {
+								parts.push(
+										`${batch.image_only} img`
+								);
+						}
 
-      if (batch.withdrawals) {
-        parts.push(
-          `${batch.withdrawals} withdrawal${
-            batch.withdrawals === 1 ? "" : "s"
-          }`
-        );
-      }
+						if (batch.withdrawals) {
+								parts.push(
+										`${batch.withdrawals} withdraw`
+								);
+						}
 
-      batchSummaryText.textContent =
-        parts.join(" · ");
+						batchSummaryText.textContent =
+								parts.join(" · ");
 
-      draftFilterButton.textContent =
-        state.workflowState === "draft"
-          ? `Show all (${batch.total} drafts)`
-          : `View drafts (${batch.total})`;
+						batchSummaryText.title = [
+								batch.name,
+								`${batch.total} draft${
+										batch.total === 1 ? "" : "s"
+								}`,
+								`${batch.new} new`,
+								`${batch.modified} modified`,
+								batch.image_only
+										? `${batch.image_only} image-only`
+										: "",
+								batch.withdrawals
+										? `${batch.withdrawals} withdrawal${
+														batch.withdrawals === 1 ? "" : "s"
+												}`
+										: "",
+						]
+								.filter(Boolean)
+								.join(" · ");
 
-      batchPublishingEnabled = Boolean(
-        payload.publishing_enabled
-      );
+						draftFilterButton.textContent =
+								`Drafts (${batch.total})`;
 
-      updateDraftSelectionControls();
-    } catch (error) {
-      batchSummary.hidden = false;
+						batchPublishingEnabled = Boolean(
+								payload.publishing_enabled
+						);
 
-      batchSummaryText.textContent =
-        error instanceof Error
-          ? error.message
-          : "Unable to load batch status";
+						updateDraftSelectionControls();
+				} catch (error) {
+						batchSummary.hidden = false;
 
-      batchPublishingEnabled = false;
+						batchSummaryText.textContent =
+								error instanceof Error
+										? error.message
+										: "Unable to load batch status";
 
-      updateDraftSelectionControls();
-    }
-  }
+						batchSummaryText.removeAttribute("title");
+
+						batchPublishingEnabled = false;
+
+						updateDraftSelectionControls();
+				}
+		}
 
   // ------------------------------------------------------------
   // Draft creation
@@ -1418,6 +1532,16 @@
       SEARCH_DELAY_MS
     );
   });
+
+		categoryFilter.addEventListener(
+				"change",
+				() => {
+						state.category =
+								categoryFilter.value;
+
+						resetAndLoad();
+				}
+		);
 
   for (const button of sortHeaders) {
     button.addEventListener(
@@ -1733,10 +1857,11 @@
     try {
       await loadSession();
 
-      await Promise.all([
-        loadMore(),
-        loadBatchSummary(),
-      ]);
+						await Promise.all([
+								loadMore(),
+								loadBatchSummary(),
+								loadCategoryOptions(),
+						]);
     } catch (error) {
       setLoadMessage(
         error instanceof Error

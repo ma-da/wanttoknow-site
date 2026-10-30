@@ -1893,7 +1893,7 @@ old_path,new_path,type,status
 /a-Health-workers-against-New-York-State-mandatory-vaccination,/news/Health-workers-against-New-York-State-mandatory-vaccination,article,301
 /a-Healthiest-country-in-the-world-US-list,/news/Healthiest-country-in-the-world-US-list,article,301
 /a-Huge-Prescription-Drug-Price-Markups,/news/Huge-Prescription-Drug-Price-Markups,article,301
-"/a-Income inequality: Older generation gets rich, younger poor","/news/Income inequality: Older generation gets rich, younger poor",article,301
+"/a-Income inequality: Older generation gets rich, younger poor",/news/income-inequality-older-generation-gets-rich-younger-poor,article,301
 /a-Income-inequality-grows,/news/Income-inequality-grows,article,301
 /a-Inspiring-documentary-innovative-Japanese-teacher,/news/Inspiring-documentary-innovative-Japanese-teacher,article,301
 /a-Internet-Control-Information-Operations-Roadmap,/news/Internet-Control-Information-Operations-Roadmap,article,301
@@ -1905,7 +1905,7 @@ old_path,new_path,type,status
 /a-LSD-studies-resume,/news/LSD-studies-resume,article,301
 /a-Legislators-corrupted-health-industry,/news/Legislators-corrupted-health-industry,article,301
 /a-Lobbyists-outnumber-lawmakers-health-care-debate,/news/Lobbyists-outnumber-lawmakers-health-care-debate,article,301
-/a-Mafia-sink- ships-toxic-nuclear-waste,/news/Mafia-sink- ships-toxic-nuclear-waste,article,301
+/a-Mafia-sink- ships-toxic-nuclear-waste,/news/mafia-sink-ships-toxic-nuclear-waste,article,301
 /a-Magnetic-electricity,/news/Magnetic-electricity,article,301
 /a-Mandatory-health-insurance-bill-fine-refusers-1000,/news/Mandatory-health-insurance-bill-fine-refusers-1000,article,301
 /a-Mandatory-swine-flu-shots-military,/news/Mandatory-swine-flu-shots-military,article,301
@@ -1940,7 +1940,7 @@ old_path,new_path,type,status
 /a-Scientists-strive-mimic-photosynthesis,/news/Scientists-strive-mimic-photosynthesis,article,301
 /a-Secret-CIA-camps-terrorized-detainees,/news/Secret-CIA-camps-terrorized-detainees,article,301
 /a-Secret-CIA-program-Blackwater-used-foreigners,/news/Secret-CIA-program-Blackwater-used-foreigners,article,301
-"/a-Sempra, Enron: Gross energy manipulations","/news/Sempra, Enron: Gross energy manipulations",article,301
+"/a-Sempra, Enron: Gross energy manipulations",/news/sempra-enron-gross-energy-manipulations,article,301
 /a-Shari-Arison,/news/Shari-Arison,article,301
 /a-Sibel-Edmonds-American-Conservative,/news/Sibel-Edmonds-American-Conservative,article,301
 /a-Smart-Choices,/news/Smart-Choices,article,301
@@ -1977,7 +1977,7 @@ old_path,new_path,type,status
 /a-Urine-powered-cars,/news/Urine-powered-cars,article,301
 /a-Vaccines-H1N1-flu-Billions-profit-drug-companies-doctors,/news/Vaccines-H1N1-flu-Billions-profit-drug-companies-doctors,article,301
 /a-Virus-powered-battery-MIT,/news/Virus-powered-battery-MIT,article,301
-/a-WHO-Tamiflu-swine flu,/news/WHO-Tamiflu-swine flu,article,301
+/a-WHO-Tamiflu-swine flu,/news/who-tamiflu-swine-flu,article,301
 /a-Wall-Street-Business-as-usual,/news/Wall-Street-Business-as-usual,article,301
 /a-Wall-Street-Little-change,/news/Wall-Street-Little-change,article,301
 /a-Wall-Street-bonuses-New-record,/news/Wall-Street-bonuses-New-record,article,301
@@ -2252,7 +2252,7 @@ old_path,new_path,type,status
 /a-america-has-free-speech-problem,/news/america-has-free-speech-problem,article,301
 /a-america-has-spent-64-trillion-wars-the-middle-east-asia-since-2001-new-study-says,/news/america-has-spent-64-trillion-wars-the-middle-east-asia-since-2001-new-study-says,article,301
 /a-america-living-borrowed-money,/news/america-living-borrowed-money,article,301
-/a-america-locks-up-too-many-people-some-acts-not -criminal,/news/america-locks-up-too-many-people-some-acts-not -criminal,article,301
+/a-america-locks-up-too-many-people-some-acts-not -criminal,/news/america-locks-up-too-many-people-some-acts-not-criminal,article,301
 /a-america-only-had-handful-billionaires-40-years-ago-were-now-creating-centibillionairesand-unless-we-tax-them-trillionaires,/news/america-only-had-handful-billionaires-40-years-ago-were-now-creating-centibillionairesand-unless-we-tax-them-trillionaires,article,301
 /a-america-pours-billions-into-military-we-dont-know-where-it-all-goes,/news/america-pours-billions-into-military-we-dont-know-where-it-all-goes,article,301
 /a-america-siding-with-terrorists-like-alnusra-its-not-conspiracy-theory,/news/america-siding-with-terrorists-like-alnusra-its-not-conspiracy-theory,article,301
@@ -5666,7 +5666,7 @@ old_path,new_path,type,status
 /a-food-drink-industries-undermine-health-policy-study-finds,/news/food-drink-industries-undermine-health-policy-study-finds,article,301
 /a-food-forward-pilot-urban-farming,/news/food-forward-pilot-urban-farming,article,301
 /a-food-inc,/news/food-inc,article,301
-/a-food-inc -documentary-exposing-corporate-food-manipulations,/news/food-inc -documentary-exposing-corporate-food-manipulations,article,301
+/a-food-inc -documentary-exposing-corporate-food-manipulations,/news/food-inc-documentary-exposing-corporate-food-manipulations,article,301
 /a-food-industry-enlisted-academics-gmo-lobbying-war-emails-show,/news/food-industry-enlisted-academics-gmo-lobbying-war-emails-show,article,301
 /a-food-industry-influence-could-cloud-us-dietary-guidelines-new-report-says,/news/food-industry-influence-could-cloud-us-dietary-guidelines-new-report-says,article,301
 /a-food-prices-world-bank-warns-millions-face-poverty,/news/food-prices-world-bank-warns-millions-face-poverty,article,301
@@ -6306,7 +6306,7 @@ old_path,new_path,type,status
 /a-green-shoppers-powerful-new-tool,/news/green-shoppers-powerful-new-tool,article,301
 /a-green-steel-swedish-company-ships-first-batch-made-without-using-coal,/news/green-steel-swedish-company-ships-first-batch-made-without-using-coal,article,301
 /a-greenest-green-fuel,/news/greenest-green-fuel,article,301
-/a-greenland-ice-sheet-faces-tipping-point -10-years,/news/greenland-ice-sheet-faces-tipping-point -10-years,article,301
+/a-greenland-ice-sheet-faces-tipping-point -10-years,/news/greenland-ice-sheet-faces-tipping-point-10-years,article,301
 /a-greentech-startup-says-batterys-time-has-passed,/news/greentech-startup-says-batterys-time-has-passed,article,301
 /a-greg-palast-potential-fed-chair-summers-heart-global-economic-crisis,/news/greg-palast-potential-fed-chair-summers-heart-global-economic-crisis,article,301
 /a-gregg-williams-speech-adds-fuel-bountygate-fire,/news/gregg-williams-speech-adds-fuel-bountygate-fire,article,301
@@ -6545,7 +6545,7 @@ old_path,new_path,type,status
 /a-hiding-details-dubious-deal-us-invokes-national-security,/news/hiding-details-dubious-deal-us-invokes-national-security,article,301
 /a-high-cholesterol-does-not-cause-heart-disease-new-research-finds-so-treating-with-statins-waste-time,/news/high-cholesterol-does-not-cause-heart-disease-new-research-finds-so-treating-with-statins-waste-time,article,301
 /a-high-court-curbs-freespeech-rights-public-workers-the-job,/news/high-court-curbs-freespeech-rights-public-workers-the-job,article,301
-/a-high-court-sides-with- ex-enron-ceo-skilling,/news/high-court-sides-with- ex-enron-ceo-skilling,article,301
+/a-high-court-sides-with- ex-enron-ceo-skilling,/news/high-court-sides-with-ex-enron-ceo-skilling,article,301
 /a-high-court-whistleblowers-testimony-protected,/news/high-court-whistleblowers-testimony-protected,article,301
 /a-high-doses-vitamin-c-could-help-treat-cancer-safely-effectively-study-suggests,/news/high-doses-vitamin-c-could-help-treat-cancer-safely-effectively-study-suggests,article,301
 /a-high-flyer,/news/high-flyer,article,301
@@ -7275,7 +7275,7 @@ old_path,new_path,type,status
 /a-inquiry-asks-why-aig-paid-banks,/news/inquiry-asks-why-aig-paid-banks,article,301
 /a-inquiry-cia-affirms-it-spied-senate-panel,/news/inquiry-cia-affirms-it-spied-senate-panel,article,301
 /a-inquiry-declares-fukushima-crisis-manmade-disaster,/news/inquiry-declares-fukushima-crisis-manmade-disaster,article,301
-/a-inquiry-ian-tomlinson-death-g20-protest -london-prompts-more-questions-than-answers,/news/inquiry-ian-tomlinson-death-g20-protest -london-prompts-more-questions-than-answers,article,301
+/a-inquiry-ian-tomlinson-death-g20-protest -london-prompts-more-questions-than-answers,/news/inquiry-ian-tomlinson-death-g20-protest-london-prompts-more-questions-than-answers,article,301
 /a-inquiry-leaks-casting-chill-over-coverage,/news/inquiry-leaks-casting-chill-over-coverage,article,301
 /a-inquiry-puts-spotlight-us-special-forces-afghanistan,/news/inquiry-puts-spotlight-us-special-forces-afghanistan,article,301
 /a-inquiry-stokes-unease-over-trading-firms-shape-markets,/news/inquiry-stokes-unease-over-trading-firms-shape-markets,article,301
@@ -8637,7 +8637,7 @@ old_path,new_path,type,status
 /a-millions-h1n1-vaccine-doses-may-be-tossed,/news/millions-h1n1-vaccine-doses-may-be-tossed,article,301
 /a-millions-millions,/news/millions-millions,article,301
 /a-millions-missing-bush-admin-emails-found,/news/millions-missing-bush-admin-emails-found,article,301
-/a-millions-spent-doctor-gagging-orders-nhs- investigation finds,/news/millions-spent-doctor-gagging-orders-nhs- investigation finds,article,301
+/a-millions-spent-doctor-gagging-orders-nhs- investigation finds,/news/millions-spent-doctor-gagging-orders-nhs-investigation-finds,article,301
 /a-millions-were-germ-war-tests,/news/millions-were-germ-war-tests,article,301
 /a-mind-control-scientists-can-now-make-people-alter-their-prejudices-belief-god,/news/mind-control-scientists-can-now-make-people-alter-their-prejudices-belief-god,article,301
 /a-mind-games,/news/mind-games,article,301
@@ -12356,7 +12356,7 @@ old_path,new_path,type,status
 /a-touchscreen-voting-fallible-ehrlich-says,/news/touchscreen-voting-fallible-ehrlich-says,article,301
 /a-toward-truly-compostable-plastic,/news/toward-truly-compostable-plastic,article,301
 /a-town-crier-global-village,/news/town-crier-global-village,article,301
-/a-toxic legacy-us-assault -fallujah-worse-than-hiroshima,/news/toxic legacy-us-assault -fallujah-worse-than-hiroshima,article,301
+/a-toxic legacy-us-assault -fallujah-worse-than-hiroshima,/news/toxic-legacy-us-assault-fallujah-worse-than-hiroshima,article,301
 /a-toxic-chemicals-emitted-those-facilities-can-ravage-human-body,/news/toxic-chemicals-emitted-those-facilities-can-ravage-human-body,article,301
 /a-toxic-fukushima-fallout-threatens-fishermens-livelihoods,/news/toxic-fukushima-fallout-threatens-fishermens-livelihoods,article,301
 /a-toxic-harvest,/news/toxic-harvest,article,301
@@ -14234,7 +14234,7 @@ old_path,new_path,type,status
 /a-worlds-oldest-man-dies-montana-114,/news/worlds-oldest-man-dies-montana-114,article,301
 /a-worlds-oldest-yoga-teacher-shares-her-tips-a-long-happy-life,/news/worlds-oldest-yoga-teacher-shares-her-tips-a-long-happy-life,article,301
 /a-worlds-poorest-expresident-mujica-turns-down-pension,/news/worlds-poorest-expresident-mujica-turns-down-pension,article,301
-/a-worlds-richest-1%-own-40%-all-wealth-un-report-discovers,/news/worlds-richest-1%-own-40%-all-wealth-un-report-discovers,article,301
+/a-worlds-richest-1%-own-40%-all-wealth-un-report-discovers,/news/worlds-richest-1-percent-own-40-percent-all-wealth-un-report-discovers,article,301
 /a-worlds-richest-1-get-82-the-wealth-says-oxfam,/news/worlds-richest-1-get-82-the-wealth-says-oxfam,article,301
 /a-worlds-richest-men-added-billions-their-fortunes-last-year-as-others-struggled,/news/worlds-richest-men-added-billions-their-fortunes-last-year-as-others-struggled,article,301
 /a-worlds-richest-people-have-more-than-doubled-their-wealth-since-2008,/news/worlds-richest-people-have-more-than-doubled-their-wealth-since-2008,article,301
@@ -14612,3 +14612,15 @@ old_path,new_path,type,status
 /zika-virusmediaarticles,/news/category/zika-virus,category,301
 /zika-virusnewsarticles,/news/category/zika-virus,category,301
 /zika-virusnewsstories,/news/category/zika-virus,category,301
+/news/worlds-richest-1%-own-40%-all-wealth-un-report-discovers,/news/worlds-richest-1-percent-own-40-percent-all-wealth-un-report-discovers,article,301
+/news/food-inc -documentary-exposing-corporate-food-manipulations,/news/food-inc-documentary-exposing-corporate-food-manipulations,article,301
+/news/Mafia-sink- ships-toxic-nuclear-waste,/news/mafia-sink-ships-toxic-nuclear-waste,article,301
+"/news/Income inequality: Older generation gets rich, younger poor",/news/income-inequality-older-generation-gets-rich-younger-poor,article,301
+/news/WHO-Tamiflu-swine flu,/news/who-tamiflu-swine-flu,article,301
+"/news/Sempra, Enron: Gross energy manipulations",/news/sempra-enron-gross-energy-manipulations,article,301
+/news/high-court-sides-with- ex-enron-ceo-skilling,/news/high-court-sides-with-ex-enron-ceo-skilling,article,301
+/news/inquiry-ian-tomlinson-death-g20-protest -london-prompts-more-questions-than-answers,/news/inquiry-ian-tomlinson-death-g20-protest-london-prompts-more-questions-than-answers,article,301
+/news/america-locks-up-too-many-people-some-acts-not -criminal,/news/america-locks-up-too-many-people-some-acts-not-criminal,article,301
+/news/toxic legacy-us-assault -fallujah-worse-than-hiroshima,/news/toxic-legacy-us-assault-fallujah-worse-than-hiroshima,article,301
+/news/millions-spent-doctor-gagging-orders-nhs- investigation finds,/news/millions-spent-doctor-gagging-orders-nhs-investigation-finds,article,301
+/news/greenland-ice-sheet-faces-tipping-point -10-years,/news/greenland-ice-sheet-faces-tipping-point-10-years,article,301

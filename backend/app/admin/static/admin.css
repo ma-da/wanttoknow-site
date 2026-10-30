@@ -998,12 +998,20 @@
    ========================================================================== */
 
 .admin-editor-header {
+  display: flex;
   align-items: center;
-  padding-bottom: 0.45rem;
+  gap: 1.25rem;
 }
 
 .admin-editor-header__title {
+  flex: 1;
   min-width: 0;
+}
+
+.admin-header__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .admin-editor-header .admin-eyebrow {
@@ -1493,6 +1501,15 @@
 }
 
 .admin-toolbar__search input {
+  width: 100%;
+}
+
+.admin-toolbar__category {
+  min-width: 0;
+  margin: 0;
+}
+
+.admin-toolbar__category select {
   width: 100%;
 }
 
@@ -2299,7 +2316,22 @@
   color: #000;
 }
 
+#save-article {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
 
+#save-article.is-saved,
+#save-article.is-saved:hover,
+#save-article.is-saved:focus-visible {
+  background: #48d1cc;
+  border-color: #48d1cc;
+  color: #173735;
+  box-shadow: 0 0 0 3px rgba(72, 209, 204, 0.2);
+}
 
 /* ==========================================================================
    Responsive layout
@@ -2354,6 +2386,16 @@
   .admin-toolbar--articles .admin-batch-status:empty {
     display: none;
   }
+
+		.admin-toolbar--articles .admin-toolbar__category {
+				flex: 0 1 11rem;
+				min-width: 8.5rem;
+				margin: 0;
+		}
+
+		.admin-toolbar--articles .admin-toolbar__category select {
+				width: 100%;
+		}
 }
 
 @media (min-width: 70rem) {
@@ -2373,9 +2415,9 @@
   }
 
   .admin-toolbar--articles .admin-toolbar__search {
-    flex: 1 1 14rem;
-    min-width: 9rem;
-    max-width: 22rem;
+				flex: 1 1 12rem;
+				min-width: 8rem;
+				max-width: 18rem;
     margin: 0;
   }
 
@@ -2416,6 +2458,7 @@
     white-space: nowrap;
   }
 
+
   .admin-toolbar--articles .admin-primary-button,
   .admin-toolbar--articles .admin-secondary-button,
   .admin-toolbar--articles .admin-publish-button {
@@ -2446,6 +2489,21 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+		.admin-toolbar--articles .admin-toolbar__category {
+				flex: 0 1 10.5rem;
+				min-width: 8rem;
+				max-width: 12rem;
+				margin: 0;
+		}
+
+		.admin-toolbar--articles .admin-toolbar__category select {
+				width: 100%;
+				min-height: 2.2rem;
+				padding: 0.38rem 1.6rem 0.38rem 0.5rem;
+				font-size: 0.72rem;
+		}
+
 }
 
 @media (max-width: 72rem) {

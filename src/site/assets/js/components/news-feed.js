@@ -21,11 +21,32 @@
 const ARTICLE_INDEX_CACHE = new Map();
 
 let newsFeedInstanceCount = 0;
-
+let CATEGORY_LABELS = {};
 
 /* ==========================================================================
    Shared data loading
    ========================================================================== */
+
+async function loadCategoryLabels() {
+  try {
+    const response = await fetch("/data/category-labels.json");
+
+    if (!response.ok) {
+      throw new Error(
+        `Unable to load category labels: ${response.status}`
+      );
+    }
+
+    CATEGORY_LABELS = await response.json();
+  } catch (error) {
+    console.warn(
+      "[wtk-news-feed] Category labels unavailable",
+      error
+    );
+
+    CATEGORY_LABELS = {};
+  }
+}
 
 async function loadJsonl(url) {
   if (ARTICLE_INDEX_CACHE.has(url)) {
@@ -120,16 +141,20 @@ function humanizeTag(tag) {
     return "";
   }
 
+  const slug = String(tag).trim();
+
+  if (CATEGORY_LABELS[slug]) {
+    return CATEGORY_LABELS[slug];
+  }
+
   /*
-   * This prettifies tags containing - or _.
-   *
-   * Legacy slugs such as "governmentcorruption" cannot be separated
-   * intelligently without a category-label lookup table. The slug is
-   * therefore preserved rather than guessed incorrectly.
+   * Fallback for future tags that aren't yet in the label file.
    */
-  return String(tag)
+  return slug
     .replace(/[-_]+/g, " ")
-    .replace(/\b\w/g, (character) => character.toUpperCase());
+    .replace(/\b\w/g, (character) =>
+      character.toUpperCase()
+    );
 }
 
 
@@ -983,7 +1008,7 @@ class WtkNewsFeed extends HTMLElement {
 
 				this.statusElement.textContent =
 						"Loading articles…";
-						
+
 				if (
 						this.hasAttribute("hide-count")
 				) {
@@ -995,7 +1020,7 @@ class WtkNewsFeed extends HTMLElement {
 						this.hasAttribute("hide-count")
 				) {
 						toolbar.hidden = true;
-				}				
+				}
 
 				toolbar.append(
 						this.statusElement
@@ -1145,9 +1170,11 @@ class WtkNewsFeed extends HTMLElement {
 
   async load() {
     try {
-      this.articles = await loadJsonl(
-        this.sourceUrl
-      );
+						await loadCategoryLabels();
+
+						this.articles = await loadJsonl(
+								this.sourceUrl
+						);
 
       this.loaded = true;
 
@@ -1201,7 +1228,7 @@ class WtkNewsFeed extends HTMLElement {
 										Number(article.priority || 0) >= this.minPriority
 						);
 				}
-				
+
 				const wantedIds =
 						this.selectedIds;
 
@@ -1229,7 +1256,7 @@ class WtkNewsFeed extends HTMLElement {
 												articlesById.get(id)
 								)
 								.filter(Boolean);
-				}				
+				}
 
     if (wantedTags.length) {
       results = results.filter((article) => {

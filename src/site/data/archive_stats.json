@@ -1,86 +1,86 @@
 {
-  "article_count": 14393,
+  "article_count": 14435,
   "date_range": {
     "first": "1904-03-27",
-    "last": "2026-09-10"
+    "last": "2026-09-30"
   },
-  "dated_article_count": 14393,
+  "dated_article_count": 14435,
   "undated_article_count": 0,
   "category_count": 92,
-  "publisher_group_count": 689,
-  "articles_with_images": 1633,
-  "articles_with_related": 14393,
+  "publisher_group_count": 694,
+  "articles_with_images": 1685,
+  "articles_with_related": 14435,
   "categories": {
-    "governmentcorruption": 6676,
-    "corporatecorruption": 2890,
-    "inspirational": 2807,
-    "health": 2303,
-    "intelligenceagency": 1573,
-    "war": 1411,
-    "militarycorruption": 1168,
+    "governmentcorruption": 6683,
+    "corporatecorruption": 2894,
+    "inspirational": 2817,
+    "health": 2312,
+    "intelligenceagency": 1578,
+    "war": 1414,
+    "militarycorruption": 1173,
     "terrorism": 1158,
     "secrecy": 1048,
-    "civilliberties": 1024,
-    "sexabusescandals": 898,
+    "civilliberties": 1026,
+    "sexabusescandals": 899,
     "financial": 789,
-    "privacy": 757,
-    "coronavirus": 730,
+    "privacy": 760,
+    "coronavirus": 731,
     "massmedia": 677,
     "pharmaceuticalcorruption": 561,
     "911": 510,
     "bigbrother": 484,
-    "newenergy": 473,
-    "food-corruption": 462,
+    "newenergy": 475,
+    "food-corruption": 467,
     "bankbailout": 442,
+    "corruptioninscience": 418,
     "incomeinequality": 418,
-    "corruptioninscience": 414,
-    "ufos": 391,
+    "ufos": 398,
     "elections": 343,
-    "police-corruption": 331,
-    "vaccines": 277,
-    "natureofreality": 276,
+    "police-corruption": 332,
+    "natureofreality": 282,
+    "vaccines": 279,
     "mindcontrol": 274,
     "geneticallymodifiedorganisms": 269,
     "prisonscorruption": 269,
-    "coronavirus-vaccine-problems": 259,
+    "coronavirus-vaccine-problems": 260,
     "court-judicial-corruption": 221,
-    "newenergyinventions": 213,
-    "healing-our-relationships": 202,
-    "big-tech": 200,
-    "healing-our-earth": 184,
-    "jeffrey-epstein": 176,
-    "nuclear_power": 161,
+    "newenergyinventions": 217,
+    "healing-our-relationships": 203,
+    "big-tech": 202,
+    "healing-our-earth": 185,
+    "jeffrey-epstein": 177,
+    "nuclear_power": 162,
     "mindalteringdrugs": 158,
-    "toxic-chemicals": 153,
+    "toxic-chemicals": 158,
     "globalwarming": 148,
+    "healing-our-bodies": 139,
     "assassinations": 138,
-    "healing-our-bodies": 138,
-    "mental-health": 134,
-    "AI": 133,
+    "mental-health": 136,
+    "AI": 134,
     "secretsocieties": 114,
     "censorship": 108,
-    "tech-for-good": 101,
-    "biotech-dangers": 97,
+    "tech-for-good": 106,
+    "biotech-dangers": 98,
+    "reimagining-the-economy": 96,
     "repairing-our-criminal-justice-system": 95,
-    "reimagining-the-economy": 92,
     "avianflubird": 91,
+    "warfare-tech": 90,
     "top-human-interest-stories": 89,
-    "warfare-tech": 87,
     "cell-phones-wireless-dangers": 85,
     "nonlethalweapons": 81,
+    "microchipsimplants": 80,
     "general": 79,
-    "microchipsimplants": 79,
     "cancercures": 77,
-    "environmental-destruction": 67,
+    "environmental-destruction": 69,
     "inspiring-disabled-persons": 67,
     "healing-the-war-machine": 66,
     "war-on-drugs": 66,
+    "neardeathexperiences": 64,
     "dolphinswhales": 62,
     "government-waste": 62,
-    "neardeathexperiences": 59,
-    "weapons-mass-destruction": 59,
+    "weapons-mass-destruction": 60,
     "hurricanekatrina": 58,
-    "immigration-enforcement-corruption": 53,
+    "immigration-enforcement-corruption": 56,
     "reimagining-education": 50,
     "animal-wonders": 49,
     "kennedy-assassination": 46,
@@ -107,15 +107,15 @@
   "publishing_groups": {
     "new-york-times": {
       "name": "New York Times",
-      "count": 1673
+      "count": 1675
     },
     "the-guardian": {
       "name": "The Guardian",
-      "count": 1366
+      "count": 1371
     },
     "washington-post": {
       "name": "Washington Post",
-      "count": 1025
+      "count": 1027
     },
     "san-francisco-chronicle": {
       "name": "San Francisco Chronicle",
@@ -127,19 +127,19 @@
     },
     "abc": {
       "name": "ABC",
-      "count": 487
+      "count": 488
     },
     "bbc": {
       "name": "BBC",
-      "count": 439
+      "count": 443
     },
     "cbs": {
       "name": "CBS",
-      "count": 421
+      "count": 422
     },
     "the-intercept": {
       "name": "The Intercept",
-      "count": 363
+      "count": 364
     },
     "the-independent": {
       "name": "The Independent",
@@ -167,7 +167,7 @@
     },
     "usa-today": {
       "name": "USA Today",
-      "count": 211
+      "count": 212
     },
     "newsweek": {
       "name": "Newsweek",
@@ -215,7 +215,7 @@
     },
     "new-york-post": {
       "name": "New York Post",
-      "count": 123
+      "count": 126
     },
     "chicago-tribune": {
       "name": "Chicago Tribune",
@@ -227,11 +227,11 @@
     },
     "yahoo": {
       "name": "Yahoo",
-      "count": 106
+      "count": 107
     },
     "cbc": {
       "name": "CBC",
-      "count": 93
+      "count": 94
     },
     "miami-herald": {
       "name": "Miami Herald",
@@ -241,13 +241,13 @@
       "name": "Daily Mail",
       "count": 88
     },
+    "london-times": {
+      "name": "London Times",
+      "count": 77
+    },
     "pbs": {
       "name": "PBS",
       "count": 77
-    },
-    "london-times": {
-      "name": "London Times",
-      "count": 75
     },
     "reasons-to-be-cheerful": {
       "name": "Reasons to be Cheerful",
@@ -333,6 +333,10 @@
       "name": "Fortune",
       "count": 31
     },
+    "newsnation": {
+      "name": "NewsNation",
+      "count": 31
+    },
     "sacramento-bee": {
       "name": "Sacramento Bee",
       "count": 31
@@ -347,10 +351,6 @@
     },
     "houston-chronicle": {
       "name": "Houston Chronicle",
-      "count": 28
-    },
-    "newsnation": {
-      "name": "NewsNation",
       "count": 28
     },
     "toronto-star": {
@@ -377,6 +377,14 @@
       "name": "Financial Times",
       "count": 23
     },
+    "quincy-center-for-responsible-statecraft": {
+      "name": "Quincy Center for Responsible Statecraft",
+      "count": 23
+    },
+    "mother-jones": {
+      "name": "Mother Jones",
+      "count": 22
+    },
     "reason": {
       "name": "Reason",
       "count": 22
@@ -392,14 +400,6 @@
     "washington-times": {
       "name": "Washington Times",
       "count": 22
-    },
-    "mother-jones": {
-      "name": "Mother Jones",
-      "count": 21
-    },
-    "quincy-center-for-responsible-statecraft": {
-      "name": "Quincy Center for Responsible Statecraft",
-      "count": 21
     },
     "jacobin": {
       "name": "Jacobin",
@@ -609,6 +609,10 @@
       "name": "Philadelphia Inquirer",
       "count": 8
     },
+    "psychology-today": {
+      "name": "Psychology Today",
+      "count": 8
+    },
     "the-conversation": {
       "name": "The Conversation",
       "count": 8
@@ -627,10 +631,6 @@
     },
     "mit-technology-review": {
       "name": "MIT Technology Review",
-      "count": 7
-    },
-    "psychology-today": {
-      "name": "Psychology Today",
       "count": 7
     },
     "quartz": {
@@ -655,6 +655,10 @@
     },
     "chicago-sun-times": {
       "name": "Chicago Sun-Times",
+      "count": 6
+    },
+    "civil-eats": {
+      "name": "Civil Eats",
       "count": 6
     },
     "deseret-news": {
@@ -683,10 +687,6 @@
     },
     "bulletin-of-the-atomic-scientists": {
       "name": "Bulletin of the Atomic Scientists",
-      "count": 5
-    },
-    "civil-eats": {
-      "name": "Civil Eats",
       "count": 5
     },
     "alternet": {
@@ -1013,6 +1013,10 @@
       "name": "GQ",
       "count": 2
     },
+    "grist": {
+      "name": "Grist",
+      "count": 2
+    },
     "harvard-gazette": {
       "name": "Harvard Gazette",
       "count": 2
@@ -1073,6 +1077,10 @@
       "name": "Metro.co.uk",
       "count": 2
     },
+    "military-com": {
+      "name": "Military.com",
+      "count": 2
+    },
     "nasa": {
       "name": "NASA",
       "count": 2
@@ -1129,6 +1137,10 @@
       "name": "SciTech Daily",
       "count": 2
     },
+    "space-com": {
+      "name": "Space.com",
+      "count": 2
+    },
     "sunday-herald": {
       "name": "Sunday Herald",
       "count": 2
@@ -1169,6 +1181,10 @@
       "name": "Treehugger",
       "count": 2
     },
+    "triple-pundit": {
+      "name": "Triple Pundit",
+      "count": 2
+    },
     "truthdig": {
       "name": "TruthDig",
       "count": 2
@@ -1187,6 +1203,10 @@
     },
     "us-patent-and-trademark-office": {
       "name": "US Patent and Trademark Office",
+      "count": 2
+    },
+    "vice-news": {
+      "name": "Vice News",
       "count": 2
     },
     "village-voice": {
@@ -1227,6 +1247,10 @@
     },
     "abc-nightline": {
       "name": "ABC Nightline",
+      "count": 1
+    },
+    "aeon": {
+      "name": "Aeon",
       "count": 1
     },
     "africa-news": {
@@ -1661,10 +1685,6 @@
       "name": "Government Executive",
       "count": 1
     },
-    "grist": {
-      "name": "Grist",
-      "count": 1
-    },
     "harm-reduction-international": {
       "name": "Harm Reduction International",
       "count": 1
@@ -1723,6 +1743,10 @@
     },
     "idaho-state-journal": {
       "name": "Idaho State Journal",
+      "count": 1
+    },
+    "ieee-spectrum": {
+      "name": "IEEE Spectrum",
       "count": 1
     },
     "inc-com": {
@@ -1913,6 +1937,10 @@
       "name": "KTVN News",
       "count": 1
     },
+    "kunm": {
+      "name": "KUNM",
+      "count": 1
+    },
     "kutv": {
       "name": "KUTV",
       "count": 1
@@ -1999,10 +2027,6 @@
     },
     "michigan-live": {
       "name": "Michigan Live",
-      "count": 1
-    },
-    "military-com": {
-      "name": "Military.com",
       "count": 1
     },
     "military-times": {
@@ -2233,6 +2257,10 @@
       "name": "Portland Tribune",
       "count": 1
     },
+    "powermag": {
+      "name": "Powermag",
+      "count": 1
+    },
     "pr-newswire": {
       "name": "PR Newswire",
       "count": 1
@@ -2377,10 +2405,6 @@
       "name": "Sky News",
       "count": 1
     },
-    "space-com": {
-      "name": "Space.com",
-      "count": 1
-    },
     "space-daily": {
       "name": "Space Daily",
       "count": 1
@@ -2451,6 +2475,10 @@
     },
     "the-american-conservative": {
       "name": "The American Conservative",
+      "count": 1
+    },
+    "the-banner": {
+      "name": "The Banner",
       "count": 1
     },
     "the-capital-times": {
@@ -2583,10 +2611,6 @@
     },
     "tooele-transcript-bulletin": {
       "name": "Tooele Transcript Bulletin",
-      "count": 1
-    },
-    "triple-pundit": {
-      "name": "Triple Pundit",
       "count": 1
     },
     "trump-s-war-on-drugs": {
@@ -2727,10 +2751,6 @@
     },
     "vera": {
       "name": "Vera",
-      "count": 1
-    },
-    "vice-news": {
-      "name": "Vice News",
       "count": 1
     },
     "voice-of-america": {
@@ -2934,11 +2954,11 @@
     "2018": 634,
     "2019": 508,
     "2020": 615,
-    "2021": 588,
+    "2021": 589,
     "2022": 503,
-    "2023": 616,
-    "2024": 662,
-    "2025": 581,
-    "2026": 238
+    "2023": 618,
+    "2024": 663,
+    "2025": 584,
+    "2026": 273
   }
 }

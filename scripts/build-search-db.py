@@ -881,6 +881,29 @@ def build_news_content(
                         )
                     )
                     or None,
+                "summary_markdown":
+                    str(
+                        pick(
+                            master_row,
+                            "summary_markdown",
+                            "summary",
+                            "Summary",
+                            "description_markdown",
+                            "description",
+                            "Description",
+                        )
+                        or ""
+                    ).strip(),
+                "note_markdown":
+                    str(
+                        pick(
+                            master_row,
+                            "note_markdown",
+                            "note",
+                            "Note",
+                        )
+                        or ""
+                    ).strip(),
             },
         )
 

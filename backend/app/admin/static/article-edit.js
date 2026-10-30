@@ -89,13 +89,23 @@
   let dirty = false;
   let loading = true;
   let currentAdminState = null;
+		let saveSuccessTimer = null;
 
   function setMessage(text, type = "") {
     message.textContent = text;
     message.dataset.type = type;
   }
 
+		function showSaveSuccess() {
+				window.clearTimeout(saveSuccessTimer);
 
+				saveButton.classList.add("is-saved");
+
+				saveSuccessTimer = window.setTimeout(() => {
+						saveButton.classList.remove("is-saved");
+						saveSuccessTimer = null;
+				}, 20000);
+		}
 
   function safePreviewUrl(value) {
     const raw = String(value || "").trim();
@@ -359,7 +369,7 @@
 
     imageStageBadge.hidden = !staged;
     imageDiscardButton.hidden = !staged;
-    imageUploadLabel.textContent = staged || working ? "Replace image" : "Choose image";
+    imageUploadLabel.textContent = staged || working ? "Replace image or drop here" : "Choose image or drop here";
 
     if (staged) {
       const cacheKey = staged.full?.sha256 ? staged.full.sha256.slice(0, 12) : Date.now();
@@ -456,7 +466,7 @@
       imageInput.disabled = false;
       imageDiscardButton.disabled = false;
       imageInput.value = "";
-      if (imageUploadLabel.textContent === "Processing…") imageUploadLabel.textContent = "Choose image";
+      if (imageUploadLabel.textContent === "Processing…") imageUploadLabel.textContent = "Choose image or drop here";
     }
   }
 
@@ -1181,20 +1191,32 @@
       renderState(result.admin || {});
       updateGeneratedUrl();
       dirty = false;
-      if (!quiet) {
-        const warning = (result.warnings || []).join(" ");
-        setMessage(
-          warning ? `Saved to SQLite. Master JSONL unchanged. ${warning}` : "Saved to SQLite. Master JSONL and public site are unchanged.",
-          warning ? "warning" : "ok",
-        );
-      }
+						if (!quiet) {
+								const warning = (result.warnings || []).join(" ");
+
+								setMessage(
+										warning
+												? `Saved to SQLite. Master JSONL unchanged. ${warning}`
+												: "Saved to SQLite. Master JSONL and public site are unchanged.",
+										warning ? "warning" : "ok",
+								);
+
+								showSaveSuccess();
+						}
       return true;
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Unable to save article", "error");
-      return false;
-    } finally {
-      saveButton.disabled = false;
-    }
+						} catch (error) {
+								window.clearTimeout(saveSuccessTimer);
+								saveSuccessTimer = null;
+								saveButton.classList.remove("is-saved");
+
+								setMessage(
+										error instanceof Error
+												? error.message
+												: "Unable to save article",
+										"error",
+								);
+								return false;
+						}
   }
 
   async function publishCurrentArticle() {
@@ -1249,9 +1271,68 @@
     if (event.target === previewDialog) previewDialog.close();
   });
 
-  imageInput.addEventListener("change", () => {
-    uploadImage(imageInput.files?.[0] || null);
-  });
+		imageInput.addEventListener("change", () => {
+				uploadImage(imageInput.files?.[0] || null);
+		});
+
+		function setImageDropActive(active) {
+				imageUploadLabel.classList.toggle("is-dragging", active);
+		}
+
+		imageUploadLabel.addEventListener("dragenter", (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (!imageInput.disabled) {
+						setImageDropActive(true);
+				}
+		});
+
+		imageUploadLabel.addEventListener("dragover", (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (event.dataTransfer) {
+						event.dataTransfer.dropEffect = "copy";
+				}
+
+				if (!imageInput.disabled) {
+						setImageDropActive(true);
+				}
+		});
+
+		imageUploadLabel.addEventListener("dragleave", (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+
+				// Ignore movement between descendants of the drop target.
+				if (
+						event.relatedTarget instanceof Node &&
+						imageUploadLabel.contains(event.relatedTarget)
+				) {
+						return;
+				}
+
+				setImageDropActive(false);
+		});
+
+		imageUploadLabel.addEventListener("drop", (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+				setImageDropActive(false);
+
+				if (imageInput.disabled) return;
+
+				const files = event.dataTransfer?.files;
+				if (!files?.length) return;
+
+				if (files.length > 1) {
+						setMessage("Drop one image at a time.", "error");
+						return;
+				}
+
+				uploadImage(files[0]);
+		});
   imageDiscardButton.addEventListener("click", discardStagedImage);
   deleteArticleButton.addEventListener("click", deleteArticleEntry);
   removeArticleButton.addEventListener("click", openWithdrawalDialog);

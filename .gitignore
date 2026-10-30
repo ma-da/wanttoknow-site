@@ -100,3 +100,23 @@ src/site/data/wtk_articles_master.csv
 # ----------------------------------------------------------------------
 .cache/
 .lesshst
+src/site/search/cointelpro/images/
+src/site/search/cointelpro/thumbs/
+# Local/editor backup artifacts
+*.bak
+*.backup
+*.orig
+*.old
+*~
+*.pre-*
+*.pre_*
+
+# Repository-local backups
+/backups/
+# Additional dated backup/snapshot artifacts
+*.bak-*
+*.before-*
+*-pre-*.csv
+
+# Legacy migration source material
+/legacy-newsletters/

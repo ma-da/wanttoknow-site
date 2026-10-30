@@ -1,0 +1,2 @@
+type,lookup_key,sources,decision,target,note
+case-sensitive-archive,/a-pakistani-prime-minister-osama-bin-laden-dead,/a-Pakistani-Prime-Minister-Osama-bin-Laden-Dead | /a-pakistani-prime-minister-osama-bin-laden-dead,preserve separately,case-specific archive targets,case-sensitive nginx regex entries generated

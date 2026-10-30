@@ -3,6 +3,9 @@
 
   const DATA_URL = "/data/elements/headerFooter.json";
 
+		const BRAND_MARK_URL =
+  "/assets/graphics/wtk-logo-top.svg";
+
   const $ = (selector, root = document) =>
     root.querySelector(selector);
 
@@ -119,15 +122,12 @@
 																aria-label="${escapeHtml(brand.ariaLabel)}">
 
 																<span
-																		class="brand-mark"
-																		aria-hidden="true">
+																				class="brand-mark"
+																				aria-hidden="true">
 
-																		<svg
-																				viewBox="0 0 24 24"
-																				focusable="false">
-																				<circle cx="11" cy="11" r="6.5"></circle>
-																				<path d="M16 16L21 21"></path>
-																		</svg>
+																				<img
+																								src="${BRAND_MARK_URL}"
+																								alt="">
 
 																</span>
 
@@ -313,15 +313,12 @@
 																aria-label="${escapeHtml(brand.ariaLabel)}">
 
 																<span
-																		class="brand-mark"
-																		aria-hidden="true">
+																				class="brand-mark"
+																				aria-hidden="true">
 
-																		<svg
-																				viewBox="0 0 24 24"
-																				focusable="false">
-																				<circle cx="11" cy="11" r="6.5"></circle>
-																				<path d="M16 16L21 21"></path>
-																		</svg>
+																				<img
+																								src="${BRAND_MARK_URL}"
+																								alt="">
 
 																</span>
 
@@ -440,15 +437,12 @@
 																aria-label="${escapeHtml(brand.ariaLabel)}">
 
 																<span
-																		class="brand-mark"
-																		aria-hidden="true">
+																				class="brand-mark"
+																				aria-hidden="true">
 
-																		<svg
-																				viewBox="0 0 24 24"
-																				focusable="false">
-																				<circle cx="11" cy="11" r="6.5"></circle>
-																				<path d="M16 16L21 21"></path>
-																		</svg>
+																				<img
+																								src="${BRAND_MARK_URL}"
+																								alt="">
 
 																</span>
 

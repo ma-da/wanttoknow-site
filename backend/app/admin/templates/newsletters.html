@@ -180,7 +180,7 @@
   }
 
   .selected-item {
-    background: var(--tan);
+    background: #ccccff;
   }
 
   .drag {
@@ -1057,14 +1057,16 @@
     blank.textContent = "New / current date";
     draftSelect.append(blank);
 
-    for (const draft of result.newsletters || []) {
+    const drafts = [...(result.newsletters || [])].sort(
+      (a, b) =>
+        String(b.issue_date || "").localeCompare(String(a.issue_date || "")) ||
+        String(b.newsletter_id || "").localeCompare(String(a.newsletter_id || ""))
+    );
+
+    for (const draft of drafts) {
       const option = document.createElement("option");
       option.value = draft.issue_date;
-      option.textContent =
-        `${draft.issue_date}${
-          draft.title ? " — " + draft.title : ""
-        }`;
-
+      option.textContent = draft.title || `Newsletter — ${draft.issue_date}`;
       draftSelect.append(option);
     }
 

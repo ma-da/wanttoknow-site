@@ -1,0 +1,58 @@
+{
+  "dataset": {
+    "id": "cointelpro-page-search",
+    "title": "COINTELPRO Archive Page Search",
+    "version": "1.0.0",
+    "created_at": "2026-10-13T17:37:40.769134+00:00",
+    "site_path": "/search/cointelpro/",
+    "primary_identifier": "page_id",
+    "description": "Client-side page-level transcription index for the WantToKnow.info COINTELPRO search application."
+  },
+  "counts": {
+    "pages": 14402,
+    "documents": 127,
+    "pages_with_year_mentions": 5380,
+    "pages_with_redactions": 13773,
+    "probable_redaction_regions": 936809,
+    "pages_needing_review": 14018
+  },
+  "files": {
+    "page_index": {
+      "filename": "assets/data/cointelpro_page_index.jsonl",
+      "media_type": "application/x-ndjson",
+      "record_count": 14402,
+      "size_bytes": 36803090,
+      "sha256": "cd97432b74a36d55aec7ee65b53dedff660bc856fc5708a17ea6cb7ffb457df1"
+    },
+    "thumbnails": {
+      "directory": "thumbs/",
+      "format": "image/jpeg",
+      "max_dimension_pixels": 360
+    },
+    "images": {
+      "directory": "images/",
+      "format": "image/jpeg",
+      "max_long_side_pixels": 1575
+    }
+  },
+  "page_schema": {
+    "record_id": "Stable zero-padded page key",
+    "page_id": "Permanent integer page identifier",
+    "page_key": "Zero-padded page filename key",
+    "document_id": "Stable source-document identifier",
+    "document_page_number": "Page number within source document",
+    "source_filename": "Matching optimized JPEG filename",
+    "thumbnail_filename": "Matching JPEG thumbnail filename",
+    "source_relative_path": "Original source-document relative path",
+    "text": "MinerU transcription with probable-redaction markers",
+    "year_mentions": "Years detected during local processing",
+    "transcription_status": "usable or needs_review",
+    "review_reasons": "Quality-control review flags",
+    "redaction_count": "Number of probable redaction regions"
+  },
+  "provenance": {
+    "source": "FBI Vault COINTELPRO collection",
+    "source_url": "https://vault.fbi.gov/cointel-pro",
+    "dataset_url": "https://huggingface.co/datasets/peers-ai/cointelpro-fbi-vault-mineru-archive"
+  }
+}

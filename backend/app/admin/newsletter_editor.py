@@ -649,55 +649,49 @@ def publishable_editor_articles(
     article_states: dict[str, dict[str, Any]],
     receipts: dict[str, dict[str, Any]],
 ) -> list[int]:
+    """Return selected newsletter article drafts for normal publication.
+
+    Save + Publish Changes is the final publication step for articles selected
+    into the newsletter. If a selected article already contains other draft
+    fields or a staged image, those changes belong to the same article draft
+    and should be published together by the normal article publication
+    pipeline.
+
+    Newsletter revision receipts remain useful while saving summary/note edits
+    for concurrency protection, but they do not block final publication of a
+    selected article draft.
+
+    Pending withdrawals remain blocked so newsletter publication cannot
+    accidentally withdraw an article.
+    """
+    # Keep the keyword argument as part of the public helper contract even
+    # though publication eligibility no longer depends on receipt lineage.
+    _ = receipts
+
     publish_ids: list[int] = []
-    blocked: list[str] = []
+    blocked_withdrawals: list[str] = []
 
     for article_id, state in article_states.items():
-        current_summary = str(state.get("summary_markdown", ""))
-        canonical_summary = str(
-            state.get("canonical_summary_markdown", "")
-        )
-        current_note = str(state.get("note_markdown", ""))
-        canonical_note = str(
-            state.get("canonical_note_markdown", "")
-        )
-
-        # The newsletter editor owns summary and WTK Note changes.
-        if (
-            current_summary == canonical_summary
-            and current_note == canonical_note
-        ):
+        # Already-published/clean articles need no article publication step.
+        if state.get("workflow_state") != "draft":
             continue
 
-        receipt = receipts.get(article_id)
-
-        safe = (
-            isinstance(receipt, dict)
-            and bool(receipt.get("safe_to_publish"))
-            and str(receipt.get("after_hash", ""))
-            == str(state.get("current_hash", ""))
-            and not has_staged_image(conn, int(article_id))
-            and pending_withdrawal_for_article(
-                conn,
-                int(article_id),
-            )
-            is None
-        )
-
-        if not safe:
-            blocked.append(article_id)
+        # A pending withdrawal is not an ordinary draft change. Never let
+        # newsletter publication implicitly withdraw an article.
+        if pending_withdrawal_for_article(
+            conn,
+            int(article_id),
+        ) is not None:
+            blocked_withdrawals.append(article_id)
             continue
 
-        if state.get("workflow_state") == "draft":
-            publish_ids.append(int(article_id))
+        publish_ids.append(int(article_id))
 
-    if blocked:
+    if blocked_withdrawals:
         raise NewsletterEditorError(
-            "These article summaries/notes cannot be safely auto-published because "
-            "the articles already contain other draft/staged changes: "
-            + ", ".join(sorted(blocked, key=int))
-            + ". Save the newsletter, then review/publish those articles "
-            "from the Article Editor."
+            "These newsletter articles have pending withdrawals and cannot be "
+            "auto-published: "
+            + ", ".join(sorted(blocked_withdrawals, key=int))
         )
 
     return publish_ids

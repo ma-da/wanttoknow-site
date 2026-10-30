@@ -143,6 +143,7 @@
   }
 
   .status[data-kind="ok"] { color: var(--ok); }
+  .status[data-kind="warning"] { color: #8a5a14; }
   .status[data-kind="error"] { color: var(--danger); }
 
   .workspace {
@@ -190,6 +191,81 @@
   .preview-loading {
     color: var(--muted);
   }
+
+		.markdown-editor {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				min-width: 0;
+				min-height: 0;
+				overflow: hidden;
+				background: #fff;
+		}
+
+		.markdown-editor__highlight,
+		#document {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 18px;
+				border: 0;
+
+				font-family: Consolas, "Courier New", monospace;
+				font-size: 14px;
+				line-height: 1.5;
+				tab-size: 2;
+
+				white-space: pre-wrap;
+				overflow-wrap: break-word;
+				word-break: normal;
+
+				scrollbar-gutter: stable;
+		}
+
+		.markdown-editor__highlight {
+				z-index: 1;
+				overflow: auto;
+				pointer-events: none;
+				color: #25222a;
+				background: #fff;
+		}
+
+		#document {
+				z-index: 2;
+				min-height: 0;
+				resize: none;
+				overflow: auto;
+				outline: 0;
+
+				/*
+					* The real textarea remains editable, but its glyphs are transparent.
+					* The highlighted mirror underneath supplies the visible text.
+					*/
+				background: transparent;
+				color: transparent;
+				caret-color: #25222a;
+				-webkit-text-fill-color: transparent;
+		}
+
+		#document::selection {
+				background: rgba(103, 80, 143, 0.22);
+		}
+
+		/* Markdown syntax highlighting */
+
+		.md-url {
+				color: #7aa98a;
+		}
+
+		.md-bold {
+				font-weight: 700;
+		}
+
+		.md-italic {
+				font-style: italic;
+		}
 
   @media (max-width: 920px) {
     .editor-shell {
@@ -247,18 +323,26 @@
       </button>
 
       <button id="publish" type="button">
-        Save + Publish Article Changes
+        Save + Publish Changes
       </button>
     </div>
   </div>
 
   <div class="workspace">
     <section class="pane">
-      <textarea
-        id="document"
-        spellcheck="true"
-        aria-label="Newsletter Markdown document"
-      ></textarea>
+						<div class="markdown-editor">
+								<pre
+										id="document-highlight"
+										class="markdown-editor__highlight"
+										aria-hidden="true"
+								></pre>
+
+								<textarea
+										id="document"
+										spellcheck="true"
+										aria-label="Newsletter Markdown document"
+								></textarea>
+						</div>
     </section>
 
     <section class="pane">
@@ -278,6 +362,7 @@
   const $ = (id) => document.getElementById(id);
 
   const documentEditor = $("document");
+		const documentHighlight = $("document-highlight");
   const templateSelect = $("template");
   const saveButton = $("save");
   const publishButton = $("publish");
@@ -347,6 +432,98 @@
     templateSelect.value = selected || "standard";
   }
 
+		function escapeHighlightHtml(value) {
+				return String(value || "")
+						.replaceAll("&", "&amp;")
+						.replaceAll("<", "&lt;")
+						.replaceAll(">", "&gt;");
+		}
+
+
+		function highlightMarkdown(value) {
+				let text = escapeHighlightHtml(value);
+
+				/*
+					* Protect URLs from the emphasis parsing below. This prevents
+					* underscores or asterisks inside URLs from being interpreted
+					* as Markdown emphasis.
+					*/
+				const urls = [];
+
+				text = text.replace(
+						/\bhttps?:\/\/[^\s<>"')\]]+/gi,
+						(url) => {
+								const index = urls.length;
+
+								urls.push(
+										`<span class="md-url">${url}</span>`
+								);
+
+								return `\uE000${index}\uE001`;
+						}
+				);
+
+				/*
+					* Bold:
+					*   **text**
+					*   __text__
+					*
+					* Only the text between the markers becomes bold.
+					* The Markdown markers remain visible.
+					*/
+				text = text.replace(
+						/\*\*([^\n*]+?)\*\*/g,
+						'**<span class="md-bold">$1</span>**'
+				);
+
+				text = text.replace(
+						/__([^\n_]+?)__/g,
+						'__<span class="md-bold">$1</span>__'
+				);
+
+				/*
+					* Italics:
+					*   *text*
+					*   _text_
+					*
+					* Again, the marker characters themselves stay visible.
+					*/
+				text = text.replace(
+						/(^|[^*])\*([^*\n]+?)\*/g,
+						'$1*<span class="md-italic">$2</span>*'
+				);
+
+				text = text.replace(
+						/(^|[\s(])_([^_\n]+?)_(?=$|[\s.,!?;:)])/g,
+						'$1_<span class="md-italic">$2</span>_'
+				);
+
+				/*
+					* Restore highlighted URLs.
+					*/
+				text = text.replace(
+						/\uE000(\d+)\uE001/g,
+						(_, index) => urls[Number(index)] || ""
+				);
+
+				return text;
+		}
+
+
+		function updateMarkdownHighlight() {
+				/*
+					* Final newline prevents the mirror from collapsing the last empty line.
+					*/
+				documentHighlight.innerHTML =
+						highlightMarkdown(documentEditor.value) + "\n";
+		}
+
+
+		function syncMarkdownScroll() {
+				documentHighlight.scrollTop = documentEditor.scrollTop;
+				documentHighlight.scrollLeft = documentEditor.scrollLeft;
+		}
+
   function applyEditorState(data, {replaceDocument = true} = {}) {
     const newsletter = data.newsletter || {};
 
@@ -358,9 +535,11 @@
       newsletter.template_key || "standard"
     );
 
-    if (replaceDocument) {
-      documentEditor.value = data.document || "";
-    }
+				if (replaceDocument) {
+						documentEditor.value = data.document || "";
+						updateMarkdownHighlight();
+						syncMarkdownScroll();
+				}
 
     dirty = false;
   }
@@ -440,7 +619,7 @@
 
     setStatus(
       publish
-        ? "Saving newsletter and checking article publication…"
+        ? "Saving and publishing final newsletter changes…"
         : "Saving newsletter and article-content drafts…"
     );
 
@@ -467,16 +646,29 @@
 
       const changed = data.changed_article_ids || [];
       const published = data.published_article_ids || [];
+      const warnings = data.warnings || [];
 
       if (data.publication_error) {
         setStatus(
-          `Saved. Article publication needs attention: ${data.publication_error}`,
+          `Saved draft. Article publication needs attention: ${data.publication_error}`,
           "error"
         );
-      } else if (published.length) {
+      } else if (data.newsletter_publication_error) {
         setStatus(
-          `Saved newsletter and published article ${published.join(", ")}.`,
-          "ok"
+          `Article changes are saved${published.length ? " and published" : ""}, but newsletter publication needs attention: ${data.newsletter_publication_error}`,
+          "error"
+        );
+      } else if (publish && data.newsletter?.status === "published") {
+        const articleText = published.length
+          ? ` Published article changes: ${published.join(", ")}.`
+          : "";
+        const warningText = warnings.length
+          ? ` ${warnings.join(" ")}`
+          : "";
+
+        setStatus(
+          `Newsletter published to the public archive.${articleText}${warningText}`,
+          warnings.length ? "warning" : "ok"
         );
       } else if (changed.length) {
         setStatus(
@@ -521,10 +713,20 @@
     }
   }
 
-  documentEditor.addEventListener("input", () => {
-    dirty = true;
-    schedulePreview();
-  });
+		documentEditor.addEventListener("input", () => {
+				dirty = true;
+
+				updateMarkdownHighlight();
+				syncMarkdownScroll();
+
+				schedulePreview();
+		});
+
+		documentEditor.addEventListener(
+				"scroll",
+				syncMarkdownScroll,
+				{ passive: true }
+		);
 
   templateSelect.addEventListener("change", () => {
     dirty = true;
@@ -538,6 +740,7 @@
   publishButton.addEventListener("click", () => {
     save({publish: true});
   });
+
 
   window.addEventListener("beforeunload", (event) => {
     if (!dirty) return;

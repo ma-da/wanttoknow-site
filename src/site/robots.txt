@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /data/substack_raws/
+
+Sitemap: https://www.wanttoknow.info/sitemap.xml
